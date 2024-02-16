@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
-[ext_resource type="Texture2D" uid="uid://c5iljap38omkg" path="res://art/TX Props.png" id="2_5rlhy"]
-[ext_resource type="Texture2D" uid="uid://d0pm4xm5xftql" path="res://art/TX Tileset Grass.png" id="2_br1ny"]
+[ext_resource type="Texture2D" uid="uid://enyrbbkltaf8" path="res://art/TX Props.png" id="2_5rlhy"]
+[ext_resource type="Texture2D" uid="uid://b611dfhmtl4pq" path="res://art/TX Tileset Grass.png" id="2_br1ny"]
 [ext_resource type="Texture2D" uid="uid://c23yunqax4bmu" path="res://art/marstiletest.png" id="3_ms3gu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftddo"]
