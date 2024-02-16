@@ -1,31 +1,102 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=13 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_vieli"]
 [ext_resource type="Texture2D" uid="uid://dou1taayi10oj" path="res://art/space front (2).png" id="2_ufwx7"]
+[ext_resource type="Texture2D" uid="uid://bb3mxa1flrbqh" path="res://art/space back.png" id="3_jlb3b"]
+[ext_resource type="Texture2D" uid="uid://c8tw4elssacaw" path="res://art/space left.png" id="4_hwggd"]
+[ext_resource type="Texture2D" uid="uid://bvy2wsov8eroh" path="res://art/space right.png" id="5_jb2h3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ttl4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ufwx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jlb3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hwggd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jb2h3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq5ux"]
 size = Vector2(38, 59)
 
 [sub_resource type="Animation" id="Animation_mfqqo"]
 resource_name = "walk down"
+length = 0.8
 step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_bcbqv"]
 resource_name = "walk left"
 step = 0.2
 
+[sub_resource type="Animation" id="Animation_f7iok"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6de70"]
+resource_name = "walkUp"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7cik"]
 _data = {
+"RESET": SubResource("Animation_f7iok"),
 "walk down": SubResource("Animation_mfqqo"),
-"walk left": SubResource("Animation_bcbqv")
+"walk left": SubResource("Animation_bcbqv"),
+"walkUp": SubResource("Animation_6de70")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_vieli")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.376786, 0.304567)
-texture = ExtResource("2_ufwx7")
+sprite_frames = SubResource("SpriteFrames_ttl4y")
+frame_progress = 0.00756851
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
