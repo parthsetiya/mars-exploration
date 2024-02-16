@@ -1,47 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=9 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_vieli"]
 [ext_resource type="Texture2D" uid="uid://4bp55c18tvc2" path="res://art/spritesheettest.png" id="2_dxsps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq5ux"]
 size = Vector2(23, 36)
-
-[sub_resource type="Animation" id="Animation_mfqqo"]
-resource_name = "walk down"
-length = 0.2
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_bcbqv"]
-resource_name = "walk left"
-step = 0.2
-
-[sub_resource type="Animation" id="Animation_tqq6x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_1a15e"]
 resource_name = "walkRight"
@@ -97,11 +60,27 @@ tracks/0/keys = {
 "values": [Vector2i(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_mfqqo"]
+resource_name = "walkDown"
+length = 0.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7cik"]
 _data = {
-"RESET": SubResource("Animation_tqq6x"),
-"walk down": SubResource("Animation_mfqqo"),
-"walk left": SubResource("Animation_bcbqv"),
+"walkDown": SubResource("Animation_mfqqo"),
 "walkLeft": SubResource("Animation_iuiml"),
 "walkRight": SubResource("Animation_1a15e"),
 "walkUp": SubResource("Animation_28m1g")
