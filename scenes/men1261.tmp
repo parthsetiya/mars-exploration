@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script/menu.gd" id="1_1lt66"]
 [ext_resource type="Texture2D" uid="uid://ceocs6oolmqf6" path="res://pixel_art_a_rover_on_mars_surf.jpeg" id="2_i0nti"]
-[ext_resource type="PackedScene" uid="uid://2uqyrmvyqs5u" path="res://scenes/options/options_menu.tscn" id="3_nqggx"]
+[ext_resource type="PackedScene" uid="uid://2uqyrmvyqs5u" path="res://scenes/options_menu.tscn" id="3_nqggx"]
 
 [sub_resource type="SystemFont" id="SystemFont_bmy7p"]
 font_names = PackedStringArray("Monospace")
@@ -92,5 +92,4 @@ layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

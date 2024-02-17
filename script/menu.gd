@@ -29,6 +29,11 @@ func on_exit_option_menu() -> void:
 	
 func handle_connecting_signals() -> void:
 	play.button_down.connect(on_start_pressed)
-	settings.button_down.connect(on_options_pressed)	
+	#settings.button_down.connect(on_options_pressed)	
 	quit.button_down.connect(on_exit_button_pressed)
 	options_menu.exit_options_menu.connect(on_exit_option_menu)
+	
+
+
+func _on_settings_pressed():
+	get_tree().change_scene_to_file("res://scenes/options/options_menu.tscn")
