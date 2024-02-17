@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://s5f2uqpihfy5"]
-
-[ext_resource type="AudioStream" uid="uid://br2ok7v7ja2kv" path="res://impactMetal_heavy_004.ogg" id="1_iitov"]
-
-[node name="jump_handler" type="Node2D"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("1_iitov")
-bus = &"SFX"
