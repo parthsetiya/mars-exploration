@@ -3,128 +3,98 @@
 		{
 			"image": "spritesheettest.png",
 			"size": {
-				"w": 459,
-				"h": 108
+				"w": 576,
+				"h": 96
 			},
 			"sprites": [
 				{
-					"filename": "space back.png",
+					"filename": "pixil-frame-0.png",
 					"region": {
-						"x": 1,
-						"y": 1,
-						"w": 58,
-						"h": 106
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 96
 					},
 					"margin": {
-						"x": 9,
-						"y": 1,
-						"w": 18,
-						"h": 2
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
 					}
 				},
 				{
-					"filename": "1.png",
+					"filename": "pixil-frame-1.png",
 					"region": {
-						"x": 61,
-						"y": 1,
-						"w": 55,
-						"h": 106
+						"x": 96,
+						"y": 0,
+						"w": 96,
+						"h": 96
 					},
 					"margin": {
-						"x": 9,
-						"y": 1,
-						"w": 21,
-						"h": 2
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
 					}
 				},
 				{
-					"filename": "2.png",
+					"filename": "pixil-frame-2.png",
 					"region": {
-						"x": 118,
-						"y": 1,
-						"w": 55,
-						"h": 106
+						"x": 192,
+						"y": 0,
+						"w": 96,
+						"h": 96
 					},
 					"margin": {
-						"x": 9,
-						"y": 1,
-						"w": 21,
-						"h": 2
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
 					}
 				},
 				{
-					"filename": "3.png",
+					"filename": "pixil-frame-3.png",
 					"region": {
-						"x": 175,
-						"y": 1,
-						"w": 55,
-						"h": 106
+						"x": 288,
+						"y": 0,
+						"w": 96,
+						"h": 96
 					},
 					"margin": {
-						"x": 9,
-						"y": 1,
-						"w": 21,
-						"h": 2
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
 					}
 				},
 				{
-					"filename": "4.png",
+					"filename": "pixil-frame-4.png",
 					"region": {
-						"x": 232,
-						"y": 1,
-						"w": 55,
-						"h": 106
+						"x": 384,
+						"y": 0,
+						"w": 96,
+						"h": 96
 					},
 					"margin": {
-						"x": 9,
-						"y": 1,
-						"w": 21,
-						"h": 2
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
 					}
 				},
 				{
-					"filename": "space front (2).png",
+					"filename": "pixil-frame-5.png",
 					"region": {
-						"x": 289,
-						"y": 1,
-						"w": 55,
-						"h": 106
+						"x": 480,
+						"y": 0,
+						"w": 96,
+						"h": 96
 					},
 					"margin": {
-						"x": 9,
-						"y": 1,
-						"w": 21,
-						"h": 2
-					}
-				},
-				{
-					"filename": "space left.png",
-					"region": {
-						"x": 346,
-						"y": 1,
-						"w": 55,
-						"h": 106
-					},
-					"margin": {
-						"x": 9,
-						"y": 1,
-						"w": 21,
-						"h": 2
-					}
-				},
-				{
-					"filename": "space right.png",
-					"region": {
-						"x": 403,
-						"y": 1,
-						"w": 55,
-						"h": 106
-					},
-					"margin": {
-						"x": 12,
-						"y": 1,
-						"w": 21,
-						"h": 2
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
 					}
 				}
 			]
@@ -133,6 +103,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "1.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:62e4a84d0aa877aca2120031c1416c4f:3edd8961a688350a15a93ac168f6ecb0:21f3a04a4736954b43bc2f272f110fc1$"
+		"smartupdate": "$TexturePacker:SmartUpdate:bda1e54e1175b7805c89158eb92f04c3:409c1619c0ed35c345ae0cf61a72c5c6:21f3a04a4736954b43bc2f272f110fc1$"
 	}
 }
