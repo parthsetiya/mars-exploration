@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgu5px0og70ui"
-path="res://.godot/imported/pixel_art_a_rover_on_mars_surf.jpeg-fdb7d28985bc8675371787260fc59a6e.ctex"
+uid="uid://dkeg2qesecpwx"
+path="res://.godot/imported/back 5.png-62325ce8d31619cf273a96a6ec60e27f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixel_art_a_rover_on_mars_surf.jpeg"
-dest_files=["res://.godot/imported/pixel_art_a_rover_on_mars_surf.jpeg-fdb7d28985bc8675371787260fc59a6e.ctex"]
+source_file="res://art/Sprites/back 5.png"
+dest_files=["res://.godot/imported/back 5.png-62325ce8d31619cf273a96a6ec60e27f.ctex"]
 
 [params]
 
