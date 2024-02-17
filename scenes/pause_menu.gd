@@ -1,11 +1,11 @@
 extends Control
 
-
+@onready var start_level = preload("res://scenes/main.tscn") as PackedScene
 
 
 
 func _on_resume_pressed():
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_packed(start_level)
 
 
 func _on_settings_pressed():
