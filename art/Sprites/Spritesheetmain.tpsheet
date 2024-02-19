@@ -98,7 +98,7 @@
 					}
 				},
 				{
-					"filename": "front 1.png",
+					"filename": "down 1.png",
 					"region": {
 						"x": 480,
 						"y": 0,
@@ -113,7 +113,7 @@
 					}
 				},
 				{
-					"filename": "front 3.png",
+					"filename": "down 3.png",
 					"region": {
 						"x": 480,
 						"y": 0,
@@ -128,7 +128,7 @@
 					}
 				},
 				{
-					"filename": "front 2.png",
+					"filename": "down 2.png",
 					"region": {
 						"x": 576,
 						"y": 0,
@@ -143,7 +143,7 @@
 					}
 				},
 				{
-					"filename": "front 4.png",
+					"filename": "down 4.png",
 					"region": {
 						"x": 672,
 						"y": 0,
@@ -158,7 +158,7 @@
 					}
 				},
 				{
-					"filename": "front 5.png",
+					"filename": "down 5.png",
 					"region": {
 						"x": 768,
 						"y": 0,
@@ -173,7 +173,7 @@
 					}
 				},
 				{
-					"filename": "front 6.png",
+					"filename": "down 6.png",
 					"region": {
 						"x": 864,
 						"y": 0,
@@ -313,6 +313,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "1.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:01482c279162ea508a2fcff186a45d11:0eb9f38ac8457d77e1e0de6df8aa9a00:3b3025061655d57dbc7a2cd17a360353$"
+		"smartupdate": "$TexturePacker:SmartUpdate:c76ad81860eedc412e848da7cedd14ea:dc79004f1eefc96ff31bdbe0bfc0f8a3:3b3025061655d57dbc7a2cd17a360353$"
 	}
 }
