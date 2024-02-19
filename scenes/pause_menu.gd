@@ -5,7 +5,9 @@ extends Control
 
 
 func _on_resume_pressed():
-	get_tree().change_scene_to_packed(start_level)
+	#get_tree().change_scene_to_packed(start_level)
+	hide()
+	Engine.time_scale =  1
 
 
 func _on_settings_pressed():
