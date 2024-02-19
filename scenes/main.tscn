@@ -12,7 +12,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0.50974, 0.50974, 0.50974, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hhbug"]
 gradient = SubResource("Gradient_3g7wf")
-width = 1000
+width = 345
 height = 150
 fill = 1
 fill_from = Vector2(0.5, 0.412844)
@@ -208,7 +208,7 @@ sources/6 = SubResource("TileSetAtlasSource_26wuu")
 script = ExtResource("1_kvib1")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-50, -236)
+position = Vector2(-50, -237)
 scale = Vector2(1, 1)
 texture = SubResource("GradientTexture2D_hhbug")
 
