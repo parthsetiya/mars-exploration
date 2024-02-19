@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8wrradir1b7k"]
+[gd_scene load_steps=6 format=3 uid="uid://m32rf8bgbsqs"]
 
 [ext_resource type="Script" path="res://script/menu.gd" id="1_1lt66"]
 [ext_resource type="Texture2D" uid="uid://m4gg8lq6ihm5" path="res://pixel_art_astronaut_standing_o(1).jpeg" id="2_muhvd"]
@@ -91,6 +91,6 @@ visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
