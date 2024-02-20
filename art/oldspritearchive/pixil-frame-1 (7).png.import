@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chcoo8nc2433h"
-path="res://.godot/imported/spritesheettest.png-543c2472b97a35191ced58e0b31bcebd.ctex"
+uid="uid://yux8u4i0l4kh"
+path="res://.godot/imported/pixil-frame-1 (7).png-d78e5a4839afbc108f6be4d5d66b0861.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Sprites/spritesheettest.png"
-dest_files=["res://.godot/imported/spritesheettest.png-543c2472b97a35191ced58e0b31bcebd.ctex"]
+source_file="res://art/oldspritearchive/pixil-frame-1 (7).png"
+dest_files=["res://.godot/imported/pixil-frame-1 (7).png-d78e5a4839afbc108f6be4d5d66b0861.ctex"]
 
 [params]
 
