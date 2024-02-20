@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=11 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_vieli"]
 [ext_resource type="Texture2D" uid="uid://elcte58b15e" path="res://art/Sprites/Spritesheetmain.png" id="2_r7c8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u2gu"]
 size = Vector2(49, 60)
+
+[sub_resource type="Animation" id="Animation_qtwtp"]
+resource_name = "Idle"
 
 [sub_resource type="Animation" id="Animation_gdqh0"]
 length = 0.001
@@ -95,6 +98,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7cik"]
 _data = {
+"Idle": SubResource("Animation_qtwtp"),
 "RESET": SubResource("Animation_gdqh0"),
 "walkDown": SubResource("Animation_mfqqo"),
 "walkLeft": SubResource("Animation_iuiml"),
