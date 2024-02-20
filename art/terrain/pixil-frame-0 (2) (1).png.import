@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cess1j0motfc4"
-path="res://.godot/imported/pixil-frame-0 (14).png-0cce410860a62ad5c0df957e526faaf2.ctex"
+uid="uid://b7fvhflfiqjpj"
+path="res://.godot/imported/pixil-frame-0 (2) (1).png-86b0939f5152672c9faefce1fef56365.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-frame-0 (14).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (14).png-0cce410860a62ad5c0df957e526faaf2.ctex"]
+source_file="res://art/terrain/pixil-frame-0 (2) (1).png"
+dest_files=["res://.godot/imported/pixil-frame-0 (2) (1).png-86b0939f5152672c9faefce1fef56365.ctex"]
 
 [params]
 

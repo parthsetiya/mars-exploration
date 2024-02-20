@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctfauluhvqn32"
-path="res://.godot/imported/pixel_art_astronaut_standing_o.jpeg-42ebb708ea1a91ecb4ae715eac835348.ctex"
+uid="uid://cess1j0motfc4"
+path="res://.godot/imported/pixil-frame-0 (14).png-ef9954e7ff7dc7b78800128e2aab8098.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixel_art_astronaut_standing_o.jpeg"
-dest_files=["res://.godot/imported/pixel_art_astronaut_standing_o.jpeg-42ebb708ea1a91ecb4ae715eac835348.ctex"]
+source_file="res://art/terrain/pixil-frame-0 (14).png"
+dest_files=["res://.godot/imported/pixil-frame-0 (14).png-ef9954e7ff7dc7b78800128e2aab8098.ctex"]
 
 [params]
 
