@@ -1,43 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=20 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_vieli"]
 [ext_resource type="Texture2D" uid="uid://elcte58b15e" path="res://art/Sprites/Spritesheetmain.png" id="2_r7c8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u2gu"]
 size = Vector2(49, 60)
-
-[sub_resource type="Animation" id="Animation_qtwtp"]
-resource_name = "Idle"
-length = 1.6
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(10, 0), Vector2i(11, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gdqh0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(2, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_mfqqo"]
 resource_name = "walkDown"
@@ -113,8 +80,6 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7cik"]
 _data = {
-"Idle": SubResource("Animation_qtwtp"),
-"RESET": SubResource("Animation_gdqh0"),
 "walkDown": SubResource("Animation_mfqqo"),
 "walkLeft": SubResource("Animation_iuiml"),
 "walkRight": SubResource("Animation_1a15e"),
@@ -124,9 +89,44 @@ _data = {
 [sub_resource type="Animation" id="Animation_7abbv"]
 resource_name = "Idle"
 
+[sub_resource type="Animation" id="Animation_40e1h"]
+resource_name = "walkDown"
+length = 0.6
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(8, 0), Vector2i(9, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g3sga"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(5, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bh6w6"]
 _data = {
-"Idle": SubResource("Animation_7abbv")
+"Idle": SubResource("Animation_7abbv"),
+"RESET": SubResource("Animation_g3sga"),
+"walkDown": SubResource("Animation_40e1h")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gtlvs"]
@@ -141,6 +141,9 @@ animation = &"Idle"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iu8i5"]
 animation = &"Idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mobch"]
+animation = &"walkDown"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_1kb1y"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_gtlvs")
 blend_point_0/pos = Vector2(-1, 0)
@@ -150,6 +153,8 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_uimv5")
 blend_point_2/pos = Vector2(0, 1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_iu8i5")
 blend_point_3/pos = Vector2(0, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_mobch")
+blend_point_4/pos = Vector2(0, -1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_k2m3y"]
@@ -165,7 +170,7 @@ position = Vector2(9.53674e-07, -1.90735e-06)
 scale = Vector2(0.964619, 0.779728)
 texture = ExtResource("2_r7c8j")
 hframes = 20
-frame = 2
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -4)
@@ -181,4 +186,4 @@ libraries = {
 "": SubResource("AnimationLibrary_bh6w6")
 }
 tree_root = SubResource("AnimationNodeStateMachine_k2m3y")
-parameters/Idle/blend_position = Vector2(-0.0449871, -0.0131578)
+parameters/Idle/blend_position = Vector2(0.00642669, -0.991228)

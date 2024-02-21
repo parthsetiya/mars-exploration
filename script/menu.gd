@@ -2,7 +2,7 @@ class_name MainMenu
 extends Control
 
 @onready var play = $MarginContainer/HBoxContainer/VBoxContainer/play as Button
-@onready var settings = $MarginContainer/HBoxContainer/VBoxContainer/options as Button
+@onready var settings = $MarginContainer/HBoxContainer/VBoxContainer/settings as Button
 @onready var quit = $MarginContainer/HBoxContainer/VBoxContainer/quit as Button
 @onready var options_menu = $options_menu as OptionsMenu
 @onready var margin_container = $MarginContainer as MarginContainer
