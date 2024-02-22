@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ck7qt3wm68nt3" path="res://art/terrain/marstiletest.png" id="1_pm6gb"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
 [ext_resource type="Texture2D" uid="uid://lsk213jgygko" path="res://art/terrain/TX Tileset Stone Ground.png" id="2_p1wt6"]
-[ext_resource type="Texture2D" uid="uid://dwq6l2swfx0tu" path="res://art/TERRAIN_TILE_SHEET_a.png" id="4_6ipu5"]
+[ext_resource type="Texture2D" uid="uid://dwq6l2swfx0tu" path="res://art/terrain/TERRAIN_TILE_SHEET_a.png" id="4_6ipu5"]
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_b4hsc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca8jy"]
@@ -261,8 +261,10 @@ z_index = 1
 visible = false
 
 [node name="PointLight2D3" type="PointLight2D" parent="Player/Camera2D"]
+visible = false
 position = Vector2(-2, -8)
 texture = SubResource("GradientTexture2D_hhbug")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
