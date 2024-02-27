@@ -186,4 +186,4 @@ libraries = {
 "": SubResource("AnimationLibrary_bh6w6")
 }
 tree_root = SubResource("AnimationNodeStateMachine_k2m3y")
-parameters/Idle/blend_position = Vector2(0.00642669, -0.991228)
+parameters/Idle/blend_position = Vector2(-0.728792, 0.627297)
