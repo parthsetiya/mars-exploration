@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=27 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_kvib1"]
 [ext_resource type="Texture2D" uid="uid://ck7qt3wm68nt3" path="res://art/terrain/marstiletest.png" id="1_pm6gb"]
@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://b0okl5e51rmf6" path="res://art/terrain/Pixel Art.png" id="4_0cij2"]
 [ext_resource type="Texture2D" uid="uid://dwq6l2swfx0tu" path="res://art/terrain/TERRAIN_TILE_SHEET_a.png" id="4_6ipu5"]
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_b4hsc"]
+[ext_resource type="Texture2D" uid="uid://c0kqsxuls7ysq" path="res://art/lavatest2down.png" id="4_ckc4k"]
 [ext_resource type="Texture2D" uid="uid://bm2h6od5pwnnf" path="res://art/terrain/lavamain.png" id="5_h762k"]
 [ext_resource type="Texture2D" uid="uid://b43a0q2mra6kd" path="res://art/terrain/lava.png" id="8_jwbxg"]
 [ext_resource type="Texture2D" uid="uid://bosvbaq8lhnql" path="res://art/terrain/lavatest2.png" id="9_0hf4f"]
+[ext_resource type="Texture2D" uid="uid://bjrj3i0qw70s8" path="res://art/lavatest2up.png" id="11_hw5yv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4pt2n"]
 texture = ExtResource("2_agmvx")
@@ -64,6 +66,13 @@ texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgw53"]
+texture = ExtResource("4_ckc4k")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_27pie"]
 texture = ExtResource("4_0cij2")
@@ -281,6 +290,13 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aypb7"]
+texture = ExtResource("11_hw5yv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_duuyq"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -292,6 +308,8 @@ sources/2 = SubResource("TileSetAtlasSource_27pie")
 sources/3 = SubResource("TileSetAtlasSource_rtd3t")
 sources/7 = SubResource("TileSetAtlasSource_bjwno")
 sources/8 = SubResource("TileSetAtlasSource_t521f")
+sources/9 = SubResource("TileSetAtlasSource_aypb7")
+sources/10 = SubResource("TileSetAtlasSource_wgw53")
 
 [sub_resource type="Gradient" id="Gradient_3g7wf"]
 offsets = PackedFloat32Array(0, 0.00649351, 1)
@@ -309,7 +327,7 @@ fill_to = Vector2(0.142202, 0.834862)
 script = ExtResource("1_kvib1")
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(2, 0)
+position = Vector2(2, -2)
 scale = Vector2(0.972782, 1.02586)
 tile_set = SubResource("TileSet_duuyq")
 format = 2
