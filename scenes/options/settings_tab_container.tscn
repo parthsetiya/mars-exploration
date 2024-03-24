@@ -32,6 +32,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 278.0
+offset_right = 2.0
+offset_bottom = -289.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -62,11 +66,6 @@ text = "sound 3
 [node name="Label4" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "sound 4
-"
-
-[node name="Label5" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "sound 5
 "
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]

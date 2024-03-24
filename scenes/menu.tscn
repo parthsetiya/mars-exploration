@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://m32rf8bgbsqs"]
+[gd_scene load_steps=7 format=3 uid="uid://m32rf8bgbsqs"]
 
 [ext_resource type="Script" path="res://script/menu.gd" id="1_1lt66"]
 [ext_resource type="Texture2D" uid="uid://m4gg8lq6ihm5" path="res://pixel_art_astronaut_standing_o(1).jpeg" id="2_muhvd"]
+[ext_resource type="Texture2D" uid="uid://brlt6w3vpxgxn" path="res://art/playbuttontest1.png" id="3_c7sm8"]
 [ext_resource type="PackedScene" uid="uid://2uqyrmvyqs5u" path="res://scenes/options/options_menu.tscn" id="3_nqggx"]
-
-[sub_resource type="SystemFont" id="SystemFont_bmy7p"]
-font_names = PackedStringArray("Monospace")
-
-[sub_resource type="SystemFont" id="SystemFont_rkntk"]
-font_names = PackedStringArray("Monospace")
+[ext_resource type="Texture2D" uid="uid://bjqa8r1rtwbr3" path="res://art/settingsbuttontest1.png" id="4_75j2l"]
+[ext_resource type="Texture2D" uid="uid://dlj21l4gnwacy" path="res://art/quitbuttontest1.png" id="5_kxdp2"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -33,6 +30,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 461.0
+offset_top = 553.0
+offset_right = -1135.0
+offset_bottom = -233.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
@@ -47,15 +48,6 @@ theme_override_constants/separation = 0
 [node name="separater" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_bmy7p")
-theme_override_font_sizes/font_size = 64
-text = "Mars Exploration"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
@@ -65,32 +57,22 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 70)
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_rkntk")
-theme_override_font_sizes/font_size = 24
-text = "Play"
+texture_normal = ExtResource("3_c7sm8")
 
-[node name="settings" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 70)
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_rkntk")
-theme_override_font_sizes/font_size = 24
-text = "Settings"
+texture_normal = ExtResource("4_75j2l")
 
-[node name="quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 70)
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_rkntk")
-theme_override_font_sizes/font_size = 24
-text = "Quit"
+texture_normal = ExtResource("5_kxdp2")
 
 [node name="options_menu" parent="." instance=ExtResource("3_nqggx")]
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]
