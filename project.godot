@@ -13,13 +13,12 @@ config_version=5
 config/name="Mars-exploration"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://script/icon.svg"
+config/icon="res://scripts/icon.svg"
 
 [display]
 
 window/size/mode=3
 window/stretch/scale=3.0
-mouse_cursor/custom_image="res://art/Sprites/cursortest.png"
 mouse_cursor/custom_image_hotspot=Vector2(0.58, 0.7)
 
 [input]

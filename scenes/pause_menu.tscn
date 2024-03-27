@@ -1,10 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbe4fh5bqi4gh"]
 
-[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_5bd7t"]
-[ext_resource type="Shader" path="res://scenes/pause_menu.gdshader" id="2_gh871"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_32q2i"]
+
+[sub_resource type="Shader" id="Shader_qg57o"]
+code = "shader_type canvas_item;
+
+uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
+uniform float amount: hint_range(0.0,5.0);
+
+
+void fragment() {
+	vec4 color = textureLod(screen_texture, SCREEN_UV, amount);
+	COLOR = color;
+}
+
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qtikp"]
-shader = ExtResource("2_gh871")
+shader = SubResource("Shader_qg57o")
 shader_parameter/amount = 1.0
 
 [node name="Pausemenu" type="Control"]
@@ -14,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5bd7t")
+script = ExtResource("1_32q2i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_qtikp")
