@@ -11,7 +11,7 @@ func _on_body_entered(body: PhysicsBody2D):
 	entered = true
 
 
-func _on_area_shape_exited():
+func _on_body_exited(body):
 	entered = false
 	
 func _process(delta):
@@ -20,7 +20,7 @@ func _process(delta):
 		if Input.is_action_just_pressed("Interact"):
 			get_tree().change_scene_to_file("res://housetest.tscn")
 			
-	elif entered == false:
+	else:
 		etointeracthide()
 		
 
@@ -31,7 +31,6 @@ func etointeractshow():
 	tooltipshow = !tooltipshow
 	
 func etointeracthide():
-	if tooltipshow == false:
 		E_to_interact.hide()
 	
 

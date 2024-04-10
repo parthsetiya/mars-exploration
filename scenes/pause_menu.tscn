@@ -47,11 +47,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 1
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "Resume"
@@ -65,6 +67,10 @@ text = "Settings"
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "Quit to main menu"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+z_index = -1
+color = Color(0.74902, 0.74902, 0.74902, 1)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
