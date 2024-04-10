@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv0los6yqfysa"]
+
+[ext_resource type="Texture2D" uid="uid://b3wirsdpgo743" path="res://art/button_which_shows_tooltip.png" id="1_j1csi"]
+
+[node name="E_to_interact" type="Control"]
+layout_mode = 3
+anchor_right = 1.667
+anchor_bottom = 1.667
+offset_right = -0.384064
+offset_bottom = -0.216036
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -231.0
+offset_top = -63.0
+offset_right = -30.0
+offset_bottom = -29.0
+texture = ExtResource("1_j1csi")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 186.0
+offset_bottom = 25.0
+text = "E to interact"

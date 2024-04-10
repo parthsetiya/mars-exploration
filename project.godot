@@ -25,6 +25,10 @@ mouse_cursor/custom_image_hotspot=Vector2(0.58, 0.7)
 
 version_control/autoload_on_startup=true
 
+[gui]
+
+theme/custom_font="res://joystix.ttf"
+
 [input]
 
 Pause={

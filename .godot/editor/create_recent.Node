@@ -1,3 +1,6 @@
+Control
+Label
+TextureRect
 TextureButton
 AnimationTree
 AnimatedSprite2D

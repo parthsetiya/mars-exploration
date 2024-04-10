@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://qcx54htx6nxc"]
+[gd_scene load_steps=10 format=3 uid="uid://qcx54htx6nxc"]
 
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="1_ev6st"]
 [ext_resource type="Script" path="res://housetest.gd" id="1_kerb7"]
 [ext_resource type="Script" path="res://Area2Dback.gd" id="2_dn4bn"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="2_kf5yp"]
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_e5uxr"]
+[ext_resource type="PackedScene" uid="uid://bv0los6yqfysa" path="res://scenes/e_to_interact.tscn" id="4_gq8xc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqm5d"]
 texture = ExtResource("1_ev6st")
@@ -728,6 +729,9 @@ script = ExtResource("2_dn4bn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/Area2D"]
 position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_y3jpw")
+
+[node name="E_to_interact" parent="tilemap/Area2D" instance=ExtResource("4_gq8xc")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_kf5yp")]
 position = Vector2(252, 149)
