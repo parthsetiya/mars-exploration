@@ -13,10 +13,10 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -101.0
-offset_top = -77.0
-offset_right = 100.0
-offset_bottom = -43.0
+offset_left = -231.0
+offset_top = -63.0
+offset_right = -30.0
+offset_bottom = -29.0
 texture = ExtResource("1_j1csi")
 
 [node name="Label" type="Label" parent="TextureRect"]
