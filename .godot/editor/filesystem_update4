@@ -1,7 +1,5 @@
 res://scenes/menu.tscn
-res://scenes/pause_menu.tscn
 res://scenes/maintest.tscn
-res://housetest.tscn
+res://scenes/housetest.tscn
+res://scenes/player.tscn
 res://scenes/e_to_interact.tscn
-res://scenes/Area2D.gd
-res://Area2Dback.gd
