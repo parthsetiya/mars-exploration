@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=21 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_rv08x"]
 [ext_resource type="Texture2D" uid="uid://elcte58b15e" path="res://art/Sprites/Spritesheetmain.png" id="2_khuyi"]
-[ext_resource type="Resource" uid="uid://c1crh6sr33f5e" path="res://Inventory/playerinv.tres" id="2_vqwqm"]
 [ext_resource type="PackedScene" uid="uid://cdmikkqiukii7" path="res://Inventory/inv_ui.tscn" id="4_1c11m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u2gu"]
@@ -165,7 +164,7 @@ states/Idle/position = Vector2(402.5, 83.5)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_rv08x")
-inv = ExtResource("2_vqwqm")
+speed = null
 metadata/_edit_horizontal_guides_ = [-48.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -193,3 +192,7 @@ parameters/Idle/blend_position = Vector2(-0.728792, 0.627297)
 
 [node name="Inv_UI" parent="." instance=ExtResource("4_1c11m")]
 visible = false
+offset_left = -97.0
+offset_top = -58.0
+offset_right = 97.0
+offset_bottom = 62.0

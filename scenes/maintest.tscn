@@ -239,6 +239,7 @@ visible = false
 [node name="Player" parent="." instance=ExtResource("1_w3bu8")]
 z_index = 1
 position = Vector2(1, -1)
+speed = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 

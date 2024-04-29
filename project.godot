@@ -15,6 +15,10 @@ run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://scripts/icon.svg"
 
+[autoload]
+
+Playerinv="*res://Inventory/playerinv.tres"
+
 [display]
 
 window/size/viewport_width=1920

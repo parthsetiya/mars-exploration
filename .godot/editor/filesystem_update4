@@ -13,3 +13,5 @@ res://scenes/player.tscn
 res://Inventory/inventory.gd
 res://Inventory/Inv_UI.gd
 res://Inventory/inv_ui.tscn
+res://Inventory/inv_ui_slot.tscn
+res://Inventory/inv_ui_slot.gd
