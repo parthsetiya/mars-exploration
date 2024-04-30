@@ -164,7 +164,6 @@ states/Idle/position = Vector2(402.5, 83.5)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_rv08x")
-speed = null
 metadata/_edit_horizontal_guides_ = [-48.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

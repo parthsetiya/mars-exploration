@@ -230,7 +230,6 @@ script = ExtResource("3_nm8o0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
 position = Vector2(-2.0526, -3.55228)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5vtw8")
 
 [node name="E_to_interact" parent="TileMap/Area2D" instance=ExtResource("4_dukk6")]
@@ -239,7 +238,6 @@ visible = false
 [node name="Player" parent="." instance=ExtResource("1_w3bu8")]
 z_index = 1
 position = Vector2(1, -1)
-speed = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 

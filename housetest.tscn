@@ -735,7 +735,6 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_kf5yp")]
 position = Vector2(252, 149)
-speed = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
