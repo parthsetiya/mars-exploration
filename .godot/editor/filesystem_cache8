@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712801804
+::res://::1714443939
 joystix.ttf::FontFile::2632679398112957767::1712792068::1712792068::1::::<><>::
 README.md::TextFile::-1::1712699690::0::1::::<><>::
-::res://art/::1712794021
+::res://art/::1714443780
 button_which_shows_tooltip.png::CompressedTexture2D::4397641661330691302::1712792068::1712792068::1::::<><>::
 ::res://art/mainmenu/::1712699930
 pixel_art_astronaut_standing_o(1).jpeg::CompressedTexture2D::1306246770854513496::1712699690::1712699690::1::::<><>::
@@ -89,67 +89,69 @@ pixil-frame-0.png::CompressedTexture2D::8636944719510119375::1712699690::1712699
 pixil-frame-1.png::CompressedTexture2D::5650730887542174189::1712699690::1712699690::1::::<><>::
 pixil-frame-2.png::CompressedTexture2D::6823808436137198219::1712699690::1712699690::1::::<><>::
 pixil-frame-3.png::CompressedTexture2D::8665424433102750204::1712699690::1712699690::1::::<><>::
-::res://art/Sprites/::1712794021
+::res://art/Sprites/::1714443780
 spritesheet.png::CompressedTexture2D::1542890486873050704::1712793952::1712793952::1::::<><>::
-::res://art/Sprites/Player/::1712793791
-::res://art/Sprites/Player/down/::1712792128
-pixil-frame-0.png::CompressedTexture2D::8754374170844758256::1712792068::1712792115::1::::<><>::
-pixil-frame-1.png::CompressedTexture2D::3604123299328806044::1712792068::1712792115::1::::<><>::
-pixil-frame-2.png::CompressedTexture2D::2894257667430941768::1712792068::1712792115::1::::<><>::
-pixil-frame-3.png::CompressedTexture2D::7385031397331083752::1712792068::1712792115::1::::<><>::
-pixil-frame-4.png::CompressedTexture2D::5815005883955034007::1712792068::1712792115::1::::<><>::
-pixil-frame-5.png::CompressedTexture2D::4487084986802402784::1712792068::1712792115::1::::<><>::
-pixil-frame-6.png::CompressedTexture2D::4922850923199906024::1712792068::1712792115::1::::<><>::
-pixil-frame-7.png::CompressedTexture2D::58704945546388794::1712792068::1712792115::1::::<><>::
-::res://art/Sprites/Player/down idle animation/::1712792126
-pixil-frame-0.png::CompressedTexture2D::7706880414680925760::1712792068::1712792115::1::::<><>::
-pixil-frame-1.png::CompressedTexture2D::3050198172450577128::1712792068::1712792115::1::::<><>::
-::res://art/Sprites/Player/left animation/::1712792128
-pixil-frame-0.png::CompressedTexture2D::8823065179047477322::1712792068::1712792115::1::::<><>::
-pixil-frame-1.png::CompressedTexture2D::9028436957890446722::1712792068::1712792115::1::::<><>::
-pixil-frame-2.png::CompressedTexture2D::428267391529676234::1712792068::1712792115::1::::<><>::
-pixil-frame-3.png::CompressedTexture2D::713170190409549071::1712792068::1712792115::1::::<><>::
-pixil-frame-4.png::CompressedTexture2D::6673134106155784907::1712792068::1712792115::1::::<><>::
-pixil-frame-5.png::CompressedTexture2D::4402064751318584592::1712792068::1712792115::1::::<><>::
-pixil-frame-6.png::CompressedTexture2D::597238548361432850::1712792068::1712792115::1::::<><>::
-pixil-frame-7.png::CompressedTexture2D::1462755299148200326::1712792068::1712792115::1::::<><>::
-::res://art/Sprites/Player/left animation idle/::1712792128
-pixil-frame-0.png::CompressedTexture2D::5263255198902866221::1712792068::1712792115::1::::<><>::
-pixil-frame-1.png::CompressedTexture2D::5746790415425143863::1712792068::1712792115::1::::<><>::
-::res://art/Sprites/Player/right animation/::1712792122
-pixil-frame-0.png::CompressedTexture2D::1403535778933637842::1712792068::1712792115::1::::<><>::
-pixil-frame-1.png::CompressedTexture2D::8017457571629733538::1712792068::1712792115::1::::<><>::
-pixil-frame-2.png::CompressedTexture2D::1619964507656794581::1712792068::1712792115::1::::<><>::
-pixil-frame-3.png::CompressedTexture2D::4111382708845290052::1712792068::1712792115::1::::<><>::
-pixil-frame-4.png::CompressedTexture2D::5241877133900623044::1712792068::1712792115::1::::<><>::
-pixil-frame-5.png::CompressedTexture2D::5384981803594067221::1712792068::1712792115::1::::<><>::
-pixil-frame-6.png::CompressedTexture2D::3627205098033690113::1712792068::1712792115::1::::<><>::
-pixil-frame-7.png::CompressedTexture2D::43956033323695166::1712792068::1712792115::1::::<><>::
-::res://art/Sprites/Player/right idle animation/::1712792126
-pixil-frame-0.png::CompressedTexture2D::5224493792699928261::1712792068::1712792115::1::::<><>::
-pixil-frame-1.png::CompressedTexture2D::3354758788812263302::1712792068::1712792115::1::::<><>::
-::res://art/Sprites/Player/up animation (2)/::1712792128
-pixil-frame-0.png::CompressedTexture2D::6295936157706359158::1712792068::1712792115::1::::<><>::
-pixil-frame-1.png::CompressedTexture2D::8135283498174698735::1712792068::1712792115::1::::<><>::
-pixil-frame-2.png::CompressedTexture2D::6907875014354556658::1712792068::1712792115::1::::<><>::
-pixil-frame-3.png::CompressedTexture2D::216293511607904361::1712792068::1712792115::1::::<><>::
-pixil-frame-4.png::CompressedTexture2D::3498907077342548262::1712792068::1712792115::1::::<><>::
-pixil-frame-5.png::CompressedTexture2D::2915416107426491290::1712792068::1712792115::1::::<><>::
-pixil-frame-6.png::CompressedTexture2D::1672437865985127060::1712792068::1712792115::1::::<><>::
-::res://art/Sprites/Player/up idle/::1712792128
-pixil-frame-0.png::CompressedTexture2D::322435940328500164::1712792068::1712792115::1::::<><>::
-pixil-frame-1.png::CompressedTexture2D::3275169949545908371::1712792068::1712792115::1::::<><>::
+::res://art/Sprites/Player/::1714443780
+::res://art/Sprites/Player/down/::1714443780
+pixil-frame-0.png::CompressedTexture2D::8754374170844758256::1712792068::1714443773::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::3604123299328806044::1712792068::1714443773::1::::<><>::
+pixil-frame-2.png::CompressedTexture2D::2894257667430941768::1712792068::1714443773::1::::<><>::
+pixil-frame-3.png::CompressedTexture2D::7385031397331083752::1712792068::1714443773::1::::<><>::
+pixil-frame-4.png::CompressedTexture2D::5815005883955034007::1712792068::1714443773::1::::<><>::
+pixil-frame-5.png::CompressedTexture2D::4487084986802402784::1712792068::1714443773::1::::<><>::
+pixil-frame-6.png::CompressedTexture2D::4922850923199906024::1712792068::1714443773::1::::<><>::
+pixil-frame-7.png::CompressedTexture2D::58704945546388794::1712792068::1714443773::1::::<><>::
+::res://art/Sprites/Player/down idle animation/::1714443780
+pixil-frame-0.png::CompressedTexture2D::7706880414680925760::1712792068::1714443773::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::3050198172450577128::1712792068::1714443773::1::::<><>::
+::res://art/Sprites/Player/left animation/::1714443780
+pixil-frame-0.png::CompressedTexture2D::8823065179047477322::1712792068::1714443773::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::9028436957890446722::1712792068::1714443773::1::::<><>::
+pixil-frame-2.png::CompressedTexture2D::428267391529676234::1712792068::1714443773::1::::<><>::
+pixil-frame-3.png::CompressedTexture2D::713170190409549071::1712792068::1714443773::1::::<><>::
+pixil-frame-4.png::CompressedTexture2D::6673134106155784907::1712792068::1714443773::1::::<><>::
+pixil-frame-5.png::CompressedTexture2D::4402064751318584592::1712792068::1714443773::1::::<><>::
+pixil-frame-6.png::CompressedTexture2D::597238548361432850::1712792068::1714443773::1::::<><>::
+pixil-frame-7.png::CompressedTexture2D::1462755299148200326::1712792068::1714443773::1::::<><>::
+::res://art/Sprites/Player/left animation idle/::1714443780
+pixil-frame-0.png::CompressedTexture2D::5263255198902866221::1712792068::1714443773::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::5746790415425143863::1712792068::1714443773::1::::<><>::
+::res://art/Sprites/Player/right animation/::1714443780
+pixil-frame-0.png::CompressedTexture2D::1403535778933637842::1712792068::1714443773::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::8017457571629733538::1712792068::1714443773::1::::<><>::
+pixil-frame-2.png::CompressedTexture2D::1619964507656794581::1712792068::1714443773::1::::<><>::
+pixil-frame-3.png::CompressedTexture2D::4111382708845290052::1712792068::1714443773::1::::<><>::
+pixil-frame-4.png::CompressedTexture2D::5241877133900623044::1712792068::1714443773::1::::<><>::
+pixil-frame-5.png::CompressedTexture2D::5384981803594067221::1712792068::1714443773::1::::<><>::
+pixil-frame-6.png::CompressedTexture2D::3627205098033690113::1712792068::1714443773::1::::<><>::
+pixil-frame-7.png::CompressedTexture2D::43956033323695166::1712792068::1714443773::1::::<><>::
+::res://art/Sprites/Player/right idle animation/::1714443780
+pixil-frame-0.png::CompressedTexture2D::5224493792699928261::1712792068::1714443773::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::3354758788812263302::1712792068::1714443773::1::::<><>::
+::res://art/Sprites/Player/up animation (2)/::1714443780
+pixil-frame-0.png::CompressedTexture2D::6295936157706359158::1712792068::1714443773::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::8135283498174698735::1712792068::1714443773::1::::<><>::
+pixil-frame-2.png::CompressedTexture2D::6907875014354556658::1712792068::1714443773::1::::<><>::
+pixil-frame-3.png::CompressedTexture2D::216293511607904361::1712792068::1714443773::1::::<><>::
+pixil-frame-4.png::CompressedTexture2D::3498907077342548262::1712792068::1714443773::1::::<><>::
+pixil-frame-5.png::CompressedTexture2D::2915416107426491290::1712792068::1714443773::1::::<><>::
+pixil-frame-6.png::CompressedTexture2D::1672437865985127060::1712792068::1714443773::1::::<><>::
+::res://art/Sprites/Player/up idle/::1714443780
+pixil-frame-0.png::CompressedTexture2D::322435940328500164::1712792068::1714443773::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::3275169949545908371::1712792068::1714443773::1::::<><>::
 ::res://art/terrain/::1712699923
 Tilemap.png::CompressedTexture2D::7077212377372888959::1712699690::1712699690::1::::<><>::
-::res://scenes/::1712801792
+::res://Inventory/::1714443770
+::res://Inventory/items/::1714443768
+::res://scenes/::1714443815
 Area2D.gd::GDScript::-1::1712792068::0::1::::<>Area2D<>::
-e_to_interact.tscn::PackedScene::3912689726399671084::1712801788::0::1::::<><>::uid://b3wirsdpgo743::::res://art/button_which_shows_tooltip.png
-housetest.tscn::PackedScene::1128601853253441356::1712801788::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>res://scripts/Area2Dback.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn
-maintest.tscn::PackedScene::554974587879262404::1712801788::0::1::::<><>::res://scripts/main.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>res://scripts/Area2D.gd<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png
-menu.tscn::PackedScene::901738731719950658::1712801788::0::1::::<><>::res://scripts/menu.gd<>uid://su0xtwgf3obo::::res://art/mainmenu/pixel_art_astronaut_standing_o(1).jpeg<>uid://bjqa8r1rtwbr3::::res://art/mainmenu/settingsbuttontest1.png<>uid://brlt6w3vpxgxn::::res://art/mainmenu/playbuttontest1.png<>uid://2uqyrmvyqs5u::::res://scenes/options/scenes/options_menu.tscn<>uid://dlj21l4gnwacy::::res://art/mainmenu/quitbuttontest1.png
+e_to_interact.tscn::PackedScene::3912689726399671084::1714443815::0::1::::<><>::uid://b3wirsdpgo743::::res://art/button_which_shows_tooltip.png
+housetest.tscn::PackedScene::1128601853253441356::1714443815::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>res://scripts/Area2Dback.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn
+maintest.tscn::PackedScene::554974587879262404::1714443815::0::1::::<><>::res://scripts/main.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>res://scripts/Area2D.gd<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png
+menu.tscn::PackedScene::901738731719950658::1714443815::0::1::::<><>::res://scripts/menu.gd<>uid://su0xtwgf3obo::::res://art/mainmenu/pixel_art_astronaut_standing_o(1).jpeg<>uid://bjqa8r1rtwbr3::::res://art/mainmenu/settingsbuttontest1.png<>uid://brlt6w3vpxgxn::::res://art/mainmenu/playbuttontest1.png<>uid://2uqyrmvyqs5u::::res://scenes/options/scenes/options_menu.tscn<>uid://dlj21l4gnwacy::::res://art/mainmenu/quitbuttontest1.png
 pause_menu.gdshader::Shader::-1::1712699690::0::1::::<><>::
-pause_menu.tscn::PackedScene::4853057857874973991::1712792068::0::1::::<><>::res://scripts/pause_menu.gd
-player.tscn::PackedScene::5051578887322139883::1712801788::0::1::::<><>::res://scripts/player.gd<>uid://v8ngfec0ti3q::::res://art/Sprites/spritesheet.png
+pause_menu.tscn::PackedScene::4853057857874973991::1714443773::0::1::::<><>::res://scripts/pause_menu.gd
+player.tscn::PackedScene::5051578887322139883::1714443815::0::1::::<><>::res://scripts/player.gd<>uid://v8ngfec0ti3q::::res://art/Sprites/spritesheet.png
 ::res://scenes/options/::1712699930
 ::res://scenes/options/scenes/::1712699930
 options_display_button.tscn::PackedScene::6322768445201395587::1712699690::0::1::::<><>::
@@ -161,7 +163,7 @@ window_mode_button.tscn::PackedScene::7300527441637170107::1712699690::0::1::::<
 ActionButton.gd::GDScript::-1::1712699690::0::1::::<>RefCounted<>::
 resolution_mode_button.gd::GDScript::-1::1712699690::0::1::::<>Control<>::
 window_mode_button.gd::GDScript::-1::1712699690::0::1::::<>Control<>::
-::res://scripts/::1712792113
+::res://scripts/::1714443780
 Area2D.gd::GDScript::-1::1712792107::0::1::::<>Area2D<>::
 Area2Dback.gd::GDScript::-1::1712792107::0::1::::<>Area2D<>::
 global.gd::GDScript::-1::1712792107::0::1::::<>Node<>::
@@ -171,4 +173,4 @@ main.gd::GDScript::-1::1712699690::0::1::::<>Node2D<>::
 menu.gd::GDScript::-1::1712699690::0::1::::MainMenu<>Control<>::
 options_menu.gd::GDScript::-1::1712699690::0::1::::OptionsMenu<>Control<>::
 pause_menu.gd::GDScript::-1::1712699690::0::1::::<>Control<>::
-player.gd::GDScript::-1::1712699690::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1714443773::0::1::::<>CharacterBody2D<>::
