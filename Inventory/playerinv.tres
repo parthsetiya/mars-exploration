@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=3 format=3 uid="uid://c1crh6sr33f5e"]
+[gd_resource type="Resource" script_class="Inv" load_steps=3 format=3 uid="uid://b4rgp1l77w1nm"]
 
-[ext_resource type="Resource" uid="uid://6a04xg7uk1uy" path="res://Inventory/items/goldbar.tres" id="1_xxcsb"]
+[ext_resource type="Resource" path="res://Inventory/items/goldbar.tres" id="1_xxcsb"]
 [ext_resource type="Script" path="res://Inventory/inventory.gd" id="2_5bvi0"]
 
 [resource]
