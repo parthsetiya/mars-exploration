@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qcx54htx6nxc"]
+[gd_scene load_steps=10 format=3 uid="uid://duy4e05e7mwvp"]
 
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="1_ev6st"]
 [ext_resource type="Script" path="res://housetest.gd" id="1_kerb7"]

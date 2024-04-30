@@ -7,3 +7,5 @@ res://scenes/player.tscn
 res://Inventory/inv_ui.tscn
 res://Inventory/inv_ui_slot.tscn
 res://scripts/player.gd
+res://Inventory/inventory_item.gd
+res://Inventory/inventory.gd
