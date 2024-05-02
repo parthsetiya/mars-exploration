@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var item_visuals: Sprite2D = $item_display 
+@onready var item_visuals: Sprite2D = $item_display
 
 func update(item: InvItem):
 	if !item:

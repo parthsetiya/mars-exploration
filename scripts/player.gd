@@ -40,6 +40,8 @@ func _process(delta):
 func invmenu():
 	if invopen:
 		inv_ui.hide()
+		speed = 200
 	else:
 		inv_ui.show()
+		speed = 0
 	invopen = !invopen

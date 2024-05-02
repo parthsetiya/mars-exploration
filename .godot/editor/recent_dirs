@@ -1,4 +1,9 @@
-res://Inventory
-res://Inventory/items
+<<<<<<< Updated upstream
 res://scenes
 res://
+=======
+res://scripts
+res://art/terrain
+res://art/mainmenu
+res://art
+>>>>>>> Stashed changes

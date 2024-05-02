@@ -5,4 +5,11 @@ extends Control
 
 func update_slots():
 	for i in range(min(inv.items.size(), slots.size())):
+		slots[i].update(inv.items[i])
+		
+		
+
+func _ready():
+	for i in range(min(inv.items.size(), slots.size())):
 		slots[i].update(inv.items[i]) 
+		print(inv.items[i])
