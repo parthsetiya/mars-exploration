@@ -7,3 +7,4 @@ res://scenes/player.tscn
 res://housetest.tscn
 res://scenes/maintest.tscn
 res://scenes/housetest.tscn
+res://scripts/player.gd
