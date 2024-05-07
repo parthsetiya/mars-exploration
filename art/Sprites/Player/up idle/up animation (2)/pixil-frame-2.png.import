@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw0msltjfsc3a"
-path="res://.godot/imported/pixil-frame-2.png-f0d64eea105fc093ae4d798ec4e1c131.ctex"
+path="res://.godot/imported/pixil-frame-2.png-b40b6e12ed84cd6fc30ea0e228bc40b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Sprites/Player/up animation (2)/pixil-frame-2.png"
-dest_files=["res://.godot/imported/pixil-frame-2.png-f0d64eea105fc093ae4d798ec4e1c131.ctex"]
+source_file="res://art/Sprites/Player/up idle/up animation (2)/pixil-frame-2.png"
+dest_files=["res://.godot/imported/pixil-frame-2.png-b40b6e12ed84cd6fc30ea0e228bc40b6.ctex"]
 
 [params]
 

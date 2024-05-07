@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cdmikkqiukii7" path="res://Inventory/inv_ui.tscn" id="4_1c11m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u2gu"]
-size = Vector2(49, 60)
+size = Vector2(152, 192)
 
 [sub_resource type="Animation" id="Animation_mfqqo"]
 resource_name = "walkDown"
@@ -163,18 +163,19 @@ states/Idle/node = SubResource("AnimationNodeBlendSpace2D_1kb1y")
 states/Idle/position = Vector2(402.5, 83.5)
 
 [node name="Player" type="CharacterBody2D"]
+safe_margin = 1.0
 script = ExtResource("1_rv08x")
 metadata/_edit_horizontal_guides_ = [-48.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, -1.90735e-06)
-scale = Vector2(0.964619, 0.779728)
+position = Vector2(144, 69)
+scale = Vector2(3, 2.423)
 texture = ExtResource("2_khuyi")
 hframes = 20
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -4)
+position = Vector2(152, 56)
 shape = SubResource("RectangleShape2D_1u2gu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
