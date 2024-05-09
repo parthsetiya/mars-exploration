@@ -54,4 +54,4 @@ func _process(delta):
 	
 func _on_body_entered(body):
 	if body.name == "Player":
-		StageManager.changeStage(StageManager.HOUSETEST)
+		StageManager.changeStage(StageManager.HOUSETEST, 100, 100)

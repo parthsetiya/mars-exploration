@@ -22,7 +22,7 @@ extends Area2D
 	#
 func _on_body_entered(body):
 	if body.name == "Player":
-		StageManager.changeStage(StageManager.MAINTEST)
+		StageManager.changeStage(StageManager.MAINTEST, 100, 100)
 	
 #func _process(delta):
 	#if entered == true:
