@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 200
+@export var speed = 100
 
 @onready var animations = $AnimationPlayer
 
@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var inv: Inv
 
 var invopen = false
-
+	
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
@@ -34,6 +34,7 @@ func _physics_process(delta):
 	
 	
 func _process(delta):
+	position += velocity * delta
 	if Input.is_action_just_pressed("Inventory"):
 		invmenu()
 

@@ -4,6 +4,7 @@ res://Inventory/playerinv.tres
 res://Inventory/inv_ui_slot.gd
 res://scenes/menu.tscn
 res://scenes/maintest.tscn
+<<<<<<< HEAD
 res://scenes/player.tscn
 res://Inventory/inv_ui.tscn
 res://Inventory/inv_ui_slot.tscn
@@ -14,3 +15,7 @@ res://scripts/player.gd
 res://Inventory/inventory.gd
 res://scenes/pickable_area.gd
 res://scenes/e_to_interact.tscn
+=======
+res://scenes/housetest.tscn
+res://scripts/player.gd
+>>>>>>> f4b7be0b705aa2defa584fb53cf02e99e25aa8be
