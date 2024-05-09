@@ -1,8 +1,17 @@
+<<<<<<< Updated upstream
 res://scenes/gold_block.tscn
+=======
+res://housetest.tscn
+>>>>>>> Stashed changes
 res://Inventory/Inv_UI.gd
 res://Inventory/playerinv.tres
 res://Inventory/inv_ui_slot.gd
 res://scenes/menu.tscn
+<<<<<<< Updated upstream
+=======
+res://scenes/e_to_interact.tscn
+res://scenes/player.tscn
+>>>>>>> Stashed changes
 res://scenes/maintest.tscn
 <<<<<<< HEAD
 res://scenes/player.tscn
@@ -17,5 +26,13 @@ res://scenes/pickable_area.gd
 res://scenes/e_to_interact.tscn
 =======
 res://scenes/housetest.tscn
+res://scenes/Area2D.gd
+res://scripts/Area2Dback.gd
 res://scripts/player.gd
+<<<<<<< Updated upstream
 >>>>>>> f4b7be0b705aa2defa584fb53cf02e99e25aa8be
+=======
+res://scenes/StageManager.tscn
+res://scripts/StageManager.gd
+res://scripts/main.gd
+>>>>>>> Stashed changes

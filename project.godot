@@ -18,6 +18,7 @@ config/icon="res://scripts/icon.svg"
 [autoload]
 
 Playerinv="*res://Inventory/playerinv.tres"
+StageManager="*res://scenes/StageManager.tscn"
 
 [display]
 

@@ -46,9 +46,16 @@ func invmenu():
 		inv_ui.show()
 		speed = 0
 	invopen = !invopen
+<<<<<<< Updated upstream
 	
 	
 	
 func collect(item):
 	inv.insert(item)
 	
+=======
+
+
+func _on_area_2d_body_entered(body):
+	pass # Replace with function body.
+>>>>>>> Stashed changes

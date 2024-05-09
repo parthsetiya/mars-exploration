@@ -8,7 +8,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pausemenu()
 		
-
 func pausemenu():
 	if paused:
 		pause_menu.hide()
