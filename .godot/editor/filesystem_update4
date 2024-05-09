@@ -1,15 +1,7 @@
-res://housetest.tscn
+res://scenes/StageManager.tscn
 res://Inventory/Inv_UI.gd
 res://Inventory/playerinv.tres
 res://Inventory/inv_ui_slot.gd
-res://scenes/menu.tscn
-res://scenes/e_to_interact.tscn
-res://scenes/player.tscn
+res://scripts/StageManager.gd
 res://scenes/maintest.tscn
 res://scenes/housetest.tscn
-res://scenes/Area2D.gd
-res://scripts/Area2Dback.gd
-res://scripts/player.gd
-res://scenes/StageManager.tscn
-res://scripts/StageManager.gd
-res://scripts/main.gd
