@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 @onready var inv_ui = $Inv_UI
 
-@export var inv = Inv
+@export var inv: Inv
 
 var invopen = false
 
@@ -45,3 +45,9 @@ func invmenu():
 		inv_ui.show()
 		speed = 0
 	invopen = !invopen
+	
+	
+	
+func collect(item):
+	inv.insert(item)
+	
