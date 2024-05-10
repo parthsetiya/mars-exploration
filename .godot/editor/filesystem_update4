@@ -1,9 +1,3 @@
 res://scenes/StageManager.tscn
-res://Inventory/Inv_UI.gd
-res://Inventory/playerinv.tres
-res://Inventory/inv_ui_slot.gd
-res://scripts/StageManager.gd
 res://scenes/maintest.tscn
 res://scenes/housetest.tscn
-res://scripts/Area2Dback.gd
-res://scenes/Area2D.gd

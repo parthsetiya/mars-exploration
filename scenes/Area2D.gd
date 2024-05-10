@@ -46,7 +46,7 @@
 
 extends Area2D
 
-func ready():
+func _ready():
 	pass
 
 func _process(delta):
