@@ -1,3 +1,7 @@
 res://scenes/StageManager.tscn
 res://scenes/maintest.tscn
 res://scenes/housetest.tscn
+res://scenes/Area2D.gd
+res://scripts/Area2Dback.gd
+res://scripts/StageManager.gd
+res://scripts/main.gd

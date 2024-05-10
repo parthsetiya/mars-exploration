@@ -733,6 +733,7 @@ size = Vector2(60, 24.5)
 script = ExtResource("1_kerb7")
 
 [node name="tilemap" type="TileMap" parent="."]
+position = Vector2(-64, -108)
 tile_set = SubResource("TileSet_qnyo5")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 393216, 2, 2, 524288, 2, 131074, 524288, 4, 131072, 393216, 4, 196608, 393216, 5, 65536, 393216, 3, 1, 458752, 2, 65538, 524288, 3, 196610, 524288, 5, 196609, 458752, 5, 131073, 458752, 4, 65537, 458752, 3, 196611, 589824, 5, 131075, 589824, 4, 65539, 589824, 3, 3, 589824, 2)

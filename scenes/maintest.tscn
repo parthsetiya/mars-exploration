@@ -213,7 +213,7 @@ func _process(delta):
 	
 func _on_body_entered(body):
 	if body.name == \"Player\":
-		StageManager.changeStage(StageManager.HOUSETEST)
+		StageManager.changeStage(StageManager.HOUSETEST, 0, 0)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vtw8"]

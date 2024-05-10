@@ -46,6 +46,13 @@
 
 extends Area2D
 
+var player_position = Vector2()
+
+# Function to get and store the player's position
+func get_player_position():
+	# Access the player's position property and store it in the variable
+	player_position = position
+	
 func _ready():
 	pass
 
@@ -54,4 +61,5 @@ func _process(delta):
 	
 func _on_body_entered(body):
 	if body.name == "Player":
-		StageManager.changeStage(StageManager.HOUSETEST, 100, 100)
+		get_player_position()
+		StageManager.changeStage(StageManager.HOUSETEST, -65, -108)
