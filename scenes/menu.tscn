@@ -15,14 +15,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1lt66")
+metadata/_edit_vertical_guides_ = [-71.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
+<<<<<<< Updated upstream
 anchor_right = 1.667
 anchor_bottom = 1.667
 offset_right = -1280.64
 offset_bottom = -720.36
+=======
+offset_right = 1152.0
+offset_bottom = 648.0
+>>>>>>> Stashed changes
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_c8sbk")
@@ -32,6 +38,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.344
 anchor_bottom = 1.114
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 offset_left = -469.0
 offset_top = 499.0
@@ -43,6 +50,12 @@ offset_top = 729.0
 offset_right = -2211.48
 offset_bottom = -180.12
 >>>>>>> 37cc3dab21f43921871552e3f11121037beeb78c
+=======
+offset_left = 16.0
+offset_top = 326.0
+offset_right = -1208.29
+offset_bottom = -101.872
+>>>>>>> Stashed changes
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12

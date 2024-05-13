@@ -1,7 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 ::res://::1715047517
 housetest.tscn::PackedScene::8614353285556120849::1715047390::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>res://scripts/Area2Dback.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn
+=======
+::res://::1715046089
+Area2Dback.gd::GDScript::-1::1714944108::0::1::::<>Area2D<>::
+housetest.gd::GDScript::-1::1714944109::0::1::::<>Node2D<>::
+housetest.tscn::PackedScene::8614353285556120849::1715043915::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://housetest.gd<>res://Area2Dback.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn
+>>>>>>> Stashed changes
 joystix.ttf::FontFile::2632679398112957767::1714944109::1714944109::1::::<><>::
 README.md::TextFile::-1::1714944108::0::1::::<><>::
 ::res://art/::1714944109
@@ -96,7 +103,11 @@ right 2.png::CompressedTexture2D::3823491099875317501::1714944109::1714944109::1
 right 3.png::CompressedTexture2D::3181557750077364984::1714944109::1714944109::1::::<><>::
 right 4.png::CompressedTexture2D::387448103800012138::1714944109::1714944109::1::::<><>::
 Spritesheetmain.png::CompressedTexture2D::8929975054582592::1714944108::1714944108::1::::<><>::
+<<<<<<< Updated upstream
 ::res://art/Sprites/Player/::1715047517
+=======
+::res://art/Sprites/Player/::1714944108
+>>>>>>> Stashed changes
 ::res://art/Sprites/Player/down/::1714944108
 pixil-frame-0.png::CompressedTexture2D::3006383517063997751::1714944108::1714944108::1::::<><>::
 pixil-frame-1.png::CompressedTexture2D::73677682595512633::1714944108::1714944108::1::::<><>::
@@ -133,6 +144,7 @@ pixil-frame-7.png::CompressedTexture2D::7979842320035860598::1714944108::1714944
 ::res://art/Sprites/Player/right idle animation/::1714944108
 pixil-frame-0.png::CompressedTexture2D::4309213820081652163::1714944108::1714944108::1::::<><>::
 pixil-frame-1.png::CompressedTexture2D::3596009807325631691::1714944108::1714944108::1::::<><>::
+<<<<<<< Updated upstream
 ::res://art/Sprites/Player/up idle/::1715047517
 pixil-frame-0.png::CompressedTexture2D::3385940840304395247::1714944108::1714944108::1::::<><>::
 pixil-frame-1.png::CompressedTexture2D::3091723759682571191::1714944108::1714944108::1::::<><>::
@@ -147,11 +159,28 @@ pixil-frame-6.png::CompressedTexture2D::9046779956223101189::1714944108::1715047
 ::res://art/terrain/::1714944109
 Tilemap.png::CompressedTexture2D::7077212377372888959::1714944109::1714944109::1::::<><>::
 ::res://Inventory/::1715046644
+=======
+::res://art/Sprites/Player/up animation (2)/::1714944108
+pixil-frame-0.png::CompressedTexture2D::5431868294390497740::1714944108::1714944108::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::8954871555808780723::1714944108::1714944108::1::::<><>::
+pixil-frame-2.png::CompressedTexture2D::6369366727002341376::1714944108::1714944108::1::::<><>::
+pixil-frame-3.png::CompressedTexture2D::1791470517107201219::1714944108::1714944108::1::::<><>::
+pixil-frame-4.png::CompressedTexture2D::8753856878561865791::1714944108::1714944108::1::::<><>::
+pixil-frame-5.png::CompressedTexture2D::1677254805866192452::1714944108::1714944108::1::::<><>::
+pixil-frame-6.png::CompressedTexture2D::9046779956223101189::1714944108::1714944108::1::::<><>::
+::res://art/Sprites/Player/up idle/::1714944108
+pixil-frame-0.png::CompressedTexture2D::3385940840304395247::1714944108::1714944108::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::3091723759682571191::1714944108::1714944108::1::::<><>::
+::res://art/terrain/::1714944109
+Tilemap.png::CompressedTexture2D::7077212377372888959::1714944109::1714944109::1::::<><>::
+::res://Inventory/::1715043847
+>>>>>>> Stashed changes
 goldbartest.png::CompressedTexture2D::8715893844006677547::1714944108::1714944108::1::::<><>::
 inventory-slot.png::CompressedTexture2D::6588075440050599775::1714944108::1714944108::1::::<><>::
 inventory.gd::GDScript::-1::1714944108::0::1::::Inv<>Resource<>::
 inventorybackgroundtest.png::CompressedTexture2D::421694421127060440::1714944108::1714944108::1::::<><>::
 inventory_item.gd::GDScript::-1::1714944108::0::1::::InvItem<>Resource<>::
+<<<<<<< Updated upstream
 Inv_UI.gd::GDScript::-1::1715046644::0::1::::<>Control<>::
 inv_ui.tscn::PackedScene::5008684575571182048::1714944108::0::1::::<><>::res://Inventory/Inv_UI.gd<>uid://gajil2maxy85::::res://Inventory/inventorybackgroundtest.png<>uid://0jy88aaieldl::::res://Inventory/inv_ui_slot.tscn
 inv_ui_slot.gd::GDScript::-1::1715046644::0::1::::<>Panel<>::
@@ -168,6 +197,24 @@ menu.tscn::PackedScene::901738731719950658::1715047390::0::1::::<><>::res://scri
 pause_menu.gdshader::Shader::-1::1714944109::0::1::::<><>::
 pause_menu.tscn::PackedScene::4853057857874973991::1714944109::0::1::::<><>::res://scripts/pause_menu.gd
 player.tscn::PackedScene::5051578887322139883::1715047390::0::1::::<><>::res://scripts/player.gd<>uid://elcte58b15e::::res://art/Sprites/Spritesheetmain.png<>uid://cdmikkqiukii7::::res://Inventory/inv_ui.tscn
+=======
+Inv_UI.gd::GDScript::-1::1715043847::0::1::::<>Control<>::
+inv_ui.tscn::PackedScene::5008684575571182048::1714944108::0::1::::<><>::res://Inventory/Inv_UI.gd<>uid://gajil2maxy85::::res://Inventory/inventorybackgroundtest.png<>uid://0jy88aaieldl::::res://Inventory/inv_ui_slot.tscn
+inv_ui_slot.gd::GDScript::-1::1715043847::0::1::::<>Panel<>::
+inv_ui_slot.tscn::PackedScene::1774818363044019773::1714944108::0::1::::<><>::uid://c04kv02j71jlv::::res://Inventory/inventory-slot.png<>res://Inventory/inv_ui_slot.gd
+playerinv.tres::Resource/Inv::6602926403758788692::1715043847::0::1::::<><>::uid://6a04xg7uk1uy::::res://Inventory/items/goldbar.tres<>res://Inventory/inventory.gd
+::res://Inventory/items/::1714944108
+goldbar.tres::Resource/Resource::2177425084408371384::1714944108::0::1::::<><>::res://Inventory/inventory_item.gd<>uid://dwgbq66mj03bb::::res://Inventory/goldbartest.png
+::res://scenes/::1715043916
+Area2D.gd::GDScript::-1::1714944109::0::1::::<>Area2D<>::
+e_to_interact.tscn::PackedScene::3912689726399671084::1715043915::0::1::::<><>::uid://b3wirsdpgo743::::res://art/button_which_shows_tooltip.png
+housetest.tscn::PackedScene::7544056492396008884::1714944109::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>res://scripts/Area2Dback.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn
+maintest.tscn::PackedScene::554974587879262404::1715043916::0::1::::<><>::res://scripts/main.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>res://scenes/Area2D.gd<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn<>uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png
+menu.tscn::PackedScene::901738731719950658::1715043915::0::1::::<><>::res://scripts/menu.gd<>uid://su0xtwgf3obo::::res://art/mainmenu/pixel_art_astronaut_standing_o(1).jpeg<>uid://bjqa8r1rtwbr3::::res://art/mainmenu/settingsbuttontest1.png<>uid://brlt6w3vpxgxn::::res://art/mainmenu/playbuttontest1.png<>uid://2uqyrmvyqs5u::::res://scenes/options/scenes/options_menu.tscn<>uid://dlj21l4gnwacy::::res://art/mainmenu/quitbuttontest1.png
+pause_menu.gdshader::Shader::-1::1714944109::0::1::::<><>::
+pause_menu.tscn::PackedScene::4853057857874973991::1714944109::0::1::::<><>::res://scripts/pause_menu.gd
+player.tscn::PackedScene::5051578887322139883::1715043915::0::1::::<><>::res://scripts/player.gd<>uid://elcte58b15e::::res://art/Sprites/Spritesheetmain.png<>uid://cdmikkqiukii7::::res://Inventory/inv_ui.tscn
+>>>>>>> Stashed changes
 ::res://scenes/options/::1714944109
 ::res://scenes/options/scenes/::1714944109
 options_display_button.tscn::PackedScene::6322768445201395587::1714944109::0::1::::<><>::
@@ -179,15 +226,20 @@ window_mode_button.tscn::PackedScene::7300527441637170107::1714944109::0::1::::<
 ActionButton.gd::GDScript::-1::1714944109::0::1::::<>RefCounted<>::
 resolution_mode_button.gd::GDScript::-1::1714944109::0::1::::<>Control<>::
 window_mode_button.gd::GDScript::-1::1714944109::0::1::::<>Control<>::
+<<<<<<< Updated upstream
 ::res://scripts/::1715046126
 Area2Dback.gd::GDScript::-1::1715046126::0::1::::<>Area2D<>::
 housetest.gd::GDScript::-1::1715046126::0::1::::<>Node2D<>::
+=======
+::res://scripts/::1714944109
+>>>>>>> Stashed changes
 icon.svg::CompressedTexture2D::5817464772805198187::1714944109::1714944109::1::::<><>::
 main.gd::GDScript::-1::1714944109::0::1::::<>Node2D<>::
 menu.gd::GDScript::-1::1714944109::0::1::::MainMenu<>Control<>::
 options_menu.gd::GDScript::-1::1714944109::0::1::::OptionsMenu<>Control<>::
 pause_menu.gd::GDScript::-1::1714944109::0::1::::<>Control<>::
 player.gd::GDScript::-1::1714944109::0::1::::<>CharacterBody2D<>::
+<<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
 ::res://::1715141897
@@ -573,3 +625,5 @@ pause_menu.gd::GDScript::-1::1712699690::0::1::::<>Control<>::
 player.gd::GDScript::-1::1714684792::0::1::::<>CharacterBody2D<>::
 >>>>>>> f4b7be0b705aa2defa584fb53cf02e99e25aa8be
 >>>>>>> 37cc3dab21f43921871552e3f11121037beeb78c
+=======
+>>>>>>> Stashed changes
