@@ -232,6 +232,7 @@ fill_from = Vector2(0.481651, 0.46789)
 fill_to = Vector2(0.142202, 0.834862)
 
 [node name="main" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_6jpb6")
 
 [node name="TileMap" type="TileMap" parent="."]
