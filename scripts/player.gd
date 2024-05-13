@@ -46,6 +46,7 @@ func invmenu():
 		speed = 0
 	invopen = !invopen
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	
 	
@@ -57,5 +58,7 @@ func collect(item):
 func _on_area_2d_body_entered(body):
 	pass # Replace with function body.
 
+=======
+>>>>>>> parent of cf02b60 (fixed main menu)
 =======
 >>>>>>> parent of cf02b60 (fixed main menu)

@@ -27,7 +27,10 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
 <<<<<<< HEAD
+<<<<<<< HEAD
 window/stretch/aspect="expand"
+=======
+>>>>>>> parent of cf02b60 (fixed main menu)
 =======
 >>>>>>> parent of cf02b60 (fixed main menu)
 mouse_cursor/custom_image_hotspot=Vector2(0.58, 0.7)

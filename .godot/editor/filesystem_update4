@@ -1,9 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 res://scenes/StageManager.tscn
 res://scenes/maintest.tscn
 res://scenes/housetest.tscn
 res://housetest.tscn
 =======
+=======
+>>>>>>> parent of cf02b60 (fixed main menu)
 res://scenes/menu.tscn
 res://Inventory/Inv_UI.gd
 res://Inventory/playerinv.tres
@@ -12,4 +15,7 @@ res://scenes/e_to_interact.tscn
 res://scenes/player.tscn
 res://housetest.tscn
 res://scenes/maintest.tscn
+<<<<<<< HEAD
+>>>>>>> parent of cf02b60 (fixed main menu)
+=======
 >>>>>>> parent of cf02b60 (fixed main menu)
