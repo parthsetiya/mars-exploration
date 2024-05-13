@@ -1,24 +1,8 @@
-res://scenes/gold_block.tscn
+res://scenes/menu.tscn
 res://Inventory/Inv_UI.gd
 res://Inventory/playerinv.tres
 res://Inventory/inv_ui_slot.gd
-res://scenes/menu.tscn
-res://scenes/maintest.tscn
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-res://scenes/player.tscn
-res://Inventory/inv_ui.tscn
-res://Inventory/inv_ui_slot.tscn
-res://scenes/gold_block.gd
-res://scenes/gold_collectable.tscn
-res://scenes/gold_collectable.gd
-res://scripts/player.gd
-res://Inventory/inventory.gd
-res://scenes/pickable_area.gd
 res://scenes/e_to_interact.tscn
-=======
-res://scenes/housetest.tscn
-res://scripts/player.gd
->>>>>>> f4b7be0b705aa2defa584fb53cf02e99e25aa8be
->>>>>>> 37cc3dab21f43921871552e3f11121037beeb78c
+res://scenes/player.tscn
+res://housetest.tscn
+res://scenes/maintest.tscn
