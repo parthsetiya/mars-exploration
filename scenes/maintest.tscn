@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=13 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
 [ext_resource type="Script" path="res://scenes/Area2D.gd" id="3_nm8o0"]
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_b4hsc"]
 [ext_resource type="PackedScene" uid="uid://bv0los6yqfysa" path="res://scenes/e_to_interact.tscn" id="4_dukk6"]
+[ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="7_3jafv"]
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="11_6wovd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddf6d"]
@@ -252,6 +253,12 @@ texture = SubResource("GradientTexture2D_hhbug")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
+
+[node name="gold_block" parent="." instance=ExtResource("7_3jafv")]
+position = Vector2(-107, -84)
+
+[node name="gold_block2" parent="." instance=ExtResource("7_3jafv")]
+position = Vector2(-76, 14)
 
 [connection signal="area_shape_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_shape_exited"]
 [connection signal="body_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_body_entered"]
