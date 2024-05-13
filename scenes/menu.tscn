@@ -32,10 +32,17 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.344
 anchor_bottom = 1.114
+<<<<<<< HEAD
 offset_left = -469.0
 offset_top = 499.0
 offset_right = -1648.29
 offset_bottom = 116.128
+=======
+offset_left = 45.0
+offset_top = 729.0
+offset_right = -2211.48
+offset_bottom = -180.12
+>>>>>>> 37cc3dab21f43921871552e3f11121037beeb78c
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
