@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 AnimationPlayer
 AnimationTree
 AnimatedSprite2D
+=======
+>>>>>>> parent of cf02b60 (fixed main menu)
 =======
 >>>>>>> parent of cf02b60 (fixed main menu)
 =======
@@ -13,6 +16,7 @@ GridContainer
 Panel
 ColorRect
 NinePatchRect
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -36,13 +40,22 @@ CanvasModulate
 Control
 Label
 >>>>>>> parent of cf02b60 (fixed main menu)
+=======
+CanvasModulate
+Control
+Label
+>>>>>>> parent of cf02b60 (fixed main menu)
 TextureRect
 TextureButton
 AnimationTree
 AnimatedSprite2D
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+TileMap
+>>>>>>> parent of cf02b60 (fixed main menu)
 =======
 TileMap
 >>>>>>> parent of cf02b60 (fixed main menu)
