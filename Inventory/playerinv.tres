@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 [gd_resource type="Resource" script_class="Inv" load_steps=2 format=3 uid="uid://c1crh6sr33f5e"]
+=======
+[gd_resource type="Resource" script_class="Inv" load_steps=3 format=3 uid="uid://c1crh6sr33f5e"]
+>>>>>>> parent of cf02b60 (fixed main menu)
 
+[ext_resource type="Resource" uid="uid://6a04xg7uk1uy" path="res://Inventory/items/goldbar.tres" id="1_xxcsb"]
 [ext_resource type="Script" path="res://Inventory/inventory.gd" id="2_5bvi0"]
 
 [resource]
 script = ExtResource("2_5bvi0")
+<<<<<<< HEAD
 slots = Array[Resource("res://Inventory/inventoryslot.gd")]([])
+=======
+items = Array[Resource("res://Inventory/inventory_item.gd")]([null, null, ExtResource("1_xxcsb"), null, null, null, null, ExtResource("1_xxcsb"), ExtResource("1_xxcsb"), ExtResource("1_xxcsb"), null, null])
+>>>>>>> parent of cf02b60 (fixed main menu)

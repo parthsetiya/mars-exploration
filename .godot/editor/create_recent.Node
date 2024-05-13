@@ -1,19 +1,16 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 AnimationPlayer
 AnimationTree
 AnimatedSprite2D
+=======
+>>>>>>> parent of cf02b60 (fixed main menu)
 Sprite2D
-StaticBody2D
-Marker2D
-Timer
-CollisionShape2D
-Area2D
-Label
-Panel
-CenterContainer
 GridContainer
+Panel
 ColorRect
 NinePatchRect
+<<<<<<< HEAD
 =======
 Label
 AnimationPlayer
@@ -25,8 +22,17 @@ Panel
 NinePatchRect
 CanvasModulate
 Control
+=======
+CanvasModulate
+Control
+Label
+>>>>>>> parent of cf02b60 (fixed main menu)
 TextureRect
 TextureButton
 AnimationTree
 AnimatedSprite2D
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+TileMap
+>>>>>>> parent of cf02b60 (fixed main menu)

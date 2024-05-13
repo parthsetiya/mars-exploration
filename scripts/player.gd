@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
-@export var speed = 100
+@export var speed = 200
 
 @onready var animations = $AnimationPlayer
 
 @onready var inv_ui = $Inv_UI
 
-@export var inv: Inv
+@export var inv = Inv
 
 var invopen = false
-	
+
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
@@ -34,7 +34,6 @@ func _physics_process(delta):
 	
 	
 func _process(delta):
-	position += velocity * delta
 	if Input.is_action_just_pressed("Inventory"):
 		invmenu()
 
@@ -46,6 +45,7 @@ func invmenu():
 		inv_ui.show()
 		speed = 0
 	invopen = !invopen
+<<<<<<< HEAD
 
 	
 	
@@ -57,3 +57,5 @@ func collect(item):
 func _on_area_2d_body_entered(body):
 	pass # Replace with function body.
 
+=======
+>>>>>>> parent of cf02b60 (fixed main menu)
