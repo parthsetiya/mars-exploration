@@ -1,13 +1,4 @@
-res://Inventory/inv_ui_slot.tscn
-res://scenes/gold_block.tscn
-res://scenes/gold_collectable.tscn
-res://scenes/e_to_interact.tscn
 res://scenes/maintest.tscn
-res://scenes/StageManager.tscn
-res://scenes/Area2D.gd
-res://housetest.tscn
-res://scripts/player.gd
-res://scripts/StageManager.gd
-res://scripts/mainglobal.gd
 res://scripts/main.gd
-res://scripts/global.gd
+res://scenes/StageManager.tscn
+res://scenes/housetest.tscn

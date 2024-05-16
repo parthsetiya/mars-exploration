@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715555281
-housetest.tscn::PackedScene::8614353285556120849::1715290533::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>res://scripts/Area2Dback.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn
+::res://::1715824516
+housetest.tscn::PackedScene::8614353285556120849::1715563926::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>res://scripts/Area2Dback.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn
 joystix.ttf::FontFile::2632679398112957767::1712792068::1712792068::1::::<><>::
 README.md::TextFile::-1::1712699690::0::1::::<><>::
-spritesheet.png::CompressedTexture2D::2929233243001763051::1715290525::1715290525::1::::<><>::
-::res://art/::1714446534
+spritesheet.png::CompressedTexture2D::2929233243001763051::1715563660::1715563660::1::::<><>::
+::res://art/::1715563582
 button_which_shows_tooltip.png::CompressedTexture2D::4397641661330691302::1712792068::1712792068::1::::<><>::
 ::res://art/mainmenu/::1712699930
 pixel_art_astronaut_standing_o(1).jpeg::CompressedTexture2D::1306246770854513496::1712699690::1712699690::1::::<><>::
@@ -66,7 +66,7 @@ pixil-frame-0.png::CompressedTexture2D::8636944719510119375::1712699690::1712699
 pixil-frame-1.png::CompressedTexture2D::5650730887542174189::1712699690::1712699690::1::::<><>::
 pixil-frame-2.png::CompressedTexture2D::6823808436137198219::1712699690::1712699690::1::::<><>::
 pixil-frame-3.png::CompressedTexture2D::8665424433102750204::1712699690::1712699690::1::::<><>::
-::res://art/Sprites/::1714446534
+::res://art/Sprites/::1715563582
 back 1.png::CompressedTexture2D::4318743320752281210::1714446511::1714446511::1::::<><>::
 back 2.png::CompressedTexture2D::4111162186140828599::1714446511::1714446511::1::::<><>::
 back 3.png::CompressedTexture2D::8428293494659970817::1714446511::1714446511::1::::<><>::
@@ -96,7 +96,7 @@ right 2.png::CompressedTexture2D::3823491099875317501::1714446511::1714446511::1
 right 3.png::CompressedTexture2D::3181557750077364984::1714446511::1714446511::1::::<><>::
 right 4.png::CompressedTexture2D::387448103800012138::1714446511::1714446511::1::::<><>::
 Spritesheetmain.png::CompressedTexture2D::8929975054582592::1714446511::1714446511::1::::<><>::
-::res://art/Sprites/Player/::1714446531
+::res://art/Sprites/Player/::1715563582
 ::res://art/Sprites/Player/down/::1714446531
 pixil-frame-0.png::CompressedTexture2D::3006383517063997751::1712792068::1714446511::1::::<><>::
 pixil-frame-1.png::CompressedTexture2D::73677682595512633::1712792068::1714446511::1::::<><>::
@@ -133,49 +133,50 @@ pixil-frame-7.png::CompressedTexture2D::7979842320035860598::1712792068::1714446
 ::res://art/Sprites/Player/right idle animation/::1714446511
 pixil-frame-0.png::CompressedTexture2D::4309213820081652163::1712792068::1714446511::1::::<><>::
 pixil-frame-1.png::CompressedTexture2D::3596009807325631691::1712792068::1714446511::1::::<><>::
-::res://art/Sprites/Player/up animation (2)/::1714446511
-pixil-frame-0.png::CompressedTexture2D::5431868294390497740::1712792068::1714446511::1::::<><>::
-pixil-frame-1.png::CompressedTexture2D::8954871555808780723::1712792068::1714446511::1::::<><>::
-pixil-frame-2.png::CompressedTexture2D::6369366727002341376::1712792068::1714446511::1::::<><>::
-pixil-frame-3.png::CompressedTexture2D::1791470517107201219::1712792068::1714446511::1::::<><>::
-pixil-frame-4.png::CompressedTexture2D::8753856878561865791::1712792068::1714446511::1::::<><>::
-pixil-frame-5.png::CompressedTexture2D::1677254805866192452::1712792068::1714446511::1::::<><>::
-pixil-frame-6.png::CompressedTexture2D::9046779956223101189::1712792068::1714446511::1::::<><>::
-::res://art/Sprites/Player/up idle/::1714446531
+::res://art/Sprites/Player/up animation (2)/::1715563582
+pixil-frame-0.png::CompressedTexture2D::5431868294390497740::1715561757::1715561757::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::8954871555808780723::1715561757::1715561757::1::::<><>::
+pixil-frame-2.png::CompressedTexture2D::6369366727002341376::1715561757::1715561757::1::::<><>::
+pixil-frame-3.png::CompressedTexture2D::1791470517107201219::1715561757::1715563576::1::::<><>::
+pixil-frame-4.png::CompressedTexture2D::8753856878561865791::1715561757::1715561757::1::::<><>::
+pixil-frame-5.png::CompressedTexture2D::1677254805866192452::1715561757::1715563576::1::::<><>::
+pixil-frame-6.png::CompressedTexture2D::9046779956223101189::1715561757::1715561757::1::::<><>::
+::res://art/Sprites/Player/up idle/::1715561751
 pixil-frame-0.png::CompressedTexture2D::3385940840304395247::1712792068::1714446511::1::::<><>::
 pixil-frame-1.png::CompressedTexture2D::3091723759682571191::1712792068::1714446511::1::::<><>::
+::res://art/Sprites/Player/up idle/up animation (2)/::1715561751
 ::res://art/terrain/::1712699923
 Tilemap.png::CompressedTexture2D::7077212377372888959::1712699690::1712699690::1::::<><>::
-::res://Inventory/::1715293823
+::res://Inventory/::1715563666
 goldbartest.png::CompressedTexture2D::8715893844006677547::1714446511::1714446511::1::::<><>::
 inventory-slot.png::CompressedTexture2D::6588075440050599775::1714446511::1714446511::1::::<><>::
-inventory.gd::GDScript::-1::1715290525::0::1::::Inv<>Resource<>::
+inventory.gd::GDScript::-1::1715563660::0::1::::Inv<>Resource<>::
 inventorybackgroundtest.png::CompressedTexture2D::421694421127060440::1714446511::1714446511::1::::<><>::
-inventoryslot.gd::GDScript::-1::1715290525::0::1::::invslot<>Resource<>::
+inventoryslot.gd::GDScript::-1::1715563660::0::1::::invslot<>Resource<>::
 inventory_item.gd::GDScript::-1::1714446511::0::1::::InvItem<>Resource<>::
-Inv_UI.gd::GDScript::-1::1715293819::0::1::::<>Control<>::
+Inv_UI.gd::GDScript::-1::1715563660::0::1::::<>Control<>::
 inv_ui.tscn::PackedScene::5008684575571182048::1714446511::0::1::::<><>::res://Inventory/Inv_UI.gd<>uid://gajil2maxy85::::res://Inventory/inventorybackgroundtest.png<>uid://0jy88aaieldl::::res://Inventory/inv_ui_slot.tscn
-inv_ui_slot.gd::GDScript::-1::1715293819::0::1::::<>Panel<>::
-inv_ui_slot.tscn::PackedScene::1774818363044019773::1715290525::0::1::::<><>::uid://c04kv02j71jlv::::res://Inventory/inventory-slot.png<>res://Inventory/inv_ui_slot.gd
-playerinv.tres::Resource/Resource::6602926403758788692::1715293819::0::1::::<><>::res://Inventory/inventory.gd
+inv_ui_slot.gd::GDScript::-1::1715563660::0::1::::<>Panel<>::
+inv_ui_slot.tscn::PackedScene::1774818363044019773::1715563660::0::1::::<><>::uid://c04kv02j71jlv::::res://Inventory/inventory-slot.png<>res://Inventory/inv_ui_slot.gd
+playerinv.tres::Resource/Resource::6602926403758788692::1715563660::0::1::::<><>::res://Inventory/inventory.gd
 ::res://Inventory/items/::1714446531
 goldbar.tres::Resource/Resource::2177425084408371384::1714446511::0::1::::<><>::res://Inventory/inventory_item.gd<>uid://dwgbq66mj03bb::::res://Inventory/goldbartest.png
-::res://scenes/::1715555187
-Area2D.gd::GDScript::-1::1715555146::0::1::::<>Area2D<>::
-e_to_interact.tscn::PackedScene::3912689726399671084::1715118830::0::1::::<><>::uid://b3wirsdpgo743::::res://art/button_which_shows_tooltip.png
-gold_block.gd::GDScript::-1::1715290525::0::1::::<>Node2D<>::
-gold_block.tscn::PackedScene::3900128459519576553::1715290525::0::1::::<><>::res://scenes/gold_block.gd<>uid://bhy7bqlr7yiql::::res://spritesheet.png<>uid://6a04xg7uk1uy::::res://Inventory/items/goldbar.tres<>res://scenes/pickable_area.gd
-gold_collectable.gd::GDScript::-1::1715290525::0::1::::<>StaticBody2D<>::
-gold_collectable.tscn::PackedScene::7170270525225173551::1715290525::0::1::::<><>::res://scenes/gold_collectable.gd<>uid://dwgbq66mj03bb::::res://Inventory/goldbartest.png
-housetest.tscn::PackedScene::7544056492396008884::1715555183::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>res://scripts/Area2Dback.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn
-maintest.tscn::PackedScene::554974587879262404::1715555183::0::1::::<><>::res://scripts/main.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn<>uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png
-menu.tscn::PackedScene::901738731719950658::1715290525::0::1::::<><>::res://scripts/menu.gd<>uid://su0xtwgf3obo::::res://art/mainmenu/pixel_art_astronaut_standing_o(1).jpeg<>uid://bjqa8r1rtwbr3::::res://art/mainmenu/settingsbuttontest1.png<>uid://brlt6w3vpxgxn::::res://art/mainmenu/playbuttontest1.png<>uid://2uqyrmvyqs5u::::res://scenes/options/scenes/options_menu.tscn<>uid://dlj21l4gnwacy::::res://art/mainmenu/quitbuttontest1.png
+::res://scenes/::1715824443
+Area2D.gd::GDScript::-1::1715563926::0::1::::<>Area2D<>::
+e_to_interact.tscn::PackedScene::3912689726399671084::1715562593::0::1::::<><>::uid://b3wirsdpgo743::::res://art/button_which_shows_tooltip.png
+gold_block.gd::GDScript::-1::1715563660::0::1::::<>Node2D<>::
+gold_block.tscn::PackedScene::3900128459519576553::1715563660::0::1::::<><>::res://scenes/gold_block.gd<>uid://bhy7bqlr7yiql::::res://spritesheet.png<>uid://6a04xg7uk1uy::::res://Inventory/items/goldbar.tres<>res://scenes/pickable_area.gd
+gold_collectable.gd::GDScript::-1::1715563660::0::1::::<>StaticBody2D<>::
+gold_collectable.tscn::PackedScene::7170270525225173551::1715563926::0::1::::<><>::res://scenes/gold_collectable.gd<>uid://dwgbq66mj03bb::::res://Inventory/goldbartest.png
+housetest.tscn::PackedScene::7544056492396008884::1715824437::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>res://scripts/Area2Dback.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn
+maintest.tscn::PackedScene::554974587879262404::1715824437::0::1::::<><>::res://scripts/main.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn<>uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png
+menu.tscn::PackedScene::901738731719950658::1715563660::0::1::::<><>::res://scripts/menu.gd<>uid://su0xtwgf3obo::::res://art/mainmenu/pixel_art_astronaut_standing_o(1).jpeg<>uid://bjqa8r1rtwbr3::::res://art/mainmenu/settingsbuttontest1.png<>uid://brlt6w3vpxgxn::::res://art/mainmenu/playbuttontest1.png<>uid://2uqyrmvyqs5u::::res://scenes/options/scenes/options_menu.tscn<>uid://dlj21l4gnwacy::::res://art/mainmenu/quitbuttontest1.png
 pause_menu.gdshader::Shader::-1::1712699690::0::1::::<><>::
 pause_menu.tscn::PackedScene::4853057857874973991::1715213761::0::1::::<><>::res://scripts/pause_menu.gd
-pickable_area.gd::GDScript::-1::1715290525::0::1::::<>Area2D<>::
-player.tscn::PackedScene::5051578887322139883::1715213761::0::1::::<><>::res://scripts/player.gd<>uid://elcte58b15e::::res://art/Sprites/Spritesheetmain.png<>uid://cdmikkqiukii7::::res://Inventory/inv_ui.tscn
-spritesheet.png::CompressedTexture2D::3077914776156884446::1715290525::1715290525::1::::<><>::
-StageManager.tscn::PackedScene::5641711189673486999::1715555183::0::1::::<><>::res://scripts/StageManager.gd
+pickable_area.gd::GDScript::-1::1715563660::0::1::::<>Area2D<>::
+player.tscn::PackedScene::5051578887322139883::1715562915::0::1::::<><>::res://scripts/player.gd<>uid://elcte58b15e::::res://art/Sprites/Spritesheetmain.png<>uid://cdmikkqiukii7::::res://Inventory/inv_ui.tscn
+spritesheet.png::CompressedTexture2D::3077914776156884446::1715563660::1715563660::1::::<><>::
+StageManager.tscn::PackedScene::5641711189673486999::1715824436::0::1::::<><>::res://scripts/StageManager.gd
 ::res://scenes/options/::1715213766
 ::res://scenes/options/scenes/::1715213766
 options_display_button.tscn::PackedScene::6322768445201395587::1712699690::0::1::::<><>::
@@ -187,13 +188,13 @@ window_mode_button.tscn::PackedScene::7300527441637170107::1712699690::0::1::::<
 ActionButton.gd::GDScript::-1::1712699690::0::1::::<>RefCounted<>::
 resolution_mode_button.gd::GDScript::-1::1712699690::0::1::::<>Control<>::
 window_mode_button.gd::GDScript::-1::1712699690::0::1::::<>Control<>::
-::res://scripts/::1715555184
+::res://scripts/::1715813278
 Area2Dback.gd::GDScript::-1::1715555182::0::1::::<>Area2D<>::
 housetest.gd::GDScript::-1::1715297849::0::1::::<>Node2D<>::
 icon.svg::CompressedTexture2D::5817464772805198187::1712699690::1715213761::1::::<><>::
-main.gd::GDScript::-1::1715307810::0::1::::<>Node2D<>::
+main.gd::GDScript::-1::1715813276::0::1::::<>Node2D<>::
 menu.gd::GDScript::-1::1715290533::0::1::::MainMenu<>Control<>::
 options_menu.gd::GDScript::-1::1712699690::0::1::::OptionsMenu<>Control<>::
 pause_menu.gd::GDScript::-1::1712699690::0::1::::<>Control<>::
-player.gd::GDScript::-1::1715290760::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1715563660::0::1::::<>CharacterBody2D<>::
 StageManager.gd::GDScript::-1::1715310166::0::1::::<>CanvasLayer<>::
