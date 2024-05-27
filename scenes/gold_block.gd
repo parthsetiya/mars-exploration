@@ -40,3 +40,5 @@ func drop_gold():
 	await get_tree().create_timer(3).timeout
 	$respawn_timer.start()
 	
+
+

@@ -12,3 +12,6 @@ res://scripts/mainglobal.gd
 res://scripts/main.gd
 res://scripts/global.gd
 res://scenes/pickable_area.gd
+res://scenes/player.tscn
+res://scenes/gold_block.gd
+res://scenes/gold_collectable.gd

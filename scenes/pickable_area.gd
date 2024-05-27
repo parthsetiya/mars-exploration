@@ -1,26 +1,38 @@
 extends Area2D
 
+var animation = preload("res://scenes/gold_collectable.tscn") as PackedScene
+@onready var gold_collectable = $gold_collectable
+@onready var gold_block = $".."
+
 var entered = false
 
-
-func _on_pickable_area_body_entered(body):
+func _on_body_entered(body):
 	entered = true
 
 
-func _on_pickable_area_body_exited(body):
+func _on_body_exited(body):
 	entered = false
+
+func popfromground():
+	$AnimationPlayer.play("poppingfromground")
+	await get_tree().create_timer(1.5).timeout
+	$AnimationPlayer.play("fade")
+	await get_tree().create_timer(0.6).timeout
+	queue_free()
+	
 	
 func _process(delta):
 	if entered == true:
-		print("test")
 		if Input.is_action_just_pressed("Interact"):
-			$gold_collectable/AnimationPlayer.play("poppingfromground")
+			gold_collectable.show()
 			await get_tree().create_timer(1.5).timeout
-			$gold_collectable/AnimationPlayer.play("fade")
-			await get_tree().create_timer(0.6).timeout
-			queue_free()
+			gold_collectable.hide()
 			
-	else:
-		print(entered)
+			
+			
 
 	
+
+
+
+

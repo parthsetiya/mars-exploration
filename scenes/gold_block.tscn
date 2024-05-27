@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvtistcsm3ds0"]
+[gd_scene load_steps=10 format=3 uid="uid://bvtistcsm3ds0"]
 
 [ext_resource type="Script" path="res://scenes/gold_block.gd" id="1_ej74l"]
 [ext_resource type="Texture2D" uid="uid://bhy7bqlr7yiql" path="res://spritesheet.png" id="2_giees"]
 [ext_resource type="Resource" uid="uid://6a04xg7uk1uy" path="res://Inventory/items/goldbar.tres" id="2_s2gbc"]
 [ext_resource type="Script" path="res://scenes/pickable_area.gd" id="4_yqus4"]
+[ext_resource type="PackedScene" uid="uid://daflkqadevkq6" path="res://scenes/gold_collectable.tscn" id="5_scnpm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvtjh"]
 atlas = ExtResource("2_giees")
@@ -47,7 +48,11 @@ animation = &"gold"
 script = ExtResource("4_yqus4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_k0isv")
+
+[node name="gold_collectable" parent="pickable_area" instance=ExtResource("5_scnpm")]
+visible = false
 
 [node name="respawn_timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -55,6 +60,6 @@ one_shot = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
-[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
-[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
+[connection signal="body_entered" from="pickable_area" to="pickable_area" method="_on_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="pickable_area" method="_on_body_exited"]
 [connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]
