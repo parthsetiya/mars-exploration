@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvtistcsm3ds0"]
+[gd_scene load_steps=16 format=3 uid="uid://bvtistcsm3ds0"]
 
 [ext_resource type="Script" path="res://scenes/gold_block.gd" id="1_ej74l"]
 [ext_resource type="Texture2D" uid="uid://bhy7bqlr7yiql" path="res://spritesheet.png" id="2_giees"]
 [ext_resource type="Resource" uid="uid://6a04xg7uk1uy" path="res://Inventory/items/goldbar.tres" id="2_s2gbc"]
 [ext_resource type="Script" path="res://scenes/pickable_area.gd" id="4_yqus4"]
 [ext_resource type="PackedScene" uid="uid://daflkqadevkq6" path="res://scenes/gold_collectable.tscn" id="5_scnpm"]
+[ext_resource type="Texture2D" uid="uid://dwgbq66mj03bb" path="res://Inventory/goldbartest.png" id="6_fjfsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvtjh"]
 atlas = ExtResource("2_giees")
@@ -36,6 +37,105 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_k0isv"]
 radius = 24.0052
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vacdt"]
+atlas = ExtResource("6_fjfsl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8j1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vacdt")
+}],
+"loop": true,
+"name": &"gold",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_75vnd"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.261799]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ajb2k"]
+resource_name = "poppingfromground"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.08165e-12, -30), Vector2(2.08165e-12, 20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.523599, 0.261799]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmh60"]
+_data = {
+"fade": SubResource("Animation_75vnd"),
+"poppingfromground": SubResource("Animation_ajb2k")
+}
+
 [node name="gold_block" type="Node2D"]
 script = ExtResource("1_ej74l")
 item = ExtResource("2_s2gbc")
@@ -52,7 +152,16 @@ position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_k0isv")
 
 [node name="gold_collectable" parent="pickable_area" instance=ExtResource("5_scnpm")]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="pickable_area/gold_collectable"]
 visible = false
+sprite_frames = SubResource("SpriteFrames_r8j1l")
+animation = &"gold"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="pickable_area/gold_collectable"]
+libraries = {
+"": SubResource("AnimationLibrary_fmh60")
+}
 
 [node name="respawn_timer" type="Timer" parent="."]
 wait_time = 3.0

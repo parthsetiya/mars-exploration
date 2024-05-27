@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+Node
 AnimationPlayer
 AnimationTree
 AnimatedSprite2D
@@ -13,20 +13,3 @@ Panel
 CenterContainer
 GridContainer
 ColorRect
-NinePatchRect
-=======
-Label
-AnimationPlayer
-ColorRect
-CanvasLayer
-Sprite2D
-GridContainer
-Panel
-NinePatchRect
-CanvasModulate
-Control
-TextureRect
-TextureButton
-AnimationTree
-AnimatedSprite2D
->>>>>>> Stashed changes
