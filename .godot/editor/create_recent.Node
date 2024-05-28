@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 Node
 AnimationPlayer
 AnimationTree
@@ -6,10 +8,7 @@ Sprite2D
 StaticBody2D
 Marker2D
 Timer
-CollisionShape2D
-Area2D
 Label
 Panel
 CenterContainer
 GridContainer
-ColorRect

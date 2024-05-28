@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bvtistcsm3ds0"]
+[gd_scene load_steps=17 format=3 uid="uid://bvtistcsm3ds0"]
 
 [ext_resource type="Script" path="res://scenes/gold_block.gd" id="1_ej74l"]
 [ext_resource type="Texture2D" uid="uid://bhy7bqlr7yiql" path="res://spritesheet.png" id="2_giees"]
@@ -33,6 +33,9 @@ animations = [{
 "name": &"no_gold",
 "speed": 0.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_68mr6"]
+radius = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k0isv"]
 radius = 24.0052
@@ -144,6 +147,11 @@ item = ExtResource("2_s2gbc")
 sprite_frames = SubResource("SpriteFrames_n0edj")
 animation = &"gold"
 
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+shape = SubResource("CircleShape2D_68mr6")
+
 [node name="pickable_area" type="Area2D" parent="."]
 script = ExtResource("4_yqus4")
 
@@ -169,6 +177,8 @@ one_shot = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="pickable_area" to="pickable_area" method="_on_body_entered"]
 [connection signal="body_exited" from="pickable_area" to="pickable_area" method="_on_body_exited"]
 [connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]

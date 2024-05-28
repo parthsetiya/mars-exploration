@@ -5,3 +5,9 @@ res://scenes/gold_block.tscn
 res://scenes/player.tscn
 res://scenes/gold_collectable.tscn
 res://scenes/pickable_area.gd
+res://scenes/gold_block.gd
+res://Inventory/inventory.gd
+res://Inventory/Inv_UI.gd
+res://Inventory/inv_ui_slot.tscn
+res://Inventory/playerinv.tres
+res://scripts/player.gd

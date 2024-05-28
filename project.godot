@@ -19,7 +19,6 @@ config/icon="res://scripts/icon.svg"
 
 Playerinv="*res://Inventory/playerinv.tres"
 StageManager="*res://scenes/StageManager.tscn"
-GoldCollectable="*res://scenes/gold_collectable.tscn"
 
 [display]
 

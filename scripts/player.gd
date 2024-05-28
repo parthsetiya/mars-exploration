@@ -51,9 +51,8 @@ func invmenu():
 	
 	
 func collect(item):
-	inv.insert(item)
-	
-
-func _on_area_2d_body_entered(body):
-	pass # Replace with function body.
+	if inv != null:
+		inv.insert(item)
+	else:
+		print("Inventory is not initialized, cannot collect item")
 
