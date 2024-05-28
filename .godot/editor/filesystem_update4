@@ -11,3 +11,6 @@ res://Inventory/Inv_UI.gd
 res://Inventory/inv_ui_slot.tscn
 res://Inventory/playerinv.tres
 res://scripts/player.gd
+res://Inventory/inventoryslot.gd
+res://Inventory/inventory_item.gd
+res://Inventory/inv_ui_slot.gd
