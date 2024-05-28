@@ -57,19 +57,3 @@ func collect(item):
 func _on_area_2d_body_entered(body):
 	pass # Replace with function body.
 
-
-var health: int = 100
-var inventory: Array = []
-var save_file_path: String = "user://save_game.json"
-
-func get_save_data() -> Dictionary:
-	return {
-		"position": position,
-		"health": health,
-		"inventory": inventory
-	}
-
-func load_save_data(data: Dictionary) -> void:
-	position = data["position"]
-	health = data["health"]
-	inventory = data["inventory"]

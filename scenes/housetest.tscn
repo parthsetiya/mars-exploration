@@ -256,6 +256,9 @@ texture_region_size = Vector2i(32, 32)
 0:5/0 = 0
 0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:5/0/physics_layer_0/angular_velocity = 0.0
+0:5/1 = 1
+0:5/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:5/1/physics_layer_0/angular_velocity = 0.0
 1:5/0 = 0
 1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:5/0/physics_layer_0/angular_velocity = 0.0
@@ -786,7 +789,6 @@ size = Vector2(60, 24.5)
 
 [node name="housetest" type="Node2D"]
 position = Vector2(30, 190)
-scale = Vector2(2, 2)
 script = ExtResource("1_kerb7")
 
 [node name="tilemap" type="TileMap" parent="."]
@@ -807,7 +809,7 @@ shape = SubResource("RectangleShape2D_y3jpw")
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_kf5yp")]
-position = Vector2(154, -13)
+position = Vector2(377, -91)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
