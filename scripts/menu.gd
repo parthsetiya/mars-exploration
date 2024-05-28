@@ -4,6 +4,8 @@ extends Control
 @onready var playbutton = $MarginContainer/HBoxContainer/VBoxContainer/playbutton as Button
 #@onready var settings = $MarginContainer/HBoxContainer/VBoxContainer/Texturebutton2	 as Button
 #@onready var quit = $MarginContainer/HBoxContainer/VBoxContainer/Texturebutton3 as Button
+@onready var player = $Player
+@onready var save_load_manager = $SaveLoadManager
 @onready var options_menu = $options_menu as OptionsMenu
 @onready var margin_container = $MarginContainer as MarginContainer
 
@@ -42,3 +44,11 @@ func _on_texture_button_3_pressed():
 
 func _on_playbutton_pressed():
 	get_tree().change_scene_to_packed(start_level)
+
+
+func _on_save_game_pressed() -> void:
+	SaveLoadManager.save_game(player)
+
+
+func _on_load_game_pressed() -> void:
+	SaveLoadManager.load_game(player)

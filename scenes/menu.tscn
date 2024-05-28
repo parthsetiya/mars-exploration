@@ -71,6 +71,14 @@ texture_normal = ExtResource("3_be5yu")
 layout_mode = 2
 texture_normal = ExtResource("5_v7smc")
 
+[node name="save_game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Save Game"
+
+[node name="load_game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load Saved Game"
+
 [node name="options_menu" parent="." instance=ExtResource("3_nqggx")]
 visible = false
 layout_mode = 1
@@ -78,3 +86,5 @@ layout_mode = 1
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/playbutton" to="." method="_on_playbutton_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/save_game" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/load_game" to="." method="_on_load_game_pressed"]
