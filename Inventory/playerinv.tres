@@ -1,7 +1,68 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=2 format=3 uid="uid://c1crh6sr33f5e"]
+[gd_resource type="Resource" script_class="Inv" load_steps=18 format=3 uid="uid://c1crh6sr33f5e"]
 
 [ext_resource type="Script" path="res://Inventory/inventory.gd" id="2_5bvi0"]
+[ext_resource type="Script" path="res://Inventory/inventoryslot.gd" id="2_nvyic"]
+
+[sub_resource type="Resource" id="Resource_hj0lb"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_jkx6e"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_uu674"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_6hyg5"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_idpr8"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_u1f6x"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_nivg2"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_d5njb"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_d0ppe"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_qg17b"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_pojev"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_a6f1n"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_i4b7u"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_aqila"]
+script = ExtResource("2_nvyic")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_ma4ls"]
+script = ExtResource("2_nvyic")
+amount = 0
 
 [resource]
 script = ExtResource("2_5bvi0")
-slots = Array[Resource("res://Inventory/inventoryslot.gd")]([])
+slots = Array[ExtResource("2_nvyic")]([SubResource("Resource_hj0lb"), SubResource("Resource_jkx6e"), SubResource("Resource_uu674"), SubResource("Resource_6hyg5"), SubResource("Resource_idpr8"), SubResource("Resource_u1f6x"), SubResource("Resource_nivg2"), SubResource("Resource_d5njb"), SubResource("Resource_d0ppe"), SubResource("Resource_qg17b"), SubResource("Resource_pojev"), SubResource("Resource_a6f1n"), SubResource("Resource_i4b7u"), SubResource("Resource_aqila"), SubResource("Resource_ma4ls")])

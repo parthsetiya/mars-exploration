@@ -13,3 +13,4 @@ func update(slot: invslot):
 		item_visuals.texture = slot.item.texture
 		amount_text.visible = true
 		amount_text.text = str(slot.amount)
+		print('test')

@@ -7,6 +7,7 @@ var animation = preload("res://scenes/gold_collectable.tscn") as PackedScene
 var entered = false
 
 func _on_body_entered(body):
+	print($AnimationPlayer)
 	entered = true
 
 
@@ -14,9 +15,10 @@ func _on_body_exited(body):
 	entered = false
 
 func popfromground():
-	$AnimationPlayer.play("poppingfromground")
+	$gold_collectable/AnimatedSprite2D.show()
+	$gold_collectable/AnimationPlayer2.play("poppingfromground")
 	await get_tree().create_timer(1.5).timeout
-	$AnimationPlayer.play("fade")
+	$gold_collectable/AnimationPlayer2.play("fade")
 	await get_tree().create_timer(0.6).timeout
 	queue_free()
 	
@@ -24,9 +26,7 @@ func popfromground():
 func _process(delta):
 	if entered == true:
 		if Input.is_action_just_pressed("Interact"):
-			gold_collectable.show()
-			await get_tree().create_timer(1.5).timeout
-			gold_collectable.hide()
+			popfromground()
 			
 			
 			

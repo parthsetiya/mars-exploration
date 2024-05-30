@@ -46,14 +46,28 @@ func invmenu():
 		inv_ui.show()
 		speed = 0
 	invopen = !invopen
-
-	
-	
 	
 func collect(item):
-	inv.insert(item)
-	
+	if inv != null:
+		inv.insert(item)
+	else:
+		print("Inventory is not initialized, cannot collect item")
 
-func _on_area_2d_body_entered(body):
-	pass # Replace with function body.
+var health: int = 100
+var inventory: Array = []
+var save_file_path: String = "user://save_game.json"
+
+# Function to get save data as a dictionary
+func get_save_data() -> Dictionary:
+	return {
+		"position": position,
+		"health": health,
+		"inventory": inventory
+	}
+
+# Function to load save data from a dictionary
+func load_save_data(data: Dictionary) -> void:
+	position = data["position"]
+	health = data["health"]
+	inventory = data["inventory"]
 
