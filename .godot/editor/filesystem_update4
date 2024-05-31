@@ -1,5 +1,4 @@
 res://scenes/menu.tscn
 res://Inventory/playerinv.tres
-res://scenes/gold_block.gd
-res://scripts/player.gd
-res://Inventory/inventory.gd
+res://scenes/player.tscn
+res://scenes/maintest.tscn
