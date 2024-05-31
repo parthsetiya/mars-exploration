@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://m32rf8bgbsqs"]
+[gd_scene load_steps=8 format=3 uid="uid://m32rf8bgbsqs"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_1lt66"]
 [ext_resource type="Texture2D" uid="uid://su0xtwgf3obo" path="res://art/mainmenu/pixel_art_astronaut_standing_o(1).jpeg" id="2_c8sbk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brlt6w3vpxgxn" path="res://art/mainmenu/playbuttontest1.png" id="3_d1rd0"]
 [ext_resource type="PackedScene" uid="uid://2uqyrmvyqs5u" path="res://scenes/options/scenes/options_menu.tscn" id="3_nqggx"]
 [ext_resource type="Texture2D" uid="uid://dlj21l4gnwacy" path="res://art/mainmenu/quitbuttontest1.png" id="5_v7smc"]
+[ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="7_rywwq"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -83,8 +84,11 @@ text = "Load Saved Game"
 visible = false
 layout_mode = 1
 
+[node name="Player" parent="." instance=ExtResource("7_rywwq")]
+visible = false
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/playbutton" to="." method="_on_playbutton_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/save_game" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/save_game" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/load_game" to="." method="_on_load_game_pressed"]

@@ -1,4 +1,7 @@
 res://scenes/menu.tscn
 res://Inventory/playerinv.tres
 res://scenes/player.tscn
+<<<<<<< Updated upstream
 res://scenes/maintest.tscn
+=======
+>>>>>>> Stashed changes

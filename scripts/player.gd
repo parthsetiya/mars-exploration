@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var speed = 100
 
 @onready var animations = $AnimationPlayer
@@ -7,6 +9,9 @@ extends CharacterBody2D
 @onready var inv_ui = $Inv_UI
 
 @export var inv: Inv
+
+
+
 
 var invopen = false
 	
@@ -53,6 +58,7 @@ func collect(item):
 	else:
 		print("Inventory is not initialized, cannot collect item")
 
+
 var health: int = 100
 var inventory: Array = []
 var save_file_path: String = "user://save_game.json"
@@ -67,7 +73,9 @@ func get_save_data() -> Dictionary:
 
 # Function to load save data from a dictionary
 func load_save_data(data: Dictionary) -> void:
-	position = data["position"]
-	health = data["health"]
-	inventory = data["inventory"]
-
+	if data.has("position"):
+		position = data["position"]
+	if data.has("health"):
+		health = data["health"]
+	if data.has("inventory"):
+		inventory = data["inventory"]

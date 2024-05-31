@@ -48,7 +48,11 @@ func _on_playbutton_pressed():
 
 func _on_save_game_pressed() -> void:
 	SaveLoadManager.save_game(player)
+	print("saving attempting")
+	
 
 
 func _on_load_game_pressed() -> void:
 	SaveLoadManager.load_game(player)
+	print("loading attempting")
+	get_tree().change_scene_to_packed(start_level)
