@@ -1,7 +1,2 @@
 res://scenes/player.tscn
-res://Inventory/inv_ui_slot.tscn
-res://scenes/gold_block.tscn
-res://scenes/gold_collectable.tscn
-res://scenes/e_to_interact.tscn
-res://scenes/maintest.tscn
-res://scenes/StageManager.tscn
+res://scripts/player.gd
