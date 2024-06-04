@@ -1,7 +1,11 @@
 res://scenes/menu.tscn
 res://Inventory/playerinv.tres
 res://scenes/player.tscn
-<<<<<<< Updated upstream
 res://scenes/maintest.tscn
-=======
->>>>>>> Stashed changes
+res://scripts/main.gd
+res://scripts/player.gd
+res://scripts/SaveLoadManager.gd
+res://scripts/menu.gd
+res://PlayerData.gd
+res://scripts/Control.gd
+res://scenes/PlayerText.gd
