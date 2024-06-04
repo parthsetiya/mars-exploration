@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 class_name Player
 
-#@export var speed = 100
-
 @onready var animations = $AnimationPlayer
 
 @onready var inv_ui = $Inv_UI
@@ -11,9 +9,6 @@ class_name Player
 @export var inv: Inv
 
 
-
-
-#testing new loading code
 var speed = 100
 var health = 100
 
@@ -61,9 +56,6 @@ func _on_control_change_health(action):
 		gain_health()
 	elif action == "-":
 		take_damage()
-		
-#end new code test
-
 
 
 var invopen = false
@@ -90,12 +82,6 @@ func _physics_process(delta):
 	move_and_slide()
 	updateAnimation()
 	
-	
-#func _process(delta):
-	#position += velocity * delta
-	#if Input.is_action_just_pressed("Inventory"):
-		#invmenu()
-
 func invmenu():
 	if invopen:
 		inv_ui.hide()
@@ -110,26 +96,3 @@ func collect(item):
 		inv.insert(item)
 	else:
 		print("Inventory is not initialized, cannot collect item")
-
-#
-#var health: int = 100
-#var inventory: Array = ["Test"]
-#var save_file_path: String = "user://save_game.json"
-#
-## Function to get save data as a dictionary
-#func get_save_data() -> Dictionary:
-	#return {
-		#"position": position,
-		#"health": health,
-		#"inventory": inventory
-	#}
-#
-## Function to load save data from a dictionary
-#func load_save_data(data: Dictionary) -> void:
-	#if data.has("position"):
-		#position = data["position"]
-	#if data.has("health"):
-		#health = data["health"]
-	#if data.has("inventory"):
-		#inventory = data["inventory"]
-		

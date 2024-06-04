@@ -2,10 +2,6 @@ res://scenes/menu.tscn
 res://Inventory/playerinv.tres
 res://scenes/player.tscn
 res://scenes/maintest.tscn
-res://scripts/main.gd
-res://scripts/player.gd
-res://scripts/SaveLoadManager.gd
 res://scripts/menu.gd
-res://PlayerData.gd
-res://scripts/Control.gd
-res://scenes/PlayerText.gd
+res://scripts/player.gd
+res://scenes/gold_block.gd

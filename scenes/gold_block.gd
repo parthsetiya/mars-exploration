@@ -26,10 +26,6 @@ func _process(delta):
 				drop_gold()
 
 
-
-
-
-
 func _on_respawn_timer_timeout():
 	if state == "no_gold":
 		state = "gold"
