@@ -1,7 +1,9 @@
-res://scenes/menu.tscn
-res://Inventory/playerinv.tres
-res://scenes/player.tscn
+res://Inventory/inv_ui_slot.tscn
+res://scenes/gold_block.tscn
+res://scenes/gold_collectable.tscn
+res://scenes/e_to_interact.tscn
 res://scenes/maintest.tscn
-res://scripts/menu.gd
-res://scripts/player.gd
+res://scenes/player.tscn
+res://Inventory/playerinv.tres
 res://scenes/gold_block.gd
+res://Inventory/inv_ui_slot.gd
