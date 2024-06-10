@@ -20,7 +20,6 @@ func _process(delta):
 	if state == "gold":
 		$AnimatedSprite2D.play("gold")
 		if player_in_area == true:
-			print("yeeeeee")
 			if Input.is_action_just_pressed("Interact"):
 				state = "no_gold"
 				drop_gold()
