@@ -106,6 +106,8 @@ _data = {
 script = ExtResource("1_6afem")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.08165e-12, 20)
+rotation = 0.261799
 sprite_frames = SubResource("SpriteFrames_yc27w")
 animation = &"gold"
 frame_progress = 0.807726
