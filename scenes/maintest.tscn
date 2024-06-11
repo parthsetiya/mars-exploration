@@ -281,10 +281,10 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="gold_block" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(-56.5, -1.5)
+position = Vector2(49.5, -99)
 
 [node name="gold_block2" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(-113, -3)
+position = Vector2(-61, 27.5)
 
 [connection signal="area_shape_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_shape_exited"]
 [connection signal="body_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_body_entered"]

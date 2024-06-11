@@ -4,3 +4,4 @@ res://scenes/player.tscn
 res://scenes/maintest.tscn
 res://scripts/main.gd
 res://interact_to_read.tscn
+res://Inventory/items/goldbar.tres
