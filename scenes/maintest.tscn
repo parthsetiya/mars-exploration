@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=18 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bv0los6yqfysa" path="res://scenes/e_to_interact.tscn" id="4_dukk6"]
 [ext_resource type="PackedScene" uid="uid://c0vc4hnvvbm3x" path="res://interact_to_read.tscn" id="4_olrbr"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
+[ext_resource type="Texture2D" uid="uid://cr41eyd0qsvfs" path="res://art/terrain/signpost.png" id="7_084ek"]
+[ext_resource type="PackedScene" uid="uid://bsp4brhm0rf88" path="res://scenes/thiswaytomines.tscn" id="9_347cy"]
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="11_6wovd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddf6d"]
@@ -215,9 +217,6 @@ func _on_body_entered(body):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vtw8"]
 size = Vector2(57.4729, 39.9261)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_34jfn"]
-radius = 38.4984
-
 [sub_resource type="Gradient" id="Gradient_3g7wf"]
 offsets = PackedFloat32Array(0, 0.00649351, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.50974, 0.50974, 0.50974, 1, 0, 0, 0, 1)
@@ -229,6 +228,12 @@ height = 600
 fill = 1
 fill_from = Vector2(0.481651, 0.46789)
 fill_to = Vector2(0.142202, 0.834862)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34jfn"]
+radius = 38.4984
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e37og"]
+radius = 38.513
 
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
@@ -252,16 +257,6 @@ shape = SubResource("RectangleShape2D_5vtw8")
 [node name="E_to_interact" parent="TileMap/Area2D" instance=ExtResource("4_dukk6")]
 visible = false
 
-[node name="startsignpostarea" type="Area2D" parent="TileMap"]
-
-[node name="startsignpost" type="CollisionShape2D" parent="TileMap/startsignpostarea"]
-position = Vector2(-80.5647, -177.146)
-shape = SubResource("CircleShape2D_34jfn")
-
-[node name="interact_to_read" parent="TileMap/startsignpostarea" instance=ExtResource("4_olrbr")]
-visible = false
-position = Vector2(-150.866, -237.482)
-
 [node name="Player" parent="." instance=ExtResource("1_w3bu8")]
 z_index = 1
 position = Vector2(1, -1)
@@ -281,13 +276,41 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="gold_block" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(49.5, -99)
+position = Vector2(-56.5, -1.5)
 
 [node name="gold_block2" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(-61, 27.5)
+position = Vector2(-113, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-76.5, -184.5)
+texture = ExtResource("7_084ek")
+
+[node name="startsignpostarea" type="Area2D" parent="Sprite2D"]
+position = Vector2(80, 183)
+scale = Vector2(0.974372, 1.03587)
+
+[node name="startsignpost" type="CollisionShape2D" parent="Sprite2D/startsignpostarea"]
+position = Vector2(-80.5647, -177.146)
+shape = SubResource("CircleShape2D_34jfn")
+
+[node name="interact_to_read" parent="Sprite2D/startsignpostarea" instance=ExtResource("4_olrbr")]
+position = Vector2(-150.866, -237.482)
+
+[node name="thiswaytomines" parent="Sprite2D" instance=ExtResource("9_347cy")]
+visible = false
+position = Vector2(-85, -74)
+
+[node name="Area2D" type="Area2D" parent="Sprite2D/thiswaytomines"]
+position = Vector2(85, 74)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/thiswaytomines/Area2D"]
+position = Vector2(1.5, 0)
+shape = SubResource("CircleShape2D_e37og")
 
 [connection signal="area_shape_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_shape_exited"]
 [connection signal="body_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
-[connection signal="body_exited" from="TileMap/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]
+[connection signal="body_entered" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
+[connection signal="body_exited" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]
+[connection signal="body_entered" from="Sprite2D/thiswaytomines/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sprite2D/thiswaytomines/Area2D" to="." method="_on_area_2d_body_exited"]

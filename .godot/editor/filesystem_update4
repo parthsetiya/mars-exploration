@@ -1,9 +1,8 @@
 res://scenes/menu.tscn
 res://Inventory/playerinv.tres
-res://scenes/player.tscn
-res://scenes/maintest.tscn
 res://interact_to_read.tscn
-res://Inventory/Inv_UI.gd
+res://scenes/e_to_interact.tscn
+res://scenes/maintest.tscn
 res://scripts/main.gd
-res://scripts/player.gd
-res://scenes/gold_block.tscn
+res://scenes/thiswaytomines.tscn
+res://scenes/player.tscn
