@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0vc4hnvvbm3x"]
+
+[ext_resource type="Texture2D" uid="uid://b3wirsdpgo743" path="res://art/button_which_shows_tooltip.png" id="1_4a1ja"]
+
+[node name="interact_to_read" type="Node2D"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 149.0
+offset_bottom = 40.0
+texture = ExtResource("1_4a1ja")
