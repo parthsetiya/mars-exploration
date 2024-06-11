@@ -10,20 +10,24 @@ var paused = false
 
 @onready var start_sign_post_entered = false
 
+var is_showing_thiswaytomines = false
+
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pausemenu()
-	if start_sign_post_entered == true:
+	if start_sign_post_entered:
 		interact_to_read.show()
 		if Input.is_action_just_pressed("Interact"):
-			interact_to_read.hide()
-			thiswaytomines.show()
-		if thiswaytomines.show() == true:
-			if Input.is_action_just_pressed("Interact"):
+			if is_showing_thiswaytomines:
 				thiswaytomines.hide()
-	elif start_sign_post_entered == false:
+				is_showing_thiswaytomines = false
+			else:
+				interact_to_read.hide()
+				thiswaytomines.show()
+				is_showing_thiswaytomines = true
+	else:
 		interact_to_read.hide()
-	
+		
 		
 		
 		
@@ -35,14 +39,12 @@ func pausemenu():
 		pause_menu.show()
 		Engine.time_scale = 0
 		
-
-
 func _on_startsignpostarea_body_entered(body):
 	start_sign_post_entered = true
 
-
 func _on_startsignpostarea_body_exited(body):
 	start_sign_post_entered = false
-	
+	thiswaytomines.hide()
+	is_showing_thiswaytomines = false 
 
 
