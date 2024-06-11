@@ -18,6 +18,11 @@ var playerData = PlayerData.new()
 
 func _ready():
 	verify_save_directory(save_file_path)
+	if inv == null:
+		inv = Inv.new()
+		print("Inventory was null, created a new instance.")
+	else:
+		print("Inventory initialized successfully!")
 	
 func verify_save_directory(path: String):
 	DirAccess.make_dir_absolute(path)
@@ -94,5 +99,6 @@ func invmenu():
 func collect(item):
 	if inv != null:
 		inv.insert(item)
+		print("Collected item: ", item.name)
 	else:
 		print("Inventory is not initialized, cannot collect item")

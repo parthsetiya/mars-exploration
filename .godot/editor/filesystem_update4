@@ -2,6 +2,8 @@ res://scenes/menu.tscn
 res://Inventory/playerinv.tres
 res://scenes/player.tscn
 res://scenes/maintest.tscn
-res://scripts/main.gd
 res://interact_to_read.tscn
-res://Inventory/items/goldbar.tres
+res://Inventory/Inv_UI.gd
+res://scripts/main.gd
+res://scripts/player.gd
+res://scenes/gold_block.tscn
