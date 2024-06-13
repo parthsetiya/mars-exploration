@@ -16,3 +16,4 @@ res://scripts/StageManager.gd
 res://scenes/goldmine.tscn
 res://scripts/player.gd
 res://scenes/goldmine.gd
+res://README.md
