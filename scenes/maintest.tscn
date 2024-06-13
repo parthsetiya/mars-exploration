@@ -278,7 +278,7 @@ shape = SubResource("RectangleShape2D_sdmmh")
 
 [node name="Player" parent="." instance=ExtResource("1_w3bu8")]
 z_index = 1
-position = Vector2(-381, -277.5)
+position = Vector2(2, -1.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(20.5, 64.5)
@@ -298,10 +298,10 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="gold_block" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(-56.5, -1.5)
+position = Vector2(-78, -32.5)
 
 [node name="gold_block2" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(-113, -3)
+position = Vector2(-103.5, 18.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-76.5, -184.5)

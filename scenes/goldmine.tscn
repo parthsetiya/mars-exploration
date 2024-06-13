@@ -26,7 +26,7 @@ size = Vector2(53, 197.5)
 [node name="goldmine" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_a5wqn")
-metadata/_edit_vertical_guides_ = [-447.0, 227.0]
+metadata/_edit_vertical_guides_ = [-447.0, 227.0, 960.0]
 metadata/_edit_horizontal_guides_ = [-223.0, -223.0]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -40,6 +40,7 @@ position = Vector2(453, -30.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(2.5, -12.5)
+limit_right = 960
 
 [node name="Pausemenu" parent="Player/Camera2D" instance=ExtResource("2_8fitg")]
 visible = false
