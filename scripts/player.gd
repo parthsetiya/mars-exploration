@@ -102,3 +102,5 @@ func collect(item):
 		print("Collected item: ", item.name)
 	else:
 		print("Inventory is not initialized, cannot collect item")
+
+

@@ -7,6 +7,7 @@ var is_transitioning = false
 const MAINTEST = preload("res://scenes/maintest.tscn")
 const HOUSETEST = preload("res://scenes/housetest.tscn")
 const PLAYER = preload("res://scenes/player.tscn")
+const GOLDMINE = preload("res://scenes/goldmine.tscn")
 
 func _ready():
 	get_node("ColorRect").hide()

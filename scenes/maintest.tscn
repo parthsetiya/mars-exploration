@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=19 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -224,6 +224,9 @@ func _on_body_entered(body):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vtw8"]
 size = Vector2(57.4729, 39.9261)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmmh"]
+size = Vector2(55.4076, 159.701)
+
 [sub_resource type="Gradient" id="Gradient_3g7wf"]
 offsets = PackedFloat32Array(0, 0.00649351, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.50974, 0.50974, 0.50974, 1, 0, 0, 0, 1)
@@ -245,6 +248,7 @@ radius = 38.513
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_6jpb6")
+metadata/_edit_vertical_guides_ = [-798.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(3.5, -1.5)
@@ -264,11 +268,21 @@ shape = SubResource("RectangleShape2D_5vtw8")
 [node name="E_to_interact" parent="TileMap/Area2D" instance=ExtResource("4_dukk6")]
 visible = false
 
+[node name="entrancetogoldmine" type="Area2D" parent="TileMap"]
+
+[node name="entrancetogoldminecollision" type="CollisionShape2D" parent="TileMap/entrancetogoldmine"]
+position = Vector2(-447.974, -272.925)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sdmmh")
+
 [node name="Player" parent="." instance=ExtResource("1_w3bu8")]
 z_index = 1
-position = Vector2(1, -1)
+position = Vector2(2, -1.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(20.5, 64.5)
+limit_left = -800
+limit_top = -1000
 
 [node name="Pausemenu" parent="Player/Camera2D" instance=ExtResource("4_b4hsc")]
 visible = false
@@ -317,6 +331,7 @@ shape = SubResource("CircleShape2D_e37og")
 [connection signal="area_shape_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_shape_exited"]
 [connection signal="body_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMap/entrancetogoldmine" to="." method="_on_entrancetogoldmine_body_entered"]
 [connection signal="body_entered" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
 [connection signal="body_exited" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]
 [connection signal="body_entered" from="Sprite2D/thiswaytomines/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -9,3 +9,10 @@ res://scenes/maintest.tscn
 res://scenes/pause_menu.tscn
 res://scenes/housetest.tscn
 res://scenes/gold_collectable.tscn
+res://scenes/test.tscn
+res://scripts/main.gd
+res://scenes/StageManager.tscn
+res://scripts/StageManager.gd
+res://scenes/goldmine.tscn
+res://scripts/player.gd
+res://scenes/goldmine.gd
