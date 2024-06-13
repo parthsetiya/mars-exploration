@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhnojfecol1ou"]
+
+[ext_resource type="Texture2D" uid="uid://dipqcuu3xpcfb" path="res://art/dialogueboxtest.png" id="1_56v5j"]
+
+[node name="dialogue" type="Node2D"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 126.0
+offset_bottom = 40.0
+texture = ExtResource("1_56v5j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 12.0
+offset_right = 136.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 14
+text = "Give me two gold"

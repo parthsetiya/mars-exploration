@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://2ej56mv1u4pi"]
+
+[ext_resource type="Texture2D" uid="uid://dv7du7hxmk7fq" path="res://art/alientest.png" id="1_buk1y"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_i3n6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8ivo"]
+size = Vector2(35, 69)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgjf2"]
+radius = 124.036
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_i3n6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.5)
+texture = ExtResource("1_buk1y")
+
+[node name="Collisionarea" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Collisionarea"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_h8ivo")
+
+[node name="Detectionarea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detectionarea"]
+shape = SubResource("CircleShape2D_lgjf2")
+
+[connection signal="body_entered" from="Sprite2D/Collisionarea" to="." method="_on_collisionarea_body_entered"]
+[connection signal="body_exited" from="Sprite2D/Collisionarea" to="." method="_on_collisionarea_body_exited"]
+[connection signal="body_entered" from="Detectionarea" to="." method="_on_detectionarea_body_entered"]
+[connection signal="body_exited" from="Detectionarea" to="." method="_on_detectionarea_body_exited"]
