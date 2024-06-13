@@ -52,4 +52,4 @@ func _on_startsignpostarea_body_exited(body):
 
 func _on_entrancetogoldmine_body_entered(body):
 	if body.name == "Player":
-		StageManager.changeStage(StageManager.GOLDMINE, 0, 0)
+		StageManager.changeStage(StageManager.GOLDMINE, 453, -30)

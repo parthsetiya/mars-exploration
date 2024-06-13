@@ -248,7 +248,8 @@ radius = 38.513
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_6jpb6")
-metadata/_edit_vertical_guides_ = [-798.0]
+metadata/_edit_vertical_guides_ = [-798.0, -797.0]
+metadata/_edit_horizontal_guides_ = [-564.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(3.5, -1.5)
@@ -277,7 +278,7 @@ shape = SubResource("RectangleShape2D_sdmmh")
 
 [node name="Player" parent="." instance=ExtResource("1_w3bu8")]
 z_index = 1
-position = Vector2(2, -1.5)
+position = Vector2(-381, -277.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(20.5, 64.5)
