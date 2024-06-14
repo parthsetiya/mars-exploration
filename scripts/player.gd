@@ -35,7 +35,8 @@ func _process(delta):
 		save()
 	if Input.is_action_just_pressed("load"):
 		load_data()
-	emit_signal("update_ui", playerData.health, self.position)
+	#emit_signal("update_ui", playerData.health, self.position)
+	emit_signal("test", playerData.health, self.position)
 	playerData.UpdatePos(self.position)
 
 func load_data():
