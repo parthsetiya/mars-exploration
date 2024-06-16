@@ -20,7 +20,7 @@ var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
 signal update_ui(health, position)
 #added reswawn location needs to be changed to last save location
-var respawn_position = Vector2(100, 100)
+var respawn_position = Vector2(playerData.SavePos)
 
 func _ready():
 	verify_save_directory(save_file_path)
