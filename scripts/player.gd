@@ -8,6 +8,9 @@ class_name Player
 
 @export var inv: Inv
 
+@onready var death_screen = $DeathScreen
+@onready var death_screen_color_rect = $Deathscreen/ColorRect
+@onready var death_screen_label = $Deathscreen/ColorRect/Label
 
 var speed = 100
 var health = 100
@@ -15,6 +18,9 @@ var health = 100
 var save_file_path = "user://save/"
 var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
+signal update_ui(health, position)
+#added reswawn location needs to be changed to last save location
+var respawn_position = Vector2(100, 100)
 
 func _ready():
 	verify_save_directory(save_file_path)
@@ -36,8 +42,31 @@ func _process(delta):
 	if Input.is_action_just_pressed("load"):
 		load_data()
 	#emit_signal("update_ui", playerData.health, self.position)
-	emit_signal("test", playerData.health, self.position)
+	emit_signal("update_ui", playerData.health, self.position)
 	playerData.UpdatePos(self.position)
+
+#checks players health
+func check_health():
+	print("checking health")
+	if playerData.health >= 0:
+		print("health removal worked running player death")
+		on_player_death()
+
+func on_player_death():
+	$DeathScreen.show()
+	print("showing deathscreen")
+	#death_screen_color_rect.modulate = Color(0, 0, 0, 0)  # Set initial color to transparent
+	$AnimationPlayer.play("fade_in")  # Play the fade-in animation
+	print("playing fade_in")
+	await get_tree().create_timer(2.0).timeout  # Show death screen for 2 seconds
+	respawn()
+
+func respawn():
+	print("respawn function running")
+	$DeathScreen.hide()
+	self.position = respawn_position
+	playerData.change_health(+100) 
+	print(playerData.health)  # Reset health or any other parameters
 
 func load_data():
 	playerData = ResourceLoader.load(save_file_path + save_file_name). duplicate(true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=27 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_rv08x"]
 [ext_resource type="Texture2D" uid="uid://bowly4t7gw8wm" path="res://art/oldspritearchive/spritesheet (3).png" id="2_tlr5x"]
@@ -252,9 +252,25 @@ tracks/1/keys = {
 "values": [16, 17, 18, 19, 20, 21, 22, 23]
 }
 
+[sub_resource type="Animation" id="Animation_icxvk"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathScreen/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7cik"]
 _data = {
 "RESET": SubResource("Animation_0d6rx"),
+"fade_in": SubResource("Animation_icxvk"),
 "idleDown": SubResource("Animation_rpyc3"),
 "idleLeft": SubResource("Animation_wx62o"),
 "idleRight": SubResource("Animation_84vhk"),
@@ -374,3 +390,44 @@ offset_left = -97.0
 offset_top = -58.0
 offset_right = 97.0
 offset_bottom = 62.0
+
+[node name="DeathScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 205.0
+offset_bottom = 72.0
+
+[node name="ColorRect" type="ColorRect" parent="DeathScreen"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.088
+anchor_top = -4.219
+anchor_right = 2.449
+anchor_bottom = 4.236
+offset_left = -217.96
+offset_top = -314.232
+offset_right = 771.955
+offset_bottom = 157.008
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="DeathScreen/ColorRect"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 646.0
+offset_top = 618.0
+offset_right = 646.0
+offset_bottom = 618.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.97, 2.97)
+text = "You died!"
+horizontal_alignment = 1
+vertical_alignment = 1

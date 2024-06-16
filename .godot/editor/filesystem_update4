@@ -8,3 +8,16 @@ res://friendlyalien.tscn
 res://dialogue.tscn
 res://scenes/housetest.tscn
 res://scenes/goldmine.tscn
+res://enemy.gd
+res://scripts/player.gd
+res://scenes/deathscreen.tscn
+res://scenes/pause_menu.gdshader
+res://friendlyalien.gd
+res://scenes/gold_block.tscn
+res://scenes/StageManager.tscn
+res://scenes/thiswaytomines.tscn
+res://scenes/pause_menu.tscn
+res://scenes/gold_collectable.tscn
+res://scenes/e_to_interact.tscn
+res://interact_to_read.tscn
+res://scripts/PlayerData.gd

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyrjlo5q125j6"]
+
+[ext_resource type="Texture2D" uid="uid://b4obyiihvcjse" path="res://art/mainmenu/deathscreen.png" id="1_3r6u1"]
+
+[node name="Deathscreen" type="Node2D"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1822.0
+offset_bottom = 960.0
+texture = ExtResource("1_3r6u1")

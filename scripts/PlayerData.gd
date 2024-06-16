@@ -9,5 +9,6 @@ class_name PlayerData
 func change_health(value : int):
 	health += value
 
+
 func UpdatePos(value : Vector2):
 	SavePos = value 
