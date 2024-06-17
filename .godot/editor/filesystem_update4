@@ -8,5 +8,3 @@ res://scenes/e_to_interact.tscn
 res://dialogue.tscn
 res://interact_to_read.tscn
 res://friendlyalien.tscn
-res://scripts/player.gd
-res://scenes/gold_block.gd

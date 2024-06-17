@@ -1,7 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://2ej56mv1u4pi"]
 
-[ext_resource type="Texture2D" uid="uid://dv7du7hxmk7fq" path="res://art/alientest.png" id="1_buk1y"]
 [ext_resource type="Script" path="res://enemy.gd" id="1_i3n6q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8gho2"]
+load_path = "res://.godot/imported/alientest.png-0447d763cf6ac51f7bc6a77c5e2b1ae8.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8ivo"]
 size = Vector2(35, 69)
@@ -14,7 +16,7 @@ script = ExtResource("1_i3n6q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -0.5)
-texture = ExtResource("1_buk1y")
+texture = SubResource("CompressedTexture2D_8gho2")
 
 [node name="Collisionarea" type="Area2D" parent="Sprite2D"]
 
