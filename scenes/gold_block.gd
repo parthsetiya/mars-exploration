@@ -4,7 +4,7 @@ var state = "no_gold"
 var player_in_area = false
 var gold_scene = preload("res://scenes/gold_collectable.tscn") as PackedScene
 
-@export var item: InvItem
+
 var player = null
 
 @onready var respawn_timer = $respawn_timer
@@ -42,7 +42,6 @@ func drop_gold():
 	gold_instance.global_position = marker.global_position / 2
 	get_parent().add_child(gold_instance)
 	popfromground(gold_instance)
-	player.collect(item)
 	await get_tree().create_timer(3).timeout
 	respawn_timer.start()
 
