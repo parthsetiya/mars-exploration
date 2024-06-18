@@ -1,8 +1,7 @@
 res://scenes/menu.tscn
-res://scripts/player.gd
 res://scenes/player.tscn
 res://scenes/maintest.tscn
 res://interact_to_read.tscn
 res://Inventory/inventory_gui.tscn
 res://slot.tscn
-res://Inventory/items/gold.tres
+res://scripts/player.gd

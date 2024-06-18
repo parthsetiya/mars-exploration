@@ -374,3 +374,15 @@ visible = false
 
 [node name="InventoryGui" parent="." instance=ExtResource("4_32p4a")]
 visible = false
+
+[node name="Deathscreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Deathscreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
