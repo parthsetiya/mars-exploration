@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bv0los6yqfysa" path="res://scenes/e_to_interact.tscn" id="4_dukk6"]
 [ext_resource type="PackedScene" uid="uid://c0vc4hnvvbm3x" path="res://interact_to_read.tscn" id="4_olrbr"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
-[ext_resource type="PackedScene" uid="uid://coy7c6xxxmwjg" path="res://Inventory/inventory_gui.tscn" id="6_wj1xp"]
 [ext_resource type="Texture2D" uid="uid://cr41eyd0qsvfs" path="res://art/terrain/signpost.png" id="7_084ek"]
 [ext_resource type="PackedScene" uid="uid://bsp4brhm0rf88" path="res://scenes/thiswaytomines.tscn" id="9_347cy"]
 [ext_resource type="PackedScene" uid="uid://2ej56mv1u4pi" path="res://enemy.tscn" id="10_1j8v7"]
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="11_6wovd"]
 [ext_resource type="PackedScene" uid="uid://crlao84s5ynxx" path="res://friendlyalien.tscn" id="11_pw7wt"]
+[ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="12_tamxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddf6d"]
 texture = ExtResource("11_6wovd")
@@ -374,19 +374,12 @@ visible = false
 position = Vector2(-2, -8)
 texture = SubResource("GradientTexture2D_hhbug")
 
-[node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("6_wj1xp")]
+[node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("12_tamxu")]
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.5
-offset_top = -132.0
-offset_right = -125.5
-offset_bottom = -132.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -22.5
+offset_top = -63.0
+offset_right = 17.5
+offset_bottom = -23.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

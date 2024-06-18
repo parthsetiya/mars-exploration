@@ -15,12 +15,30 @@ var health = 100
 var save_file_path = "user://save/"
 var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
+var inventory = Inventory.new()
 signal update_ui(health, position)
 #added reswawn location needs to be changed to last save location
 var respawn_position = Vector2(playerData.SavePos)
 
+# Node definitions
+var gold_node
+var inventory_node
+
+
 func _ready():
 	verify_save_directory(save_file_path)
+	gold_node = get_node("gold_block")
+	gold_node.connect("request_inventory_update", _on_request_inventory_update)
+
+func _on_request_inventory_update(item_name, quantity):
+	print("adding item name with quantity: " + str(item_name) + " - " + str(quantity))
+	inventory.add_item(item_name, quantity)
+	print("inventory after adding new item : " + str(inventory.get_items()))
+	print("updating inventory texture with new item")
+	inventory_node = get_node("InventoryGui").get_children()
+	print("inventory texture node" + str(inventory_node))
+	
+	
 	
 func verify_save_directory(path: String):
 	DirAccess.make_dir_absolute(path)

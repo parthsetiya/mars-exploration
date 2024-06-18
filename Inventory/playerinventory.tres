@@ -1,7 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dys5gc87l1lvr"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dpci1dmq4n26m"]
 
 [ext_resource type="Script" path="res://Inventory/inventory.gd" id="1_rdlfl"]
 
 [resource]
 script = ExtResource("1_rdlfl")
-items = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]

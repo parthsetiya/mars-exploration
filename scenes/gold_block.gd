@@ -6,21 +6,30 @@ var gold_scene = preload("res://scenes/gold_collectable.tscn") as PackedScene
 
 var player = null
 
+
 @export var inventory_manager: Node
 
 @onready var respawn_timer = $respawn_timer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var marker = $Marker2D
 
-var inventory = preload("res://Inventory/inventory.gd")
 
 const item = preload("res://Inventory/items/gold.tres")
+
+var player_node
+var inventory
+
+signal request_inventory_update()
+
 
 func _ready():
 	print(gold_scene)
 	if state == "no_gold":
-		respawn_timer.start()
-	inventory_manager = get_node("res://Inventory/inventorymanager.gd") 
+		respawn_timer.start()  # Check if the instance is correctly assigned
+	#print("player node: " + str(player_node))
+
+func _on_inventory_updated(new_inventory):
+	print("new inventory: " + str(new_inventory))
 
 func _process(delta):
 	if state == "no_gold":
@@ -30,7 +39,7 @@ func _process(delta):
 		if player_in_area and Input.is_action_just_pressed("Interact"):
 			state = "no_gold"
 			drop_gold()
-			add_item_to_inventory(item, 1)
+			add_item_to_inventory(item.name, 1)
 
 func popfromground(gold_collectable):
 	gold_collectable.get_node("AnimatedSprite2D").show()
@@ -59,5 +68,5 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	player_in_area = false
 
-func add_item_to_inventory(item, quantity):
-	inventory.add_item(item, quantity)
+func add_item_to_inventory(item_name, quantity):
+	emit_signal("request_inventory_update", item_name, quantity)
