@@ -9,6 +9,8 @@ class_name Player
 @onready var death_screen_color_rect = $Deathscreen/ColorRect
 @onready var death_screen_label = $Deathscreen/ColorRect/Label
 
+var GOLD = load("res://Inventory/items/gold.tres")
+
 var speed = 100
 var health = 100
 
@@ -22,7 +24,7 @@ var respawn_position = Vector2(playerData.SavePos)
 
 # Node definitions
 var gold_node
-var inventory_node
+var inventory_slots
 
 
 func _ready():
@@ -35,8 +37,14 @@ func _on_request_inventory_update(item_name, quantity):
 	inventory.add_item(item_name, quantity)
 	print("inventory after adding new item : " + str(inventory.get_items()))
 	print("updating inventory texture with new item")
-	inventory_node = get_node("InventoryGui").get_children()
-	print("inventory texture node" + str(inventory_node))
+	inventory_slots = get_node("InventoryGui/NinePatchRect/GridContainer").get_children()
+	for slot in inventory_slots:
+		var centre_container = slot.get_children()[1]
+		var item = centre_container.get_children()[0].get_children()[0]
+		print("texture before: " + str(item.texture))
+		item.texture = GOLD.texture
+		print("texture after: " + str(item.texture))
+		
 	
 	
 	

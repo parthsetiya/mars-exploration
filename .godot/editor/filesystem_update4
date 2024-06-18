@@ -1,15 +1,8 @@
 res://scenes/menu.tscn
-res://Inventory/playerinv.tres
+res://scripts/player.gd
 res://scenes/player.tscn
 res://scenes/maintest.tscn
 res://interact_to_read.tscn
-res://scenes/gold_block.gd
-res://scenes/gold_block.tscn
-res://Inventory/inventorymanager.gd
 res://Inventory/inventory_gui.tscn
-res://scenes/Node.gd
-res://Inventory/inventory.gd
-res://Inventory/playerinventory.tres
+res://slot.tscn
 res://Inventory/items/gold.tres
-res://scripts/player.gd
-res://Inventory/inventory_gui.gd
