@@ -8,10 +8,14 @@ var paused = false
 
 @onready var thiswaytomines = $Sprite2D/thiswaytomines
 
+@onready var inventory_gui = $Player/Camera2D/InventoryGui
+
 @onready var start_sign_post_entered = false
 
 var is_showing_thiswaytomines = false
 
+var inv_open = false
+	
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pausemenu()
@@ -27,7 +31,8 @@ func _process(delta):
 				is_showing_thiswaytomines = true
 	else:
 		interact_to_read.hide()
-		
+	if Input.is_action_just_pressed("Inventory"):
+		inventory()
 		
 		
 		
@@ -48,6 +53,13 @@ func _on_startsignpostarea_body_exited(body):
 	is_showing_thiswaytomines = false 
 
 
+func inventory():
+	if inv_open:
+		inventory_gui.hide()
+	else:
+		inventory_gui.show()
+	inv_open = !inv_open 
+	
 
 
 func _on_entrancetogoldmine_body_entered(body):
