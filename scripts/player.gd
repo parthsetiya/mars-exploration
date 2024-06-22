@@ -3,21 +3,23 @@ extends CharacterBody2D
 class_name Player
 
 @onready var animations = $AnimationPlayer
+@onready var gold_block = $gold_block
 
 
-@onready var death_screen = $DeathScreen
+@onready var deathscreen = $Deathscreen
 @onready var death_screen_color_rect = $Deathscreen/ColorRect
-@onready var death_screen_label = $Deathscreen/ColorRect/Label
 
 var GOLD = load("res://Inventory/items/gold.tres")
 
 var speed = 100
 var health = 100
+var inv_open = false
 
 var save_file_path = "user://save/"
 var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
 var inventory = Inventory.new()
+@onready var inventory_gui = $InventoryGui
 signal update_ui(health, position)
 #added reswawn location needs to be changed to last save location
 var respawn_position = Vector2(playerData.SavePos)
@@ -38,13 +40,16 @@ func _on_request_inventory_update(item_name, quantity):
 	print("inventory after adding new item : " + str(inventory.get_items()))
 	print("updating inventory texture with new item")
 	inventory_slots = get_node("InventoryGui/NinePatchRect/GridContainer").get_children()
-	for slot in inventory_slots:
+	var specific_slot_index = 0
+	for i in range(inventory_slots.size()):
+		var slot = inventory_slots[i]
 		var centre_container = slot.get_children()[1]
 		var item = centre_container.get_children()[0].get_children()[0]
-		print("texture before: " + str(item.texture))
-		item.texture = GOLD.texture
-		print("texture after: " + str(item.texture))
-		
+		if i == specific_slot_index:
+			print("texture before: " + str(item.texture))
+			item.texture = GOLD.texture
+			print("texture after: " + str(item.texture))
+
 	
 	
 	
@@ -60,6 +65,8 @@ func _process(delta):
 	#emit_signal("update_ui", playerData.health, self.position)
 	emit_signal("update_ui", playerData.health, self.position)
 	playerData.UpdatePos(self.position)
+	if Input.is_action_just_pressed("Inventory"):
+		inventoryopen()
 
 
 #checks players health
@@ -70,7 +77,7 @@ func check_health():
 		on_player_death()
 
 func on_player_death():
-	$DeathScreen.show()
+	deathscreen.show()
 	print("showing deathscreen")
 	#death_screen_color_rect.modulate = Color(0, 0, 0, 0)  # Set initial color to transparent
 	$AnimationPlayer.play("fade_in")  # Play the fade-in animation
@@ -80,7 +87,7 @@ func on_player_death():
 
 func respawn():
 	print("respawn function running")
-	$DeathScreen.hide()
+	deathscreen.hide()
 	self.position = respawn_position
 	playerData.change_health(+100) 
 	print(playerData.health)  # Reset health or any other parameters
@@ -132,5 +139,12 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	updateAnimation()
+	
+func inventoryopen():
+	if inv_open:
+		inventory_gui.hide()
+	else:
+		inventory_gui.show()
+	inv_open = !inv_open 
 	
 
