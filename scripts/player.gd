@@ -61,6 +61,7 @@ func _process(delta):
 	emit_signal("update_ui", playerData.health, self.position)
 	playerData.UpdatePos(self.position)
 
+
 #checks players health
 func check_health():
 	print("checking health")

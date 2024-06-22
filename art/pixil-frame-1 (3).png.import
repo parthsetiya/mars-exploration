@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfg77f6x8nady"
-path="res://.godot/imported/goldbartest.png-36715dc03272dc272ef3f267208aa670.ctex"
+uid="uid://bycf5aac7ok8e"
+path="res://.godot/imported/pixil-frame-1 (3).png-5549dbba0d71159b164a80b96c5e6c50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/goldbartest.png"
-dest_files=["res://.godot/imported/goldbartest.png-36715dc03272dc272ef3f267208aa670.ctex"]
+source_file="res://art/pixil-frame-1 (3).png"
+dest_files=["res://.godot/imported/pixil-frame-1 (3).png-5549dbba0d71159b164a80b96c5e6c50.ctex"]
 
 [params]
 
