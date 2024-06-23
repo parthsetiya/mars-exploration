@@ -34,10 +34,14 @@ func _ready():
 	gold_node = get_node("gold_block")
 	gold_node.connect("request_inventory_update", _on_request_inventory_update)
 
+
 func _on_request_inventory_update(item_name, quantity):
 	print("adding item name with quantity: " + str(item_name) + " - " + str(quantity))
 	inventory.add_item(item_name, quantity)
 	print("inventory after adding new item : " + str(inventory.get_items()))
+	var updated_quantity = inventory.get_item_quantity(item_name)
+	print("Updated inventory after adding item: " + str(inventory.get_items()))
+	print("Updated quantity for " + item_name + ": " + str(updated_quantity))
 	print("updating inventory texture with new item")
 	inventory_slots = get_node("InventoryGui/NinePatchRect/GridContainer").get_children()
 	var specific_slot_index = 0
@@ -45,9 +49,12 @@ func _on_request_inventory_update(item_name, quantity):
 		var slot = inventory_slots[i]
 		var centre_container = slot.get_children()[1]
 		var item = centre_container.get_children()[0].get_children()[0]
+		var label =centre_container.get_children()[0].get_children()[1]
 		if i == specific_slot_index:
 			print("texture before: " + str(item.texture))
 			item.texture = GOLD.texture
+			label.text = str(updated_quantity)
+			print("Label text (quantity) updated to: " + str(updated_quantity))
 			print("texture after: " + str(item.texture))
 
 	

@@ -18,4 +18,4 @@ func _process(delta):
 	if in_talkable == true:
 		dialogue.show()
 	else:
-			dialogue.hide()
+		dialogue.hide()

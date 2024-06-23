@@ -5,13 +5,14 @@
 [node name="dialogue" type="Node2D"]
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_right = 126.0
-offset_bottom = 40.0
+offset_left = -124.0
+offset_top = -40.0
+offset_right = 2.0
 texture = ExtResource("1_56v5j")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 12.0
-offset_right = 136.0
-offset_bottom = 40.0
+offset_left = -112.0
+offset_top = -40.0
+offset_right = 12.0
 theme_override_font_sizes/normal_font_size = 14
 text = "Give me two gold"

@@ -60,6 +60,7 @@ func drop_gold():
 	popfromground(gold_instance)
 	await get_tree().create_timer(3).timeout
 	respawn_timer.start()
+	emit_signal("request_inventory_update", item.name, 1)
 
 func _on_area_2d_body_entered(body):
 	player_in_area = true

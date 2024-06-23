@@ -1,14 +1,20 @@
 extends Resource
 
 class_name Inventory
-var items = []
+
+var items = {}
+
+func add_item(item_name, quantity):
+	if items.has(item_name):
+		items[item_name] += quantity
+	else:
+		items[item_name] = quantity
 
 func get_items():
 	return items
 
-func add_item(item_name, quantity=1):
-	for item in items:
-		if item.name == item_name:
-			item.quantity += quantity
-			return
-	items.append({"name": item_name, "quantity": quantity})
+func get_item_quantity(item_name):
+	if items.has(item_name):
+		return items[item_name]
+	else:
+		return 0
