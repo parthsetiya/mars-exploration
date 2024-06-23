@@ -441,7 +441,7 @@ shape = SubResource("CircleShape2D_e37og")
 position = Vector2(3.5, -331)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("11_pw7wt")]
-position = Vector2(113, -114.5)
+position = Vector2(114, 44.5)
 
 [connection signal="area_shape_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_shape_exited"]
 [connection signal="body_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_body_entered"]

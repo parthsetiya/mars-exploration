@@ -52,6 +52,7 @@ func _on_request_inventory_update(item_name, quantity):
 		var label =centre_container.get_children()[0].get_children()[1]
 		if i == specific_slot_index:
 			print("texture before: " + str(item.texture))
+			playerData.add_invGoldIngot(updated_quantity)
 			item.texture = GOLD.texture
 			label.text = str(updated_quantity)
 			print("Label text (quantity) updated to: " + str(updated_quantity))

@@ -3,7 +3,7 @@ extends Node2D
 var state = "no_gold"
 var player_in_area = false
 var gold_scene = preload("res://scenes/gold_collectable.tscn") as PackedScene
-
+var playerData = PlayerData.new()
 var player = null
 
 
