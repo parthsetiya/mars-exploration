@@ -1,13 +1,8 @@
 res://scenes/menu.tscn
-res://scenes/gold_block.gd
+res://Inventory/inventoryslot.gd
 res://scenes/player.tscn
 res://scenes/maintest.tscn
 res://interact_to_read.tscn
 res://Inventory/inventory_gui.tscn
 res://slot.tscn
 res://scripts/player.gd
-res://Inventory/inventory.gd
-res://dialogue.tscn
-res://friendlyalien.tscn
-res://friendlyalien.gd
-res://scenes/thiswaytomines.tscn

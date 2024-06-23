@@ -374,10 +374,6 @@ visible = false
 
 [node name="InventoryGui" parent="." instance=ExtResource("4_32p4a")]
 visible = false
-offset_left = -105.0
-offset_top = -65.0
-offset_right = -65.0
-offset_bottom = -25.0
 
 [node name="Deathscreen" type="Control" parent="."]
 visible = false
