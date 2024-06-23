@@ -7,3 +7,4 @@ res://slot.tscn
 res://friendlyalien.tscn
 res://friendlyalien.gd
 res://scripts/PlayerData.gd
+res://scripts/player.gd

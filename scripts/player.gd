@@ -75,6 +75,7 @@ func _process(delta):
 	playerData.UpdatePos(self.position)
 	if Input.is_action_just_pressed("Inventory"):
 		inventoryopen()
+	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
 
 
 #checks players health

@@ -386,3 +386,9 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Goldcounter" type="Label" parent="."]
+offset_left = -75.0
+offset_top = -61.0
+offset_right = -24.0
+offset_bottom = -35.0
