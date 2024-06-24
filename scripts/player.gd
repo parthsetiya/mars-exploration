@@ -34,7 +34,6 @@ func _ready():
 	gold_node = get_node("gold_block")
 	gold_node.connect("request_inventory_update", _on_request_inventory_update)
 
-
 func _on_request_inventory_update(item_name, quantity):
 	print("adding item name with quantity: " + str(item_name) + " - " + str(quantity))
 	inventory.add_item(item_name, quantity)
@@ -57,6 +56,10 @@ func _on_request_inventory_update(item_name, quantity):
 			label.text = str(updated_quantity)
 			print("Label text (quantity) updated to: " + str(updated_quantity))
 			print("texture after: " + str(item.texture))
+			if updated_quantity >= playerData.invGoldIngot:
+				updated_quantity = playerData.invGoldIngot
+				print("updated quantity after interaction " + str(playerData.invGoldIngot))
+				label.text = str(updated_quantity)
 
 	
 	
