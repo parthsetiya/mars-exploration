@@ -10,7 +10,7 @@ class_name PlayerData
 
 func add_invGoldIngot(value : int):
 	invGoldIngot = value
-	print("running ad gold ingot")
+	print("running add gold ingot")
 	print(invGoldIngot)
 
 func change_health(value : int):

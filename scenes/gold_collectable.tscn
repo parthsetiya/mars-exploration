@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://daflkqadevkq6"]
 
 [ext_resource type="Script" path="res://scenes/gold_collectable.gd" id="1_6afem"]
-[ext_resource type="Texture2D" uid="uid://dwgbq66mj03bb" path="res://Inventory/goldbartest.png" id="1_oq2pv"]
+[ext_resource type="Texture2D" uid="uid://dfg77f6x8nady" path="res://Inventory/goldbartest.png" id="1_oq2pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vacdt"]
 atlas = ExtResource("1_oq2pv")

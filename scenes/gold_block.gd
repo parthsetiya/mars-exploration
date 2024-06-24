@@ -5,6 +5,7 @@ var player_in_area = false
 var gold_scene = preload("res://scenes/gold_collectable.tscn") as PackedScene
 var playerData = PlayerData.new()
 var player = null
+var collectable = false
 
 
 @export var inventory_manager: Node
@@ -18,6 +19,7 @@ const item = preload("res://Inventory/items/gold.tres")
 
 var player_node
 var inventory
+var current_gold
 
 signal request_inventory_update()
 
@@ -36,7 +38,7 @@ func _process(delta):
 		animated_sprite.play("no_gold")
 	elif state == "gold":
 		animated_sprite.play("gold")
-		if player_in_area and Input.is_action_just_pressed("Interact"):
+		if player_in_area and Input.is_action_just_pressed("Interact") and collectable:
 			state = "no_gold"
 			drop_gold()
 			add_item_to_inventory(item.name, 1)
@@ -71,3 +73,18 @@ func _on_area_2d_body_exited(body):
 
 func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
+
+
+func _on_area_2d_area_entered(area):
+	if area.has_meta("Gold"):
+		collectable = true
+		current_gold = area.get_parent()
+
+
+func _on_area_2d_area_exited(area):
+	if area.has_meta("Gold"):
+		collectable = false
+		
+
+
+

@@ -8,3 +8,9 @@ res://slot.tscn
 res://friendlyalien.tscn
 res://scripts/player.gd
 res://scripts/PlayerData.gd
+res://friendlyalien.gd
+res://enemy.tscn
+res://scenes/pickable_area.gd
+res://scenes/gold_block.gd
+res://scenes/gold_block.tscn
+res://scenes/gold_collectable.tscn

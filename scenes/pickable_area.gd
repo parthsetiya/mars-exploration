@@ -5,6 +5,8 @@ var animation = preload("res://scenes/gold_collectable.tscn") as PackedScene
 @onready var gold_block = $".."
 
 var entered = false
+var collectable = false
+var current_gold
 
 func _on_body_entered(body):
 	print($AnimationPlayer)
@@ -13,6 +15,8 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	entered = false
+	
+
 
 func popfromground():
 	$gold_collectable/AnimatedSprite2D.show()
@@ -30,9 +34,4 @@ func _process(delta):
 			
 			
 			
-
-	
-
-
-
 
