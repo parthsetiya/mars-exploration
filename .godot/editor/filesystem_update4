@@ -1,10 +1,10 @@
 res://scenes/menu.tscn
+res://Inventory/inventoryslot.gd
 res://scenes/player.tscn
 res://scenes/maintest.tscn
 res://interact_to_read.tscn
 res://Inventory/inventory_gui.tscn
 res://slot.tscn
 res://friendlyalien.tscn
-res://friendlyalien.gd
-res://scripts/PlayerData.gd
 res://scripts/player.gd
+res://scripts/PlayerData.gd

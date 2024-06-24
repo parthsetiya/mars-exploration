@@ -9,7 +9,7 @@ class_name PlayerData
 @export var SavePos : Vector2
 
 func add_invGoldIngot(value : int):
-	invGoldIngot += value
+	invGoldIngot = value
 	print("running ad gold ingot")
 	print(invGoldIngot)
 
