@@ -8,7 +8,3 @@ res://friendlyalien.tscn
 res://enemy.tscn
 res://scenes/gold_collectable.tscn
 res://scenes/gold_block.tscn
-res://scenes/goldmine.tscn
-res://scripts/player.gd
-res://scripts/PlayerData.gd
-res://friendlyalien.gd
