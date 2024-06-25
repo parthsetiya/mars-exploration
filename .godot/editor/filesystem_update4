@@ -1,16 +1,3 @@
 res://scenes/menu.tscn
-res://Inventory/inventoryslot.gd
-res://scripts/player.gd
-res://scenes/player.tscn
-res://scenes/maintest.tscn
-res://interact_to_read.tscn
-res://Inventory/inventory_gui.tscn
-res://slot.tscn
-res://friendlyalien.tscn
-res://enemy.tscn
-res://scenes/gold_collectable.tscn
-res://scenes/gold_block.tscn
 res://scenes/goldmine.tscn
-res://scripts/menu.gd
-res://scripts/main.gd
-res://scripts/PlayerData.gd
+res://scenes/maintest.tscn
