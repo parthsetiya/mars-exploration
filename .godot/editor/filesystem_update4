@@ -1,3 +1,7 @@
 res://scenes/menu.tscn
 res://scenes/goldmine.tscn
 res://scenes/maintest.tscn
+res://scenes/housetest.tscn
+res://enemy.tscn
+res://scenes/player.tscn
+res://scripts/player.gd

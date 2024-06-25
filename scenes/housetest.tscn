@@ -809,7 +809,7 @@ shape = SubResource("RectangleShape2D_y3jpw")
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_kf5yp")]
-position = Vector2(377, -91)
+position = Vector2(151, -51)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 

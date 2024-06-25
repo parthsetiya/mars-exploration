@@ -127,10 +127,15 @@ func check_health():
 func on_player_death():
 	deathscreen.show()
 	print("showing deathscreen")
+	if deathscreen.visible:
+		speed = 0
+	
 	#death_screen_color_rect.modulate = Color(0, 0, 0, 0)  # Set initial color to transparent
 	$AnimationPlayer.play("fade_in")  # Play the fade-in animation
 	print("playing fade_in")
 	await get_tree().create_timer(2.0).timeout  # Show death screen for 2 seconds
+	if deathscreen.visible != false:
+		speed = 100
 	respawn()
 
 func respawn():
