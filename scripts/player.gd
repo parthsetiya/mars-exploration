@@ -27,40 +27,65 @@ var respawn_position = Vector2(playerData.SavePos)
 # Node definitions
 var gold_node
 var inventory_slots
-
+var first_slot_index = null
+var second_slot_index = null
 
 func _ready():
 	verify_save_directory(save_file_path)
 	gold_node = get_node("gold_block")
-	gold_node.connect("request_inventory_update", _on_request_inventory_update)
+	gold_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	inventory_gui.connect("slot_clicked", Callable(self, "_on_slot_clicked"))
+	inventory_slots = get_node("InventoryGui/NinePatchRect/GridContainer").get_children()
+
+func _on_slot_clicked(slot_index):
+	if first_slot_index == null:
+		first_slot_index = slot_index
+	else:
+		second_slot_index = slot_index
+		_swap_items(first_slot_index, second_slot_index)
+		first_slot_index = null
+		second_slot_index = null
+
+func _swap_items(slot_index_1, slot_index_2):
+	var slot_1 = inventory_slots[slot_index_1]
+	var slot_2 = inventory_slots[slot_index_2]
+
+	var item_1 = slot_1.get_children()[1].get_children()[0].get_children()[0]
+	var label_1 = slot_1.get_children()[1].get_children()[0].get_children()[1]
+
+	var item_2 = slot_2.get_children()[1].get_children()[0].get_children()[0]
+	var label_2 = slot_2.get_children()[1].get_children()[0].get_children()[1]
+
+	var temp_texture = item_1.texture
+	var temp_text = label_1.text
+
+	item_1.texture = item_2.texture
+	label_1.text = label_2.text
+
+	item_2.texture = temp_texture
+	label_2.text = temp_text
+
+	print("Swapped items between slots " + str(slot_index_1) + " and " + str(slot_index_2))
 
 func _on_request_inventory_update(item_name, quantity):
-	print("adding item name with quantity: " + str(item_name) + " - " + str(quantity))
 	inventory.add_item(item_name, quantity)
-	print("inventory after adding new item : " + str(inventory.get_items()))
 	var updated_quantity = inventory.get_item_quantity(item_name)
-	print("Updated inventory after adding item: " + str(inventory.get_items()))
-	print("Updated quantity for " + item_name + ": " + str(updated_quantity))
-	print("updating inventory texture with new item")
-	inventory_slots = get_node("InventoryGui/NinePatchRect/GridContainer").get_children()
+	update_inventory_ui(item_name, updated_quantity)
+
+func update_inventory_ui(item_name, updated_quantity):
 	var specific_slot_index = 0
 	for i in range(inventory_slots.size()):
 		var slot = inventory_slots[i]
 		var centre_container = slot.get_children()[1]
 		var item = centre_container.get_children()[0].get_children()[0]
-		var label =centre_container.get_children()[0].get_children()[1]
+		var label = centre_container.get_children()[0].get_children()[1]
+
 		if i == specific_slot_index:
-			print("texture before: " + str(item.texture))
-			playerData.add_invGoldIngot(updated_quantity)
 			item.texture = GOLD.texture
 			label.text = str(updated_quantity)
-			print("Label text (quantity) updated to: " + str(updated_quantity))
-			print("texture after: " + str(item.texture))
-			if updated_quantity >= playerData.invGoldIngot:
-				updated_quantity = playerData.invGoldIngot
-				print("updated quantity after interaction " + str(playerData.invGoldIngot))
-				label.text = str(updated_quantity)
-
+		elif specific_slot_index >= 1:
+			label.text = str(updated_quantity)
+			
 	
 	
 	

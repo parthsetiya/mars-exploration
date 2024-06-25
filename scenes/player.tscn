@@ -373,7 +373,10 @@ parameters/Idle/blend_position = Vector2(-0.728792, 0.627297)
 visible = false
 
 [node name="InventoryGui" parent="." instance=ExtResource("4_32p4a")]
-visible = false
+offset_left = -102.0
+offset_top = -65.0
+offset_right = -62.0
+offset_bottom = -25.0
 
 [node name="Deathscreen" type="Control" parent="."]
 visible = false
