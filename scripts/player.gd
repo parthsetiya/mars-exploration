@@ -91,11 +91,11 @@ func update_inventory_ui(item_name, updated_quantity):
 		var item = centre_container.get_children()[0].get_children()[0]
 		var label = centre_container.get_children()[0].get_children()[1]
 
-		# Find the first empty slot and add gold to it
-		if item.texture == null: # Assuming null means the slot is empty
+		
+		if item.texture == null: 
 			item.texture = GOLD.texture
 			label.text = str(updated_quantity)
-			return # Exit the function after adding gold to the first empty slot
+			return 
 
 	
 	
