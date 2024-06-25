@@ -21,7 +21,7 @@ func on_exit_option_menu() -> void:
 	pass	
 	
 func _on_texture_button_2_pressed():
-	get_tree().change_scene_to_file("res://scenes/options/options_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/options/scenes/options_menu.tscn")
 
 
 func _on_texture_button_3_pressed():

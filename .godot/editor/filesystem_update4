@@ -11,3 +11,6 @@ res://enemy.tscn
 res://scenes/gold_collectable.tscn
 res://scenes/gold_block.tscn
 res://scenes/goldmine.tscn
+res://scripts/menu.gd
+res://scripts/main.gd
+res://scripts/PlayerData.gd
