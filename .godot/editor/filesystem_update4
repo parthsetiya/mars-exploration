@@ -1,6 +1,11 @@
 res://scenes/menu.tscn
-res://scenes/maintest.tscn
-res://scenes/goldmine.tscn
-res://enemy.tscn
-res://scenes/housetest.tscn
+res://scripts/main.gd
 res://scenes/player.tscn
+res://scenes/maintest.tscn
+res://interact_to_read.tscn
+res://Inventory/inventory_gui.tscn
+res://scenes/gold_block.tscn
+res://hotbar.tscn
+res://Hotbar.gd
+res://Inventory/inventory_gui.gd
+res://scripts/player.gd

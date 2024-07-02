@@ -73,29 +73,30 @@ func _on_request_inventory_update(item_name, quantity):
 	update_inventory_ui(item_name, updated_quantity)
 
 func update_inventory_ui(item_name, updated_quantity):
-	# Iterate through inventory slots to find if gold is already in a slot
 	for i in range(inventory_slots.size()):
 		var slot = inventory_slots[i]
-		var centre_container = slot.get_children()[1]
-		var item = centre_container.get_children()[0].get_children()[0]
-		var label = centre_container.get_children()[0].get_children()[1]
+		if slot.get_child_count() != 0:
+			var centre_container = slot.get_children()[1]
+			var item = centre_container.get_children()[0].get_children()[0]
+			var label = centre_container.get_children()[0].get_children()[1]
 
-		if item.texture == GOLD.texture:
-			label.text = str(updated_quantity)
-			return 
+			if item.texture == GOLD.texture:
+				label.text = str(updated_quantity)
+				return 
 
 	# If no gold was found in any slot, add gold to the first available slot
 	for i in range(inventory_slots.size()):
 		var slot = inventory_slots[i]
-		var centre_container = slot.get_children()[1]
-		var item = centre_container.get_children()[0].get_children()[0]
-		var label = centre_container.get_children()[0].get_children()[1]
+		if slot.get_children()[1] != null:
+			var centre_container = slot.get_children()[1]
+			var item = centre_container.get_children()[0].get_children()[0]
+			var label = centre_container.get_children()[0].get_children()[1]
 
-		
-		if item.texture == null: 
-			item.texture = GOLD.texture
-			label.text = str(updated_quantity)
-			return 
+			
+			if item.texture == null: 
+				item.texture = GOLD.texture
+				label.text = str(updated_quantity)
+				return 
 
 	
 	

@@ -6,9 +6,10 @@
 
 [node name="InventoryGui" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_right = 0.08
+anchor_bottom = 0.037
+offset_right = 0.399989
+offset_bottom = 0.0399995
 script = ExtResource("1_egmnt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -70,3 +71,47 @@ layout_mode = 2
 
 [node name="slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
 layout_mode = 2
+
+[node name="Control2" type="Control" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2
+
+[node name="slot17" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2
+
+[node name="slot18" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2
+
+[node name="slot19" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2
+
+[node name="slot20" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 271.0
+offset_right = 207.0
+offset_bottom = 311.0
+texture = ExtResource("2_nxaso")

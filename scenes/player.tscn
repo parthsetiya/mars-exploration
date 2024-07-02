@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=29 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_rv08x"]
 [ext_resource type="Texture2D" uid="uid://bowly4t7gw8wm" path="res://art/oldspritearchive/spritesheet (3).png" id="2_tlr5x"]
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="4_32p4a"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="4_qas7l"]
+[ext_resource type="PackedScene" path="res://hotbar.tscn" id="5_s7een"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u2gu"]
 size = Vector2(19, 7)
@@ -431,3 +432,9 @@ offset_left = -75.0
 offset_top = -61.0
 offset_right = -24.0
 offset_bottom = -35.0
+
+[node name="Hotbar" parent="." instance=ExtResource("5_s7een")]
+offset_left = -93.0
+offset_top = 182.0
+offset_right = -93.0
+offset_bottom = 182.0
