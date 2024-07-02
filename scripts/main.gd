@@ -42,13 +42,15 @@ func pausemenu():
 		pause_menu.show()
 		Engine.time_scale = 0
 		
-func _on_startsignpostarea_body_entered(player):
-	start_sign_post_entered = true
+func _on_startsignpostarea_body_entered(body):
+	if body == player:
+		start_sign_post_entered = true
 
-func _on_startsignpostarea_body_exited(player):
-	start_sign_post_entered = false
-	thiswaytomines.hide()
-	is_showing_thiswaytomines = false 
+func _on_startsignpostarea_body_exited(body):
+	if body == player:
+		start_sign_post_entered = false
+		thiswaytomines.hide()
+		is_showing_thiswaytomines = false 
 
 
 
