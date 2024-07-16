@@ -9,3 +9,5 @@ res://hotbar.tscn
 res://Hotbar.gd
 res://Inventory/inventory_gui.gd
 res://scripts/player.gd
+res://Inventory/inventoryitem.gd
+res://slot.tscn
