@@ -38,7 +38,7 @@ func _process(delta):
 		animated_sprite.play("no_gold")
 	elif state == "gold":
 		animated_sprite.play("gold")
-		if player_in_area and Input.is_action_just_pressed("Interact") and collectable:
+		if player_in_area and Input.is_action_just_pressed("Interact"):
 			state = "no_gold"
 			drop_gold()
 			add_item_to_inventory(item.name, 1)
@@ -75,15 +75,15 @@ func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
 
 
-func _on_area_2d_area_entered(area):
-	if area.has_meta("Gold"):
-		collectable = true
-		current_gold = area.get_parent()
-
-
-func _on_area_2d_area_exited(area):
-	if area.has_meta("Gold"):
-		collectable = false
+#func _on_area_2d_area_entered(area):
+	#if area.has_meta("Gold"):
+		#collectable = true
+		#current_gold = area.get_parent()
+#
+#
+#func _on_area_2d_area_exited(area):
+	#if area.has_meta("Gold"):
+		#collectable = false
 		
 
 

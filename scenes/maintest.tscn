@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=24 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bv0los6yqfysa" path="res://scenes/e_to_interact.tscn" id="4_dukk6"]
 [ext_resource type="PackedScene" uid="uid://c0vc4hnvvbm3x" path="res://interact_to_read.tscn" id="4_olrbr"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
+[ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/iron_block.tscn" id="7_8am3e"]
 [ext_resource type="Texture2D" uid="uid://cr41eyd0qsvfs" path="res://art/terrain/signpost.png" id="7_084ek"]
 [ext_resource type="PackedScene" uid="uid://bsp4brhm0rf88" path="res://scenes/thiswaytomines.tscn" id="9_347cy"]
 [ext_resource type="PackedScene" uid="uid://2ej56mv1u4pi" path="res://enemy.tscn" id="10_1j8v7"]
@@ -455,54 +456,6 @@ size = Vector2(57.4729, 39.9261)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmmh"]
 size = Vector2(55.4076, 159.701)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug5fo"]
-size = Vector2(384.5, 26.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t607n"]
-size = Vector2(25, 146.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_roqkx"]
-size = Vector2(24.5, 143.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dry4h"]
-size = Vector2(27.5, 177.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw1ab"]
-size = Vector2(27, 250)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1lcx"]
-size = Vector2(313, 26.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nflct"]
-size = Vector2(237, 22.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvpih"]
-size = Vector2(26, 307.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ea8e"]
-size = Vector2(25, 245)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kda5r"]
-radius = 37.0304
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d1au"]
-size = Vector2(110, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvn2u"]
-size = Vector2(96, 25.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdhrb"]
-size = Vector2(26, 239.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3y7b"]
-size = Vector2(132.5, 20.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u2sc"]
-size = Vector2(25, 180.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wqp7"]
-size = Vector2(265, 20)
-
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_6jpb6")
@@ -534,13 +487,6 @@ visible = false
 position = Vector2(-2, -8)
 texture = SubResource("GradientTexture2D_hhbug")
 
-[node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("12_tamxu")]
-visible = false
-offset_left = -22.5
-offset_top = -63.0
-offset_right = 17.5
-offset_bottom = -23.0
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
@@ -550,6 +496,9 @@ position = Vector2(-56.5, -1.5)
 
 [node name="gold_block2" parent="." instance=ExtResource("6_rrp7u")]
 position = Vector2(-113, -3)
+
+[node name="iron_block" parent="." instance=ExtResource("7_8am3e")]
+position = Vector2(-111.5, 49)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-113.5, -184.5)
@@ -603,75 +552,7 @@ scale = Vector2(0.974372, 1.03587)
 position = Vector2(-447.974, -272.925)
 shape = SubResource("RectangleShape2D_sdmmh")
 
-[node name="Fishablearea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(5.75, 120.75)
-shape = SubResource("RectangleShape2D_ug5fo")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-176, 34.25)
-shape = SubResource("RectangleShape2D_t607n")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(183.25, 39.25)
-shape = SubResource("RectangleShape2D_roqkx")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-148.75, -132.25)
-shape = SubResource("RectangleShape2D_dry4h")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-148.75, -132.25)
-shape = SubResource("RectangleShape2D_dry4h")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-91, -171.5)
-shape = SubResource("RectangleShape2D_gw1ab")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-239.5, -292.25)
-shape = SubResource("RectangleShape2D_x1lcx")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-279, -231.75)
-shape = SubResource("RectangleShape2D_nflct")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-26, -204.25)
-shape = SubResource("RectangleShape2D_pvpih")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(66, -169)
-shape = SubResource("RectangleShape2D_6ea8e")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-59, -60.5)
-shape = SubResource("CircleShape2D_kda5r")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(114, -30)
-shape = SubResource("RectangleShape2D_5d1au")
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(117.5, -307.25)
-shape = SubResource("RectangleShape2D_qvn2u")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(152, -443.75)
-shape = SubResource("RectangleShape2D_rdhrb")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-91.25, -370.75)
-shape = SubResource("RectangleShape2D_d3y7b")
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(-143.5, -475.25)
-shape = SubResource("RectangleShape2D_8u2sc")
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Fishablearea"]
-position = Vector2(4.5, -556)
-shape = SubResource("RectangleShape2D_0wqp7")
+[node name="InventoryGui" parent="." instance=ExtResource("12_tamxu")]
 
 [connection signal="body_entered" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
 [connection signal="body_exited" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]
@@ -681,5 +562,3 @@ shape = SubResource("RectangleShape2D_0wqp7")
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="entrancetogoldmine" to="." method="_on_entrancetogoldmine_body_entered"]
-[connection signal="body_entered" from="Fishablearea" to="." method="_on_fishablearea_body_entered"]
-[connection signal="body_exited" from="Fishablearea" to="." method="_on_fishablearea_body_exited"]

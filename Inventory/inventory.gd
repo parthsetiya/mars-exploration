@@ -6,7 +6,7 @@ var items = {}
 
 func add_item(item_name, quantity):
 	if items.has(item_name):
-		items[item_name] += quantity
+		items[item_name] + quantity
 	else:
 		items[item_name] = quantity
 

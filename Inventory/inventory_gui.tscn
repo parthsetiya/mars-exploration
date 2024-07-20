@@ -13,101 +13,15 @@ offset_bottom = 0.0399995
 script = ExtResource("1_egmnt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(213, 132)
 layout_mode = 0
 offset_right = 213.0
 offset_bottom = 132.0
 texture = ExtResource("2_nxaso")
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 14.0
-offset_right = 194.0
-offset_bottom = 118.0
-columns = 5
-
-[node name="slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="Control2" type="Control" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-
-[node name="Control4" type="Control" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-
-[node name="Control5" type="Control" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-
-[node name="Control3" type="Control" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-
-[node name="Control" type="Control" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-
-[node name="slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot17" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot18" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot19" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
-[node name="slot20" parent="NinePatchRect/GridContainer" instance=ExtResource("3_meoxf")]
-layout_mode = 2
-
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
+visible = false
 z_index = -1
 layout_mode = 0
 offset_left = 8.0
@@ -115,3 +29,106 @@ offset_top = 271.0
 offset_right = 207.0
 offset_bottom = 311.0
 texture = ExtResource("2_nxaso")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 194.0
+offset_bottom = 308.0
+columns = 5
+
+[node name="slot" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot2" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot3" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot4" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot5" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot6" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot7" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot8" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot9" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot10" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot11" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot12" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot13" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot14" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="slot15" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="slot16" parent="GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2
+
+[node name="slot17" parent="GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2
+
+[node name="slot18" parent="GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2
+
+[node name="slot19" parent="GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2
+
+[node name="slot20" parent="GridContainer" instance=ExtResource("3_meoxf")]
+layout_mode = 2

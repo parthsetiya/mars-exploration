@@ -18,8 +18,8 @@ func _on_talkablearea_body_exited(body):
 func _process(delta):
 	if in_talkable == true:
 		dialogue.show()
-		if Input.is_action_just_pressed("Interact") and playerData.invGoldIngot >=2:
-			playerData.add_invGoldIngot(-2)
+		if Input.is_action_just_pressed("Interact"):
+			playerData.remove_invGoldIngot(-2)
 			print("Jhao is taking yo ahh gold")
 			print(playerData.invGoldIngot)
 			dialogue.hide()

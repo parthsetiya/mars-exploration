@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://uvxjnidohd5v"]
+
+[ext_resource type="Texture2D" uid="uid://cnr8nf2cs2r3p" path="res://art/terrain/ironore.png" id="1_tp7sv"]
+[ext_resource type="Script" path="res://scenes/iron_block.gd" id="1_vknek"]
+[ext_resource type="Script" path="res://scenes/pickableareairon.gd" id="3_8ebru"]
+[ext_resource type="PackedScene" uid="uid://b3n7abpn4yivd" path="res://scenes/iron_collectable.tscn" id="4_j7c42"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vahp8"]
+atlas = ExtResource("1_tp7sv")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjnaq"]
+atlas = ExtResource("1_tp7sv")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eq3ih"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vahp8")
+}],
+"loop": true,
+"name": &"iron",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjnaq")
+}],
+"loop": true,
+"name": &"no_iron",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4s8r"]
+radius = 17.0294
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e15sv"]
+radius = 17.1172
+
+[node name="iron_block" type="Node2D"]
+script = ExtResource("1_vknek")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eq3ih")
+animation = &"iron"
+
+[node name="pickableareairon" type="Area2D" parent="."]
+script = ExtResource("3_8ebru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickableareairon"]
+shape = SubResource("CircleShape2D_w4s8r")
+
+[node name="iron_collectable" parent="pickableareairon" instance=ExtResource("4_j7c42")]
+visible = false
+
+[node name="respawn_timeriron" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_e15sv")
+
+[connection signal="body_entered" from="pickableareairon" to="pickableareairon" method="_on_body_entered"]
+[connection signal="body_exited" from="pickableareairon" to="pickableareairon" method="_on_body_exited"]
+[connection signal="timeout" from="respawn_timeriron" to="." method="_on_respawn_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
