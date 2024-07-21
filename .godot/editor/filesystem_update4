@@ -8,8 +8,7 @@ res://slot.tscn
 res://scenes/iron_block.tscn
 res://scenes/iron_collectable.tscn
 res://scenes/gold_collectable.tscn
-res://scenes/iron_block.gd
 res://scripts/main.gd
-res://scripts/player.gd
+res://scenes/iron_block.gd
 res://scenes/gold_block.gd
-res://Inventory/inventory.gd
+res://scripts/player.gd

@@ -27,8 +27,7 @@ signal request_inventory_update()
 func _ready():
 	print(gold_scene)
 	if state == "no_gold":
-		respawn_timer.start()  # Check if the instance is correctly assigned
-	#print("player node: " + str(player_node))
+		respawn_timer.start() 
 
 func _on_inventory_updated(new_inventory):
 	print("new inventory: " + str(new_inventory))

@@ -20,7 +20,7 @@ var inventory = Inventory.new()
 var inv_open = false
 
 const GOLD = preload("res://Inventory/items/gold.tres")
-
+const IRON = preload("res://Inventory/items/iron.tres")
 # Node definitions
 var gold_node
 var inventory_slots
@@ -30,6 +30,10 @@ var first_slot_index = null
 var second_slot_index = null
 var inv_gui_show
 var inv_gui_show_hotbar
+var iniron
+var ingold 
+var ironcollectable = false
+var goldcollectable = false
 
 func _ready():
 	gold_node = get_node("gold_block")
@@ -43,6 +47,17 @@ func _ready():
 	inv_gui_show = get_node("InventoryGui/NinePatchRect")
 	inv_gui_show_hotbar = get_node("InventoryGui/NinePatchRect2")
 	
+	iniron = get_node("iron_block/Area2D")
+	ingold = get_node("gold_block/Area2D")
+	iniron.connect("area_entered", self,"inironcollectable")
+	ingold.connect("area_entered", self,"ingoldcollectable")
+	
+
+func inironcollectable():
+	ironcollectable = true 
+
+func ingoldcollectable():
+	goldcollectable = true
 
 func _on_slot_clicked(slot_index):
 	if first_slot_index == null:
@@ -81,43 +96,82 @@ func _on_request_inventory_update(item_name, quantity):
 	
 
 func update_inventory_ui(item_name, updated_quantity):
-	
-	for i in range(inventory_slots.size()):
-		var slot = inventory_slots[i]
-		if slot.get_child_count() != 0:
-			var centre_container = slot.get_children()[1]
-			var item = centre_container.get_children()[0].get_children()[0]
-			var label = centre_container.get_children()[0].get_children()[1]
+	if ironcollectable:
+		for i in range(inventory_slots.size()):
+			var slot = inventory_slots[i]
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
 
-			if item.texture == GOLD.texture:
-				label.text = str(updated_quantity)
-				return 
+				if item.texture == IRON.texture:
+					label.text = str(updated_quantity)
+					return 
 
-	for i in range(inventory_slots.size()):
-		var slot = inventory_slots[i]
-		if slot.get_children()[1] != null:
-			var centre_container = slot.get_children()[1]
-			var item = centre_container.get_children()[0].get_children()[0]
-			var label = centre_container.get_children()[0].get_children()[1]
+		for i in range(inventory_slots.size()):
+			var slot = inventory_slots[i]
+			if slot.get_children()[1] != null:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
 
-			
-			if item.texture == null: 
-				item.texture = GOLD.texture
-				label.text = str(updated_quantity)
-				return 
 				
-	for i in range(inventory_slots.size()):
-		var slot = inventory_slots[i]
-		if slot.get_children()[1] != null:
-			var centre_container = slot.get_children()[1]
-			var item = centre_container.get_children()[0].get_children()[0]
-			var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == null: 
+					item.texture = IRON.texture
+					label.text = str(updated_quantity)
+					return 
+					
+		for i in range(inventory_slots.size()):
+			var slot = inventory_slots[i]
+			if slot.get_children()[1] != null:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
 
-			
-			if item.texture == null: 
-				item.texture = GOLD.texture
-				label.text = str(updated_quantity)
-				return 
+				
+				if item.texture == null: 
+					item.texture = IRON.texture
+					label.text = str(updated_quantity)
+					return 
+	
+	
+	if goldcollectable:
+		for i in range(inventory_slots.size()):
+			var slot = inventory_slots[i]
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == GOLD.texture:
+					label.text = str(updated_quantity)
+					return 
+
+		for i in range(inventory_slots.size()):
+			var slot = inventory_slots[i]
+			if slot.get_children()[1] != null:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				
+				if item.texture == null: 
+					item.texture = GOLD.texture
+					label.text = str(updated_quantity)
+					return 
+					
+		for i in range(inventory_slots.size()):
+			var slot = inventory_slots[i]
+			if slot.get_children()[1] != null:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				
+				if item.texture == null: 
+					item.texture = GOLD.texture
+					label.text = str(updated_quantity)
+					return 
 				
 		
 	

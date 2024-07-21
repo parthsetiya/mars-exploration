@@ -451,7 +451,7 @@ func _on_body_entered(body):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vtw8"]
-size = Vector2(57.4729, 39.9261)
+size = Vector2(57.4729, 19.6529)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmmh"]
 size = Vector2(55.4076, 159.701)
@@ -498,7 +498,8 @@ position = Vector2(-56.5, -1.5)
 position = Vector2(-113, -3)
 
 [node name="iron_block" parent="." instance=ExtResource("7_8am3e")]
-position = Vector2(-111.5, 49)
+light_mask = 2
+position = Vector2(-114.5, 86.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-113.5, -184.5)
@@ -538,7 +539,7 @@ scale = Vector2(0.974372, 1.03587)
 script = SubResource("GDScript_ahtlq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2.0526, -3.55228)
+position = Vector2(-2.0526, 33.7871)
 shape = SubResource("RectangleShape2D_5vtw8")
 
 [node name="E_to_interact" parent="Area2D" instance=ExtResource("4_dukk6")]
@@ -553,6 +554,10 @@ position = Vector2(-447.974, -272.925)
 shape = SubResource("RectangleShape2D_sdmmh")
 
 [node name="InventoryGui" parent="." instance=ExtResource("12_tamxu")]
+offset_left = -114.0
+offset_top = -3.0
+offset_right = -113.6
+offset_bottom = -2.96
 
 [connection signal="body_entered" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
 [connection signal="body_exited" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]

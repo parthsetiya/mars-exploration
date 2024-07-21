@@ -67,21 +67,21 @@ func drop_iron():
 	emit_signal("request_inventory_update", item.name, 1)
 
 func _on_area_2d_body_entered(body):
-	player_in_area = true
-	player = body
+		player_in_area = true
+		player = body
 
 func _on_area_2d_body_exited(body):
-	player_in_area = false
+		player_in_area = false
 
 func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
 
-# Uncomment and adjust these functions if needed
+
 #func _on_area_2d_area_entered(area):
-	#if area.has_meta("iron"):
+	#if area.has_meta("Iron"):
 		#collectable = true
 		#current_iron = area.get_parent()
-
+#
 #func _on_area_2d_area_exited(area):
-	#if area.has_meta("iron"):
+	#if area.has_meta("Iron"):
 		#collectable = false
