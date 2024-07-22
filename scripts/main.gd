@@ -14,6 +14,7 @@ var is_showing_thiswaytomines = false
 
 @onready var player = $Player
 
+var playerdata = PlayerData.new()
 
 var inventory = Inventory.new()
 @onready var inventory_gui = $InventoryGui
@@ -23,6 +24,7 @@ const GOLD = preload("res://Inventory/items/gold.tres")
 const IRON = preload("res://Inventory/items/iron.tres")
 # Node definitions
 var gold_node
+var iron_node
 var inventory_slots
 var inventory_gui_slots
 var inventory_hotbar_slots
@@ -38,6 +40,8 @@ var goldcollectable = false
 func _ready():
 	gold_node = get_node("gold_block")
 	gold_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	iron_node = get_node("iron_block")
+	iron_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui.connect("slot_clicked", Callable(self, "_on_slot_clicked"))
 	inventory_slots = get_node("InventoryGui/GridContainer").get_children()
 
@@ -49,15 +53,24 @@ func _ready():
 	
 	iniron = get_node("iron_block/Area2D")
 	ingold = get_node("gold_block/Area2D")
-	iniron.connect("area_entered", self,"inironcollectable")
-	ingold.connect("area_entered", self,"ingoldcollectable")
-	
+	iniron.connect("body_entered", Callable(self,"inironcollectable"))
+	ingold.connect("body_entered", Callable(self,"ingoldcollectable"))
+	iniron.connect("body_exited", Callable(self, "leaveironcollectable"))
+	ingold.connect("body_exited", Callable(self, "leavegoldcollectable"))
 
-func inironcollectable():
+func inironcollectable(body):
 	ironcollectable = true 
+	print("in iron collectable area")
 
-func ingoldcollectable():
+func ingoldcollectable(body):
 	goldcollectable = true
+	print("in gold collectable area")
+
+func leaveironcollectable(body):
+	ironcollectable = false
+
+func leavegoldcollectable(body):
+	goldcollectable = false 
 
 func _on_slot_clicked(slot_index):
 	if first_slot_index == null:
@@ -94,9 +107,12 @@ func _on_request_inventory_update(item_name, quantity):
 	var updated_quantity = inventory.get_item_quantity(item_name)
 	update_inventory_ui(item_name, updated_quantity)
 	
+		
+	
 
 func update_inventory_ui(item_name, updated_quantity):
-	if ironcollectable:
+	if ironcollectable and goldcollectable == false:
+		playerdata.add_invironingot(1)
 		for i in range(inventory_slots.size()):
 			var slot = inventory_slots[i]
 			if slot.get_child_count() != 0:
@@ -105,8 +121,9 @@ func update_inventory_ui(item_name, updated_quantity):
 				var label = centre_container.get_children()[0].get_children()[1]
 
 				if item.texture == IRON.texture:
-					label.text = str(updated_quantity)
-					return 
+					label.text = str(int(label.text) + 1)
+					return
+					break
 
 		for i in range(inventory_slots.size()):
 			var slot = inventory_slots[i]
@@ -118,8 +135,9 @@ func update_inventory_ui(item_name, updated_quantity):
 				
 				if item.texture == null: 
 					item.texture = IRON.texture
-					label.text = str(updated_quantity)
+					label.text = str(int(label.text) + 1)
 					return 
+					break
 					
 		for i in range(inventory_slots.size()):
 			var slot = inventory_slots[i]
@@ -131,11 +149,14 @@ func update_inventory_ui(item_name, updated_quantity):
 				
 				if item.texture == null: 
 					item.texture = IRON.texture
-					label.text = str(updated_quantity)
-					return 
+					label.text = str(int(label.text) + 1)
+					return
+					break 
+		
 	
 	
-	if goldcollectable:
+	if goldcollectable and ironcollectable == false:
+		playerdata.add_invGoldIngot(1)
 		for i in range(inventory_slots.size()):
 			var slot = inventory_slots[i]
 			if slot.get_child_count() != 0:
@@ -144,8 +165,9 @@ func update_inventory_ui(item_name, updated_quantity):
 				var label = centre_container.get_children()[0].get_children()[1]
 
 				if item.texture == GOLD.texture:
-					label.text = str(updated_quantity)
+					label.text = str(int(label.text) + 1)
 					return 
+					break
 
 		for i in range(inventory_slots.size()):
 			var slot = inventory_slots[i]
@@ -157,8 +179,9 @@ func update_inventory_ui(item_name, updated_quantity):
 				
 				if item.texture == null: 
 					item.texture = GOLD.texture
-					label.text = str(updated_quantity)
-					return 
+					label.text = str(int(label.text) + 1)
+					return
+					break 
 					
 		for i in range(inventory_slots.size()):
 			var slot = inventory_slots[i]
@@ -170,8 +193,9 @@ func update_inventory_ui(item_name, updated_quantity):
 				
 				if item.texture == null: 
 					item.texture = GOLD.texture
-					label.text = str(updated_quantity)
-					return 
+					label.text = str(int(label.text) + 1)
+					return
+					break 
 				
 		
 	
