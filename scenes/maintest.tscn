@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=25 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="11_6wovd"]
 [ext_resource type="PackedScene" uid="uid://crlao84s5ynxx" path="res://friendlyalien.tscn" id="11_pw7wt"]
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="12_tamxu"]
+[ext_resource type="PackedScene" uid="uid://3bwcv0gq0aw7" path="res://scenes/amethyst_block.tscn" id="14_vt680"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wylw6"]
 resource_name = "interactables"
@@ -558,6 +559,9 @@ offset_left = -114.0
 offset_top = -3.0
 offset_right = -113.6
 offset_bottom = -2.96
+
+[node name="amethyst_block" parent="." instance=ExtResource("14_vt680")]
+position = Vector2(-34.5, 91)
 
 [connection signal="body_entered" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
 [connection signal="body_exited" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]

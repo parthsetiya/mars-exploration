@@ -1,41 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://daflkqadevkq6"]
+[gd_scene load_steps=7 format=3 uid="uid://b683v8qkstwsn"]
 
-[ext_resource type="Script" path="res://scenes/gold_collectable.gd" id="1_6afem"]
-[ext_resource type="Texture2D" uid="uid://dfg77f6x8nady" path="res://Inventory/goldbartest.png" id="1_oq2pv"]
+[ext_resource type="Texture2D" uid="uid://cmmcy67gjjvd3" path="res://art/amethystbar.png" id="1_cu77r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vacdt"]
-atlas = ExtResource("1_oq2pv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju1ig"]
+atlas = ExtResource("1_cu77r")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yc27w"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uolxw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vacdt")
+"texture": SubResource("AtlasTexture_ju1ig")
 }],
 "loop": true,
-"name": &"gold",
+"name": &"amethyst",
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_75vnd"]
-resource_name = "fade"
+[sub_resource type="Animation" id="Animation_rnb1i"]
+resource_name = "fadeamethyst"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2.08165e-12, 20)]
+"values": [Vector2(0, 20)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -47,7 +46,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/2/path = NodePath(".:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -57,24 +56,24 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ajb2k"]
-resource_name = "poppingfromground"
+[sub_resource type="Animation" id="Animation_6qkjp"]
+resource_name = "popfromgroundamethyst"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(2.08165e-12, -30), Vector2(2.08165e-12, 20)]
+"values": [Vector2(0, 0), Vector2(0, -30), Vector2(0, 20)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -86,7 +85,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/2/path = NodePath(".:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -96,21 +95,20 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmh60"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qfuml"]
 _data = {
-"fade": SubResource("Animation_75vnd"),
-"poppingfromground": SubResource("Animation_ajb2k")
+"fadeamethyst": SubResource("Animation_rnb1i"),
+"popfromgroundamethyst": SubResource("Animation_6qkjp")
 }
 
-[node name="gold_collectable" type="StaticBody2D"]
-script = ExtResource("1_6afem")
+[node name="amethyst_collectable" type="StaticBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_yc27w")
-animation = &"gold"
-frame_progress = 0.807726
+sprite_frames = SubResource("SpriteFrames_uolxw")
+animation = &"amethyst"
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_fmh60")
+"": SubResource("AnimationLibrary_qfuml")
 }
