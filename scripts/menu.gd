@@ -9,6 +9,7 @@ extends Control
 
 @onready var start_level = preload("res://scenes/maintest.tscn") as PackedScene
 
+var playerdata = PlayerData.new()
 
 func _ready():
 	pass
@@ -30,3 +31,7 @@ func _on_texture_button_3_pressed():
 
 func _on_playbutton_pressed():
 	get_tree().change_scene_to_packed(start_level)
+	playerdata.load_data()
+
+
+

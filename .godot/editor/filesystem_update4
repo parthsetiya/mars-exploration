@@ -9,3 +9,8 @@ res://scenes/gold_block.tscn
 res://scenes/amethyst_collectable.tscn
 res://scenes/gold_collectable.tscn
 res://scenes/iron_block.tscn
+res://scripts/menu.gd
+res://scripts/PlayerData.gd
+res://scripts/pause_menu.gd
+res://scenes/pause_menu.tscn
+res://scripts/main.gd
