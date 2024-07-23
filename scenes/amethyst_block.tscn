@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://3bwcv0gq0aw7"]
+[gd_scene load_steps=9 format=3 uid="uid://kfgimtoe72hl"]
 
 [ext_resource type="Texture2D" uid="uid://c2kojoy4dlxhd" path="res://art/terrain/amethystore.png" id="1_fwlw8"]
 [ext_resource type="Script" path="res://scenes/amethyst_block.gd" id="1_ui0j2"]
-[ext_resource type="PackedScene" uid="uid://b683v8qkstwsn" path="res://scenes/amethyst_collectable.tscn" id="3_o40u2"]
+[ext_resource type="PackedScene" path="res://scenes/amethyst_collectable.tscn" id="3_o40u2"]
 [ext_resource type="Script" path="res://scenes/pickableareamethyst.gd" id="3_rbxik"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5efwl"]
@@ -36,7 +36,7 @@ script = ExtResource("1_ui0j2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3hoaj")
-animation = &"no_amethyst"
+animation = &"amethyst"
 
 [node name="pickableareamethyst" type="Area2D" parent="."]
 script = ExtResource("3_rbxik")
@@ -59,8 +59,8 @@ shape = SubResource("CircleShape2D_m8w04")
 
 [connection signal="body_entered" from="pickableareamethyst" to="pickableareamethyst" method="_on_body_entered"]
 [connection signal="body_exited" from="pickableareamethyst" to="pickableareamethyst" method="_on_body_exited"]
-[connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timeramethyst_timeout"]
 [connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timeramethyst_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

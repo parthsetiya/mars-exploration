@@ -4,6 +4,7 @@ class_name PlayerData
 @export var speed = 100
 @export var health = 100
 
+var data = {}
 
 @export var invGoldIngot = 0 
 @export var SavePos : Vector2
@@ -53,22 +54,4 @@ func save():
 	print("Data saved to res://Inventory/saveitems.json")
 
 func load_data():
-	print("Loading data...")
-	var file = FileAccess.open("res://Inventory/saveitems.json", FileAccess.READ)
-	if file:
-		var json_string = file.get_as_text().strip_edges()
-		file.close()
-		
-		var json = JSON.new()
-		var data = json.parse_string(json_string)
-		if data.error == OK:
-			var dict = data.result
-			invGoldIngot = dict["gold_amount"]
-			invironingot = dict["iron_amount"]
-			print("Loaded data:")
-			print("Gold ingots:", invGoldIngot)
-			print("Iron ingots:", invironingot)
-		else:
-			print("Failed to parse JSON.")
-	else:
-		print("Failed to open save file.")
+	pass
