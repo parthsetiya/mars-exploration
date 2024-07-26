@@ -74,3 +74,4 @@ func load_data():
 	jsonironvalue = data["iron_amount"]
 	invironingot = jsonironvalue
 	print("New inv iron ingot: " + str(invironingot))
+	print("asdfasdfasdf")
