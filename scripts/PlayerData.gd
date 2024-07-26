@@ -6,9 +6,15 @@ class_name PlayerData
 
 var data = {}
 
-@export var invGoldIngot = 0 
+var file_json = "res://Inventory/saveitems.json"
+
+
 @export var SavePos : Vector2
-@export var invironingot = 0 
+var invironingot : int
+var invGoldIngot : int
+
+var jsongoldvalue
+var jsonironvalue
 
 func add_invGoldIngot(value : int):
 	invGoldIngot += value
@@ -21,9 +27,6 @@ func add_invironingot(value : int):
 	print("adding iron ingot")
 	print("no of iron: " + str(invironingot))
 	save()  # Save after adding iron
-
-func get_iron():
-	return invironingot
 
 func remove_invGoldIngot(value : int):
 	invGoldIngot -= value
@@ -54,4 +57,20 @@ func save():
 	print("Data saved to res://Inventory/saveitems.json")
 
 func load_data():
-	pass
+	if not FileAccess.file_exists("res://Inventory/saveitems.json"):
+		save()
+		return
+	var file = FileAccess.open("res://Inventory/saveitems.json", FileAccess.READ)
+	var file_data = JSON.parse_string(file.get_as_text())
+	file.close()
+	
+	data = file_data
+	print("Loaded data: " + str(data))
+	
+	jsongoldvalue = data["gold_amount"]
+	invGoldIngot = jsongoldvalue
+	print("New inv gold ingot: " + str(invGoldIngot))
+	
+	jsonironvalue = data["iron_amount"]
+	invironingot = jsonironvalue
+	print("New inv iron ingot: " + str(invironingot))
