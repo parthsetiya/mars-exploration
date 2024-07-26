@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://kfgimtoe72hl"]
+[gd_scene load_steps=8 format=3 uid="uid://kfgimtoe72hl"]
 
-[ext_resource type="Texture2D" uid="uid://c2kojoy4dlxhd" path="res://art/terrain/amethystore.png" id="1_fwlw8"]
 [ext_resource type="Script" path="res://scenes/amethyst_block.gd" id="1_ui0j2"]
-[ext_resource type="PackedScene" path="res://scenes/amethyst_collectable.tscn" id="3_o40u2"]
+[ext_resource type="PackedScene" uid="uid://b683v8qkstwsn" path="res://scenes/amethyst_collectable.tscn" id="3_o40u2"]
 [ext_resource type="Script" path="res://scenes/pickableareamethyst.gd" id="3_rbxik"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5efwl"]
-atlas = ExtResource("1_fwlw8")
 region = Rect2(0, 0, 34, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3hoaj"]
