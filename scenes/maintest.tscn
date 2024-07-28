@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=27 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://crlao84s5ynxx" path="res://friendlyalien.tscn" id="11_pw7wt"]
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="12_tamxu"]
 [ext_resource type="PackedScene" uid="uid://kfgimtoe72hl" path="res://scenes/amethyst_block.tscn" id="14_u0j5j"]
+[ext_resource type="PackedScene" uid="uid://cy45fnv5txv60" path="res://tree_block.tscn" id="16_7rs0e"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wylw6"]
 resource_name = "interactables"
@@ -726,7 +727,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(-56.5, -1.5)
 
 [node name="gold_block2" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(-113, -3)
+position = Vector2(-110.5, -37)
 
 [node name="iron_block" parent="." instance=ExtResource("7_8am3e")]
 light_mask = 2
@@ -762,7 +763,7 @@ shape = SubResource("CircleShape2D_e37og")
 position = Vector2(44, -566)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("11_pw7wt")]
-position = Vector2(114, 44.5)
+position = Vector2(247.5, -182.5)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(5.5, -443.499)
@@ -786,6 +787,11 @@ shape = SubResource("RectangleShape2D_sdmmh")
 
 [node name="amethyst_block" parent="." instance=ExtResource("14_u0j5j")]
 position = Vector2(-60.5, 72.5)
+
+[node name="tree_block" parent="." instance=ExtResource("16_7rs0e")]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(200, -36)
 
 [connection signal="body_entered" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
 [connection signal="body_exited" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]
