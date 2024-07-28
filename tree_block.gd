@@ -22,7 +22,6 @@ var inventory
 signal request_inventory_update()
 
 func _ready():
-	print(gold_scene)
 	if state == "no_gold":
 		respawn_timer.start() 
 
@@ -32,7 +31,7 @@ func _on_inventory_updated(new_inventory):
 func _process(delta):
 	if state == "no_gold":
 		animated_sprite.play("no_tree")
-		treefallinganim.play("treedown")
+		#treefallinganim.play("treedown")
 	elif state == "gold":
 		animated_sprite.play("tree")
 		treefallinganim.play("treeup")
@@ -44,7 +43,6 @@ func treefallinganimplayer():
 	treefallinganim.play("treefalling")
 	await get_tree().create_timer(1.5).timeout
 	treefallinganim.play("treefading")
-	await get_tree().create_timer(0.6).timeout
 	drop_gold()
 
 func drop_gold():

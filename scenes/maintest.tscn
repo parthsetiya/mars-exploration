@@ -763,7 +763,7 @@ shape = SubResource("CircleShape2D_e37og")
 position = Vector2(44, -566)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("11_pw7wt")]
-position = Vector2(247.5, -182.5)
+position = Vector2(267.5, -156)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(5.5, -443.499)

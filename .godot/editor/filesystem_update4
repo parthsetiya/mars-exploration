@@ -8,3 +8,4 @@ res://scenes/gold_block.tscn
 res://tree_block.tscn
 res://tree_collectable.tscn
 res://scripts/main.gd
+res://tree_block.gd
