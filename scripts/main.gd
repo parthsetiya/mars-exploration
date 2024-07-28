@@ -17,7 +17,7 @@ var is_showing_thiswaytomines = false
 var playerdata = PlayerData.new()
 
 var inventory = Inventory.new()
-@onready var inventory_gui = $InventoryGui
+@onready var inventory_gui = $Player/Camera2D/InventoryGui
 var inv_open = false
 
 const GOLD = preload("res://Inventory/items/gold.tres")
@@ -43,13 +43,13 @@ func _ready():
 	iron_node = get_node("iron_block")
 	iron_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui.connect("slot_clicked", Callable(self, "_on_slot_clicked"))
-	inventory_slots = get_node("InventoryGui/GridContainer").get_children()
+	inventory_slots = get_node("Player/Camera2D/InventoryGui/GridContainer").get_children()
 
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25)
 	
-	inv_gui_show = get_node("InventoryGui/NinePatchRect")
-	inv_gui_show_hotbar = get_node("InventoryGui/NinePatchRect2")
+	inv_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
+	inv_gui_show_hotbar = get_node("Player/Camera2D/InventoryGui/NinePatchRect2")
 	
 	iniron = get_node("iron_block/Area2D")
 	ingold = get_node("gold_block/Area2D")
