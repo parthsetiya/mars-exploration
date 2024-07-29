@@ -1,15 +1,12 @@
-extends Node
+extends Node2D
 
 var recipeCount = 0
-var recipe = {}
 var recipeValues = {}
 var recipes = {}
 
-var items = {
-	3: "Stick",
-	2: "Cobble",
-	1: "Plank"
-}
+var items = { 3 : "Stick",
+			  1 : "Cobble",
+			  2 : "Plank"}
 
 func _ready():
 	load_game()
@@ -19,25 +16,31 @@ func createRecipe(rec, nam):
 	recipeCount += 1
 	recipes[str(rec)] = nam
 	print("NEW RECIPE")
-	print(recipe[str(rec)], " : ", rec)
+	print(recipes[str(rec)], " : ", rec)
+	save_game()
 	
-func save_crafting():
-	var sav_arr = [recipes, recipeValues, recipeCount]
+func save():
+	var save_dict = [ recipes,
+					  recipeValues,
+					  recipeCount]
 	
-	return sav_arr
+	return save_dict
 
 func save_game():
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
-	var json_string = JSON.stringify(save_crafting())
+	
+	var json_string = JSON.stringify(save())
+	
 	save_game.store_line(json_string)
 
 func load_game():
 	if not FileAccess.file_exists("user://savegame.save"):
 		return
+	
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
 	
 	while save_game.get_position() < save_game.get_length():
-		var json_string = save_game().get_line()
+		var json_string = save_game.get_line()
 		var json = JSON.new()
 		var parse_result = json.parse(json_string)
 		var node_data = json.get_data()

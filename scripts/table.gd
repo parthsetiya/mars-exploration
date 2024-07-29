@@ -62,7 +62,7 @@ var record = false
 	
 func updateTable():
 	if !record:
-		$"../Recipe".text = "RECIPE:"
+		recipe = {}
 		items = 0
 		recipe = {}
 		firstItem = 0
@@ -79,8 +79,8 @@ func updateTable():
 		print(recipe)
 		for n in crafting.recipeValues:
 			if str(crafting.recipeValues[str(n)]) == str(recipe):
-				print(str(recipe))
-				$"../Recipe".text = str("RECIPE: \n", crafting.recipes[str(recipe)])
+				print(crafting.recipes[str(recipe)])
+				#$"../Recipe".text = str("RECIPE: \n", crafting.recipes[str(recipe)])
 	else:
 		items = 0
 		recipe = {}
