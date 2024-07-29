@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_b4hsc"]
 [ext_resource type="PackedScene" uid="uid://bv0los6yqfysa" path="res://scenes/e_to_interact.tscn" id="4_dukk6"]
 [ext_resource type="PackedScene" uid="uid://c0vc4hnvvbm3x" path="res://interact_to_read.tscn" id="4_olrbr"]
-[ext_resource type="Script" path="res://scenes/Camera2D.gd" id="5_m68xa"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
 [ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/iron_block.tscn" id="7_8am3e"]
 [ext_resource type="Texture2D" uid="uid://cr41eyd0qsvfs" path="res://art/terrain/signpost.png" id="7_084ek"]
@@ -636,6 +635,20 @@ physics_layer_0/collision_layer = 1
 sources/18 = SubResource("TileSetAtlasSource_ddf6d")
 sources/0 = SubResource("TileSetScenesCollectionSource_wylw6")
 
+[sub_resource type="GDScript" id="GDScript_824ix"]
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [sub_resource type="Gradient" id="Gradient_3g7wf"]
 offsets = PackedFloat32Array(0, 0.00649351, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.50974, 0.50974, 0.50974, 1, 0, 0, 0, 1)
@@ -703,7 +716,7 @@ position = Vector2(2, -1.5)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -0.5)
 limit_smoothed = true
-script = ExtResource("5_m68xa")
+script = SubResource("GDScript_824ix")
 
 [node name="Pausemenu" parent="Player/Camera2D" instance=ExtResource("4_b4hsc")]
 visible = false

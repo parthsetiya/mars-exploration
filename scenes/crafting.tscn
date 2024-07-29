@@ -1,0 +1,103 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwbjcat8e4j7n"]
+
+[ext_resource type="Script" path="res://scripts/crafting.gd" id="1_cpp4s"]
+[ext_resource type="Script" path="res://scripts/table.gd" id="2_qrt3n"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="2_udjdx"]
+
+[node name="crafting" type="Node2D"]
+script = ExtResource("1_cpp4s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="table" type="Node2D" parent="."]
+script = ExtResource("2_qrt3n")
+
+[node name="0" type="Button" parent="table"]
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("2_udjdx")
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Button" parent="table"]
+offset_left = 21.0
+offset_right = 41.0
+offset_bottom = 20.0
+script = ExtResource("2_udjdx")
+metadata/_edit_use_anchors_ = true
+
+[node name="2" type="Button" parent="table"]
+offset_left = 42.0
+offset_right = 62.0
+offset_bottom = 20.0
+script = ExtResource("2_udjdx")
+metadata/_edit_use_anchors_ = true
+
+[node name="3" type="Button" parent="table"]
+offset_top = 21.0
+offset_right = 20.0
+offset_bottom = 41.0
+script = ExtResource("2_udjdx")
+metadata/_edit_use_anchors_ = true
+
+[node name="4" type="Button" parent="table"]
+offset_left = 21.0
+offset_top = 21.0
+offset_right = 41.0
+offset_bottom = 41.0
+script = ExtResource("2_udjdx")
+metadata/_edit_use_anchors_ = true
+
+[node name="5" type="Button" parent="table"]
+offset_left = 42.0
+offset_top = 21.0
+offset_right = 62.0
+offset_bottom = 41.0
+script = ExtResource("2_udjdx")
+metadata/_edit_use_anchors_ = true
+
+[node name="6" type="Button" parent="table"]
+offset_top = 42.0
+offset_right = 20.0
+offset_bottom = 62.0
+script = ExtResource("2_udjdx")
+metadata/_edit_use_anchors_ = true
+
+[node name="7" type="Button" parent="table"]
+offset_left = 21.0
+offset_top = 42.0
+offset_right = 41.0
+offset_bottom = 62.0
+script = ExtResource("2_udjdx")
+metadata/_edit_use_anchors_ = true
+
+[node name="8" type="Button" parent="table"]
+offset_left = 42.0
+offset_top = 42.0
+offset_right = 62.0
+offset_bottom = 62.0
+script = ExtResource("2_udjdx")
+metadata/_edit_use_anchors_ = true
+
+[node name="Record" type="Button" parent="."]
+offset_left = -92.0
+offset_top = -29.0
+offset_right = -4.0
+offset_bottom = -1.0
+text = "Record"
+
+[node name="Name" type="TextEdit" parent="."]
+offset_left = -151.0
+offset_top = 2.0
+offset_right = -6.0
+offset_bottom = 53.0
+
+[connection signal="pressed" from="table/0" to="table/0" method="_on_pressed"]
+[connection signal="pressed" from="table/1" to="table/1" method="_on_pressed"]
+[connection signal="pressed" from="table/2" to="table/2" method="_on_pressed"]
+[connection signal="pressed" from="table/3" to="table/3" method="_on_pressed"]
+[connection signal="pressed" from="table/4" to="table/4" method="_on_pressed"]
+[connection signal="pressed" from="table/5" to="table/5" method="_on_pressed"]
+[connection signal="pressed" from="table/6" to="table/6" method="_on_pressed"]
+[connection signal="pressed" from="table/7" to="table/7" method="_on_pressed"]
+[connection signal="pressed" from="table/8" to="table/8" method="_on_pressed"]
+[connection signal="pressed" from="Record" to="table" method="_on_record_pressed"]
