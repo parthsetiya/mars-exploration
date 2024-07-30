@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://booto5uhhl2kr"]
+[gd_scene load_steps=5 format=3 uid="uid://booto5uhhl2kr"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_gui.gd" id="1_egmnt"]
 [ext_resource type="Texture2D" uid="uid://gajil2maxy85" path="res://Inventory/inventorybackgroundtest.png" id="2_nxaso"]
 [ext_resource type="PackedScene" uid="uid://chpj76y4h6uxx" path="res://slot.tscn" id="3_meoxf"]
+[ext_resource type="PackedScene" uid="uid://cwbjcat8e4j7n" path="res://scenes/crafting.tscn" id="4_qikhw"]
 
 [node name="InventoryGui" type="Control"]
 layout_mode = 3
@@ -132,3 +133,6 @@ layout_mode = 2
 
 [node name="slot20" parent="GridContainer" instance=ExtResource("3_meoxf")]
 layout_mode = 2
+
+[node name="crafting" parent="." instance=ExtResource("4_qikhw")]
+visible = false

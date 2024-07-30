@@ -34,6 +34,7 @@ var first_slot_index = null
 var second_slot_index = null
 var inv_gui_show
 var inv_gui_show_hotbar
+var craft_gui_show
 var iniron
 var ingold 
 var intree
@@ -56,6 +57,7 @@ func _ready():
 	
 	inv_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
 	inv_gui_show_hotbar = get_node("Player/Camera2D/InventoryGui/NinePatchRect2")
+	craft_gui_show = get_node("Player/Camera2D/InventoryGui/crafting")
 	
 	iniron = get_node("iron_block/Area2D")
 	ingold = get_node("gold_block/Area2D")
@@ -255,12 +257,14 @@ func update_inventory_ui(item_name, updated_quantity):
 func inventoryopen():
 	if inv_open:
 		inv_gui_show.hide()
+		craft_gui_show.hide()
 		for slot in inventory_gui_slots:
 			slot.hide()
 		inv_gui_show_hotbar.hide()
 		
 	else:
 		inv_gui_show.show()
+		craft_gui_show.show()
 		for slot in inventory_gui_slots:
 			slot.show()
 		inv_gui_show_hotbar.show()
