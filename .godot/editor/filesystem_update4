@@ -13,3 +13,4 @@ res://scenes/gold_block.tscn
 res://scenes/housetest.tscn
 res://Inventory/inventory_gui.tscn
 res://scripts/main.gd
+res://scripts/player.gd
