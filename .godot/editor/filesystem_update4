@@ -1,16 +1,2 @@
-res://scenes/maintest.tscn
-res://scripts/crafting.gd
-res://scripts/button.gd
-res://scenes/crafting.tscn
-res://scripts/table.gd
 res://scenes/menu.tscn
 res://scenes/player.tscn
-res://slot.tscn
-res://scenes/gold_collectable.tscn
-res://scenes/iron_block.tscn
-res://scenes/amethyst_block.tscn
-res://scenes/gold_block.tscn
-res://scenes/housetest.tscn
-res://Inventory/inventory_gui.tscn
-res://scripts/main.gd
-res://scripts/player.gd
