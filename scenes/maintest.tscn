@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_b4hsc"]
 [ext_resource type="PackedScene" uid="uid://bv0los6yqfysa" path="res://scenes/e_to_interact.tscn" id="4_dukk6"]
 [ext_resource type="PackedScene" uid="uid://c0vc4hnvvbm3x" path="res://interact_to_read.tscn" id="4_olrbr"]
+[ext_resource type="Script" path="res://scenes/Camera2D.gd" id="5_m68xa"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
 [ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/iron_block.tscn" id="7_8am3e"]
 [ext_resource type="Texture2D" uid="uid://cr41eyd0qsvfs" path="res://art/terrain/signpost.png" id="7_084ek"]
@@ -635,20 +636,6 @@ physics_layer_0/collision_layer = 1
 sources/18 = SubResource("TileSetAtlasSource_ddf6d")
 sources/0 = SubResource("TileSetScenesCollectionSource_wylw6")
 
-[sub_resource type="GDScript" id="GDScript_824ix"]
-script/source = "extends Camera2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
 [sub_resource type="Gradient" id="Gradient_3g7wf"]
 offsets = PackedFloat32Array(0, 0.00649351, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.50974, 0.50974, 0.50974, 1, 0, 0, 0, 1)
@@ -716,7 +703,7 @@ position = Vector2(2, -1.5)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -0.5)
 limit_smoothed = true
-script = SubResource("GDScript_824ix")
+script = ExtResource("5_m68xa")
 
 [node name="Pausemenu" parent="Player/Camera2D" instance=ExtResource("4_b4hsc")]
 visible = false
@@ -776,7 +763,7 @@ shape = SubResource("CircleShape2D_e37og")
 position = Vector2(44, -566)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("11_pw7wt")]
-position = Vector2(84, -92.5)
+position = Vector2(66, -81)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(5.5, -443.499)
@@ -795,7 +782,7 @@ position = Vector2(3.5, -1.5)
 scale = Vector2(0.974372, 1.03587)
 
 [node name="entrancetogoldminecollision" type="CollisionShape2D" parent="entrancetogoldmine"]
-position = Vector2(-151.376, -257.168)
+position = Vector2(-335.601, -195.971)
 shape = SubResource("RectangleShape2D_sdmmh")
 
 [node name="amethyst_block" parent="." instance=ExtResource("14_u0j5j")]
