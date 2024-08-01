@@ -13,3 +13,5 @@ res://scripts/player.gd
 res://new_script.gd
 res://scripts/menu.gd
 res://scripts/main.gd
+res://scenes/goldmine.tscn
+res://scenes/goldmine.gd

@@ -25,6 +25,7 @@ const IRON = preload("res://Inventory/items/iron.tres")
 const LOG = preload("res://Inventory/items/log.tres")
 # Node definitions
 var gold_node
+var gold_node2
 var iron_node
 var tree_node
 var inventory_slots
@@ -36,14 +37,18 @@ var inv_gui_show
 var inv_gui_show_hotbar
 var iniron
 var ingold 
+var ingold2
 var intree
 var ironcollectable = false
 var goldcollectable = false
 var treecollectable = false
+var goldcollectable2 = false
 
 func _ready():
 	gold_node = get_node("gold_block")
 	gold_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	gold_node2 = get_node("gold_block2")
+	gold_node2.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	iron_node = get_node("iron_block")
 	iron_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	tree_node = get_node("tree_block")
@@ -59,12 +64,15 @@ func _ready():
 	
 	iniron = get_node("iron_block/Area2D")
 	ingold = get_node("gold_block/Area2D")
+	ingold2 = get_node("gold_block2/Area2D")
 	intree = get_node("tree_block/Area2D")
 	iniron.connect("body_entered", Callable(self,"inironcollectable"))
 	ingold.connect("body_entered", Callable(self,"ingoldcollectable"))
+	ingold2.connect("body_entered", Callable(self,"ingoldcollectable"))
 	intree.connect("body_entered", Callable(self,"intreecollectable"))
 	iniron.connect("body_exited", Callable(self,"leaveironcollectable"))
 	ingold.connect("body_exited", Callable(self,"leavegoldcollectable"))
+	ingold2.connect("body_exited", Callable(self,"leavegoldcollectable"))
 	intree.connect("body_exited", Callable(self,"leavetreecollectable"))
 	playerdata.load_data()
 
