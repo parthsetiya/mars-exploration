@@ -356,6 +356,7 @@ states/Idle/node = SubResource("AnimationNodeBlendSpace2D_1kb1y")
 states/Idle/position = Vector2(402.5, 83.5)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(1.1, 1)
 collision_layer = 3
 script = ExtResource("1_rv08x")
 metadata/_edit_horizontal_guides_ = [-48.0]
