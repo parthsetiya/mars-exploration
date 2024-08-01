@@ -8,19 +8,20 @@ var data = {}
 
 var file_json = "res://Inventory/saveitems.json"
 
-
 @export var SavePos : Vector2
 var invironingot : int
 var invGoldIngot : int
 
-var jsongoldvalue
+@export var jsongoldvalue : int
 var jsonironvalue
+
+signal inventory_loaded(gold_amount, iron_amount)
 
 func add_invGoldIngot(value : int):
 	invGoldIngot += value
 	print("running add gold ingot")
 	print("no of gold: " + str(invGoldIngot))
-	save()  # Save after adding gold
+	save()  
 
 func add_invironingot(value : int):
 	invironingot += value
@@ -55,6 +56,8 @@ func save():
 	file.store_line(json_string)
 	file.close()
 	print("Data saved to res://Inventory/saveitems.json")
+	jsongoldvalue = data["gold_amount"]
+	jsonironvalue = data["iron_amount"]
 
 func load_data():
 	if not FileAccess.file_exists("res://Inventory/saveitems.json"):
@@ -68,10 +71,10 @@ func load_data():
 	print("Loaded data: " + str(data))
 	
 	jsongoldvalue = data["gold_amount"]
-	invGoldIngot = jsongoldvalue
-	print("New inv gold ingot: " + str(invGoldIngot))
-	
 	jsonironvalue = data["iron_amount"]
 	invironingot = jsonironvalue
 	print("New inv iron ingot: " + str(invironingot))
-	print("asdfasdfasdf")
+	invGoldIngot = int(jsongoldvalue)
+	print("New inv gold ingot: " + str(invGoldIngot))
+
+	emit_signal("inventory_loaded", invGoldIngot, invironingot)  
