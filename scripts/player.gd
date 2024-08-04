@@ -42,6 +42,8 @@ func _process(delta):
 	playerData.UpdatePos(self.position)
 	if Input.is_action_just_pressed("right"):
 		direction = "right"
+	if Input.is_action_just_pressed("left"):
+		direction = "left"
 
 	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
 	if direction == "right" and Input.is_action_just_pressed("swing"):
@@ -49,6 +51,14 @@ func _process(delta):
 		toolanim.play("toolswingright")
 		await get_tree().create_timer(0.05).timeout
 		animations.play("axeswingright")
+		await get_tree().create_timer(0.6).timeout
+		node_2d.hide()
+	
+	if direction == "left" and Input.is_action_just_pressed("swing"):
+		node_2d.show()
+		toolanim.play("toolswingright")
+		await get_tree().create_timer(0.05).timeout
+		animations.play("axeswingleft")
 		await get_tree().create_timer(0.6).timeout
 		node_2d.hide()
 		

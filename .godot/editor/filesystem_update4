@@ -7,3 +7,4 @@ res://scenes/iron_block.tscn
 res://scenes/amethyst_block.tscn
 res://scenes/gold_block.tscn
 res://scenes/goldmine.tscn
+res://scripts/player.gd
