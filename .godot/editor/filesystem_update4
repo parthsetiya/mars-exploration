@@ -8,3 +8,4 @@ res://scenes/gold_block.tscn
 res://scenes/goldmine.tscn
 res://scenes/maintest.tscn
 res://scripts/player.gd
+res://Inventory/saveitems.json
