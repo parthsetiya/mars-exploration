@@ -14,18 +14,19 @@ var GOLD = load("res://Inventory/items/gold.tres")
 var speed = 100
 var health = 100
 #var inv_open = false
-
+var is_swinging = false
 var save_file_path = "user://save/"
 var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
 var input_direction
-var direction 
+var direction = "right"
 @onready var toolanim = $Node2D/AnimationPlayer
 @onready var node_2d = $Node2D
 signal update_ui(health, position)
 var respawn_position = Vector2(playerData.SavePos)
 
 func _ready():
+	
 	verify_save_directory(save_file_path)
 	
 func verify_save_directory(path: String):
@@ -44,25 +45,43 @@ func _process(delta):
 		direction = "right"
 	if Input.is_action_just_pressed("left"):
 		direction = "left"
-
 	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
-	if direction == "right" and Input.is_action_just_pressed("swing"):
-		node_2d.show()
-		toolanim.play("toolswingright")
-		await get_tree().create_timer(0.05).timeout
-		animations.play("axeswingright")
-		await get_tree().create_timer(0.6).timeout
-		node_2d.hide()
-	
-	if direction == "left" and Input.is_action_just_pressed("swing"):
-		node_2d.show()
-		toolanim.play("toolswingright")
-		await get_tree().create_timer(0.05).timeout
-		animations.play("axeswingleft")
-		await get_tree().create_timer(0.6).timeout
-		node_2d.hide()
+	if Input.is_action_just_pressed("swing") and not is_swinging:
+		swing_tool()
+	#if Input.is_action_just_pressed("right") and Input.is_action_just_pressed("swing"):
+		#is_swinging = true
+		#print("direction is right and input is swing")
+		#node_2d.show()
+		#toolanim.play("toolswingright")
+		#await get_tree().create_timer(0.05).timeout
+		#animations.play("axeswingright")
+		#await get_tree().create_timer(0.6).timeout
+		#node_2d.hide()
+		#is_swinging = false
+	#
+	#if direction == "left" and Input.is_action_just_pressed("swing"):
+		#is_swinging = true
+		#node_2d.show()
+		#toolanim.play("toolswingright")
+		#await get_tree().create_timer(0.05).timeout
+		#animations.play("axeswingleft")
+		#await get_tree().create_timer(0.6).timeout
+		#node_2d.hide()
+		#is_swinging = false
 		
-
+func swing_tool():
+	is_swinging = true
+	node_2d.show()
+	toolanim.play("toolswingright")
+	await get_tree().create_timer(0.05).timeout
+	print("Playing swing animation: ", direction)
+	if direction == "right":
+		animations.play("axeswingright")
+	elif direction == "left":
+		animations.play("axeswingleft")
+	await get_tree().create_timer(0.6).timeout
+	node_2d.hide()
+	is_swinging = false
 
 #checks players health
 func check_health():
@@ -123,35 +142,21 @@ func get_input():
 	velocity = input_direction * speed
 
 func updateAnimation():
-	if velocity.length() == 0: 
-		animations.stop()
-		
-	else: 
-		var direction = "Down"
-		if velocity.x < 0: direction = "Left"
-		elif velocity.x > 0: direction = "Right"
-		elif velocity.y < 0: direction = "Up"
-		elif velocity.y < 0: direction = "Idle"
+	if not is_swinging:
+		if velocity.length() == 0: 
+			animations.stop()
+			
+		elif is_swinging == false:
+			var direction = "Down"
+			if velocity.x < 0: direction = "Left"
+			elif velocity.x > 0: direction = "Right"
+			elif velocity.y < 0: direction = "Up"
+			elif velocity.y < 0: direction = "Idle"
 
-		animations.play("walk" + direction)
+			animations.play("walk" + direction)
 
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	updateAnimation()
 	
-#func inventoryopen():
-	#if inv_open:
-		#inv_gui_show.hide()
-		#for slot in inventory_gui_slots:
-			#slot.hide()
-		#inv_gui_show_hotbar.hide()
-		#
-	#else:
-		#inv_gui_show.show()
-		#for slot in inventory_gui_slots:
-			#slot.show()
-		#inv_gui_show_hotbar.show()
-	#inv_open = !inv_open
-	
-
