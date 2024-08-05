@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://o8wrav26i6mf"]
+
+[ext_resource type="Script" path="res://Inventory/inventoryitem.gd" id="1_1rpmx"]
+[ext_resource type="Texture2D" uid="uid://r77ltypqkvmf" path="res://art/mainart/hotbartseterbolt.png" id="2_a7pvw"]
+
+[resource]
+script = ExtResource("1_1rpmx")
+name = "slotdefault"
+texture = ExtResource("2_a7pvw")
