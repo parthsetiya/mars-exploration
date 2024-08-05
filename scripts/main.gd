@@ -19,7 +19,7 @@ var playerdata = PlayerData.new()
 var inventory = Inventory.new()
 @onready var inventory_gui = $Player/Camera2D/InventoryGui
 var inv_open = false
-
+const SELECTEDSLOT = preload("res://art/mainart/selectedslot.tres")
 const GOLD = preload("res://Inventory/items/gold.tres")
 const IRON = preload("res://Inventory/items/iron.tres")
 const LOG = preload("res://Inventory/items/log.tres")
@@ -43,6 +43,8 @@ var ironcollectable = false
 var goldcollectable = false
 var treecollectable = false
 var goldcollectable2 = false
+var slotone
+var slotonetexture
 
 func _ready():
 	gold_node = get_node("gold_block")
@@ -58,6 +60,21 @@ func _ready():
 
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25)
+	var slotone = inventory_hotbar_slots[0]  
+	
+	if slotone.has_node("background"):  # Ensure the slot has a child named "background"
+		slotonetexture = slotone.get_node("background")  # Get the background node
+
+		if slotonetexture is Sprite2D:  # Ensure the background node is a Sprite2D
+			var background_texture = slotonetexture.texture  # Access the texture property
+
+			# Print to check if the correct texture is assigned
+			print(background_texture)
+		else:
+			print("Error: 'background' is not a Sprite2D")
+	else:
+		print("Error: No child named 'background'")
+	 
 	
 	inv_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
 	inv_gui_show_hotbar = get_node("Player/Camera2D/InventoryGui/NinePatchRect2")
@@ -292,6 +309,12 @@ func _process(delta):
 		interact_to_read.hide()
 	if Input.is_action_just_pressed("Inventory"):
 		inventoryopen()
+	if Input.is_action_just_pressed("1"):  # Replace "ui_select" with your input action
+		if slotonetexture is Sprite2D:
+			slotonetexture.texture = SELECTEDSLOT.texture  # Assuming SELECTEDSLOT is defined and has a texture property
+		else:
+			print("Error: 'slotonetexture' is not a Sprite2D")
+		
 	
 func pausemenu():
 	if paused:
