@@ -37,7 +37,7 @@ func _process(delta):
 		animated_sprite.play("no_gold")
 	elif state == "gold":
 		animated_sprite.play("gold")
-		if player_in_area and Input.is_action_just_pressed("Interact"):
+		if player_in_area and Input.is_action_just_pressed("swing"):
 			state = "no_gold"
 			drop_gold()
 			add_item_to_inventory(item.name, 1)

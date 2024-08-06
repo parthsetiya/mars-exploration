@@ -8,3 +8,5 @@ res://scenes/crafting.tscn
 res://scripts/player.gd
 res://scripts/crafting.gd
 res://scripts/tree_block.gd
+res://scenes/gold_block.tscn
+res://scenes/gold_block.gd
