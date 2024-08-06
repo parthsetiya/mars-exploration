@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://cy45fnv5txv60"]
 
 [ext_resource type="Texture2D" uid="uid://ccxsvq2btowku" path="res://art/treespritesheet.png" id="1_fg20q"]
-[ext_resource type="Script" path="res://tree_block.gd" id="1_n8dsu"]
-[ext_resource type="PackedScene" uid="uid://lkw70av67ao6" path="res://tree_collectable.tscn" id="2_5wokc"]
+[ext_resource type="Script" path="res://scripts/tree_block.gd" id="1_n8dsu"]
+[ext_resource type="PackedScene" uid="uid://lkw70av67ao6" path="res://scenes/tree_collectable.tscn" id="2_5wokc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpmve"]
 atlas = ExtResource("1_fg20q")

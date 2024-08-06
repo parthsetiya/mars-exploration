@@ -7,3 +7,4 @@ res://Inventory/inventory_gui.tscn
 res://scenes/crafting.tscn
 res://scripts/player.gd
 res://scripts/crafting.gd
+res://scripts/tree_block.gd

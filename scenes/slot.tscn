@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://chpj76y4h6uxx"]
 
-[ext_resource type="Script" path="res://slot.gd" id="1_cwd2w"]
+[ext_resource type="Script" path="res://scripts/slot.gd" id="1_cwd2w"]
 [ext_resource type="Texture2D" uid="uid://r77ltypqkvmf" path="res://art/mainart/hotbartseterbolt.png" id="2_dpsfg"]
 
 [node name="Panel" type="Panel"]

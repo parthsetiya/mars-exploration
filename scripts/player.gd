@@ -48,26 +48,6 @@ func _process(delta):
 	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
 	if Input.is_action_just_pressed("swing") and not is_swinging:
 		swing_tool()
-	#if Input.is_action_just_pressed("right") and Input.is_action_just_pressed("swing"):
-		#is_swinging = true
-		#print("direction is right and input is swing")
-		#node_2d.show()
-		#toolanim.play("toolswingright")
-		#await get_tree().create_timer(0.05).timeout
-		#animations.play("axeswingright")
-		#await get_tree().create_timer(0.6).timeout
-		#node_2d.hide()
-		#is_swinging = false
-	#
-	#if direction == "left" and Input.is_action_just_pressed("swing"):
-		#is_swinging = true
-		#node_2d.show()
-		#toolanim.play("toolswingright")
-		#await get_tree().create_timer(0.05).timeout
-		#animations.play("axeswingleft")
-		#await get_tree().create_timer(0.6).timeout
-		#node_2d.hide()
-		#is_swinging = false
 		
 func swing_tool():
 	is_swinging = true
@@ -75,8 +55,6 @@ func swing_tool():
 	
 	if is_swinging == true:
 		speed = 0
-	
-	print("Playing swing animation: ", direction)
 	
 	if direction == "right":
 		animations.play("axeswingright")

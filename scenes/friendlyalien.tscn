@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://crlao84s5ynxx"]
 
 [ext_resource type="Texture2D" uid="uid://cvv1cpp0kkjel" path="res://art/friendlyalienttest.png" id="1_6ucnm"]
-[ext_resource type="Script" path="res://friendlyalien.gd" id="1_yojhl"]
-[ext_resource type="PackedScene" uid="uid://bhnojfecol1ou" path="res://dialogue.tscn" id="3_5ud7g"]
+[ext_resource type="Script" path="res://scripts/friendlyalien.gd" id="1_yojhl"]
+[ext_resource type="PackedScene" uid="uid://bhnojfecol1ou" path="res://scenes/dialogue.tscn" id="3_5ud7g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ce8a"]
 radius = 40.0125
