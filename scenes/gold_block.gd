@@ -41,6 +41,7 @@ func _process(delta):
 			await get_tree().create_timer(0.6).timeout
 			state = "no_gold"
 			drop_gold()
+			await get_tree().create_timer(3).timeout
 			add_item_to_inventory(item.name, 1)
 
 func popfromground(gold_collectable):
@@ -63,6 +64,7 @@ func drop_gold():
 	await get_tree().create_timer(3).timeout
 	respawn_timer.start()
 	emit_signal("request_inventory_update", item.name, 1)
+	
 
 func _on_area_2d_body_entered(body):
 	player_in_area = true

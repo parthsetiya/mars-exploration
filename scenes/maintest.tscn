@@ -726,10 +726,7 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="gold_block" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(-56.5, -1.5)
-
-[node name="gold_block2" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(-110.5, -37)
+position = Vector2(-58.5, 4.5)
 
 [node name="iron_block" parent="." instance=ExtResource("7_8am3e")]
 light_mask = 2

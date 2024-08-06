@@ -1,12 +1,5 @@
-res://scenes/player.tscn
-res://scenes/menu.tscn
-res://slot.tscn
-res://scenes/gold_collectable.tscn
 res://scenes/maintest.tscn
-res://Inventory/inventory_gui.tscn
-res://scenes/crafting.tscn
-res://scripts/player.gd
-res://scripts/crafting.gd
-res://scripts/tree_block.gd
+res://scenes/player.tscn
 res://scenes/gold_block.tscn
+res://scripts/main.gd
 res://scenes/gold_block.gd
