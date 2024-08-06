@@ -72,11 +72,12 @@ func _process(delta):
 func swing_tool():
 	is_swinging = true
 	node_2d.show()
-
-	toolanim.play("toolswingright")
-
-
+	
+	if is_swinging == true:
+		speed = 0
+	
 	print("Playing swing animation: ", direction)
+	
 	if direction == "right":
 		animations.play("axeswingright")
 		toolanim.play("toolswingright")
@@ -86,6 +87,8 @@ func swing_tool():
 	await get_tree().create_timer(0.6).timeout
 	node_2d.hide()
 	is_swinging = false
+	if is_swinging == false:
+		speed = 100
 
 #checks players health
 func check_health():
