@@ -1,5 +1,8 @@
 res://scenes/maintest.tscn
+res://Inventory/inventoryslot.gd
 res://scenes/player.tscn
 res://scenes/gold_block.tscn
+res://scripts/crafting.gd
 res://scripts/main.gd
+res://scenes/iron_block.gd
 res://scenes/gold_block.gd
