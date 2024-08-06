@@ -4,6 +4,7 @@ var recipeCount = 0
 var recipeValues = {}
 var recipes = {}
 var playerdata = PlayerData.new()
+var main = Main.new()
 const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
 
 signal request_inventory_update
@@ -59,4 +60,4 @@ func _on__pressed():
 	playerdata.load_data()
 	if playerdata.invGoldIngot >= 2:
 		print("making gold stick")
-		emit_signal("request_inventory_update", GOLD_STICK, 1)
+		main.crafted_stick()

@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name Main
 
 @onready var pause_menu = $Player/Camera2D/Pausemenu
 var paused = false
@@ -115,7 +115,7 @@ func crafted_stick():
 	goldcollectable = false
 	goldcollectable2 = false
 	ironcollectable = false
-	update_inventory_ui(GOLD_STICK, 1)
+	_on_request_inventory_update(GOLD_STICK, 1)
 	making_stick = false
 	
 
@@ -282,46 +282,49 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(int(label.text) + 1)
 					return
 					break 
-		if treecollectable == false and ironcollectable == false and goldcollectable == false and making_stick == true:
-			for i in range(inventory_slots.size()):
-				var slot = inventory_slots[i]
-				if slot.get_child_count() != 0:
-					var centre_container = slot.get_children()[1]
-					var item = centre_container.get_children()[0].get_children()[0]
-					var label = centre_container.get_children()[0].get_children()[1]
+	if making_stick == true:
+		inventory_slots = get_node("Player/Camera2D/InventoryGui/GridContainer").get_children()
+		print("ADDING STICK INTO INVENTORY")
+		print(inventory_slots)
+		for i in range(inventory_slots.size()):
+			var slot = inventory_slots[i]
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
 
-					if item.texture == GOLD_STICK.texture:
-						label.text = str(int(label.text) + 1)
-						return 
-						break
+				if item.texture == GOLD_STICK.texture:
+					label.text = str(int(label.text) + 1)
+					return 
+					break
 
-			for i in range(inventory_slots.size()):
-				var slot = inventory_slots[i]
-				if slot.get_children()[1] != null:
-					var centre_container = slot.get_children()[1]
-					var item = centre_container.get_children()[0].get_children()[0]
-					var label = centre_container.get_children()[0].get_children()[1]
+		for i in range(inventory_slots.size()):
+			var slot = inventory_slots[i]
+			if slot.get_children()[1] != null:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
 
+				
+				if item.texture == null: 
+					item.texture = GOLD_STICK.texture
+					label.text = str(int(label.text) + 1)
+					return
+					break 
 					
-					if item.texture == null: 
-						item.texture = GOLD_STICK.texture
-						label.text = str(int(label.text) + 1)
-						return
-						break 
-						
-			for i in range(inventory_slots.size()):
-				var slot = inventory_slots[i]
-				if slot.get_children()[1] != null:
-					var centre_container = slot.get_children()[1]
-					var item = centre_container.get_children()[0].get_children()[0]
-					var label = centre_container.get_children()[0].get_children()[1]
+		for i in range(inventory_slots.size()):
+			var slot = inventory_slots[i]
+			if slot.get_children()[1] != null:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
 
-					
-					if item.texture == null: 
-						item.texture = GOLD_STICK.texture
-						label.text = str(int(label.text) + 1)
-						return
-						break 	
+				
+				if item.texture == null: 
+					item.texture = GOLD_STICK.texture
+					label.text = str(int(label.text) + 1)
+					return
+					break 	
 			
 	
 func inventoryopen():

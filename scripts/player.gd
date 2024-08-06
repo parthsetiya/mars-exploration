@@ -73,7 +73,6 @@ func swing_tool():
 	is_swinging = true
 	node_2d.show()
 	toolanim.play("toolswingright")
-	await get_tree().create_timer(0.05).timeout
 	print("Playing swing animation: ", direction)
 	if direction == "right":
 		animations.play("axeswingright")
