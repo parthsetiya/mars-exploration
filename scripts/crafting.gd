@@ -3,6 +3,7 @@ extends Node2D
 var recipeCount = 0
 var recipeValues = {}
 var recipes = {}
+var playerdata = PlayerData.new()
 
 var items = { 3 : "Stick",
 			  1 : "Cobble",
@@ -48,3 +49,10 @@ func load_game():
 		recipes = node_data[0]
 		recipeValues = node_data[1]
 		recipeCount = node_data[2]
+
+
+func _on__pressed():
+	print("running on preseed")
+	playerdata.load_data()
+	if playerdata.invGoldIngot >= 2:
+		print("making gold stick")

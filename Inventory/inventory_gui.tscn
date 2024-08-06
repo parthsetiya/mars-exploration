@@ -135,4 +135,3 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="crafting" parent="." instance=ExtResource("4_qikhw")]
-visible = false
