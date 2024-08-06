@@ -38,6 +38,7 @@ func _process(delta):
 	elif state == "gold":
 		animated_sprite.play("gold")
 		if player_in_area and Input.is_action_just_pressed("swing"):
+			await get_tree().create_timer(0.6).timeout
 			state = "no_gold"
 			drop_gold()
 			add_item_to_inventory(item.name, 1)
