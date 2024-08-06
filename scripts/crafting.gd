@@ -4,6 +4,9 @@ var recipeCount = 0
 var recipeValues = {}
 var recipes = {}
 var playerdata = PlayerData.new()
+const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
+
+signal request_inventory_update
 
 var items = { 3 : "Stick",
 			  1 : "Cobble",
@@ -52,7 +55,8 @@ func load_game():
 
 
 func _on__pressed():
-	print("running on preseed")
+	print("running on pressed")
 	playerdata.load_data()
 	if playerdata.invGoldIngot >= 2:
 		print("making gold stick")
+		emit_signal("request_inventory_update", GOLD_STICK, 1)

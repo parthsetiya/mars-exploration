@@ -24,6 +24,7 @@ const DEFAULTSLOT = preload("res://art/mainart/defaultslot.tres")
 const GOLD = preload("res://Inventory/items/gold.tres")
 const IRON = preload("res://Inventory/items/iron.tres")
 const LOG = preload("res://Inventory/items/log.tres")
+const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
 # Node definitions
 var gold_node
 var gold_node2
@@ -32,6 +33,7 @@ var tree_node
 var inventory_slots
 var inventory_gui_slots
 var inventory_hotbar_slots
+var inventory_crafting
 var first_slot_index = null
 var second_slot_index = null
 var inv_gui_show
@@ -44,6 +46,7 @@ var ironcollectable = false
 var goldcollectable = false
 var treecollectable = false
 var goldcollectable2 = false
+var making_stick = false
 var slotonetexture
 
 func _ready():
@@ -57,6 +60,8 @@ func _ready():
 	tree_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui.connect("slot_clicked", Callable(self, "_on_slot_clicked"))
 	inventory_slots = get_node("Player/Camera2D/InventoryGui/GridContainer").get_children()
+	inventory_crafting = get_node("Player/Camera2D/InventoryGui/crafting/table/0")
+	inventory_crafting.connect("on_pressed", Callable(self, "crafted_stick"))
 
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25) 
@@ -102,6 +107,17 @@ func intreecollectable(body):
 
 func leavetreecollectable():
 	treecollectable = false
+
+func crafted_stick():
+	print("running add gold")
+	making_stick = true
+	treecollectable = false
+	goldcollectable = false
+	goldcollectable2 = false
+	ironcollectable = false
+	update_inventory_ui(GOLD_STICK, 1)
+	making_stick = false
+	
 
 func _on_slot_clicked(slot_index):
 	if first_slot_index == null:
@@ -266,8 +282,47 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(int(label.text) + 1)
 					return
 					break 
-				
-		
+		if treecollectable == false and ironcollectable == false and goldcollectable == false and making_stick == true:
+			for i in range(inventory_slots.size()):
+				var slot = inventory_slots[i]
+				if slot.get_child_count() != 0:
+					var centre_container = slot.get_children()[1]
+					var item = centre_container.get_children()[0].get_children()[0]
+					var label = centre_container.get_children()[0].get_children()[1]
+
+					if item.texture == GOLD_STICK.texture:
+						label.text = str(int(label.text) + 1)
+						return 
+						break
+
+			for i in range(inventory_slots.size()):
+				var slot = inventory_slots[i]
+				if slot.get_children()[1] != null:
+					var centre_container = slot.get_children()[1]
+					var item = centre_container.get_children()[0].get_children()[0]
+					var label = centre_container.get_children()[0].get_children()[1]
+
+					
+					if item.texture == null: 
+						item.texture = GOLD_STICK.texture
+						label.text = str(int(label.text) + 1)
+						return
+						break 
+						
+			for i in range(inventory_slots.size()):
+				var slot = inventory_slots[i]
+				if slot.get_children()[1] != null:
+					var centre_container = slot.get_children()[1]
+					var item = centre_container.get_children()[0].get_children()[0]
+					var label = centre_container.get_children()[0].get_children()[1]
+
+					
+					if item.texture == null: 
+						item.texture = GOLD_STICK.texture
+						label.text = str(int(label.text) + 1)
+						return
+						break 	
+			
 	
 func inventoryopen():
 	if inv_open:
