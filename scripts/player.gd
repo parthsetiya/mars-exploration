@@ -50,6 +50,7 @@ func _process(delta):
 		swing_tool()
 		
 func swing_tool():
+	
 	is_swinging = true
 	node_2d.show()
 	

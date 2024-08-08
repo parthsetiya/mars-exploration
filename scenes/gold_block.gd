@@ -4,8 +4,10 @@ var state = "no_gold"
 var player_in_area = false
 var gold_scene = preload("res://scenes/gold_collectable.tscn") as PackedScene
 var playerData = PlayerData.new()
+var playerscript = Player.new()
 var player = null
 var collectable = false
+var gold_collected = false
 
 
 @export var inventory_manager: Node
@@ -35,13 +37,14 @@ func _on_inventory_updated(new_inventory):
 func _process(delta):
 	if state == "no_gold":
 		animated_sprite.play("no_gold")
+		gold_collected = false
 	elif state == "gold":
 		animated_sprite.play("gold")
-		if player_in_area and Input.is_action_just_pressed("swing"):
+		if player_in_area and Input.is_action_just_pressed("swing") and not gold_collected:
+			gold_collected = true
 			await get_tree().create_timer(0.6).timeout
 			state = "no_gold"
 			drop_gold()
-			await get_tree().create_timer(3).timeout
 			add_item_to_inventory(item.name, 1)
 
 func popfromground(gold_collectable):
