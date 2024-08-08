@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsjdcdm4g0u2p"]
+
+[ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_36os8"]
+[ext_resource type="Texture2D" uid="uid://cxflra5e8aob5" path="res://art/terrain/spaceship.png" id="2_vcy67"]
+[ext_resource type="Texture2D" uid="uid://b3wirsdpgo743" path="res://art/button_which_shows_tooltip.png" id="3_f4yrm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltsrt"]
+atlas = ExtResource("2_vcy67")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4igy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltsrt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6v04t"]
+size = Vector2(128, 127)
+
+[node name="Spaceship" type="Node2D"]
+script = ExtResource("1_36os8")
+
+[node name="spaceshiparea" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spaceshiparea"]
+sprite_frames = SubResource("SpriteFrames_d4igy")
+
+[node name="spaceshipcollision" type="CollisionShape2D" parent="spaceshiparea"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_6v04t")
+
+[node name="crashmessage" type="Node2D" parent="spaceshiparea"]
+visible = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="spaceshiparea/crashmessage"]
+offset_left = -139.0
+offset_top = -79.0
+offset_right = 65.0
+offset_bottom = 25.0
+texture = ExtResource("3_f4yrm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="spaceshiparea/crashmessage"]
+offset_left = -120.0
+offset_top = -65.0
+offset_right = 208.0
+offset_bottom = 87.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/normal_font_size = 15
+text = "You have crashed and broken your spaceship!!! Gather resources to repair your spaceship and return to earth!"

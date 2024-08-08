@@ -8,6 +8,10 @@ var paused = false
 
 @onready var thiswaytomines = $Sprite2D/thiswaytomines
 
+@onready var spaceship_entered = false
+@onready var crashmessage = $Player/Camera2D/crashmessage
+@onready var spaceshiparea_2 = $Spaceship/spaceshiparea2
+
 @onready var start_sign_post_entered = false
 
 var is_showing_thiswaytomines = false
@@ -288,6 +292,8 @@ func _process(delta):
 		var action_name = "ui_hotbar_" + str(i + 1)  # Define action names like ui_hotbar_1, ui_hotbar_2, etc.
 		if Input.is_action_just_pressed(action_name):
 			highlight_slot(i)
+	if spaceship_entered:
+		crashmessage.show()
 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:
@@ -326,3 +332,14 @@ func _on_startsignpostarea_body_exited(body):
 func _on_entrancetogoldmine_body_entered(body):
 	if body.name == "Player":
 		StageManager.changeStage(StageManager.GOLDMINE, 453, -30)
+
+
+func _on_spaceshiparea_2_body_entered(body):
+	if body == player:
+		spaceship_entered = true
+
+
+func _on_spaceshiparea_2_body_exited(body):
+	if body == player:
+		spaceship_entered = false
+		crashmessage.hide()
