@@ -20,6 +20,7 @@ const item = preload("res://Inventory/items/gold.tres")
 var player_node
 var inventory
 var current_gold
+var gold_collected = false
 
 signal request_inventory_update()
 
@@ -35,9 +36,11 @@ func _on_inventory_updated(new_inventory):
 func _process(delta):
 	if state == "no_gold":
 		animated_sprite.play("no_gold")
+		gold_collected = false
 	elif state == "gold":
 		animated_sprite.play("gold")
 		if player_in_area and Input.is_action_just_pressed("swing"):
+			gold_collected = true
 			await get_tree().create_timer(0.6).timeout
 			state = "no_gold"
 			drop_gold()
