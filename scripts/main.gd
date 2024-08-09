@@ -149,7 +149,7 @@ func _on_request_inventory_update(item_name, quantity):
 	inventory.add_item(item_name, quantity)
 	var updated_quantity = inventory.get_item_quantity(item_name)
 	update_inventory_ui(item_name, updated_quantity)
-	
+
 
 func update_inventory_ui(item_name, updated_quantity):
 	if item_name == IRON.name:
@@ -184,8 +184,10 @@ func update_inventory_ui(item_name, updated_quantity):
 				var label = centre_container.get_children()[0].get_children()[1]
 
 				if item.texture == GOLD.texture:
-					label.text = str(int(label.text) + 1)
-					
+					if updated_quantity <= 0:
+						label.text = str(int(label.text) + updated_quantity)
+					else:
+						label.text = str(int(label.text) +1)
 					return
 
 		for slot in inventory_slots:
@@ -232,6 +234,7 @@ func update_inventory_ui(item_name, updated_quantity):
 
 				if item.texture == GOLD_STICK.texture:
 					label.text = str(int(label.text) + 1)
+					_on_request_inventory_update(GOLD.name, -2)
 					return
 
 		for slot in inventory_slots:
@@ -243,7 +246,9 @@ func update_inventory_ui(item_name, updated_quantity):
 				if item.texture == null:
 					item.texture = GOLD_STICK.texture
 					label.text = str(1)
+					_on_request_inventory_update(GOLD.name, -2)
 					return
+
 			
 	
 func _on_inventory_loaded(gold_amount, iron_amount):
