@@ -61,6 +61,7 @@ func _on__pressed():
 	if playerdata.invGoldIngot >= 2:
 		print("making gold stick")
 		add_item_to_inventory(item.name, 1)
+		playerdata.add_invGoldIngot(-2)
 		
 
 func add_item_to_inventory(item_name, quantity):

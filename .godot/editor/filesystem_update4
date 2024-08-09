@@ -5,3 +5,4 @@ res://scenes/crafting.tscn
 res://scenes/housetest.tscn
 res://scripts/crafting.gd
 res://scripts/main.gd
+res://scripts/PlayerData.gd

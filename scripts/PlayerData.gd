@@ -76,5 +76,6 @@ func load_data():
 	print("New inv iron ingot: " + str(invironingot))
 	invGoldIngot = int(jsongoldvalue)
 	print("New inv gold ingot: " + str(invGoldIngot))
-
+	emit_signal("inventory_loaded", invGoldIngot, invironingot)
+	
 

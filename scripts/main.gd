@@ -63,6 +63,8 @@ func _ready():
 	inventory_slots = get_node("Player/Camera2D/InventoryGui/GridContainer").get_children()
 	inventory_crafting = get_node("Player/Camera2D/InventoryGui/crafting")
 	inventory_crafting.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	playerdata.connect("inventory_loaded", Callable(self, "_on_inventory_loaded"))
+
 
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25) 
@@ -243,6 +245,41 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(1)
 					return
 			
+	
+func _on_inventory_loaded(gold_amount, iron_amount):
+	for slot in inventory_slots:
+		if slot.get_child_count() != 0:
+			var centre_container = slot.get_children()[1]
+			var item = centre_container.get_children()[0].get_children()[0]
+			var label = centre_container.get_children()[0].get_children()[1]
+			item.texture = null
+			label.text = ""
+
+	if gold_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = GOLD.texture
+					label.text = str(gold_amount)
+					break
+
+	if iron_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = IRON.texture
+					label.text = str(iron_amount)
+					break
+
+	
 	
 func inventoryopen():
 	if inv_open:
