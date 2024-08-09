@@ -61,8 +61,8 @@ func _ready():
 	tree_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui.connect("slot_clicked", Callable(self, "_on_slot_clicked"))
 	inventory_slots = get_node("Player/Camera2D/InventoryGui/GridContainer").get_children()
-	inventory_crafting = get_node("Player/Camera2D/InventoryGui/crafting/table/0")
-	inventory_crafting.connect("on_pressed", Callable(self, "crafted_stick"))
+	inventory_crafting = get_node("Player/Camera2D/InventoryGui/crafting")
+	inventory_crafting.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25) 
@@ -110,14 +110,7 @@ func _ready():
 	#treecollectable = false
 
 func crafted_stick():
-	print("running add gold")
-	making_stick = true
-	#treecollectable = false
-	#goldcollectable = false
-	#goldcollectable2 = false
-	#ironcollectable = false
-	_on_request_inventory_update(GOLD_STICK, 1)
-	#making_stick = false
+	pass
 	
 
 func _on_slot_clicked(slot_index):
@@ -227,9 +220,8 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(1)
 					return
 
-	if item_name:
+	if item_name == GOLD_STICK.name:
 		print("ADDING STICK INTO INVENTORY")
-		print(inventory_slots)
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
 				var centre_container = slot.get_children()[1]
