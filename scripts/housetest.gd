@@ -17,3 +17,7 @@ func pausemenu():
 		Engine.time_scale = 0
 		
 	paused = !paused
+
+
+func _on_area_2d_body_entered(body):
+	StageManager.changeStage(StageManager.MAINTEST, 0, -10)
