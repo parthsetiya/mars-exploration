@@ -907,7 +907,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_2vkqu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
-position = Vector2(5.90908, -49.5)
+position = Vector2(6.36364, -38)
 shape = SubResource("RectangleShape2D_w05k3")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
