@@ -84,7 +84,7 @@ friendlyalienttest.png::CompressedTexture2D::6291742042191846279::1722934221::17
 ironbar.png::CompressedTexture2D::7627574727233947773::1722934221::1722934283::1::::<><>::
 log.png::CompressedTexture2D::4303411137905930639::1722934221::1722934283::1::::<><>::
 treespritesheet.png::CompressedTexture2D::4961831032702164288::1722934221::1722934283::1::::<><>::
-::res://art/mainart/::1723191679
+::res://art/mainart/::1723192577
 defaultslot.tres::Resource/InventoryItem::1052134442863097705::1722934221::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://r77ltypqkvmf::::res://art/mainart/hotbartseterbolt.png
 gold_stick.tres::Resource/InventoryItem::4331540727425506813::1722934221::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://brjp666nsipya::::res://art/mainart/gold_stick_test.png
 gold_stick_test.png::CompressedTexture2D::3599178216556576812::1722934221::1722934283::1::::<><>::
@@ -96,7 +96,7 @@ pixil-frame-0 (14).png::CompressedTexture2D::3278119922276882670::1722934221::17
 pixil-frame-0 (15).png::CompressedTexture2D::2503228540134820708::1722934221::1722934283::1::::<><>::
 selectedslot.png::CompressedTexture2D::1811154842321857077::1722934221::1722934283::1::::<><>::
 selectedslot.tres::Resource/InventoryItem::141980961967370813::1722934221::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://02lpqyqe50qb::::res://art/mainart/selectedslot.png
-spritesheet (11).png::CompressedTexture2D::4126716118773138236::1723191496::1723191681::1::::<><>::
+spritesheet (11).png::CompressedTexture2D::4126716118773138236::1723192559::1723192579::1::::<><>::
 toolspritesheet.png::CompressedTexture2D::2006780287754194011::1722934221::1722934283::1::::<><>::
 tungsten pickaxe.png::CompressedTexture2D::8841538533671235743::1722934221::1722934283::1::::<><>::
 ::res://art/mainart/Player/::1723191594
