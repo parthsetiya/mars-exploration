@@ -995,7 +995,6 @@ script = SubResource("GDScript_ahtlq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.513147, 39.2516)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5vtw8")
 
 [node name="E_to_interact" parent="Area2D" instance=ExtResource("4_dukk6")]

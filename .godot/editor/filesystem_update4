@@ -1,8 +1,11 @@
-res://scenes/housetest.tscn
 res://scenes/maintest.tscn
+res://scripts/main.gd
 res://scenes/player.tscn
 res://scenes/gold_block.tscn
 res://scenes/crafting.tscn
-res://scripts/main.gd
-res://scripts/housetest.gd
-res://scenes/goldmine.tscn
+res://scenes/housetest.tscn
+res://Inventory/saveitems.json
+res://Inventory/inventory_gui.tscn
+res://scenes/slot.tscn
+res://scripts/crafting.gd
+res://scripts/PlayerData.gd

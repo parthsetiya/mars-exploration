@@ -63,6 +63,7 @@ func _ready():
 	inventory_slots = get_node("Player/Camera2D/InventoryGui/GridContainer").get_children()
 	inventory_crafting = get_node("Player/Camera2D/InventoryGui/crafting")
 	inventory_crafting.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	#inventory_crafting.connect("request_inventory_update", Callable(self, "remove_inventory_items"))
 	playerdata.connect("inventory_loaded", Callable(self, "_on_inventory_loaded"))
 
 
@@ -184,10 +185,7 @@ func update_inventory_ui(item_name, updated_quantity):
 				var label = centre_container.get_children()[0].get_children()[1]
 
 				if item.texture == GOLD.texture:
-					if updated_quantity <= 0:
-						label.text = str(int(label.text) + updated_quantity)
-					else:
-						label.text = str(int(label.text) +1)
+					label.text = str(int(label.text) + 1)
 					return
 
 		for slot in inventory_slots:
@@ -202,7 +200,7 @@ func update_inventory_ui(item_name, updated_quantity):
 					return
 
 	if item_name == LOG.name:
-		playerdata.add_invGoldIngot(1)
+		playerdata.add_inglogingot(1)
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
 				var centre_container = slot.get_children()[1]
@@ -225,6 +223,7 @@ func update_inventory_ui(item_name, updated_quantity):
 					return
 
 	if item_name == GOLD_STICK.name:
+		playerdata.add_invGoldIngot(-2)
 		print("ADDING STICK INTO INVENTORY")
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -234,8 +233,9 @@ func update_inventory_ui(item_name, updated_quantity):
 
 				if item.texture == GOLD_STICK.texture:
 					label.text = str(int(label.text) + 1)
-					_on_request_inventory_update(GOLD.name, -2)
 					return
+				if item.texture == GOLD.texture:
+					label.text = str(int(label.text) - 2)
 
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -246,12 +246,21 @@ func update_inventory_ui(item_name, updated_quantity):
 				if item.texture == null:
 					item.texture = GOLD_STICK.texture
 					label.text = str(1)
-					_on_request_inventory_update(GOLD.name, -2)
 					return
-
 			
+#func remove_inventory_items():
+	#print("ASDFASDFASD")
+	#for slot in inventory_slots:
+		#if slot.get_child_count() != 0:
+			#var centre_container = slot.get_children()[1]
+			#var item = centre_container.get_children()[0].get_children()[0]
+			#var label = centre_container.get_children()[0].get_children()[1]
+			#
+			#if item.texture == GOLD.texture:
+				#label.text == str(playerdata.invGoldIngot)
+
 	
-func _on_inventory_loaded(gold_amount, iron_amount):
+func _on_inventory_loaded(gold_amount, iron_amount, log_amount):
 	for slot in inventory_slots:
 		if slot.get_child_count() != 0:
 			var centre_container = slot.get_children()[1]
@@ -283,6 +292,19 @@ func _on_inventory_loaded(gold_amount, iron_amount):
 					item.texture = IRON.texture
 					label.text = str(iron_amount)
 					break
+
+	if log_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = LOG.texture
+					label.text = str(log_amount)
+					break
+		
 
 	
 	
