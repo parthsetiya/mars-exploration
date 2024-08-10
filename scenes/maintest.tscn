@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=26 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bsp4brhm0rf88" path="res://scenes/thiswaytomines.tscn" id="9_347cy"]
 [ext_resource type="PackedScene" uid="uid://c0vc4hnvvbm3x" path="res://scenes/interact_to_read.tscn" id="9_j40lu"]
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="11_6wovd"]
-[ext_resource type="PackedScene" uid="uid://2ej56mv1u4pi" path="res://scenes/enemy.tscn" id="11_tmkuu"]
 [ext_resource type="PackedScene" uid="uid://crlao84s5ynxx" path="res://scenes/friendlyalien.tscn" id="12_3kb63"]
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="12_tamxu"]
 [ext_resource type="PackedScene" uid="uid://kfgimtoe72hl" path="res://scenes/amethyst_block.tscn" id="14_u0j5j"]
@@ -981,9 +980,6 @@ position = Vector2(85, 74)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/thiswaytomines/Area2D"]
 position = Vector2(1.5, 0)
 shape = SubResource("CircleShape2D_e37og")
-
-[node name="enemy" parent="." instance=ExtResource("11_tmkuu")]
-position = Vector2(44, -566)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("12_3kb63")]
 position = Vector2(66, -81)

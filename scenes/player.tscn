@@ -568,18 +568,19 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1.1, 1)
 collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_rv08x")
 metadata/_edit_horizontal_guides_ = [-48.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(9.09091, -25)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.45996, 1.50856)
 texture = ExtResource("2_dxfbu")
-hframes = 52
+hframes = 64
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.68182, 10)
+position = Vector2(7.27273, 8)
 shape = SubResource("RectangleShape2D_1u2gu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -622,7 +623,7 @@ offset_bottom = 329.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 100
-text = "You died!"
+placeholder_text = "You died!"
 
 [node name="Goldcounter" type="Label" parent="."]
 visible = false

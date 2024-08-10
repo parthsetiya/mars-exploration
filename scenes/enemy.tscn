@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://2ej56mv1u4pi"]
 
-[ext_resource type="Texture2D" path="res://art/alientest.png" id="1_buk1y"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_i3n6q"]
+[ext_resource type="Texture2D" path="res://art/mainart/pixil-frame-0 (69).png" id="2_ibsxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8ivo"]
-size = Vector2(35, 69)
+size = Vector2(21, 28)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lgjf2"]
 radius = 124.036
@@ -14,12 +14,12 @@ script = ExtResource("1_i3n6q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -0.5)
-texture = ExtResource("1_buk1y")
+texture = ExtResource("2_ibsxa")
 
 [node name="Collisionarea" type="Area2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Collisionarea"]
-position = Vector2(-0.5, 1)
+position = Vector2(0, 11.5)
 shape = SubResource("RectangleShape2D_h8ivo")
 
 [node name="Detectionarea" type="Area2D" parent="."]
