@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=33 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_rv08x"]
 [ext_resource type="Texture2D" uid="uid://by2an801le88g" path="res://art/mainart/spritesheet (11).png" id="2_dxfbu"]
@@ -32,21 +32,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_q6vqo"]
-resource_name = "axeswingdown"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [58, 59, 60, 61, 62, 63]
 }
 
 [sub_resource type="Animation" id="Animation_04dav"]
@@ -318,7 +303,6 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7cik"]
 _data = {
 "RESET": SubResource("Animation_0d6rx"),
-"axeswingdown": SubResource("Animation_q6vqo"),
 "axeswingleft": SubResource("Animation_04dav"),
 "axeswingright": SubResource("Animation_ygm34"),
 "fade_in": SubResource("Animation_ubv5s"),
@@ -445,9 +429,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_i4rs2"]
-resource_name = "axeswingdown"
 
 [sub_resource type="Animation" id="Animation_815mu"]
 resource_name = "toolswingleft"
@@ -580,7 +561,6 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n5xte"]
 _data = {
 "RESET": SubResource("Animation_451hy"),
-"axeswingdown": SubResource("Animation_i4rs2"),
 "toolswingleft": SubResource("Animation_815mu"),
 "toolswingright": SubResource("Animation_onxj6")
 }

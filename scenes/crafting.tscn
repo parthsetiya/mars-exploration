@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwbjcat8e4j7n"]
+[gd_scene load_steps=4 format=3 uid="uid://cwbjcat8e4j7n"]
 
 [ext_resource type="Script" path="res://scripts/crafting.gd" id="1_cpp4s"]
 [ext_resource type="Script" path="res://scripts/table.gd" id="2_qrt3n"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="2_udjdx"]
-[ext_resource type="Texture2D" uid="uid://ds07yrx74f5t" path="res://art/mainart/pixil-frame-0 (10).png" id="4_a5u05"]
 
 [node name="crafting" type="Node2D"]
 script = ExtResource("1_cpp4s")
@@ -22,13 +21,19 @@ text = "stick"
 script = ExtResource("2_udjdx")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureButton" type="TextureButton" parent="table"]
-offset_left = 33.0
-offset_top = 21.0
-offset_right = 73.0
-offset_bottom = 61.0
-texture_normal = ExtResource("4_a5u05")
+[node name="Record" type="Button" parent="."]
+offset_left = -88.0
+offset_top = -32.0
+offset_bottom = -4.0
+text = "Record"
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="TextEdit" parent="."]
+offset_left = -144.0
+offset_right = 1.0
+offset_bottom = 51.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="table/0" to="." method="_on__pressed"]
 [connection signal="pressed" from="table/0" to="table/0" method="_on_pressed"]
-[connection signal="pressed" from="table/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Record" to="table" method="_on_record_pressed"]

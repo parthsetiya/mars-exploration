@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvtistcsm3ds0"]
+[gd_scene load_steps=9 format=3 uid="uid://bvtistcsm3ds0"]
 
 [ext_resource type="Script" path="res://scenes/gold_block.gd" id="1_ej74l"]
 [ext_resource type="Script" path="res://scenes/pickable_area.gd" id="4_yqus4"]
@@ -6,10 +6,6 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0tdoc"]
 load_path = "res://.godot/imported/spritesheet (2).png-7bfe718cf7c92d2a2917842350ebe726.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvtjh"]
-atlas = SubResource("CompressedTexture2D_0tdoc")
-region = Rect2(0, 0, 34, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_un7te"]
 atlas = SubResource("CompressedTexture2D_0tdoc")
@@ -19,7 +15,7 @@ region = Rect2(34, 0, 34, 34)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yvtjh")
+"texture": null
 }],
 "loop": true,
 "name": &"gold",
