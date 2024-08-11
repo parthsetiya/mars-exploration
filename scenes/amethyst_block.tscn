@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://kfgimtoe72hl"]
+[gd_scene load_steps=8 format=3 uid="uid://kfgimtoe72hl"]
 
 [ext_resource type="Script" path="res://scenes/amethyst_block.gd" id="1_ui0j2"]
+[ext_resource type="Texture2D" uid="uid://bf0f76pe3s568" path="res://art/mainart/amythest.png" id="2_r4cgc"]
 [ext_resource type="PackedScene" uid="uid://b683v8qkstwsn" path="res://scenes/amethyst_collectable.tscn" id="3_o40u2"]
 [ext_resource type="Script" path="res://scenes/pickableareamethyst.gd" id="3_rbxik"]
 
@@ -8,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("2_r4cgc")
 }],
 "loop": true,
 "name": &"amethyst",

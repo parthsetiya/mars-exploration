@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvtistcsm3ds0"]
+[gd_scene load_steps=10 format=3 uid="uid://bvtistcsm3ds0"]
 
 [ext_resource type="Script" path="res://scenes/gold_block.gd" id="1_ej74l"]
+[ext_resource type="Texture2D" uid="uid://ch7fbuhmrm1yq" path="res://art/mainart/gold.png" id="2_k44p7"]
 [ext_resource type="Script" path="res://scenes/pickable_area.gd" id="4_yqus4"]
 [ext_resource type="PackedScene" uid="uid://daflkqadevkq6" path="res://scenes/gold_collectable.tscn" id="5_scnpm"]
 
@@ -15,7 +16,7 @@ region = Rect2(34, 0, 34, 34)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("2_k44p7")
 }],
 "loop": true,
 "name": &"gold",

@@ -9,3 +9,7 @@ res://scenes/amethyst_block.tscn
 res://scenes/amethyst_collectable.tscn
 res://scenes/iron_block.tscn
 res://scripts/main.gd
+res://scenes/cobalt_block.tscn
+res://scenes/gold_block.gd
+res://scenes/iron_block.gd
+res://scenes/cobalt_ore.gd

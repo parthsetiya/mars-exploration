@@ -43,6 +43,8 @@ func _process(delta):
 			state = "no_iron"
 			drop_iron()
 			add_item_to_inventory(item.name, 1)
+	if player_in_area == true:
+		animated_sprite.play("cobalt_outline")
 
 func popfromground(iron_collectable):
 	iron_collectable.get_node("AnimatedSprite2D").show()
@@ -68,6 +70,7 @@ func drop_iron():
 func _on_area_2d_body_entered(body):
 		player_in_area = true
 		player = body
+		
 
 func _on_area_2d_body_exited(body):
 		player_in_area = false
@@ -76,11 +79,3 @@ func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
 
 
-#func _on_area_2d_area_entered(area):
-	#if area.has_meta("Iron"):
-		#collectable = true
-		#current_iron = area.get_parent()
-#
-#func _on_area_2d_area_exited(area):
-	#if area.has_meta("Iron"):
-		#collectable = false

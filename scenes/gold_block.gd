@@ -79,6 +79,18 @@ func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
 
 
+@export var outline_frame: int = 1  
+@export var normal_frame: int = 0  
+
+func _on_area2d_body_entered(body: Node2D):
+	if body.is_in_group("Player"):  
+		animated_sprite.frame = outline_frame  
+
+	else:
+		animated_sprite.frame = normal_frame  
+func _on_area2d_body_exited(body: Node2D):
+	if body.is_in_group("Player"):
+		animated_sprite.frame = normal_frame
 
 
 

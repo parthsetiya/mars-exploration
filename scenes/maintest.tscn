@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_b4hsc"]
 [ext_resource type="PackedScene" uid="uid://bv0los6yqfysa" path="res://scenes/e_to_interact.tscn" id="4_dukk6"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
-[ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/iron_block.tscn" id="7_8am3e"]
+[ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/cobalt_block.tscn" id="7_6rs4l"]
 [ext_resource type="Texture2D" uid="uid://cr41eyd0qsvfs" path="res://art/terrain/signpost.png" id="7_084ek"]
 [ext_resource type="PackedScene" uid="uid://bsp4brhm0rf88" path="res://scenes/thiswaytomines.tscn" id="9_347cy"]
 [ext_resource type="PackedScene" uid="uid://c0vc4hnvvbm3x" path="res://scenes/interact_to_read.tscn" id="9_j40lu"]
@@ -951,7 +951,7 @@ color = Color(0, 0, 0, 1)
 [node name="gold_block" parent="." instance=ExtResource("6_rrp7u")]
 position = Vector2(-58.5, 4.5)
 
-[node name="iron_block" parent="." instance=ExtResource("7_8am3e")]
+[node name="iron_block" parent="." instance=ExtResource("7_6rs4l")]
 light_mask = 2
 position = Vector2(-114.5, 86.5)
 

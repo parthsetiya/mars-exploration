@@ -1,19 +1,29 @@
-[gd_scene load_steps=9 format=3 uid="uid://uvxjnidohd5v"]
+[gd_scene load_steps=11 format=3 uid="uid://uvxjnidohd5v"]
 
-[ext_resource type="Texture2D" uid="uid://cnr8nf2cs2r3p" path="res://art/terrain/ironore.png" id="1_tp7sv"]
-[ext_resource type="Script" path="res://scenes/iron_block.gd" id="1_vknek"]
-[ext_resource type="Script" path="res://scenes/pickableareairon.gd" id="3_8ebru"]
-[ext_resource type="PackedScene" uid="uid://b3n7abpn4yivd" path="res://scenes/iron_collectable.tscn" id="4_j7c42"]
+[ext_resource type="Script" path="res://scenes/cobalt_ore.gd" id="1_2h2iy"]
+[ext_resource type="Texture2D" uid="uid://gntyv3hcc3ba" path="res://art/mainart/cobalt.png" id="2_awg00"]
+[ext_resource type="Texture2D" uid="uid://cnr8nf2cs2r3p" path="res://art/terrain/ironore.png" id="3_21gcd"]
+[ext_resource type="Texture2D" uid="uid://yc0p3cu2uucr" path="res://art/mainart/cobalt_outline.png" id="3_rmib1"]
+[ext_resource type="Script" path="res://scenes/pickableareairon.gd" id="4_30e3k"]
+[ext_resource type="PackedScene" uid="uid://b3n7abpn4yivd" path="res://scenes/iron_collectable.tscn" id="5_tkbfo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjnaq"]
-atlas = ExtResource("1_tp7sv")
+atlas = ExtResource("3_21gcd")
 region = Rect2(34, 0, 34, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eq3ih"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("3_rmib1")
+}],
+"loop": true,
+"name": &"cobalt_outline",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_awg00")
 }],
 "loop": true,
 "name": &"iron",
@@ -29,25 +39,28 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w4s8r"]
-radius = 17.0294
+radius = 19.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e15sv"]
-radius = 17.1172
+radius = 18.3473
 
-[node name="iron_block" type="Node2D"]
-script = ExtResource("1_vknek")
+[node name="cobalt" type="Node2D" node_paths=PackedStringArray("inventory_manager")]
+script = ExtResource("1_2h2iy")
+inventory_manager = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eq3ih")
 animation = &"iron"
 
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
 [node name="pickableareairon" type="Area2D" parent="."]
-script = ExtResource("3_8ebru")
+script = ExtResource("4_30e3k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pickableareairon"]
 shape = SubResource("CircleShape2D_w4s8r")
 
-[node name="iron_collectable" parent="pickableareairon" instance=ExtResource("4_j7c42")]
+[node name="iron_collectable" parent="pickableareairon" instance=ExtResource("5_tkbfo")]
 visible = false
 
 [node name="respawn_timeriron" type="Timer" parent="."]
@@ -59,8 +72,10 @@ wait_time = 3.0
 metadata/iron = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.03558, 1.03558)
 shape = SubResource("CircleShape2D_e15sv")
 
+[connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="pickableareairon" to="pickableareairon" method="_on_body_entered"]
 [connection signal="body_exited" from="pickableareairon" to="pickableareairon" method="_on_body_exited"]
 [connection signal="timeout" from="respawn_timeriron" to="." method="_on_respawn_timer_timeout"]
