@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1723352302
+::res://::1723353377
 joystix.ttf::FontFile::2632679398112957767::1723201382::1723201399::1::::<><>::
 README.md::TextFile::-1::1723201382::0::1::::<><>::
 ::res://addons/::1723201382
@@ -84,12 +84,14 @@ friendlyalienttest.png::CompressedTexture2D::6291742042191846279::1723201382::17
 ironbar.png::CompressedTexture2D::7627574727233947773::1723201382::1723201399::1::::<><>::
 log.png::CompressedTexture2D::4303411137905930639::1723201382::1723201399::1::::<><>::
 treespritesheet.png::CompressedTexture2D::4961831032702164288::1723201382::1723201399::1::::<><>::
-::res://art/mainart/::1723352667
+::res://art/mainart/::1723361145
 amythest.png::CompressedTexture2D::2789336727719369415::1723352203::1723352244::1::::<><>::
 amythest_outline.png::CompressedTexture2D::2095934083469100788::1723352581::1723352667::1::::<><>::
 cobalt.png::CompressedTexture2D::449167601112960034::1723352203::1723352244::1::::<><>::
 cobalt_outline.png::CompressedTexture2D::1690207189237643509::1723352581::1723352667::1::::<><>::
+crashed.png::CompressedTexture2D::737350612448395393::1723361118::1723361146::1::::<><>::
 defaultslot.tres::Resource/Resource::1052134442863097705::1723201382::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://r77ltypqkvmf::::res://art/mainart/hotbartseterbolt.png
+fire spaceship.png::CompressedTexture2D::9164802075164247100::1723360026::1723361128::1::::<><>::
 gold.png::CompressedTexture2D::5330529793589157976::1723352203::1723352244::1::::<><>::
 gold_outline.png::CompressedTexture2D::3145606055267031032::1723352581::1723352667::1::::<><>::
 gold_stick.tres::Resource/Resource::4331540727425506813::1723201382::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://brjp666nsipya::::res://art/mainart/gold_stick_test.png
@@ -133,6 +135,13 @@ pixil-frame-6.png::CompressedTexture2D::3857085108365621634::1723201382::1723201
 ::res://art/mainart/Player/up idle/::1723201399
 pixil-frame-0.png::CompressedTexture2D::4087870495558629415::1723201382::1723201399::1::::<><>::
 pixil-frame-1.png::CompressedTexture2D::4712151267824879406::1723201382::1723201399::1::::<><>::
+::res://art/mainart/spaceship fire animation/::1723361128
+pixil-frame-0.png::CompressedTexture2D::280414947663604624::1723359938::1723361128::1::::<><>::
+pixil-frame-1.png::CompressedTexture2D::1237101188305494837::1723359938::1723361128::1::::<><>::
+pixil-frame-2.png::CompressedTexture2D::7941728082541792372::1723359938::1723361128::1::::<><>::
+pixil-frame-3.png::CompressedTexture2D::7209245715317880574::1723359938::1723361128::1::::<><>::
+pixil-frame-4.png::CompressedTexture2D::2075578704021850945::1723359938::1723361128::1::::<><>::
+pixil-frame-5.png::CompressedTexture2D::785695184689971379::1723359938::1723361128::1::::<><>::
 ::res://art/mainmenu/::1723201399
 deathscreen.png::CompressedTexture2D::4450902446690798156::1723201382::1723201399::1::::<><>::
 pixel_art_astronaut_standing_o(1).jpeg::CompressedTexture2D::1306246770854513496::1723201382::1723201399::1::::<><>::
@@ -174,42 +183,42 @@ inventoryslot.gd::GDScript::-1::1723201382::0::1::::invslot<>Resource<>::
 inventory_gui.gd::GDScript::-1::1723201382::0::1::::<>Control<>::
 inventory_gui.tscn::PackedScene::3399146014084081529::1723201382::0::1::::<><>::res://Inventory/inventory_gui.gd<>uid://gajil2maxy85::::res://Inventory/inventorybackgroundtest.png<>uid://chpj76y4h6uxx::::res://scenes/slot.tscn<>uid://cwbjcat8e4j7n::::res://scenes/crafting.tscn
 playerinventory.tres::Resource::8216755804615534670::1723201382::0::1::::<><>::res://Inventory/inventory.gd
-saveitems.json::JSON::-1::1723341240::0::1::::<><>::
+saveitems.json::JSON::-1::1723353015::0::1::::<><>::
 ::res://Inventory/items/::1723340889
 amethyst.tres::Resource/Resource::8416872338663696268::1723201382::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://cmmcy67gjjvd3::::res://art/amethystbar.png
 gold.tres::Resource/Resource::3378477205999874120::1723201382::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://dwgbq66mj03bb::::res://Inventory/goldbartest.png
 gold_pickaxe.tres::Resource/Resource::6356666372468992744::1723340889::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://ds07yrx74f5t::::res://art/mainart/pixil-frame-0 (10).png
 iron.tres::Resource/Resource::9070520384283150741::1723201382::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://dgw4bn2ocyrgn::::res://art/ironbar.png
 log.tres::Resource/Resource::5645858665277730215::1723201382::0::1::::<><>::res://Inventory/inventoryitem.gd<>uid://b2kus16rxojx4::::res://art/log.png
-::res://scenes/::1723353265
+::res://scenes/::1723354695
 amethyst_block.gd::GDScript::-1::1723201382::0::1::::<>Node2D<>::
-amethyst_block.tscn::PackedScene::712589573732676773::1723353081::0::1::::<><>::res://scenes/amethyst_block.gd<>uid://bf0f76pe3s568::::res://art/mainart/amythest.png<>uid://b683v8qkstwsn::::res://scenes/amethyst_collectable.tscn<>res://scenes/pickableareamethyst.gd
-amethyst_collectable.tscn::PackedScene::4632138638292147905::1723353081::0::1::::<><>::uid://cmmcy67gjjvd3::::res://art/amethystbar.png
+amethyst_block.tscn::PackedScene::712589573732676773::1723354695::0::1::::<><>::res://scenes/amethyst_block.gd<>uid://bf0f76pe3s568::::res://art/mainart/amythest.png<>uid://b683v8qkstwsn::::res://scenes/amethyst_collectable.tscn<>res://scenes/pickableareamethyst.gd
+amethyst_collectable.tscn::PackedScene::4632138638292147905::1723354695::0::1::::<><>::uid://cmmcy67gjjvd3::::res://art/amethystbar.png
 Area2D.gd::GDScript::-1::1723201382::0::1::::<>Area2D<>::
-cobalt_block.tscn::PackedScene::1448542063891957525::1723353376::0::1::::<><>::res://scenes/iron_block.gd<>uid://gntyv3hcc3ba::::res://art/mainart/cobalt.png<>uid://cnr8nf2cs2r3p::::res://art/terrain/ironore.png<>uid://yc0p3cu2uucr::::res://art/mainart/cobalt_outline.png<>res://scenes/pickableareairon.gd<>uid://b3n7abpn4yivd::::res://scenes/iron_collectable.tscn
-crafting.tscn::PackedScene::6319610360556831865::1723353081::0::1::::<><>::res://scripts/crafting.gd<>res://scripts/table.gd<>res://scripts/button.gd
+cobalt_block.tscn::PackedScene::1448542063891957525::1723354695::0::1::::<><>::res://scenes/cobalt_ore.gd<>uid://gntyv3hcc3ba::::res://art/mainart/cobalt.png<>uid://cnr8nf2cs2r3p::::res://art/terrain/ironore.png<>uid://yc0p3cu2uucr::::res://art/mainart/cobalt_outline.png<>res://scenes/pickableareairon.gd<>uid://b3n7abpn4yivd::::res://scenes/iron_collectable.tscn
+cobalt_ore.gd::GDScript::-1::1723354144::0::1::::<>Node2D<>::
+crafting.tscn::PackedScene::6319610360556831865::1723354695::0::1::::<><>::res://scripts/crafting.gd<>res://scripts/table.gd<>res://scripts/button.gd
 dialogue.tscn::PackedScene::2905445878911990224::1723201382::0::1::::<><>::uid://dipqcuu3xpcfb::::res://art/dialogueboxtest.png
-enemy.tscn::PackedScene::1903957963746374746::1723353081::0::1::::<><>::res://scripts/enemy.gd
+enemy.tscn::PackedScene::1903957963746374746::1723354695::0::1::::<><>::res://scripts/enemy.gd
 e_to_interact.tscn::PackedScene::3912689726399671084::1723201382::0::1::::<><>::uid://b3wirsdpgo743::::res://art/button_which_shows_tooltip.png
 friendlyalien.tscn::PackedScene::5988786644570848377::1723201382::0::1::::<><>::uid://cvv1cpp0kkjel::::res://art/friendlyalienttest.png<>res://scripts/friendlyalien.gd<>uid://bhnojfecol1ou::::res://scenes/dialogue.tscn
 goldmine.gd::GDScript::-1::1723201382::0::1::::<>Node2D<>::
-goldmine.tscn::PackedScene::7155676553177805251::1723353081::0::1::::<><>::uid://cd8a1b041m6tj::::res://scenes/player.tscn<>res://scenes/goldmine.gd<>uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bvtistcsm3ds0::::res://scenes/gold_block.tscn
+goldmine.tscn::PackedScene::7155676553177805251::1723354695::0::1::::<><>::uid://cd8a1b041m6tj::::res://scenes/player.tscn<>res://scenes/goldmine.gd<>uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bvtistcsm3ds0::::res://scenes/gold_block.tscn
 gold_block.gd::GDScript::-1::1723353081::0::1::::<>Node2D<>::
-gold_block.tscn::PackedScene::3900128459519576553::1723353081::0::1::::<><>::res://scenes/gold_block.gd<>uid://ch7fbuhmrm1yq::::res://art/mainart/gold.png<>res://scenes/pickable_area.gd<>uid://daflkqadevkq6::::res://scenes/gold_collectable.tscn
+gold_block.tscn::PackedScene::3900128459519576553::1723354695::0::1::::<><>::res://scenes/gold_block.gd<>uid://ch7fbuhmrm1yq::::res://art/mainart/gold.png<>res://scenes/pickable_area.gd<>uid://daflkqadevkq6::::res://scenes/gold_collectable.tscn
 gold_collectable.gd::GDScript::-1::1723201382::0::1::::<>StaticBody2D<>::
 gold_collectable.tscn::PackedScene::7170270525225173551::1723201382::0::1::::<><>::res://scenes/gold_collectable.gd<>uid://dfg77f6x8nady::::res://Inventory/goldbartest.png
-housetest.tscn::PackedScene::7544056492396008884::1723353081::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://2ej56mv1u4pi::::res://scenes/enemy.tscn
+housetest.tscn::PackedScene::7544056492396008884::1723354695::0::1::::<><>::uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>res://scripts/housetest.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://2ej56mv1u4pi::::res://scenes/enemy.tscn
 interact_to_read.tscn::PackedScene::6571088001909211447::1723201382::0::1::::<><>::uid://b3wirsdpgo743::::res://art/button_which_shows_tooltip.png
-iron_block.gd::GDScript::-1::1723353376::0::1::::<>Node2D<>::
 iron_collectable.tscn::PackedScene::4380488236455095645::1723201382::0::1::::<><>::uid://dgw4bn2ocyrgn::::res://art/ironbar.png
-maintest.tscn::PackedScene::554974587879262404::1723353081::0::1::::<><>::res://scripts/main.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn<>uid://bvtistcsm3ds0::::res://scenes/gold_block.tscn<>uid://uvxjnidohd5v::::res://scenes/cobalt_block.tscn<>uid://cr41eyd0qsvfs::::res://art/terrain/signpost.png<>uid://bsp4brhm0rf88::::res://scenes/thiswaytomines.tscn<>uid://c0vc4hnvvbm3x::::res://scenes/interact_to_read.tscn<>uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>uid://crlao84s5ynxx::::res://scenes/friendlyalien.tscn<>uid://booto5uhhl2kr::::res://Inventory/inventory_gui.tscn<>uid://kfgimtoe72hl::::res://scenes/amethyst_block.tscn<>uid://cy45fnv5txv60::::res://scenes/tree_block.tscn
+maintest.tscn::PackedScene::554974587879262404::1723354695::0::1::::<><>::res://scripts/main.gd<>uid://cd8a1b041m6tj::::res://scenes/player.tscn<>uid://cbe4fh5bqi4gh::::res://scenes/pause_menu.tscn<>uid://bv0los6yqfysa::::res://scenes/e_to_interact.tscn<>uid://bvtistcsm3ds0::::res://scenes/gold_block.tscn<>uid://uvxjnidohd5v::::res://scenes/cobalt_block.tscn<>uid://cr41eyd0qsvfs::::res://art/terrain/signpost.png<>uid://bsp4brhm0rf88::::res://scenes/thiswaytomines.tscn<>uid://c0vc4hnvvbm3x::::res://scenes/interact_to_read.tscn<>uid://c73iwh4m45alj::::res://art/terrain/Tilemap.png<>uid://crlao84s5ynxx::::res://scenes/friendlyalien.tscn<>uid://booto5uhhl2kr::::res://Inventory/inventory_gui.tscn<>uid://kfgimtoe72hl::::res://scenes/amethyst_block.tscn<>uid://cy45fnv5txv60::::res://scenes/tree_block.tscn
 menu.tscn::PackedScene::901738731719950658::1723201382::0::1::::<><>::res://scripts/menu.gd<>uid://su0xtwgf3obo::::res://art/mainmenu/pixel_art_astronaut_standing_o(1).jpeg<>uid://bjqa8r1rtwbr3::::res://art/mainmenu/settingsbuttontest1.png<>uid://brlt6w3vpxgxn::::res://art/mainmenu/playbuttontest1.png<>uid://2uqyrmvyqs5u::::res://scenes/options/scenes/options_menu.tscn<>uid://dlj21l4gnwacy::::res://art/mainmenu/quitbuttontest1.png<>uid://cd8a1b041m6tj::::res://scenes/player.tscn
 pause_menu.gdshader::Shader::-1::1723201382::0::1::::<><>::
 pause_menu.tscn::PackedScene::4853057857874973991::1723201382::0::1::::<><>::res://scripts/pause_menu.gd
 pickableareairon.gd::GDScript::-1::1723201382::0::1::::<>Area2D<>::
 pickableareamethyst.gd::GDScript::-1::1723201382::0::1::::<>Area2D<>::
 pickable_area.gd::GDScript::-1::1723201382::0::1::::<>Area2D<>::
-player.tscn::PackedScene::5051578887322139883::1723353081::0::1::::<><>::res://scripts/player.gd<>uid://by2an801le88g::::res://art/mainart/spritesheet (11).png<>uid://3udm4eu3ldbv::::res://art/mainart/toolspritesheet.png
+player.tscn::PackedScene::5051578887322139883::1723354695::0::1::::<><>::res://scripts/player.gd<>uid://by2an801le88g::::res://art/mainart/spritesheet (11).png<>uid://3udm4eu3ldbv::::res://art/mainart/toolspritesheet.png
 PlayerText.gd::GDScript::-1::1723201382::0::1::::<>Control<>::
 slot.tscn::PackedScene::5295734204130564733::1723201382::0::1::::<><>::res://scripts/slot.gd<>uid://r77ltypqkvmf::::res://art/mainart/hotbartseterbolt.png
 spritesheet.png::CompressedTexture2D::3077914776156884446::1723201382::1723201399::1::::<><>::
