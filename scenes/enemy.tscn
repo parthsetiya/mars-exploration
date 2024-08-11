@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://2ej56mv1u4pi"]
+[gd_scene load_steps=4 format=3 uid="uid://2ej56mv1u4pi"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_i3n6q"]
-[ext_resource type="Texture2D" path="res://art/mainart/pixil-frame-0 (69).png" id="2_ibsxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8ivo"]
 size = Vector2(21, 28)
@@ -14,7 +13,6 @@ script = ExtResource("1_i3n6q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -0.5)
-texture = ExtResource("2_ibsxa")
 
 [node name="Collisionarea" type="Area2D" parent="Sprite2D"]
 

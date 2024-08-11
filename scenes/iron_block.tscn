@@ -2,12 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cnr8nf2cs2r3p" path="res://art/terrain/ironore.png" id="1_tp7sv"]
 [ext_resource type="Script" path="res://scenes/iron_block.gd" id="1_vknek"]
+[ext_resource type="Texture2D" uid="uid://b0btf660jb8us" path="res://art/mainart/pixil-frame-0 (79).png" id="2_5y8ya"]
 [ext_resource type="Script" path="res://scenes/pickableareairon.gd" id="3_8ebru"]
 [ext_resource type="PackedScene" uid="uid://b3n7abpn4yivd" path="res://scenes/iron_collectable.tscn" id="4_j7c42"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vahp8"]
-atlas = ExtResource("1_tp7sv")
-region = Rect2(0, 0, 34, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjnaq"]
 atlas = ExtResource("1_tp7sv")
@@ -17,7 +14,7 @@ region = Rect2(34, 0, 34, 34)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vahp8")
+"texture": ExtResource("2_5y8ya")
 }],
 "loop": true,
 "name": &"iron",

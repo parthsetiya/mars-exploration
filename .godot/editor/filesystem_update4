@@ -1,7 +1,10 @@
+res://scenes/housetest.tscn
 res://scenes/maintest.tscn
 res://scenes/player.tscn
 res://scenes/gold_block.tscn
 res://scenes/crafting.tscn
-res://scenes/housetest.tscn
 res://scenes/goldmine.tscn
 res://scenes/enemy.tscn
+res://scenes/amethyst_block.tscn
+res://scenes/amethyst_collectable.tscn
+res://scenes/iron_block.tscn
