@@ -5,8 +5,8 @@ var recipeValues = {}
 var recipes = {}
 var playerdata = PlayerData.new()
 var main = Main.new()
-const item = preload("res://art/mainart/gold_stick.tres")
-
+const gold_stick = preload("res://art/mainart/gold_stick.tres")
+const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 signal request_inventory_update
 
 var items = { 3 : "Stick",
@@ -56,12 +56,18 @@ func load_game():
 
 
 func _on__pressed():
-	print("running on pressed")
 	playerdata.load_data()
 	if playerdata.invGoldIngot >= 2:
 		print("making gold stick")
-		add_item_to_inventory(item.name, 1)
+		add_item_to_inventory(gold_stick.name, 1)
 		
 
 func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
+
+
+func _on_texture_button_pressed():
+	playerdata.load_data()
+	if playerdata.invGoldIngot >= 3 and playerdata.invstick >= 2:
+		print("making gold stick")
+		add_item_to_inventory(GOLD_PICKAXE.name, 1)

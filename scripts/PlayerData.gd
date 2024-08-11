@@ -12,10 +12,12 @@ var file_json = "res://Inventory/saveitems.json"
 var invironingot : int
 var invGoldIngot : int
 var invlogingot : int
+var invstick : int
 
 @export var jsongoldvalue : int
 var jsonironvalue
 var jsonlogvalue
+var jsonstickvalue
 
 signal inventory_loaded(gold_amount, iron_amount, log_amount)
 
@@ -29,6 +31,10 @@ func add_invironingot(value : int):
 
 func add_invlogingot(value : int):
 	invlogingot += value
+	save()
+
+func add_invstick(value: int):
+	invstick += value
 	save()
 	
 
@@ -46,12 +52,11 @@ func UpdatePos(value : Vector2):
 	
 func save():
 	print("Saving data...")
-	print("Gold ingots:", invGoldIngot)
-	print("Iron ingots:", invironingot)
 	var data = {
 		"gold_amount" : invGoldIngot,
 		"iron_amount" : invironingot,
 		"log_amount" : invlogingot, 
+		"stick_amount": invstick,
 	}
 	
 	var json = JSON.new()
@@ -63,6 +68,7 @@ func save():
 	jsongoldvalue = data["gold_amount"]
 	jsonironvalue = data["iron_amount"]
 	jsonlogvalue = data["log_amount"]
+	jsonstickvalue = data["stick_amount"]
 
 func load_data():
 	if not FileAccess.file_exists("res://Inventory/saveitems.json"):
@@ -78,9 +84,11 @@ func load_data():
 	jsongoldvalue = data["gold_amount"]
 	jsonironvalue = data["iron_amount"]
 	jsonlogvalue = data["log_amount"]
+	jsonstickvalue = data["stick_amount"]
 	invlogingot = jsonlogvalue
 	invironingot = jsonironvalue
 	invGoldIngot = jsongoldvalue
-	emit_signal("inventory_loaded", invGoldIngot, invironingot, invlogingot)
+	invstick = jsonstickvalue
+	emit_signal("inventory_loaded", invGoldIngot, invironingot, invlogingot, invstick)
 	
 

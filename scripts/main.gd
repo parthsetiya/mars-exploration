@@ -25,6 +25,7 @@ const GOLD = preload("res://Inventory/items/gold.tres")
 const IRON = preload("res://Inventory/items/iron.tres")
 const LOG = preload("res://Inventory/items/log.tres")
 const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
+const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 # Node definitions
 var gold_node
 var gold_node2
@@ -224,6 +225,7 @@ func update_inventory_ui(item_name, updated_quantity):
 
 	if item_name == GOLD_STICK.name:
 		playerdata.add_invGoldIngot(-2)
+		playerdata.add_invstick(1)
 		print("ADDING STICK INTO INVENTORY")
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -247,6 +249,29 @@ func update_inventory_ui(item_name, updated_quantity):
 					item.texture = GOLD_STICK.texture
 					label.text = str(1)
 					return
+					
+	if item_name == GOLD_PICKAXE.name:
+		playerdata.add_invGoldIngot(-3)
+		playerdata.add_invstick(-2)
+		var pickaxe_crafted = false
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == null and pickaxe_crafted == false:
+					item.texture = GOLD_PICKAXE.texture
+					label.text = str(1)
+					pickaxe_crafted = true
+				if item.texture == GOLD_STICK.texture:
+					label.text = str(int(label.text) - 2) 
+					if label.text == "0":
+						item.texture == null
+				elif item.texture == GOLD.texture:
+					label.text = str(int(label.text) - 3) 
+					if label.text == "0":
+						item.texture = null
+
 			
 #func remove_inventory_items():
 	#print("ASDFASDFASD")
@@ -260,7 +285,7 @@ func update_inventory_ui(item_name, updated_quantity):
 				#label.text == str(playerdata.invGoldIngot)
 
 	
-func _on_inventory_loaded(gold_amount, iron_amount, log_amount):
+func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount):
 	for slot in inventory_slots:
 		if slot.get_child_count() != 0:
 			var centre_container = slot.get_children()[1]
@@ -303,6 +328,18 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount):
 				if item.texture == null:
 					item.texture = LOG.texture
 					label.text = str(log_amount)
+					break
+	
+	if stick_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = GOLD_STICK.texture
+					label.text = str(stick_amount)
 					break
 		
 

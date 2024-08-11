@@ -1,7 +1,11 @@
+res://scripts/crafting.gd
+res://scenes/crafting.tscn
+res://scripts/main.gd
+res://scripts/PlayerData.gd
+res://Inventory/saveitems.json
 res://scenes/maintest.tscn
 res://scenes/player.tscn
 res://scenes/gold_block.tscn
-res://scenes/crafting.tscn
 res://scenes/housetest.tscn
 res://scenes/goldmine.tscn
 res://scenes/enemy.tscn
