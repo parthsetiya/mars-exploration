@@ -8,7 +8,13 @@ var paused = false
 
 @onready var thiswaytomines = $Sprite2D/thiswaytomines
 
+@onready var spaceship_entered = false
+@onready var crashmessage = $Player/Camera2D/crashmessage
+@onready var spaceshiparea_2 = $Spaceship/spaceshiparea2
+
 @onready var start_sign_post_entered = false
+
+@onready var engineer: DQDialoguePlayer = $DialoguePlayer
 
 var is_showing_thiswaytomines = false
 
@@ -81,40 +87,48 @@ func _ready():
 	inv_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
 	inv_gui_show_hotbar = get_node("Player/Camera2D/InventoryGui/NinePatchRect2")
 	
-	#iniron = get_node("iron_block/Area2D")
-	#ingold = get_node("gold_block/Area2D")
-	#ingold2 = get_node("gold_block2/Area2D")
-	#intree = get_node("tree_block/Area2D")
-	#iniron.connect("body_entered", Callable(self,"inironcollectable"))
-	#ingold.connect("body_entered", Callable(self,"ingoldcollectable"))
-	##ingold2.connect("body_entered", Callable(self,"ingoldcollectable"))
-	#intree.connect("body_entered", Callable(self,"intreecollectable"))
-	#iniron.connect("body_exited", Callable(self,"leaveironcollectable"))
-	#ingold.connect("body_exited", Callable(self,"leavegoldcollectable"))
-	##ingold2.connect("body_exited", Callable(self,"leavegoldcollectable"))
-	#intree.connect("body_exited", Callable(self,"leavetreecollectable"))
+	iniron = get_node("iron_block/Area2D")
+	ingold = get_node("gold_block/Area2D")
+	ingold2 = get_node("gold_block2/Area2D")
+	intree = get_node("tree_block/Area2D")
+	iniron.connect("body_entered", Callable(self,"inironcollectable"))
+	ingold.connect("body_entered", Callable(self,"ingoldcollectable"))
+	#ingold2.connect("body_entered", Callable(self,"ingoldcollectable"))
+	intree.connect("body_entered", Callable(self,"intreecollectable"))
+	iniron.connect("body_exited", Callable(self,"leaveironcollectable"))
+	ingold.connect("body_exited", Callable(self,"leavegoldcollectable"))
+	#ingold2.connect("body_exited", Callable(self,"leavegoldcollectable"))
+	intree.connect("body_exited", Callable(self,"leavetreecollectable"))
 	playerdata.load_data()
-#
-#func inironcollectable(body):
-	#ironcollectable = true 
-#
-#func ingoldcollectable(body):
-	#goldcollectable = true
-#
-#func leaveironcollectable(body):
-	#ironcollectable = false
-#
-#func leavegoldcollectable(body):
-	#goldcollectable = false 
-	#
-#func intreecollectable(body):
-	#treecollectable = true
-#
-#func leavetreecollectable():
-	#treecollectable = false
+
+func inironcollectable(body):
+	ironcollectable = true 
+
+func ingoldcollectable(body):
+	goldcollectable = true
+
+func leaveironcollectable(body):
+	ironcollectable = false
+
+func leavegoldcollectable(body):
+	goldcollectable = false 
+	
+func intreecollectable(body):
+	treecollectable = true
+
+func leavetreecollectable():
+	treecollectable = false
 
 func crafted_stick():
-	pass
+	
+	print("running add gold")
+	making_stick = true
+	treecollectable = false
+	goldcollectable = false
+	goldcollectable2 = false
+	ironcollectable = false
+	_on_request_inventory_update(GOLD_STICK, 1)
+	making_stick = false
 	
 
 func _on_slot_clicked(slot_index):
@@ -154,7 +168,7 @@ func _on_request_inventory_update(item_name, quantity):
 
 
 func update_inventory_ui(item_name, updated_quantity):
-	if item_name == IRON.name:
+	if ironcollectable and not goldcollectable:
 		playerdata.add_invironingot(1)
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -177,7 +191,7 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(1)
 					return
 
-	if item_name == GOLD.name:
+	if goldcollectable and not ironcollectable:
 		playerdata.add_invGoldIngot(1)
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -202,6 +216,10 @@ func update_inventory_ui(item_name, updated_quantity):
 
 	if item_name == LOG.name:
 		playerdata.add_invlogingot(1)
+
+	if treecollectable and not ironcollectable and not goldcollectable:
+		playerdata.add_invGoldIngot(1)
+		
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
 				var centre_container = slot.get_children()[1]
@@ -223,9 +241,13 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(1)
 					return
 
+
 	if item_name == GOLD_STICK.name:
 		playerdata.add_invGoldIngot(-2)
 		playerdata.add_invstick(1)
+
+	if making_stick == true:
+
 		print("ADDING STICK INTO INVENTORY")
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -381,6 +403,8 @@ func _process(delta):
 		var action_name = "ui_hotbar_" + str(i + 1)  # Define action names like ui_hotbar_1, ui_hotbar_2, etc.
 		if Input.is_action_just_pressed(action_name):
 			highlight_slot(i)
+	if spaceship_entered:
+		crashmessage.show()
 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:
@@ -407,6 +431,9 @@ func pausemenu():
 		
 func _on_startsignpostarea_body_entered(body):
 	if body == player:
+		print("running dialogue")
+		engineer.play("spaceshipintro.dqd")
+		
 		start_sign_post_entered = true
 
 func _on_startsignpostarea_body_exited(body):
@@ -421,7 +448,19 @@ func _on_entrancetogoldmine_body_entered(body):
 		StageManager.changeStage(StageManager.GOLDMINE, 453, -30)
 
 
+
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		StageManager.changeStage(StageManager.HOUSETEST, 155, -10)
+
+
+func _on_spaceshiparea_body_entered(body):
+	if body == player:
+		spaceship_entered = true
+
+
+func _on_spaceshiparea_body_exited(body):
+	if body == player:
+		spaceship_entered = false
+		crashmessage.hide()
 

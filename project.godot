@@ -22,6 +22,11 @@ config/icon="res://scripts/icon.svg"
 Playerinv="*res://Inventory/playerinv.tres"
 StageManager="*res://scenes/StageManager.tscn"
 SaveLoadManager="*res://scripts/SaveLoadManager.gd"
+DialogueQuest="*res://addons/dialogue_quest/scripts/dialogue_quest_interface.gd"
+
+[dialogue_quest]
+
+data_directory="res://dialogue"
 
 [display]
 
@@ -35,6 +40,10 @@ mouse_cursor/custom_image_hotspot=Vector2(0.58, 0.7)
 [editor]
 
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_quest/plugin.cfg")
 
 [gui]
 

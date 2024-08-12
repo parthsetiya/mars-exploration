@@ -160,8 +160,8 @@ func set_dialogue_box(value: DQDialogueBox) -> void:
 	
 	dialogue_box = value
 	
-	_dialogue_box_default_speed = dialogue_box.settings.letters_per_second
-	
+	#_dialogue_box_default_speed = dialogue_box.settings.letters_per_second
+	_dialogue_box_default_speed = 100
 	dialogue_box.text_shown.connect(_on_text_shown)
 
 func get_dialogue_box() -> DQDialogueBox:
