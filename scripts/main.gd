@@ -201,7 +201,7 @@ func update_inventory_ui(item_name, updated_quantity):
 					return
 
 	if item_name == LOG.name:
-		playerdata.add_inglogingot(1)
+		playerdata.add_invlogingot(1)
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
 				var centre_container = slot.get_children()[1]
