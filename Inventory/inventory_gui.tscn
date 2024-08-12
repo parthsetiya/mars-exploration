@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://booto5uhhl2kr"]
+[gd_scene load_steps=4 format=3 uid="uid://booto5uhhl2kr"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_gui.gd" id="1_egmnt"]
-[ext_resource type="Texture2D" uid="uid://gajil2maxy85" path="res://Inventory/inventorybackgroundtest.png" id="2_nxaso"]
 [ext_resource type="PackedScene" uid="uid://chpj76y4h6uxx" path="res://scenes/slot.tscn" id="3_meoxf"]
 [ext_resource type="PackedScene" uid="uid://cwbjcat8e4j7n" path="res://scenes/crafting.tscn" id="4_qikhw"]
 
@@ -14,12 +13,10 @@ offset_bottom = 0.0399995
 script = ExtResource("1_egmnt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-visible = false
 custom_minimum_size = Vector2(213, 132)
 layout_mode = 0
 offset_right = 213.0
 offset_bottom = 132.0
-texture = ExtResource("2_nxaso")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 visible = false
@@ -29,7 +26,6 @@ offset_left = 8.0
 offset_top = 271.0
 offset_right = 207.0
 offset_bottom = 311.0
-texture = ExtResource("2_nxaso")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
@@ -102,6 +98,7 @@ layout_mode = 2
 [node name="Control2" type="Control" parent="GridContainer"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Control4" type="Control" parent="GridContainer"]
 custom_minimum_size = Vector2(0, 150)

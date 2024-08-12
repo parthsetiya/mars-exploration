@@ -66,7 +66,7 @@ func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
 
 
-func _on_texture_button_pressed():
+func _on_gold_pick_pressed():
 	playerdata.load_data()
 	if playerdata.invGoldIngot >= 3 and playerdata.invstick >= 2:
 		print("making gold stick")
