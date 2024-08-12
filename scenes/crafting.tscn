@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwbjcat8e4j7n"]
+[gd_scene load_steps=5 format=3 uid="uid://cwbjcat8e4j7n"]
 
 [ext_resource type="Script" path="res://scripts/crafting.gd" id="1_cpp4s"]
 [ext_resource type="Script" path="res://scripts/table.gd" id="2_qrt3n"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="2_udjdx"]
+[ext_resource type="Texture2D" uid="uid://faj3ubygyg5v" path="res://addons/dialogue_quest/art/placeholders/portraits/shahar_portrait.png" id="4_vippv"]
 
 [node name="crafting" type="Node2D"]
 script = ExtResource("1_cpp4s")
@@ -13,27 +14,22 @@ script = ExtResource("1_cpp4s")
 position = Vector2(-72, 58)
 script = ExtResource("2_qrt3n")
 
-[node name="0" type="Button" parent="table"]
-offset_top = -2.0
-offset_right = 22.0
-offset_bottom = 26.0
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = -73.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 66.0
+
+[node name="0" type="Button" parent="GridContainer"]
+layout_mode = 2
 text = "stick"
 script = ExtResource("2_udjdx")
 metadata/_edit_use_anchors_ = true
 
-[node name="Record" type="Button" parent="."]
-offset_left = -88.0
-offset_top = -32.0
-offset_bottom = -4.0
-text = "Record"
-metadata/_edit_use_anchors_ = true
+[node name="gold_pick" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_vippv")
 
-[node name="Name" type="TextEdit" parent="."]
-offset_left = -144.0
-offset_right = 1.0
-offset_bottom = 51.0
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="table/0" to="." method="_on__pressed"]
-[connection signal="pressed" from="table/0" to="table/0" method="_on_pressed"]
-[connection signal="pressed" from="Record" to="table" method="_on_record_pressed"]
+[connection signal="pressed" from="GridContainer/0" to="." method="_on__pressed"]
+[connection signal="pressed" from="GridContainer/0" to="GridContainer/0" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/gold_pick" to="." method="_on_gold_pick_pressed"]

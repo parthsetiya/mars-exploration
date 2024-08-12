@@ -939,10 +939,10 @@ position = Vector2(-2, -8)
 texture = SubResource("GradientTexture2D_hhbug")
 
 [node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("12_tamxu")]
-offset_left = -117.0
-offset_top = 68.4999
-offset_right = -116.6
-offset_bottom = 68.5399
+offset_left = -116.0
+offset_top = -39.0
+offset_right = -115.6
+offset_bottom = -38.96
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
