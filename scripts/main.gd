@@ -40,6 +40,7 @@ var tree_node
 var inventory_slots
 var inventory_gui_slots
 var inventory_hotbar_slots
+var inv_crafting
 var inventory_crafting
 var first_slot_index = null
 var second_slot_index = null
@@ -86,49 +87,50 @@ func _ready():
 	
 	inv_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
 	inv_gui_show_hotbar = get_node("Player/Camera2D/InventoryGui/NinePatchRect2")
+	inv_crafting = get_node("Player/Camera2D/InventoryGui/crafting")
 	
-	iniron = get_node("iron_block/Area2D")
-	ingold = get_node("gold_block/Area2D")
-	ingold2 = get_node("gold_block2/Area2D")
-	intree = get_node("tree_block/Area2D")
-	iniron.connect("body_entered", Callable(self,"inironcollectable"))
-	ingold.connect("body_entered", Callable(self,"ingoldcollectable"))
-	#ingold2.connect("body_entered", Callable(self,"ingoldcollectable"))
-	intree.connect("body_entered", Callable(self,"intreecollectable"))
-	iniron.connect("body_exited", Callable(self,"leaveironcollectable"))
-	ingold.connect("body_exited", Callable(self,"leavegoldcollectable"))
-	#ingold2.connect("body_exited", Callable(self,"leavegoldcollectable"))
-	intree.connect("body_exited", Callable(self,"leavetreecollectable"))
+	#iniron = get_node("iron_block/Area2D")
+	#ingold = get_node("gold_block/Area2D")
+	#ingold2 = get_node("gold_block2/Area2D")
+	#intree = get_node("tree_block/Area2D")
+	#iniron.connect("body_entered", Callable(self,"inironcollectable"))
+	#ingold.connect("body_entered", Callable(self,"ingoldcollectable"))
+	##ingold2.connect("body_entered", Callable(self,"ingoldcollectable"))
+	#intree.connect("body_entered", Callable(self,"intreecollectable"))
+	#iniron.connect("body_exited", Callable(self,"leaveironcollectable"))
+	#ingold.connect("body_exited", Callable(self,"leavegoldcollectable"))
+	##ingold2.connect("body_exited", Callable(self,"leavegoldcollectable"))
+	#intree.connect("body_exited", Callable(self,"leavetreecollectable"))
 	playerdata.load_data()
 
-func inironcollectable(body):
-	ironcollectable = true 
-
-func ingoldcollectable(body):
-	goldcollectable = true
-
-func leaveironcollectable(body):
-	ironcollectable = false
-
-func leavegoldcollectable(body):
-	goldcollectable = false 
-	
-func intreecollectable(body):
-	treecollectable = true
-
-func leavetreecollectable():
-	treecollectable = false
-
-func crafted_stick():
-	
-	print("running add gold")
-	making_stick = true
-	treecollectable = false
-	goldcollectable = false
-	goldcollectable2 = false
-	ironcollectable = false
-	_on_request_inventory_update(GOLD_STICK, 1)
-	making_stick = false
+#func inironcollectable(body):
+	#ironcollectable = true 
+#
+#func ingoldcollectable(body):
+	#goldcollectable = true
+#
+#func leaveironcollectable(body):
+	#ironcollectable = false
+#
+#func leavegoldcollectable(body):
+	#goldcollectable = false 
+	#
+#func intreecollectable(body):
+	#treecollectable = true
+#
+#func leavetreecollectable():
+	#treecollectable = false
+#
+#func crafted_stick():
+	#
+	#print("running add gold")
+	#making_stick = true
+	#treecollectable = false
+	#goldcollectable = false
+	#goldcollectable2 = false
+	#ironcollectable = false
+	#_on_request_inventory_update(GOLD_STICK, 1)
+	#making_stick = false
 	
 
 func _on_slot_clicked(slot_index):
@@ -168,7 +170,7 @@ func _on_request_inventory_update(item_name, quantity):
 
 
 func update_inventory_ui(item_name, updated_quantity):
-	if ironcollectable and not goldcollectable:
+	if item_name == IRON.name:
 		playerdata.add_invironingot(1)
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -191,7 +193,7 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(1)
 					return
 
-	if goldcollectable and not ironcollectable:
+	if item_name == GOLD.name:
 		playerdata.add_invGoldIngot(1)
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -216,10 +218,6 @@ func update_inventory_ui(item_name, updated_quantity):
 
 	if item_name == LOG.name:
 		playerdata.add_invlogingot(1)
-
-	if treecollectable and not ironcollectable and not goldcollectable:
-		playerdata.add_invGoldIngot(1)
-		
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
 				var centre_container = slot.get_children()[1]
@@ -247,7 +245,6 @@ func update_inventory_ui(item_name, updated_quantity):
 		playerdata.add_invstick(1)
 
 	if making_stick == true:
-
 		print("ADDING STICK INTO INVENTORY")
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -370,12 +367,14 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount):
 func inventoryopen():
 	if inv_open:
 		inv_gui_show.hide()
+		inv_crafting.hide()
 		for slot in inventory_gui_slots:
 			slot.hide()
 		inv_gui_show_hotbar.hide()
 		
 	else:
 		inv_gui_show.show()
+		inv_crafting.show()
 		for slot in inventory_gui_slots:
 			slot.show()
 		inv_gui_show_hotbar.show()
