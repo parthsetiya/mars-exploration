@@ -243,8 +243,6 @@ func update_inventory_ui(item_name, updated_quantity):
 	if item_name == GOLD_STICK.name:
 		playerdata.add_invGoldIngot(-2)
 		playerdata.add_invstick(1)
-
-	if making_stick == true:
 		print("ADDING STICK INTO INVENTORY")
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
