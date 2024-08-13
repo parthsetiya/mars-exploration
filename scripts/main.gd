@@ -9,8 +9,8 @@ var paused = false
 @onready var thiswaytomines = $Sprite2D/thiswaytomines
 
 @onready var spaceship_entered = false
-@onready var crashmessage = $Player/Camera2D/crashmessage
 @onready var spaceshiparea_2 = $Spaceship/spaceshiparea2
+@onready var crashmessage = $spaceship/spaceshiparea/crashmessage
 
 @onready var start_sign_post_entered = false
 
@@ -454,6 +454,7 @@ func _on_area_2d_body_entered(body):
 func _on_spaceshiparea_body_entered(body):
 	if body == player:
 		spaceship_entered = true
+		crashmessage.show()
 
 
 func _on_spaceshiparea_body_exited(body):

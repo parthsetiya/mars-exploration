@@ -1,11 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=28 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_b4hsc"]
 [ext_resource type="PackedScene" uid="uid://bv0los6yqfysa" path="res://scenes/e_to_interact.tscn" id="4_dukk6"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
-[ext_resource type="Texture2D" uid="uid://b3wirsdpgo743" path="res://art/button_which_shows_tooltip.png" id="7_0fbm0"]
 [ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/cobalt_block.tscn" id="7_6rs4l"]
 [ext_resource type="Texture2D" uid="uid://cr41eyd0qsvfs" path="res://art/terrain/signpost.png" id="7_084ek"]
 [ext_resource type="PackedScene" uid="uid://bsp4brhm0rf88" path="res://scenes/thiswaytomines.tscn" id="9_347cy"]
@@ -15,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="12_tamxu"]
 [ext_resource type="PackedScene" uid="uid://kfgimtoe72hl" path="res://scenes/amethyst_block.tscn" id="14_u0j5j"]
 [ext_resource type="PackedScene" uid="uid://cy45fnv5txv60" path="res://scenes/tree_block.tscn" id="15_5jhu1"]
-[ext_resource type="Texture2D" uid="uid://108k0hdoohuq" path="res://art/mainart/crashed shadows.png" id="16_fc1n1"]
+[ext_resource type="Texture2D" uid="uid://d3tq7ltk53a5a" path="res://art/mainart/fire spaceship.png" id="15_qp1lu"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wylw6"]
 resource_name = "interactables"
@@ -904,8 +903,8 @@ size = Vector2(94.4198, 30.5819)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmmh"]
 size = Vector2(170.36, 63.9218)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf44j"]
-size = Vector2(59.0142, 57.3121)
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3nl2"]
+radius = 27.5678
 
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
@@ -944,29 +943,10 @@ position = Vector2(-2, -8)
 texture = SubResource("GradientTexture2D_hhbug")
 
 [node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("12_tamxu")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = -116.0
 offset_top = -39.0
-offset_right = -76.0
-offset_bottom = 0.0
-
-[node name="crashmessage" type="TextureRect" parent="Player/Camera2D"]
-visible = false
-offset_left = -108.727
-offset_top = 199.0
-offset_right = 92.2727
-offset_bottom = 233.0
-texture = ExtResource("7_0fbm0")
-
-[node name="Label" type="Label" parent="Player/Camera2D/crashmessage"]
-layout_mode = 0
-offset_left = 13.0
-offset_top = 5.0
-offset_right = 186.0
-offset_bottom = 25.0
-text = "Crashed!"
+offset_right = -115.6
+offset_bottom = -38.96
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -1034,19 +1014,20 @@ position = Vector2(-60.5, 72.5)
 [node name="tree_block" parent="." instance=ExtResource("15_5jhu1")]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(166, -331.5)
+position = Vector2(153, -277)
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(205.5, 30)
-scale = Vector2(2.20312, 2.20312)
-texture = ExtResource("16_fc1n1")
+[node name="spaceship" type="Sprite2D" parent="."]
+position = Vector2(198.5, 39)
+scale = Vector2(1.78125, 1.66406)
+texture = ExtResource("15_qp1lu")
 
-[node name="spaceshiparea" type="Area2D" parent="Sprite2D2"]
+[node name="spaceshiparea" type="Area2D" parent="spaceship"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/spaceshiparea"]
-position = Vector2(-0.457458, 3.11702)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_jf44j")
+[node name="crashmessage" parent="spaceship/spaceshiparea" instance=ExtResource("4_dukk6")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spaceship/spaceshiparea"]
+shape = SubResource("CircleShape2D_q3nl2")
 
 [connection signal="body_entered" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
 [connection signal="body_exited" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]
@@ -1057,5 +1038,5 @@ shape = SubResource("RectangleShape2D_jf44j")
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="entrancetogoldmine" to="." method="_on_entrancetogoldmine_body_entered"]
-[connection signal="body_entered" from="Sprite2D2/spaceshiparea" to="." method="_on_spaceshiparea_body_entered"]
-[connection signal="body_exited" from="Sprite2D2/spaceshiparea" to="." method="_on_spaceshiparea_body_exited"]
+[connection signal="body_entered" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_entered"]
+[connection signal="body_exited" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_exited"]
