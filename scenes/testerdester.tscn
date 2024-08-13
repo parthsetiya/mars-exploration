@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b75nhpgk3ixsp"]
+
+[ext_resource type="Texture2D" uid="uid://tas4mf55aa1" path="res://art/terrain/spaceship.png" id="1_xhq2e"]
+
+[node name="testerdester" type="Node2D"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 1005.0
+offset_bottom = 427.0
+texture = ExtResource("1_xhq2e")

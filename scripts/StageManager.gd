@@ -3,11 +3,13 @@ extends CanvasLayer
 signal stageChangeCompleted
 
 var is_transitioning = false
+@onready var anim = $anim
 
 const MAINTEST = preload("res://scenes/maintest.tscn")
 const HOUSETEST = preload("res://scenes/housetest.tscn")
 const PLAYER = preload("res://scenes/player.tscn")
 const GOLDMINE = preload("res://scenes/goldmine.tscn")
+const TESTERDESTER = preload("res://scenes/testerdester.tscn")
 
 func _ready():
 	get_node("ColorRect").hide()
@@ -24,9 +26,16 @@ func changeStage(stage_path, x, y):
 	get_node("anim").play("TransIn")
 	await get_node("anim").animation_finished
 	
+	# Free the current scene safely
+	var current_scene = get_tree().get_current_scene()
+	current_scene.free()
+	
+	# Instantiate and add the new scene
 	var stage = stage_path.instantiate()
-	get_tree().get_root().get_child(1).free()
 	get_tree().get_root().add_child(stage)
+	get_tree().set_current_scene(stage)
+	
+	# Set player position if Player node exists
 	if stage.has_node("Player"):
 		stage.get_node("Player").position = Vector2(x, y)
 	
@@ -36,4 +45,3 @@ func changeStage(stage_path, x, y):
 
 	is_transitioning = false
 	emit_signal("stageChangeCompleted")
-

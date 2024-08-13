@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=28 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://crlao84s5ynxx" path="res://scenes/friendlyalien.tscn" id="12_3kb63"]
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="12_tamxu"]
 [ext_resource type="PackedScene" uid="uid://kfgimtoe72hl" path="res://scenes/amethyst_block.tscn" id="14_u0j5j"]
+[ext_resource type="Texture2D" uid="uid://bmvyr17y7iqwa" path="res://art/mainart/Player/mlg-doritos-png-clipart.jpg" id="15_5a5tm"]
 [ext_resource type="PackedScene" uid="uid://cy45fnv5txv60" path="res://scenes/tree_block.tscn" id="15_5jhu1"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wylw6"]
@@ -902,6 +903,9 @@ size = Vector2(94.4198, 30.5819)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmmh"]
 size = Vector2(170.36, 63.9218)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_i56ux"]
+radius = 203.904
+
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_6jpb6")
@@ -1012,6 +1016,17 @@ light_mask = 4
 visibility_layer = 4
 position = Vector2(200, -36)
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(83, -240)
+scale = Vector2(0.166875, 0.124167)
+texture = ExtResource("15_5a5tm")
+
+[node name="aodhfiuahsdf" type="Area2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/aodhfiuahsdf"]
+position = Vector2(2.99644, -4.02685)
+shape = SubResource("CircleShape2D_i56ux")
+
 [connection signal="body_entered" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
 [connection signal="body_exited" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]
 [connection signal="body_entered" from="Sprite2D/thiswaytomines/Area2D" to="." method="_on_area_2d_body_entered"]
@@ -1021,3 +1036,5 @@ position = Vector2(200, -36)
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="entrancetogoldmine" to="." method="_on_entrancetogoldmine_body_entered"]
+[connection signal="body_entered" from="Sprite2D2/aodhfiuahsdf" to="." method="_on_aodhfiuahsdf_body_entered"]
+[connection signal="body_exited" from="Sprite2D2/aodhfiuahsdf" to="." method="_on_aodhfiuahsdf_body_exited"]

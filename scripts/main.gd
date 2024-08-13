@@ -429,7 +429,7 @@ func pausemenu():
 func _on_startsignpostarea_body_entered(body):
 	if body == player:
 		print("running dialogue")
-		engineer.play("spaceshipintro.dqd")
+		#engineer.play("spaceshipintrfo.dqd")
 		
 		start_sign_post_entered = true
 
@@ -448,8 +448,8 @@ func _on_entrancetogoldmine_body_entered(body):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		StageManager.changeStage(StageManager.HOUSETEST, 155, -10)
-
+		StageManager.changeStage(StageManager.HOUSETEST, 453, -30)
+		
 
 func _on_spaceshiparea_body_entered(body):
 	if body == player:
@@ -460,4 +460,11 @@ func _on_spaceshiparea_body_exited(body):
 	if body == player:
 		spaceship_entered = false
 		crashmessage.hide()
+
+
+
+func _on_aodhfiuahsdf_body_entered(body):
+	if body == player:
+		get_tree().change_scene_to_file("res://scenes/testerdester.tscn")
+
 
