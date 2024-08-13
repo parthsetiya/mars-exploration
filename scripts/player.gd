@@ -150,17 +150,17 @@ func _physics_process(delta):
 	move_and_slide()
 	updateAnimation()
 	 
-	var mouse_pos = get_global_mouse_position()
-	$Marker2D.look_at(mouse_pos)
-	
-	if Input.is_action_just_pressed("left_mouse") and gun_equiped and gun_cooldown:
-		gun_cooldown = false 
-		var bullet_instance = bullet.instantiate()
-		bullet_instance.rotation = $Marker2D.rotation
-		bullet_instance.global_position = $Marker2D.global_position
-		add_child(bullet_instance)
-		
-		await get_tree().create_timer(0.2).timeout
-		gun_cooldown = true
-	print("Marker2D global position: ", $Marker2D.global_position)
+	#var mouse_pos = get_global_mouse_position()
+	#$Marker2D.look_at(mouse_pos)
+	#
+	#if Input.is_action_just_pressed("left_mouse") and gun_equiped and gun_cooldown:
+		#gun_cooldown = false 
+		#var bullet_instance = bullet.instantiate()
+		#bullet_instance.rotation = $Marker2D.rotation
+		#bullet_instance.global_position = $Marker2D.global_position
+		#add_child(bullet_instance)
+		#
+		#await get_tree().create_timer(0.2).timeout
+		#gun_cooldown = true
+	#print("Marker2D global position: ", $Marker2D.global_position)
 

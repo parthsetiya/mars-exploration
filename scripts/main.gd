@@ -21,7 +21,7 @@ var is_showing_thiswaytomines = false
 @onready var player = $Player
 
 var playerdata = PlayerData.new()
-
+@onready var character_body_2d = $CharacterBody2D
 var inventory = Inventory.new()
 @onready var inventory_gui = $Player/Camera2D/InventoryGui
 var inv_open = false
@@ -32,11 +32,13 @@ const IRON = preload("res://Inventory/items/iron.tres")
 const LOG = preload("res://Inventory/items/log.tres")
 const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
 const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
+const REMOVE_GOLD = preload("res://Inventory/items/remove_gold.tres")
 # Node definitions
 var gold_node
 var gold_node2
 var iron_node
 var tree_node
+var remove_gold
 var inventory_slots
 var inventory_gui_slots
 var inventory_hotbar_slots
@@ -57,6 +59,7 @@ var goldcollectable2 = false
 var making_stick = false
 var slotonetexture
 var collectediron = false
+var npc
 
 func _ready():
 	gold_node = get_node("gold_block")
@@ -73,6 +76,8 @@ func _ready():
 	inventory_crafting.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	#inventory_crafting.connect("request_inventory_update", Callable(self, "remove_inventory_items"))
 	playerdata.connect("inventory_loaded", Callable(self, "_on_inventory_loaded"))
+	npc = get_node("CharacterBody2D")
+	npc.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 
 
 	inventory_gui_slots = inventory_slots.slice(0, 15)
@@ -202,6 +207,8 @@ func update_inventory_ui(item_name, updated_quantity):
 				var label = centre_container.get_children()[0].get_children()[1]
 
 				if item.texture == GOLD.texture:
+					item.show()
+					label.show()
 					label.text = str(int(label.text) + 1)
 					return
 
@@ -288,18 +295,24 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(int(label.text) - 3) 
 					if label.text == "0":
 						item.texture = null
+						
+	if item_name == REMOVE_GOLD.name:
+		playerdata.add_invGoldIngot(-2)
+		print("removing gold which has been taken by jhao")
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == GOLD.texture:
+					label.text = str(int(label.text) - 2)
+					if int(label.text) == 0:
+						item.hide()
+						label.hide()
+						
+					
 
-			
-#func remove_inventory_items():
-	#print("ASDFASDFASD")
-	#for slot in inventory_slots:
-		#if slot.get_child_count() != 0:
-			#var centre_container = slot.get_children()[1]
-			#var item = centre_container.get_children()[0].get_children()[0]
-			#var label = centre_container.get_children()[0].get_children()[1]
-			#
-			#if item.texture == GOLD.texture:
-				#label.text == str(playerdata.invGoldIngot)
+
 
 	
 func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount):
