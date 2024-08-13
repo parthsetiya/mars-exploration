@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DQCharacter" load_steps=3 format=3 uid="uid://dv1t8tbveslyf"]
+
+[ext_resource type="Texture2D" uid="uid://faj3ubygyg5v" path="res://addons/dialogue_quest/art/placeholders/portraits/shahar_portrait.png" id="1_gt1k1"]
+[ext_resource type="Script" path="res://addons/dialogue_quest/scripts/systems/character/resources/character.gd" id="1_l15ia"]
+
+[resource]
+script = ExtResource("1_l15ia")
+color = Color(0, 0, 0, 1)
+portrait = ExtResource("1_gt1k1")
+character_id = "Engineer"
+character_name = "Engineer"

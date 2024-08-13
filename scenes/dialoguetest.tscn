@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://dfhay8dp68p5n"]
+
+[ext_resource type="Script" path="res://scenes/dialoguetest.gd" id="1_edh6g"]
+[ext_resource type="Script" path="res://addons/dialogue_quest/scripts/systems/dqd/dialogue_player.gd" id="2_8bid6"]
+[ext_resource type="Script" path="res://addons/dialogue_quest/scripts/ui/dialogue/components/resources/settings/dialogue_player_settings.gd" id="3_j2k8v"]
+[ext_resource type="Script" path="res://addons/dialogue_quest/scripts/ui/dialogue/components/dialogue_box.gd" id="4_mu8mq"]
+[ext_resource type="Script" path="res://addons/dialogue_quest/scripts/ui/dialogue/components/choice_menu/choice_menu.gd" id="5_gqih6"]
+[ext_resource type="Script" path="res://addons/dialogue_quest/scripts/ui/dialogue/components/resources/settings/dialogue_box_settings.gd" id="5_twp1w"]
+[ext_resource type="Texture2D" uid="uid://faj3ubygyg5v" path="res://addons/dialogue_quest/art/placeholders/portraits/shahar_portrait.png" id="7_e82ib"]
+
+[sub_resource type="Resource" id="Resource_uavdq"]
+script = ExtResource("3_j2k8v")
+autoplay_enabled = false
+autoplay_delay_sec = 0.5
+autoplay_on_start = true
+skip_enabled = false
+skip_speed = 5
+skip_after_choices = false
+skip_stop_on_dialogue_end = true
+run_expressions_as_script = false
+
+[sub_resource type="Resource" id="Resource_btt22"]
+script = ExtResource("5_twp1w")
+text_finished_marker_enabled = true
+letters_per_second = 0.0
+layout_direction_box = 0
+layout_direction_name = 3
+layout_direction_text = 0
+text_direction_name = 0
+text_direction_text = 0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_edh6g")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="DQDialoguePlayer" type="Node" parent="CanvasLayer2" node_paths=PackedStringArray("dialogue_box", "choice_menu")]
+script = ExtResource("2_8bid6")
+settings = SubResource("Resource_uavdq")
+dialogue_box = NodePath("../DQDialogueBox")
+choice_menu = NodePath("../DQChoiceMenu")
+
+[node name="DQDialogueBox" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_mu8mq")
+settings = SubResource("Resource_btt22")
+metadata/_edit_use_anchors_ = true
+
+[node name="DQChoiceMenu" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_gqih6")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_e82ib")

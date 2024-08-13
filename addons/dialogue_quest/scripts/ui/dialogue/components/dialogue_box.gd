@@ -32,7 +32,8 @@ var _name: Label = %Name
 @onready
 var _text: RichTextLabel = %DialogueText
 @onready
-var _portrait: TextureRect = %Portrait
+var _portrait = $"../../TextureRect"
+
 @onready
 var _auto_button: Button = %AutoButton : get = get_auto_button
 @onready

@@ -953,6 +953,7 @@ offset_right = -76.0
 offset_bottom = 0.0
 
 [node name="crashmessage" type="TextureRect" parent="Player/Camera2D"]
+visible = false
 offset_left = -108.727
 offset_top = 199.0
 offset_right = 92.2727
