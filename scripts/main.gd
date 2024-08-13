@@ -14,8 +14,6 @@ var paused = false
 
 @onready var start_sign_post_entered = false
 
-@onready var engineer: DQDialoguePlayer = $DialoguePlayer
-
 var is_showing_thiswaytomines = false
 
 @onready var player = $Player
