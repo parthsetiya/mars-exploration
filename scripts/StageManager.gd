@@ -26,16 +26,13 @@ func changeStage(stage_path, x, y):
 	get_node("anim").play("TransIn")
 	await get_node("anim").animation_finished
 	
-	# Free the current scene safely
 	var current_scene = get_tree().get_current_scene()
 	current_scene.free()
 	
-	# Instantiate and add the new scene
 	var stage = stage_path.instantiate()
 	get_tree().get_root().add_child(stage)
 	get_tree().set_current_scene(stage)
 	
-	# Set player position if Player node exists
 	if stage.has_node("Player"):
 		stage.get_node("Player").position = Vector2(x, y)
 	
