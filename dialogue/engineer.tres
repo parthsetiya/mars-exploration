@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DQCharacter" load_steps=3 format=3 uid="uid://dgmm3wriw2pwi"]
+
+[ext_resource type="Script" path="res://addons/dialogue_quest/scripts/systems/character/resources/character.gd" id="1_mkk32"]
+[ext_resource type="Texture2D" uid="uid://b83tevv7afc" path="res://art/characters/bolt.png" id="1_wvmjb"]
+
+[resource]
+script = ExtResource("1_mkk32")
+color = Color(0, 0, 0, 1)
+portrait = ExtResource("1_wvmjb")
+character_id = "Engineer"
+character_name = "Engineer"
