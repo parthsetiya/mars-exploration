@@ -566,6 +566,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(4, 0)
 scale = Vector2(1.1, 1)
 collision_layer = 3
 collision_mask = 3
@@ -573,7 +574,7 @@ script = ExtResource("1_rv08x")
 metadata/_edit_horizontal_guides_ = [-48.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.09091, -25)
+position = Vector2(8.18182, -25)
 scale = Vector2(1.45996, 1.50856)
 texture = ExtResource("2_dxfbu")
 hframes = 64
@@ -646,3 +647,5 @@ hframes = 6
 libraries = {
 "": SubResource("AnimationLibrary_n5xte")
 }
+
+[node name="Marker2D" type="Marker2D" parent="."]

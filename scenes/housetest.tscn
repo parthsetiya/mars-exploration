@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfqnrjrpenwto"]
+[gd_scene load_steps=13 format=3 uid="uid://dfqnrjrpenwto"]
 
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="1_ev6st"]
 [ext_resource type="Script" path="res://scripts/housetest.gd" id="1_kerb7"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="2_kf5yp"]
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_e5uxr"]
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="5_xi8iw"]
-[ext_resource type="PackedScene" uid="uid://2ej56mv1u4pi" path="res://scenes/enemy.tscn" id="5_yt0ux"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqm5d"]
 texture = ExtResource("1_ev6st")
@@ -1195,9 +1194,6 @@ shape = SubResource("RectangleShape2D_ee0bw")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(3.5, -1.5)
 navigation_polygon = SubResource("NavigationPolygon_o1fds")
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_yt0ux")]
-position = Vector2(673, 161)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

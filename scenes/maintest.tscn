@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=26 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="12_tamxu"]
 [ext_resource type="PackedScene" uid="uid://kfgimtoe72hl" path="res://scenes/amethyst_block.tscn" id="14_u0j5j"]
 [ext_resource type="PackedScene" uid="uid://cy45fnv5txv60" path="res://scenes/tree_block.tscn" id="15_5jhu1"]
-[ext_resource type="Texture2D" uid="uid://d3tq7ltk53a5a" path="res://art/mainart/fire spaceship.png" id="15_qp1lu"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wylw6"]
 resource_name = "interactables"
@@ -861,18 +860,6 @@ sources/18 = SubResource("TileSetAtlasSource_ddf6d")
 sources/0 = SubResource("TileSetScenesCollectionSource_wylw6")
 sources/1 = SubResource("TileSetScenesCollectionSource_bt6h6")
 
-[sub_resource type="Gradient" id="Gradient_3g7wf"]
-offsets = PackedFloat32Array(0, 0.00649351, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.50974, 0.50974, 0.50974, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_hhbug"]
-gradient = SubResource("Gradient_3g7wf")
-width = 600
-height = 600
-fill = 1
-fill_from = Vector2(0.481651, 0.46789)
-fill_to = Vector2(0.142202, 0.834862)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_34jfn"]
 radius = 38.4984
 
@@ -903,8 +890,17 @@ size = Vector2(94.4198, 30.5819)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmmh"]
 size = Vector2(170.36, 63.9218)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q3nl2"]
-radius = 27.5678
+[sub_resource type="Gradient" id="Gradient_upvns"]
+offsets = PackedFloat32Array(0, 0.00649351, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.50974, 0.50974, 0.50974, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hhbug"]
+gradient = SubResource("Gradient_upvns")
+width = 600
+height = 600
+fill = 1
+fill_from = Vector2(0.481651, 0.46789)
+fill_to = Vector2(0.142202, 0.834862)
 
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
@@ -925,28 +921,6 @@ layer_3/name = "ihaveaids"
 layer_3/z_index = 27
 layer_3/tile_data = PackedInt32Array(-327672, 393234, 8, -262136, 393234, 9, -196600, 393234, 10, -131064, 393234, 11, -65528, 393234, 12, 8, 393234, 13, -327671, 458770, 8, -262135, 458770, 9, -196599, 458770, 10, -131063, 458770, 11, -65527, 458770, 12, 9, 458770, 13, -327670, 524306, 8, -262134, 524306, 9, -196598, 524306, 10, -131062, 524306, 11, -65526, 524306, 12, 10, 524306, 13, -327669, 589842, 8, -262133, 589842, 9, -196597, 589842, 10, -131061, 589842, 11, -65525, 589842, 12, 11, 589842, 13, -458749, 393234, 8, -393213, 393234, 9, -327677, 393234, 10, -262141, 393234, 11, -196605, 393234, 12, -131069, 393234, 13, -458748, 458770, 8, -393212, 458770, 9, -327676, 458770, 10, -262140, 458770, 11, -196604, 458770, 12, -131068, 458770, 13, -458747, 524306, 8, -393211, 524306, 9, -327675, 524306, 10, -262139, 524306, 11, -196603, 524306, 12, -131067, 524306, 13, -458746, 589842, 8, -393210, 589842, 9, -327674, 589842, 10, -262138, 589842, 11, -196602, 589842, 12, -131066, 589842, 13)
 layer_4/tile_data = PackedInt32Array(-917506, 393234, 16, -1048579, 327698, 14, -983043, 327698, 15, -917507, 327698, 16, -851971, 327698, 17, -786435, 327698, 18, -1048578, 393234, 14, -983042, 393234, 15, -851970, 393234, 17, -1048577, 458770, 14, -983041, 458770, 15, -917505, 458770, 16, -851969, 458770, 17, -786433, 458770, 18, -1114112, 524306, 14, -1048576, 524306, 15, -983040, 524306, 16, -917504, 524306, 17, -851968, 524306, 18, -1114111, 589842, 14, -1048575, 589842, 15, -983039, 589842, 16, -917503, 589842, 17, -851967, 589842, 18, -1114110, 655378, 14, -1048574, 655378, 15, -983038, 655378, 16, -917502, 655378, 17, -851966, 655378, 18, -786434, 393234, 18)
-
-[node name="Player" parent="." instance=ExtResource("1_w3bu8")]
-z_index = 1
-position = Vector2(-4, -8)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(1, -0.5)
-limit_smoothed = true
-
-[node name="Pausemenu" parent="Player/Camera2D" instance=ExtResource("4_b4hsc")]
-visible = false
-
-[node name="PointLight2D3" type="PointLight2D" parent="Player/Camera2D"]
-visible = false
-position = Vector2(-2, -8)
-texture = SubResource("GradientTexture2D_hhbug")
-
-[node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("12_tamxu")]
-offset_left = -116.0
-offset_top = -39.0
-offset_right = -115.6
-offset_bottom = -38.96
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -1014,20 +988,29 @@ position = Vector2(-60.5, 72.5)
 [node name="tree_block" parent="." instance=ExtResource("15_5jhu1")]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(153, -277)
+position = Vector2(200, -36)
 
-[node name="spaceship" type="Sprite2D" parent="."]
-position = Vector2(198.5, 39)
-scale = Vector2(1.78125, 1.66406)
-texture = ExtResource("15_qp1lu")
+[node name="Player" parent="." instance=ExtResource("1_w3bu8")]
+z_index = 1
+position = Vector2(-4, -8)
 
-[node name="spaceshiparea" type="Area2D" parent="spaceship"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, -0.5)
+limit_smoothed = true
 
-[node name="crashmessage" parent="spaceship/spaceshiparea" instance=ExtResource("4_dukk6")]
+[node name="Pausemenu" parent="Player/Camera2D" instance=ExtResource("4_b4hsc")]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spaceship/spaceshiparea"]
-shape = SubResource("CircleShape2D_q3nl2")
+[node name="PointLight2D3" type="PointLight2D" parent="Player/Camera2D"]
+visible = false
+position = Vector2(-2, -8)
+texture = SubResource("GradientTexture2D_hhbug")
+
+[node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("12_tamxu")]
+offset_left = -116.0
+offset_top = -39.0
+offset_right = -115.6
+offset_bottom = -38.96
 
 [connection signal="body_entered" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_entered"]
 [connection signal="body_exited" from="Sprite2D/startsignpostarea" to="." method="_on_startsignpostarea_body_exited"]
@@ -1038,5 +1021,3 @@ shape = SubResource("CircleShape2D_q3nl2")
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="entrancetogoldmine" to="." method="_on_entrancetogoldmine_body_entered"]
-[connection signal="body_entered" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_entered"]
-[connection signal="body_exited" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_exited"]
