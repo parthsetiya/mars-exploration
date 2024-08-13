@@ -462,9 +462,3 @@ func _on_spaceshiparea_body_exited(body):
 		crashmessage.hide()
 
 
-
-func _on_aodhfiuahsdf_body_entered(body):
-	if body == player:
-		get_tree().change_scene_to_file("res://scenes/testerdester.tscn")
-
-
