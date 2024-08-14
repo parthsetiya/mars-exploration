@@ -7,7 +7,7 @@ extends CanvasLayer
 @export var skip_action: StringName = &"ui_cancel"
 
 @onready var balloon: Control = %Balloon
-@onready var portrait: TextureRect = $Balloon/Panel/Dialogue/HBoxContainer/Portrait
+@onready var portrait: TextureRect = %Portrait
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
@@ -46,8 +46,6 @@ var dialogue_line: DialogueLine:
 
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
-		var portrait_path= "res://dialogue/edmund_maccas.png" % dialogue_line.character.to_lower()
-		portrait.texture = load(portrait_path)
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line
