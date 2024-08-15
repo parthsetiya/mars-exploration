@@ -46,8 +46,6 @@ var dialogue_line: DialogueLine:
 
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
-		var portrait_path= "res://dialogue/edmund_maccas.png" % dialogue_line.character.to_lower()
-		portrait.texture = load(portrait_path)
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line

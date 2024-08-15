@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://crlao84s5ynxx"]
+[gd_scene load_steps=6 format=3 uid="uid://crlao84s5ynxx"]
 
 [ext_resource type="Texture2D" uid="uid://cvv1cpp0kkjel" path="res://art/friendlyalienttest.png" id="1_6ucnm"]
 [ext_resource type="Script" path="res://scripts/friendlyalien.gd" id="1_yojhl"]
 [ext_resource type="PackedScene" uid="uid://bhnojfecol1ou" path="res://scenes/dialogue.tscn" id="3_5ud7g"]
+[ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="4_x3phw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ce8a"]
 radius = 40.0125
@@ -20,6 +21,8 @@ shape = SubResource("CircleShape2D_0ce8a")
 
 [node name="dialogue" parent="." instance=ExtResource("3_5ud7g")]
 visible = false
+
+[node name="ExampleBalloon" parent="." instance=ExtResource("4_x3phw")]
 
 [connection signal="body_entered" from="talkablearea" to="." method="_on_talkablearea_body_entered"]
 [connection signal="body_exited" from="talkablearea" to="." method="_on_talkablearea_body_exited"]
