@@ -83,3 +83,7 @@ func _on_spaceshiparea_body_exited(body):
 		crashmessage.hide()
 
 
+
+
+func _on_craft_pressed():
+	pass # Replace with function body.

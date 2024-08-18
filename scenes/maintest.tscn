@@ -929,8 +929,20 @@ texture = SubResource("GradientTexture2D_hhbug")
 [node name="recipeGui" parent="Player/Camera2D" instance=ExtResource("7_lua2c")]
 
 [node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("8_ybsfo")]
-visible = false
 script = ExtResource("9_uv7oj")
+
+[node name="InventoryLabel" type="Label" parent="Player/Camera2D/InventoryGui"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="craft" type="Button" parent="Player/Camera2D/InventoryGui"]
+layout_mode = 0
+offset_left = -171.0
+offset_top = -1.0
+offset_right = -4.0
+offset_bottom = 27.0
+text = "Golden joint"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -967,6 +979,7 @@ texture = ExtResource("15_nc7go")
 
 [node name="spaceshiparea" type="Area2D" parent="spaceship"]
 
+[connection signal="pressed" from="Player/Camera2D/InventoryGui/craft" to="." method="_on_craft_pressed"]
 [connection signal="area_shape_exited" from="Area2D" to="Area2D" method="_on_area_shape_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

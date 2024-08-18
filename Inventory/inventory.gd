@@ -25,7 +25,8 @@ extends Node
 var items = {
 	"gold": 0,
 	"wood": 0,
-	"amethyst": 0
+	"amethyst": 0,
+	"Golden joint": 0
 }
 
 func add_item(item_name: String, quantity: int = 1):
