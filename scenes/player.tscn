@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=34 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_rv08x"]
 [ext_resource type="Texture2D" uid="uid://by2an801le88g" path="res://art/mainart/spritesheet (11).png" id="2_dxfbu"]
@@ -430,6 +430,70 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_8l43i"]
+resource_name = "toolswingdown"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.523599, 0.0, 0.261799, 0.785398, 1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -32), Vector2(8, -30), Vector2(20, -22), Vector2(26, -13)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tools:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, 32), Vector2(25.2722, 14.5909), Vector2(16.5373, 6.08375), Vector2(5.87709, 4.54784), Vector2(-8.35775, 5.56695), Vector2(-13.9323, 11.5861)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("tools:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.02934, 0.523599, -0.552036, -0.545952, -1.0472]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("tools:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1e+06, 1e+06, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_815mu"]
 resource_name = "toolswingleft"
 length = 0.6
@@ -561,6 +625,7 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n5xte"]
 _data = {
 "RESET": SubResource("Animation_451hy"),
+"toolswingdown": SubResource("Animation_8l43i"),
 "toolswingleft": SubResource("Animation_815mu"),
 "toolswingright": SubResource("Animation_onxj6")
 }
@@ -580,7 +645,7 @@ hframes = 64
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.27273, 8)
+position = Vector2(5.45455, 8)
 shape = SubResource("RectangleShape2D_1u2gu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

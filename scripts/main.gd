@@ -397,18 +397,18 @@ func inventoryopen():
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pausemenu()
-	if start_sign_post_entered:
-		interact_to_read.show()
-		if Input.is_action_just_pressed("Interact"):
-			if is_showing_thiswaytomines == true:
-				thiswaytomines.hide()
-				is_showing_thiswaytomines = false
-			else:
-				interact_to_read.hide()
-				thiswaytomines.show()
-				is_showing_thiswaytomines = true
-	else:
-		interact_to_read.hide()
+	#if start_sign_post_entered:
+		#interact_to_read.show()
+		#if Input.is_action_just_pressed("Interact"):
+			#if is_showing_thiswaytomines == true:
+				#thiswaytomines.hide()
+				#is_showing_thiswaytomines = false
+			#else:
+				#interact_to_read.hide()
+				#thiswaytomines.show()
+				#is_showing_thiswaytomines = true
+	#else:
+		#interact_to_read.hide()
 	if Input.is_action_just_pressed("Inventory"):
 		inventoryopen()
 	for i in range(5):

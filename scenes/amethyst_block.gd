@@ -38,7 +38,7 @@ func _process(delta):
 		animated_sprite.play("no_amethyst")
 	elif state == "amethyst":
 		animated_sprite.play("amethyst")
-		if player_in_area and Input.is_action_just_pressed("Interact"):
+		if player_in_area and Input.is_action_just_pressed("swing"):
 			state = "no_amethyst"
 			drop_amethyst()
 			add_item_to_inventory(item.name, 1)
