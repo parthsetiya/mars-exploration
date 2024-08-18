@@ -146,10 +146,12 @@ func _on_slot_clicked(slot_index):
 		second_slot_index = null
 
 func _swap_items(slot_index_1, slot_index_2):
+	if inv_open == false:
+		print("invenotry gui sin't visible gango")
+		return
 	var slot_1 = inventory_slots[slot_index_1]
 	var slot_2 = inventory_slots[slot_index_2]
-
-	var item_1 = slot_1.get_children()[1].get_children()[0].get_children()[0]
+	var item_1 = slot_1.get_children()[1].get_chwildren()[0].get_children()[0]
 	var label_1 = slot_1.get_children()[1].get_children()[0].get_children()[1]
 
 	var item_2 = slot_2.get_children()[1].get_children()[0].get_children()[0]
@@ -438,10 +440,7 @@ func pausemenu():
 		Engine.time_scale = 0
 		
 func _on_startsignpostarea_body_entered(body):
-	if body == player:
-		print("running dialogue")
-		#engineer.play("spaceshipintrfo.dqd")
-		
+	if body == player:	
 		start_sign_post_entered = true
 
 func _on_startsignpostarea_body_exited(body):

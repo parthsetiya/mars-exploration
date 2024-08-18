@@ -1,6 +1,5 @@
 ~ start
-Edmund: [speed=0.5][[Hi|Hello|Ni hao]]! [wait=1]Wǒ de míngzì shì ài dé méng, Wǒ xūyào bāngzhù
-- Wǒ néng bāngmáng ma?
-	Edmund: Wǒmen xūyào xiūlǐ tàikōng chuán cáinéng fǎnhuí dìqiú!
-- Wǒ bù huì bāngzhù nǐ
-	Edmund: Nǐ shìgè tóngxìngliàn
+Engineer: [speed=0.5][[Hi|Hello|Hello]]! [wait=1]Your spaceship has crashed sir! You'll need to fix it up to return home!
+Engineer: [speed=0.5]I have compiled a list of parts you need and the materials to craft them. Press C to open the menu!
+
+Engineer: [speed=0.5] Please find the necessary materials to repair the ship and bring them to me!
