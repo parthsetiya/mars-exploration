@@ -76,7 +76,6 @@ func _on_area_2d_body_exited(body):
 	player_in_area = false
 
 func add_item_to_inventory(item_name, quantity):
-	print("adding gold to inv")
 	emit_signal("request_inventory_update", item_name, quantity)
 
 

@@ -171,6 +171,7 @@ func _swap_items(slot_index_1, slot_index_2):
 	print("Swapped items between slots " + str(slot_index_1) + " and " + str(slot_index_2))
 
 func _on_request_inventory_update(item_name, quantity):
+	print("adding ", item_name, quantity)
 	inventory.add_item(item_name, quantity)
 	var updated_quantity = inventory.get_item_quantity(item_name)
 	update_inventory_ui(item_name, updated_quantity)
