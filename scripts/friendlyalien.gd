@@ -32,12 +32,12 @@ func _process(delta):
 		
 		if Input.is_action_just_pressed("Interact"):
 			playerData.load_data() 
-			if playerData.invGoldIngot >=2:
-				print("interacted to remove gold")
-				add_item_to_inventory(REMOVE_GOLD.name, 1)
-				dialogue.hide()
+			#if playerData.invGoldIngot >=2:
+				#print("interacted to remove gold")
+				#add_item_to_iinventory(REMOVE_GOLD.name, 1)
+			dialogue.hide()
 	else:
 		dialogue.hide()
-
-func add_item_to_inventory(item_name, quantity):
-	emit_signal("request_inventory_update", item_name, quantity)
+#
+#func add_item_to_inventory(item_name, quantity):
+	#emit_signal("request_inventory_update", item_name, quantity)

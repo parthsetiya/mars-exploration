@@ -3,7 +3,6 @@ extends Control
 
 var recipes = {
 	"Stick": {"Wood": "2",},
-	"Golden Pickaxe": {"Stick": "2", "Gold": "2"},
 }
 
 var recipe_buttons = {}

@@ -51,7 +51,7 @@ func drop_gold():
 	get_parent().add_child(gold_instance)
 	popfromground(gold_instance)
 	respawn_timer.start()
-	emit_signal("request_inventory_update", item.name, 1)
+	#emit_signal("request_inventory_update", item.name, 1)
 
 func popfromground(tree_collectable):
 	tree_collectable.get_node("AnimatedSprite2D").show()

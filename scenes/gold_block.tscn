@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvtistcsm3ds0"]
+[gd_scene load_steps=7 format=3 uid="uid://bvtistcsm3ds0"]
 
 [ext_resource type="Script" path="res://scenes/gold_block.gd" id="1_ej74l"]
 [ext_resource type="Texture2D" uid="uid://ch7fbuhmrm1yq" path="res://art/mainart/gold.png" id="2_k44p7"]
-[ext_resource type="Script" path="res://scenes/pickable_area.gd" id="4_yqus4"]
-[ext_resource type="PackedScene" uid="uid://daflkqadevkq6" path="res://scenes/gold_collectable.tscn" id="5_scnpm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0tdoc"]
 load_path = "res://.godot/imported/spritesheet (2).png-7bfe718cf7c92d2a2917842350ebe726.ctex"
@@ -31,9 +29,6 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k0isv"]
-radius = 20.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_yhpvt"]
 radius = 20.0
 
@@ -46,25 +41,6 @@ position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_n0edj")
 animation = &"gold"
 
-[node name="pickable_area" type="Area2D" parent="."]
-position = Vector2(3, -1)
-script = ExtResource("4_yqus4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
-position = Vector2(-1, 2)
-shape = SubResource("CircleShape2D_k0isv")
-
-[node name="gold_collectable" parent="pickable_area" instance=ExtResource("5_scnpm")]
-visible = false
-position = Vector2(-1, -3)
-
-[node name="respawn_timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(2.08165e-12, 2.08165e-12)
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(2, 2)
 metadata/Gold = ""
@@ -73,11 +49,7 @@ metadata/Gold = ""
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_yhpvt")
 
-[connection signal="body_entered" from="pickable_area" to="pickable_area" method="_on_body_entered"]
-[connection signal="body_exited" from="pickable_area" to="pickable_area" method="_on_body_exited"]
-[connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="area_exited" from="Area2D" to="pickable_area" method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
