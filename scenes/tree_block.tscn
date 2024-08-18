@@ -34,9 +34,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qjadx"]
 radius = 60.2993
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_me6kn"]
-radius = 60.0083
-
 [sub_resource type="Animation" id="Animation_mebjp"]
 resource_name = "treedown"
 tracks/0/type = "value"
@@ -177,6 +174,9 @@ _data = {
 "treeup": SubResource("Animation_ji6ok")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_82jtq"]
+radius = 92.0489
+
 [node name="tree_block" type="Node2D"]
 script = ExtResource("1_n8dsu")
 
@@ -194,24 +194,22 @@ position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_qjadx")
 
 [node name="tree_collectable" parent="pickablearea" instance=ExtResource("2_5wokc")]
-visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3, 6)
-shape = SubResource("CircleShape2D_me6kn")
-
 [node name="treefallinganim" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_miovb")
 }
 
+[node name="intreearea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="intreearea"]
+shape = SubResource("CircleShape2D_82jtq")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="intreearea" to="." method="_on_intreearea_body_entered"]
+[connection signal="body_exited" from="intreearea" to="." method="_on_intreearea_body_exited"]

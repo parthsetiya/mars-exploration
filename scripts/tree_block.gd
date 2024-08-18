@@ -61,13 +61,7 @@ func popfromground(tree_collectable):
 	await get_tree().create_timer(0.6).timeout
 	tree_collectable.queue_free()
 
-func _on_area_2d_body_entered(body):
-	print("in tree area")
-	player_in_area = true
-	player = body
 
-func _on_area_2d_body_exited(body):
-	player_in_area = false
 
 func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
@@ -75,3 +69,13 @@ func add_item_to_inventory(item_name, quantity):
 func _on_timer_timeout():
 	if state == "no_gold":
 		state = "gold"
+
+
+func _on_intreearea_body_entered(body):
+	print("in tree area")
+	player_in_area = true
+	player = body
+
+
+func _on_intreearea_body_exited(body):
+	player_in_area = false

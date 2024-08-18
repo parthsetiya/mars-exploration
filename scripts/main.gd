@@ -12,6 +12,8 @@ var paused = false
 @onready var spaceshiparea_2 = $Spaceship/spaceshiparea2
 @onready var crashmessage = $spaceship/spaceshiparea/crashmessage
 
+@onready var recipe_gui = $Player/Camera2D/recipeGui
+
 @onready var start_sign_post_entered = false
 
 var is_showing_thiswaytomines = false
@@ -46,7 +48,7 @@ var first_slot_index = null
 var second_slot_index = null
 var inv_gui_show
 var inv_gui_show_hotbar
-var list_gui_show
+var recipe_gui_show
 var iniron
 var ingold 
 var ingold2
@@ -92,7 +94,7 @@ func _ready():
 	inv_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
 	inv_gui_show_hotbar = get_node("Player/Camera2D/InventoryGui/NinePatchRect2")
 	inv_crafting = get_node("Player/Camera2D/InventoryGui/crafting")
-	list_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
+	recipe_gui_show = get_node("Player/Camera2D/crafting")
 	#iniron = get_node("iron_block/Area2D")
 	#ingold = get_node("gold_block/Area2D")
 	#ingold2 = get_node("gold_block2/Area2D")
@@ -415,6 +417,11 @@ func _process(delta):
 			highlight_slot(i)
 	if spaceship_entered:
 		crashmessage.show()
+	if Input.is_action_just_pressed("craftinglist"):
+		if not recipe_gui.visible:
+			recipe_gui.show()
+		else:
+			recipe_gui.hide()
 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=28 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
 [ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/cobalt_block.tscn" id="7_6rs4l"]
 [ext_resource type="Texture2D" uid="uid://cr41eyd0qsvfs" path="res://art/terrain/signpost.png" id="7_084ek"]
+[ext_resource type="PackedScene" uid="uid://b2tn12fbfracb" path="res://scenes/recipeGui.tscn" id="7_lua2c"]
 [ext_resource type="PackedScene" uid="uid://bsp4brhm0rf88" path="res://scenes/thiswaytomines.tscn" id="9_347cy"]
 [ext_resource type="PackedScene" uid="uid://c0vc4hnvvbm3x" path="res://scenes/interact_to_read.tscn" id="9_j40lu"]
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="11_6wovd"]
@@ -947,6 +948,9 @@ offset_left = -86.9091
 offset_top = -38.5
 offset_right = -86.5091
 offset_bottom = -38.46
+
+[node name="recipeGui" parent="Player/Camera2D" instance=ExtResource("7_lua2c")]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
