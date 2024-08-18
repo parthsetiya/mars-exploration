@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2tn12fbfracb"]
+
+[ext_resource type="Script" path="res://scripts/recipeGui.gd" id="1_4q0j4"]
+
+[node name="recipeGui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_4q0j4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 127.0

@@ -1012,7 +1012,6 @@ shape = SubResource("RectangleShape2D_sdmmh")
 position = Vector2(-60.5, 72.5)
 
 [node name="tree_block" parent="." instance=ExtResource("15_5jhu1")]
-visible = false
 light_mask = 4
 visibility_layer = 4
 position = Vector2(153, -277)

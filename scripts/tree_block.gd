@@ -62,6 +62,7 @@ func popfromground(tree_collectable):
 	tree_collectable.queue_free()
 
 func _on_area_2d_body_entered(body):
+	print("in tree area")
 	player_in_area = true
 	player = body
 

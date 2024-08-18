@@ -46,6 +46,7 @@ var first_slot_index = null
 var second_slot_index = null
 var inv_gui_show
 var inv_gui_show_hotbar
+var list_gui_show
 var iniron
 var ingold 
 var ingold2
@@ -91,7 +92,7 @@ func _ready():
 	inv_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
 	inv_gui_show_hotbar = get_node("Player/Camera2D/InventoryGui/NinePatchRect2")
 	inv_crafting = get_node("Player/Camera2D/InventoryGui/crafting")
-	
+	list_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
 	#iniron = get_node("iron_block/Area2D")
 	#ingold = get_node("gold_block/Area2D")
 	#ingold2 = get_node("gold_block2/Area2D")
