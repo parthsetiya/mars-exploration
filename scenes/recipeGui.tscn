@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/recipeGui.gd" id="1_4q0j4"]
 
 [node name="recipeGui" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 3

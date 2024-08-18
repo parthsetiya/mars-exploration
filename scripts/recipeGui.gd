@@ -1,8 +1,8 @@
 extends Control
 
-
 var recipes = {
-	"Stick": {"Wood": "2",},
+	"Stick": {"Wood": "2"},
+	"Golden joint": {"Stick": "1", "Gold": "4"}
 }
 
 var recipe_buttons = {}
@@ -24,7 +24,7 @@ func create_recipe_list():
 
 		var ingredients_vbox = VBoxContainer.new()
 		ingredients_vbox.visible = false  
-		#ingredients_vbox.name = recipe_name + "_ingredients"
+		ingredients_vbox.name = recipe_name + "_ingredients"
 		
 		for ingredient in recipes[recipe_name].keys():
 			var ingredient_label = Label.new()

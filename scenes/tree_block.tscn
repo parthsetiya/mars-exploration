@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy45fnv5txv60"]
+[gd_scene load_steps=7 format=3 uid="uid://cy45fnv5txv60"]
 
 [ext_resource type="Texture2D" uid="uid://ccxsvq2btowku" path="res://art/treespritesheet.png" id="1_fg20q"]
 [ext_resource type="Script" path="res://scripts/tree_block.gd" id="1_n8dsu"]
-[ext_resource type="PackedScene" uid="uid://lkw70av67ao6" path="res://scenes/tree_collectable.tscn" id="2_5wokc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpmve"]
 atlas = ExtResource("1_fg20q")
@@ -31,154 +30,15 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qjadx"]
-radius = 60.2993
-
-[sub_resource type="Animation" id="Animation_mebjp"]
-resource_name = "treedown"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_kosq5"]
-resource_name = "treefading"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(30, -80)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.5708]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gon28"]
-resource_name = "treefalling"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.5708]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(30, -80)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_ji6ok"]
-resource_name = "treeup"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_miovb"]
-_data = {
-"treedown": SubResource("Animation_mebjp"),
-"treefading": SubResource("Animation_kosq5"),
-"treefalling": SubResource("Animation_gon28"),
-"treeup": SubResource("Animation_ji6ok")
-}
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_82jtq"]
 radius = 92.0489
 
 [node name="tree_block" type="Node2D"]
 script = ExtResource("1_n8dsu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(70, -3)
+texture = ExtResource("1_fg20q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -187,29 +47,11 @@ sprite_frames = SubResource("SpriteFrames_ift33")
 animation = &"tree"
 offset = Vector2(30, -80)
 
-[node name="pickablearea" type="Area2D" parent="."]
+[node name="area2d" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pickablearea"]
-position = Vector2(0, 9)
-shape = SubResource("CircleShape2D_qjadx")
-
-[node name="tree_collectable" parent="pickablearea" instance=ExtResource("2_5wokc")]
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-
-[node name="Marker2D" type="Marker2D" parent="."]
-
-[node name="treefallinganim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_miovb")
-}
-
-[node name="intreearea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="intreearea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area2d"]
+position = Vector2(2, 1)
 shape = SubResource("CircleShape2D_82jtq")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="intreearea" to="." method="_on_intreearea_body_entered"]
-[connection signal="body_exited" from="intreearea" to="." method="_on_intreearea_body_exited"]
+[connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="area2d" to="." method="_on_area_2d_body_exited"]

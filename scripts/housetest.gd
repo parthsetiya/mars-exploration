@@ -49,7 +49,7 @@ func pausemenu():
 
 
 func _on_area_2d_body_entered(body):
-	StageManager.changeStage(StageManager.MAINTEST, 0, -10)
+	StageManager.changeStage(StageManager.MAINTEST, 6.818, -398)
 
 
 func _ready():

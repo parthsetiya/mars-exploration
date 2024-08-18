@@ -1,81 +1,26 @@
 extends Node2D
 
-var state = "no_gold"
 var player_in_area = false
-var gold_scene = preload("res://scenes/tree_collectable.tscn") as PackedScene
-var playerData = PlayerData.new()
-var player = null
-var collectable = false
+var is_collected = false
+@onready var animated_sprite = $Sprite2D
 
-@export var inventory_manager: Node
-
-@onready var respawn_timer = $Timer
-@onready var animated_sprite = $AnimatedSprite2D
-@onready var marker = $Marker2D
-@onready var treefallinganim = $treefallinganim
-
-const item = preload("res://Inventory/items/log.tres")
-
-var player_node
-var inventory
-
-signal request_inventory_update()
-
-func _ready():
-	if state == "no_gold":
-		respawn_timer.start() 
-
-func _on_inventory_updated(new_inventory):
-	print("new inventory: " + str(new_inventory))
 
 func _process(delta):
-	if state == "no_gold":
-		animated_sprite.play("no_tree")
-		#treefallinganim.play("treedown")
-	elif state == "gold":
-		animated_sprite.play("tree")
-		treefallinganim.play("treeup")
-		if player_in_area and Input.is_action_just_pressed("Interact"):
-			state = "falling"
-			treefallinganimplayer()
+	if player_in_area and Input.is_action_just_pressed("swing") and not is_collected:
+		print("running way too many times for some rzn")
+		is_collected = true
+		await get_tree().create_timer(0.6).timeout
+		var inventory = get_node("/root/Inventory") 
+		Inventory.add_item("wood", 1)
+		animated_sprite.hide()
 
-func treefallinganimplayer():
-	treefallinganim.play("treefalling")
-	await get_tree().create_timer(1.5).timeout
-	treefallinganim.play("treefading")
-	drop_gold()
-
-func drop_gold():
-	var gold_instance = gold_scene.instantiate()
-	gold_instance.global_position = marker.global_position / 2
-	get_parent().add_child(gold_instance)
-	popfromground(gold_instance)
-	respawn_timer.start()
-	#emit_signal("request_inventory_update", item.name, 1)
-
-func popfromground(tree_collectable):
-	tree_collectable.get_node("AnimatedSprite2D").show()
-	tree_collectable.get_node("logdroppinganim").play("log_dropping")
-	await get_tree().create_timer(1.5).timeout
-	tree_collectable.get_node("logdroppinganim").play("logfading")
-	await get_tree().create_timer(0.6).timeout
-	tree_collectable.queue_free()
-
-
-
-func add_item_to_inventory(item_name, quantity):
-	emit_signal("request_inventory_update", item_name, quantity)
-
-func _on_timer_timeout():
-	if state == "no_gold":
-		state = "gold"
-
-
-func _on_intreearea_body_entered(body):
-	print("in tree area")
+		await get_tree().create_timer(3).timeout
+		animated_sprite.show()
+		is_collected = false
+#
+func _on_area_2d_body_entered(body):
 	player_in_area = true
-	player = body
 
 
-func _on_intreearea_body_exited(body):
+func _on_area_2d_body_exited(body):
 	player_in_area = false
