@@ -11,7 +11,7 @@ func _process(delta):
 		is_collected = true
 		await get_tree().create_timer(0.6).timeout
 		var inventory = get_node("/root/Inventory") 
-		Inventory.add_item("wood", 1)
+		Inventory.add_item("Wood", 1)
 		animated_sprite.hide()
 
 		await get_tree().create_timer(3).timeout

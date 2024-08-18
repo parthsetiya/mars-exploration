@@ -9,3 +9,25 @@ anchor_bottom = 0.037
 offset_right = 0.399989
 offset_bottom = 0.0399995
 script = ExtResource("1_egmnt")
+
+[node name="InventoryLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="Goldon joint" type="Button" parent="."]
+offset_left = -171.0
+offset_top = -1.0
+offset_right = -3.99998
+offset_bottom = 27.0
+text = "Golden joint"
+
+[node name="Stick" type="Button" parent="."]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 32.0
+offset_right = -3.0
+offset_bottom = 60.0
+text = "Stick"
+
+[connection signal="pressed" from="Goldon joint" to="." method="_on_craft_pressed"]
+[connection signal="pressed" from="Stick" to="." method="_on_stick_pressed"]

@@ -1,63 +1,46 @@
-#extends Resource
-#
-#class_name Inventory
-#
-#var items = {}
-#
-#func add_item(item_name, quantity):
-	#if items.has(item_name):
-		#items[item_name] + quantity
-	#else:
-		#items[item_name] = quantity
-#
-#func get_items():
-	#return items
-#
-#func get_item_quantity(item_name):
-	#if items.has(item_name):
-		#return items[item_name]
-	#else:
-		#return 0
-
 extends Node
 
-# Dictionary to hold item names and their quantities
 var items = {
-	"gold": 0,
-	"wood": 0,
-	"amethyst": 0,
-	"Golden joint": 0
+	
+	"Gold": 0,
+	"Wood": 0,
+	"Amethyst": 0,
+	"Golden joint": 0,
+	"Stick": 0
 }
 
-func add_item(item_name: String, quantity: int = 1):
-	print("adding items like a slave")
-	print(items)
+# Adds an item to the inventory
+func add_item(item_name: String, amount: int = 1):
 	if item_name in items:
-		items[item_name] += quantity
+		items[item_name] += amount
 	else:
-		items[item_name] = quantity
+		items[item_name] = amount
 
-func remove_item(item_name: String, quantity: int = 1) -> bool:
-	if item_name in items and items[item_name] >= quantity:
-		items[item_name] -= quantity
-		return true
-	return false
-
-func get_item_quantity(item_name: String) -> int:
+# Removes an item from the inventory
+func remove_item(item_name: String, amount: int = 1):
 	if item_name in items:
-		return items[item_name]
-	return 0
+		items[item_name] -= amount
+		if items[item_name] <= 0:
+			items.erase(item_name)
 
-func can_craft(recipe: Dictionary) -> bool:
-	for ingredient in recipe.keys():
-		if get_item_quantity(ingredient) < recipe[ingredient]:
+# Checks if the inventory has enough items for crafting
+func has_enough_items(required_items: Dictionary) -> bool:
+	for resource_name in required_items.keys():
+		# Convert the string quantity to an integer
+		var required_amount = int(required_items[resource_name])
+		if !items.has(resource_name) or items[resource_name] < required_amount:
 			return false
 	return true
 
-func craft_item(recipe: Dictionary, output_item: String, output_quantity: int = 1) -> bool:
-	if can_craft(recipe):
-		for ingredient in recipe.keys():
-			remove_item(ingredient, recipe[ingredient])
-		add_item(output_item, output_quantity)
+# Crafts an item by removing resources and adding the crafted item
+func craft_item(required_items: Dictionary, item_name: String) -> bool:
+	if has_enough_items(required_items):
+		# Remove required resources
+		for resource_name in required_items.keys():
+			remove_item(resource_name, int(required_items[resource_name]))
+
+		# Add the crafted item
+		add_item(item_name, 1)
 		return true
-	return false
+	else:
+		return false

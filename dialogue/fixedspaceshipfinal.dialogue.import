@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bmubpgevodfdj"
+path="res://.godot/imported/fixedspaceshipfinal.dialogue-8e20e5e6ef3d25274ed4748295e4aa47.tres"
+
+[deps]
+
+source_file="res://dialogue/fixedspaceshipfinal.dialogue"
+dest_files=["res://.godot/imported/fixedspaceshipfinal.dialogue-8e20e5e6ef3d25274ed4748295e4aa47.tres"]
+
+[params]
+
+defaults=true

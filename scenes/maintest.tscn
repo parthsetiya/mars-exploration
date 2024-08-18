@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=31 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -7,12 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
 [ext_resource type="PackedScene" uid="uid://b2tn12fbfracb" path="res://scenes/recipeGui.tscn" id="7_lua2c"]
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="8_ybsfo"]
-[ext_resource type="Script" path="res://Inventory/inventorygui.gd" id="9_uv7oj"]
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="11_6wovd"]
 [ext_resource type="PackedScene" uid="uid://crlao84s5ynxx" path="res://scenes/friendlyalien.tscn" id="12_3kb63"]
+[ext_resource type="Texture2D" uid="uid://d3tq7ltk53a5a" path="res://art/mainart/fire spaceship.png" id="13_ay668"]
+[ext_resource type="Texture2D" uid="uid://d83nmtcsw5jw" path="res://art/mainart/spaceship fire animation/pixil-frame-0.png" id="14_srp5l"]
 [ext_resource type="PackedScene" uid="uid://kfgimtoe72hl" path="res://scenes/amethyst_block.tscn" id="14_u0j5j"]
 [ext_resource type="PackedScene" uid="uid://cy45fnv5txv60" path="res://scenes/tree_block.tscn" id="15_5jhu1"]
+[ext_resource type="Texture2D" uid="uid://rvi41ptl43lx" path="res://art/mainart/spaceship fire animation/pixil-frame-1.png" id="15_dk0no"]
 [ext_resource type="Texture2D" uid="uid://108k0hdoohuq" path="res://art/mainart/crashed shadows.png" id="15_nc7go"]
+[ext_resource type="Texture2D" uid="uid://dlfbdpaj5clqy" path="res://art/mainart/spaceship fire animation/pixil-frame-2.png" id="16_xve0s"]
+[ext_resource type="Texture2D" uid="uid://dayhhush7d255" path="res://art/mainart/spaceship fire animation/pixil-frame-3.png" id="17_5mb3j"]
+[ext_resource type="Texture2D" uid="uid://4toqitxft8yf" path="res://art/mainart/spaceship fire animation/pixil-frame-4.png" id="18_frnbg"]
+[ext_resource type="Texture2D" uid="uid://lgujxlyt1qjb" path="res://art/mainart/spaceship fire animation/pixil-frame-5.png" id="19_ir5mc"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_j7otx"]
 scenes/1/scene = ExtResource("6_rrp7u")
@@ -892,6 +898,51 @@ size = Vector2(94.4198, 30.5819)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmmh"]
 size = Vector2(113.404, 63.9218)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl2lv"]
+atlas = ExtResource("15_nc7go")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6ahm"]
+atlas = ExtResource("13_ay668")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0uih8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl2lv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6ahm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_srp5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dk0no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xve0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5mb3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_frnbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ir5mc")
+}],
+"loop": true,
+"name": &"fixed",
+"speed": 5.0
+}]
+
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_6jpb6")
@@ -906,9 +957,9 @@ layer_1/name = "Foliage"
 layer_1/tile_data = PackedInt32Array(-720898, 655378, 2, -786430, 917522, 2, -720894, 917522, 3, -720890, 327698, 11, -720887, 327698, 12, -786421, 327698, 10, -589813, 327698, 9, -262132, 327698, 12, -655347, 327698, 12, -262155, 327698, 9, -131083, 327698, 10, -65547, 327698, 10, 131061, 327698, 10, 196597, 327698, 10, -131081, 327698, 9, 65527, 327698, 12, 196599, 327698, 9, -65544, 327698, 11, -262150, 327698, 11, -327685, 327698, 9, -262149, 327698, 10, -196613, 327698, 12, -262148, 327698, 10, -1114125, 327698, 10, -851980, 327698, 11, -786444, 327698, 10, -720908, 327698, 9, -655372, 327698, 12, -458763, 327698, 10, -1310730, 327698, 11, -720906, 327698, 10, -393226, 327698, 11, -1114121, 327698, 12, -524296, 327698, 9, -393223, 327698, 10, -1114118, 327698, 11, -917510, 327698, 10, -655366, 327698, 9, -327686, 327698, 10, -1048570, 327698, 11, -851962, 327698, 9, -1048569, 327698, 9, -983033, 327698, 10, -983029, 327698, 10, -851956, 327698, 11, -1245171, 327698, 9, -1114099, 327698, 11, -851955, 327698, 11, -1245170, 327698, 10, -983016, 327698, 11, -524264, 327698, 12, -196584, 327698, 11, -589798, 327698, 10, -786405, 327698, 12, -262117, 327698, 10, -786404, 327698, 12, -1048547, 327698, 9, -393186, 327698, 10, -851937, 327698, 11, -65505, 327698, 9, -524256, 327698, 12, -196591, 327698, 11, -131052, 327698, 9, -131050, 327698, 11, -458740, 327698, 13, -589820, 720914, 13, -65522, 655378, 13, -131076, 327698, 13, -131079, 327698, 13, -327690, 327698, 13, -589832, 327698, 13, -655364, 327698, 13, -655373, 720914, 13, -196590, 655378, 13, -196610, 327698, 8, -589818, 327698, 8, -720893, 327698, 8, -524295, 327698, 8, -196617, 327698, 8, -327669, 327698, 8, -720903, 327698, 8, -983048, 327698, 8, -917495, 327698, 8, -327692, 327698, 8, -524275, 327698, 7, -65524, 327698, 7, -327688, 327698, 7, -786446, 327698, 7, -1179644, 327698, 7, -983025, 327698, 7, -262122, 327698, 7, 131065, 327698, 7, -720871, 327698, 7, -983020, 327698, 7, -1179651, 327698, 7, -131058, 655378, 12, -131057, 720914, 12, -65521, 720914, 13, -262126, 655378, 12, -262125, 720914, 12, -196589, 720914, 13, -655357, 655378, 12, -589821, 655378, 13, -655356, 720914, 12, -720910, 655378, 12, -655374, 655378, 13, -720909, 720914, 12, -262145, 655378, 12, -196609, 655378, 13, -327680, 720914, 12, -262144, 720914, 13)
 layer_2/name = "Trees"
 layer_2/z_index = 1
-layer_2/tile_data = PackedInt32Array(-262147, 393234, 11, -196611, 393234, 12, -262144, 589842, 12, -262141, 393234, 11, -196605, 393234, 12, -131069, 393234, 13, -131066, 589842, 13, -786432, 393234, 11, -720896, 393234, 12, -655360, 393234, 13, -655357, 589842, 13, -7, 393234, 12, -4, 589842, 12, -589836, 393234, 13, 65538, 1, 65536, -6, 0, 262144, -327672, 0, 262144, -1245198, 0, 262144, -1245183, 0, 262144, -917513, 0, 262144, -1114096, 0, 262144, -983013, 0, 262144, -393190, 0, 262144, -327666, 0, 262144, -983033, 0, 262144, -655365, 0, 262144, -1048579, 327698, 14, -983043, 327698, 15, -917507, 327698, 16, -851971, 327698, 17, -786435, 327698, 18, -1048578, 393234, 14, -983042, 393234, 15, -917506, 393234, 16, -851970, 393234, 17, -786434, 393234, 18, -1048577, 458770, 14, -983041, 458770, 15, -917505, 458770, 16, -851969, 458770, 17, -786433, 458770, 18, -1114112, 524306, 14, -1048576, 524306, 15, -983040, 524306, 16, -917504, 524306, 17, -851968, 524306, 18, -1114111, 589842, 14, -1048575, 589842, 15, -983039, 589842, 16, -917503, 589842, 17, -851967, 589842, 18, -1114110, 655378, 14, -1048574, 655378, 15, -983038, 655378, 16, -917502, 655378, 17, -851966, 655378, 18)
+layer_2/tile_data = PackedInt32Array(-262147, 393234, 11, -196611, 393234, 12, -262144, 589842, 12, -262141, 393234, 11, -196605, 393234, 12, -786432, 393234, 11, -720896, 393234, 12, -7, 393234, 12, -4, 589842, 12, -589836, 393234, 13, -6, 0, 262144, -327672, 0, 262144, -1245198, 0, 262144, -1245183, 0, 262144, -917513, 0, 262144, -1114096, 0, 262144, -983013, 0, 262144, -393190, 0, 262144, -327666, 0, 262144, -983033, 0, 262144, -655365, 0, 262144, -1048579, 327698, 14, -983043, 327698, 15, -917507, 327698, 16, -851971, 327698, 17, -786435, 327698, 18, -1048578, 393234, 14, -983042, 393234, 15, -917506, 393234, 16, -851970, 393234, 17, -786434, 393234, 18, -1048577, 458770, 14, -983041, 458770, 15, -917505, 458770, 16, -851969, 458770, 17, -786433, 458770, 18, -1114112, 524306, 14, -1048576, 524306, 15, -983040, 524306, 16, -917504, 524306, 17, -851968, 524306, 18, -1114111, 589842, 14, -1048575, 589842, 15, -983039, 589842, 16, -917503, 589842, 17, -851967, 589842, 18, -1114110, 655378, 14, -1048574, 655378, 15, -983038, 655378, 16, -917502, 655378, 17, -851966, 655378, 18)
 layer_3/name = "ores"
-layer_3/tile_data = PackedInt32Array(-589798, 0, 65536, -786404, 0, 65536, -1048554, 0, 65536, -917490, 0, 65536, -917493, 0, 65536, -983030, 0, 65536, -1114109, 0, 65536, -1048572, 0, 65536, -655350, 0, 65536, -655349, 0, 65536, -327663, 0, 65536, -65518, 0, 65536, -65521, 0, 65536, -1310730, 0, 65536, -1376263, 0, 65536, -1114115, 0, 131072, -262121, 0, 65536, -458726, 0, 65536, -327652, 0, 65536, -917494, 0, 131072, -196591, 0, 131072, -262123, 0, 131072, -196581, 0, 131072, -524259, 0, 131072, -458721, 0, 131072, -1179629, 0, 131072, -1179637, 0, 131072, 131069, 0, 65536, 131070, 0, 65536, 131071, 0, 65536, 65536, 0, 65536, 131072, 0, 65536, 196607, 0, 65536, 196606, 0, 65536, 196605, 0, 65536)
+layer_3/tile_data = PackedInt32Array(-589798, 0, 65536, -786404, 0, 65536, -1048554, 0, 65536, -917490, 0, 65536, -917493, 0, 65536, -983030, 0, 65536, -1114109, 0, 65536, -1048572, 0, 65536, -655350, 0, 65536, -655349, 0, 65536, -327663, 0, 65536, -65518, 0, 65536, -65521, 0, 65536, -1310730, 0, 65536, -1376263, 0, 65536, -1114115, 0, 131072, -262121, 0, 65536, -458726, 0, 65536, -327652, 0, 65536, -917494, 0, 131072, -196591, 0, 131072, -262123, 0, 131072, -196581, 0, 131072, -524259, 0, 131072, -458721, 0, 131072, -1179629, 0, 131072, -1179637, 0, 131072, 196607, 0, 65536, -131075, 0, 65536, -65527, 0, 65536, -458747, 0, 65536, -458748, 0, 65536, -458760, 0, 65536, -131081, 0, 65536, -720894, 0, 65536, -655352, 0, 65536, 65527, 0, 65536, -589836, 0, 65536, -262156, 0, 65536)
 
 [node name="Player" parent="." instance=ExtResource("1_w3bu8")]
 z_index = 1
@@ -929,27 +980,14 @@ texture = SubResource("GradientTexture2D_hhbug")
 [node name="recipeGui" parent="Player/Camera2D" instance=ExtResource("7_lua2c")]
 
 [node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("8_ybsfo")]
-script = ExtResource("9_uv7oj")
-
-[node name="InventoryLabel" type="Label" parent="Player/Camera2D/InventoryGui"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 20.0
-
-[node name="craft" type="Button" parent="Player/Camera2D/InventoryGui"]
-layout_mode = 0
-offset_left = -171.0
-offset_top = -1.0
-offset_right = -4.0
-offset_bottom = 27.0
-text = "Golden joint"
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("12_3kb63")]
-position = Vector2(107, -103)
+position = Vector2(122, -139.5)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(5.5, -443.499)
@@ -972,14 +1010,44 @@ position = Vector2(-523.927, -103.295)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sdmmh")
 
-[node name="spaceship" type="Sprite2D" parent="."]
+[node name="spaceship" type="AnimatedSprite2D" parent="."]
 position = Vector2(186, 1)
 scale = Vector2(3.54688, 3.31352)
-texture = ExtResource("15_nc7go")
+sprite_frames = SubResource("SpriteFrames_0uih8")
+frame_progress = 0.24929
 
 [node name="spaceshiparea" type="Area2D" parent="spaceship"]
 
-[connection signal="pressed" from="Player/Camera2D/InventoryGui/craft" to="." method="_on_craft_pressed"]
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+z_index = 30
+offset_left = -2168.5
+offset_top = -1497.0
+offset_right = 2479.5
+offset_bottom = 1394.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ColorRect2"]
+z_index = 30
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.442556
+anchor_top = 0.407471
+anchor_right = 0.442556
+anchor_bottom = 0.407471
+offset_right = 371.0
+offset_bottom = 135.0
+scale = Vector2(2.25, 2.25)
+text = "Game Finished
+
+Credits:
+Bolt - Art/Map design
+Stegg - Food management
+Parrot -  Prodigy Programmer
+"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="area_shape_exited" from="Area2D" to="Area2D" method="_on_area_shape_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

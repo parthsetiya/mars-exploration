@@ -16,6 +16,7 @@ func update_inventory_display():
 
 
 var recipes = {
+	"Stick": {"Wood": "2"},
 	"Golden joint": {"Stick": "1", "Gold": "4"}
 }
 
@@ -29,3 +30,7 @@ func craft_item(item_name: String):
 func _on_craft_pressed():
 	print("crafint joint")
 	craft_item("Golden joint")
+
+
+func _on_stick_pressed():
+	craft_item("Stick")

@@ -10,6 +10,7 @@ const HOUSETEST = preload("res://scenes/housetest.tscn")
 const PLAYER = preload("res://scenes/player.tscn")
 const GOLDMINE = preload("res://scenes/goldmine.tscn")
 const TESTERDESTER = preload("res://scenes/testerdester.tscn")
+#const FINISHSCREEN = preload("res://scenes/finishscreen.tscn")
 
 func _ready():
 	get_node("ColorRect").hide()
