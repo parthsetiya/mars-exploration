@@ -2,7 +2,8 @@ extends Node2D
 
 var player_in_area = false
 var is_collected = false
-@onready var animated_sprite = $Sprite2D
+@onready var animated_sprite = $AnimatedSprite2D
+
 
 
 func _process(delta):

@@ -36,10 +36,6 @@ radius = 92.0489
 [node name="tree_block" type="Node2D"]
 script = ExtResource("1_n8dsu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(70, -3)
-texture = ExtResource("1_fg20q")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 rotation = 1.5708
