@@ -979,20 +979,17 @@ visible = false
 visible = false
 
 [node name="Hotbar" parent="Player/Camera2D" instance=ExtResource("11_3xaid")]
-offset_left = -141.909
-offset_top = 238.0
-offset_right = -59.9091
-offset_bottom = 320.0
-
-[node name="Marker2D" type="Marker2D" parent="Player"]
-position = Vector2(44.0909, -341)
+offset_left = -143.273
+offset_top = 174.5
+offset_right = -61.2728
+offset_bottom = 256.5
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("12_3kb63")]
-position = Vector2(122.5, -139.5)
+position = Vector2(123, -232.5)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(5.5, -443.499)
