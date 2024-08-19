@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://1mfgjrvmk8ho"]
 
-[ext_resource type="Script" path="res://scenes/cave.gd" id="1_2ljf6"]
+[ext_resource type="Script" path="res://scripts/housetest.gd" id="1_2ljf6"]
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="1_glu5q"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="3_srocn"]
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_2hmad"]
