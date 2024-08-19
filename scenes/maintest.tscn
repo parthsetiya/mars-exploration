@@ -944,7 +944,7 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="gold_block" parent="." instance=ExtResource("6_rrp7u")]
-position = Vector2(-68, -86)
+position = Vector2(-68, -80)
 
 [node name="iron_block" parent="." instance=ExtResource("7_6rs4l")]
 light_mask = 2
@@ -974,7 +974,7 @@ position = Vector2(-335.601, -195.971)
 shape = SubResource("RectangleShape2D_sdmmh")
 
 [node name="amethyst_block" parent="." instance=ExtResource("14_u0j5j")]
-position = Vector2(-60.5, 72.5)
+position = Vector2(-69, 78.5)
 
 [node name="tree_block" parent="." instance=ExtResource("15_5jhu1")]
 light_mask = 4
