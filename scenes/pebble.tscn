@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b56rw2ogor7j8"]
+
+[ext_resource type="Script" path="res://scenes/pebble.gd" id="1_c5gop"]
+[ext_resource type="Texture2D" uid="uid://dgw4bn2ocyrgn" path="res://art/ironbar.png" id="2_u7sam"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ygpt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u7sam")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfqbf"]
+radius = 20.0
+
+[node name="Pebble" type="Node2D"]
+script = ExtResource("1_c5gop")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3ygpt")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 2)
+metadata/Gold = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_sfqbf")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_exited"]

@@ -41,15 +41,13 @@ position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_n0edj")
 animation = &"gold"
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(2, 2)
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 2)
 metadata/Gold = ""
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_yhpvt")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_exited"]
