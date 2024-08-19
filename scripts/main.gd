@@ -153,7 +153,7 @@ func _swap_items(slot_index_1, slot_index_2):
 		return
 	var slot_1 = inventory_slots[slot_index_1]
 	var slot_2 = inventory_slots[slot_index_2]
-	var item_1 = slot_1.get_children()[1].get_chwildren()[0].get_children()[0]
+	var item_1 = slot_1.get_children()[1].get_children()[0].get_children()[0]
 	var label_1 = slot_1.get_children()[1].get_children()[0].get_children()[1]
 
 	var item_2 = slot_2.get_children()[1].get_children()[0].get_children()[0]
