@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://boc5snqhqbeco"]
+
+[ext_resource type="Script" path="res://scripts/hotbar.gd" id="1_uh3b1"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchor_right = 0.048
+anchor_bottom = 0.055
+offset_left = -107.0
+offset_top = -12.0
+offset_right = -131.16
+offset_bottom = -12.4
+script = ExtResource("1_uh3b1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 59.0
+offset_bottom = 10.0
+scale = Vector2(3.75, 3.75)
+
+[node name="item1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="item2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="item3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="item4" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="item5" type="Button" parent="HBoxContainer"]
+layout_mode = 2

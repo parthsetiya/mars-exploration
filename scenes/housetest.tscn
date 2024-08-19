@@ -1171,6 +1171,7 @@ position = Vector2(-5.5, 0.5)
 visible = false
 
 [node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("5_xi8iw")]
+visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
 position = Vector2(6.13635, -12.5)

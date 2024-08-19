@@ -6,7 +6,8 @@ var items = {
 	"Wood": 0,
 	"Amethyst": 0,
 	"Golden joint": 0,
-	"Stick": 0
+	"Stick": 0,
+	"Pebble": 0
 }
 
 # Adds an item to the inventory

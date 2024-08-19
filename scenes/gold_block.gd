@@ -7,7 +7,6 @@ var gold_collected = false
 
 func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("swing") and not gold_collected:
-		print("running")
 		gold_collected = true
 		await get_tree().create_timer(0.6).timeout
 		var inventory = get_node("/root/Inventory") 

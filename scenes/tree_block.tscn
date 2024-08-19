@@ -1,11 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy45fnv5txv60"]
+[gd_scene load_steps=6 format=3 uid="uid://cy45fnv5txv60"]
 
 [ext_resource type="Texture2D" uid="uid://ccxsvq2btowku" path="res://art/treespritesheet.png" id="1_fg20q"]
 [ext_resource type="Script" path="res://scripts/tree_block.gd" id="1_n8dsu"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpmve"]
-atlas = ExtResource("1_fg20q")
-region = Rect2(128, 0, 128, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3n33"]
 atlas = ExtResource("1_fg20q")
@@ -13,14 +9,6 @@ region = Rect2(0, 0, 128, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ift33"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fpmve")
-}],
-"loop": true,
-"name": &"no_tree",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d3n33")
@@ -36,22 +24,19 @@ radius = 92.0489
 [node name="tree_block" type="Node2D"]
 script = ExtResource("1_n8dsu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(70, -3)
-texture = ExtResource("1_fg20q")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-rotation = 1.5708
+position = Vector2(-26, 66)
 sprite_frames = SubResource("SpriteFrames_ift33")
 animation = &"tree"
+frame_progress = 0.340458
 offset = Vector2(30, -80)
 
-[node name="area2d" type="Area2D" parent="."]
+[node name="area2d" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(26, -66)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/area2d"]
 position = Vector2(2, 1)
 shape = SubResource("CircleShape2D_82jtq")
 
-[connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="area2d" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="AnimatedSprite2D/area2d" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/area2d" to="." method="_on_area_2d_body_exited"]
