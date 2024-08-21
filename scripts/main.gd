@@ -34,6 +34,7 @@ const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
 const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 const REMOVE_GOLD = preload("res://Inventory/items/remove_gold.tres")
 @onready var allgoldfolder = $allgold
+@onready var allironfolder = $allironfolder
 # Node definitions
 var gold_node
 var gold_node2
@@ -62,19 +63,16 @@ var making_stick = false
 var slotonetexture
 var collectediron = false
 var npc
-var gold_minable
+var alliron
 var allgold
 
 func _ready():
-	gold_node = get_node("gold_block")
-	gold_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
-	gold_node2 = get_node("gold_block2")
 	allgold = allgoldfolder.get_children()
+	alliron = allironfolder.get_children()
 	for gold in allgold:
 		gold.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
-	#gold_node2.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
-	iron_node = get_node("iron_block")
-	iron_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	for iron in alliron:
+		iron.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	tree_node = get_node("tree_block")
 	tree_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui.connect("slot_clicked", Callable(self, "_on_slot_clicked"))
