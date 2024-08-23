@@ -5,7 +5,6 @@ class_name Player
 @onready var animations = $AnimationPlayer
 @onready var gold_block = $gold_block
 
-
 @onready var deathscreen = $Deathscreen
 @onready var death_screen_color_rect = $Deathscreen/ColorRect
 
@@ -27,7 +26,7 @@ var direction = "right"
 @onready var toolanim = $Node2D/AnimationPlayer
 @onready var node_2d = $Node2D
 signal update_ui(health, position)
-var respawn_position = Vector2(playerData.SavePos)
+#var respawn_position = Vector2(playerData.SavePos)
 
 func _ready():
 	
@@ -44,7 +43,7 @@ func _process(delta):
 		load_data()
 	#emit_signal("update_ui", playerData.health, self.position)
 	emit_signal("update_ui", playerData.health, self.position)
-	playerData.UpdatePos(self.position)
+	#playerData.UpdatePos(self.position)
 	if Input.is_action_just_pressed("right"):
 		direction = "right"
 	if Input.is_action_just_pressed("left"):
@@ -52,7 +51,7 @@ func _process(delta):
 	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
 	if Input.is_action_just_pressed("swing") and not is_swinging:
 		swing_tool()
-		
+	
 func swing_tool():
 	
 	is_swinging = true
@@ -97,7 +96,7 @@ func on_player_death():
 func respawn():
 	print("respawn function running")
 	deathscreen.hide()
-	self.position = respawn_position
+	#self.position = respawn_position
 	playerData.change_health(+100) 
 	print(playerData.health)  # Reset health or any other parameters
 

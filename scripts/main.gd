@@ -65,6 +65,7 @@ var collectediron = false
 var npc
 var alliron
 var allgold
+var player_node
 
 func _ready():
 	allgold = allgoldfolder.get_children()
@@ -83,8 +84,7 @@ func _ready():
 	playerdata.connect("inventory_loaded", Callable(self, "_on_inventory_loaded"))
 	npc = get_node("CharacterBody2D")
 	npc.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
-
-
+	player_node = get_node("Player")
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25) 
 	
@@ -112,6 +112,7 @@ func _ready():
 	##ingold2.connect("body_exited", Callable(self,"leavegoldcollectable"))
 	#intree.connect("body_exited", Callable(self,"leavetreecollectable"))
 	playerdata.load_data()
+	playerdata.SavePos = player.position
 
 #func inironcollectable(body):
 	#ironcollectable = true 
@@ -427,6 +428,8 @@ func _process(delta):
 			recipe_gui.show()
 		else:
 			recipe_gui.hide()
+	playerdata.save()
+	
 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:

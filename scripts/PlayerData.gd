@@ -57,6 +57,7 @@ func save():
 		"iron_amount" : invironingot,
 		"log_amount" : invlogingot, 
 		"stick_amount": invstick,
+		"position": SavePos
 	}
 	
 	var json = JSON.new()
@@ -91,4 +92,5 @@ func load_data():
 	invstick = jsonstickvalue
 	emit_signal("inventory_loaded", invGoldIngot, invironingot, invlogingot, invstick)
 	
-
+	var pos_array = data["position"]
+	UpdatePos(Vector2(pos_array))

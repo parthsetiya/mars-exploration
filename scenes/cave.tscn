@@ -612,7 +612,6 @@ limit_smoothed = true
 visible = false
 
 [node name="PointLight2D3" type="PointLight2D" parent="Player/Camera2D"]
-visible = false
 position = Vector2(-2, -8)
 texture = SubResource("GradientTexture2D_yqv0r")
 
