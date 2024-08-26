@@ -35,7 +35,7 @@ func _process(delta):
 	elif state == "gold":
 		animated_sprite.play("tree")
 		treefallinganim.play("treeup")
-		if player_in_area and Input.is_action_just_pressed("Interact"):
+		if player_in_area and Input.is_action_just_pressed("swing"):
 			state = "falling"
 			treefallinganimplayer()
 

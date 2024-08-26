@@ -19,7 +19,7 @@ var paused = false
 var is_showing_thiswaytomines = false
 
 @onready var player = $Player
-
+@onready var alltreegolder = $alltree
 var playerdata = PlayerData.new()
 @onready var character_body_2d = $CharacterBody2D
 var inventory = Inventory.new()
@@ -33,8 +33,10 @@ const LOG = preload("res://Inventory/items/log.tres")
 const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
 const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 const REMOVE_GOLD = preload("res://Inventory/items/remove_gold.tres")
+const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
+
 @onready var allgoldfolder = $allgold
-@onready var allironfolder = $allironfolder
+@onready var allironfolder = $alliron
 # Node definitions
 var gold_node
 var gold_node2
@@ -65,15 +67,19 @@ var collectediron = false
 var npc
 var alliron
 var allgold
+var alltree
 var player_node
 
 func _ready():
 	allgold = allgoldfolder.get_children()
 	alliron = allironfolder.get_children()
+	alltree = alltreegolder.get_children()
 	for gold in allgold:
 		gold.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	for iron in alliron:
 		iron.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	for tree in alltree:
+		tree.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	tree_node = get_node("tree_block")
 	tree_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui.connect("slot_clicked", Callable(self, "_on_slot_clicked"))
@@ -288,6 +294,28 @@ func update_inventory_ui(item_name, updated_quantity):
 					if label.text == "0":
 						item.texture == null
 				elif item.texture == GOLD.texture:
+					label.text = str(int(label.text) - 3) 
+					if label.text == "0":
+						item.texture = null
+						
+	if item_name == WOODEN_PICKAXE.name:
+		playerdata.add_invlogingot(-3)
+		playerdata.add_invstick(-2)
+		var pickaxe_crafted = false
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == null and pickaxe_crafted == false:
+					item.texture = WOODEN_PICKAXE.texture
+					label.text = str(1)
+					pickaxe_crafted = true
+				if item.texture == GOLD_STICK.texture:
+					label.text = str(int(label.text) - 2) 
+					if label.text == "0":
+						item.texture == null
+				elif item.texture == LOG.texture:
 					label.text = str(int(label.text) - 3) 
 					if label.text == "0":
 						item.texture = null

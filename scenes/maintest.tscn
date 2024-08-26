@@ -998,11 +998,19 @@ position = Vector2(-117, -224.5)
 [node name="gold_block6" parent="allgold" instance=ExtResource("6_rrp7u")]
 position = Vector2(14, -195.5)
 
-[node name="allironfolder" type="Node2D" parent="."]
+[node name="alliron" type="Node2D" parent="."]
 
-[node name="iron_block" parent="allironfolder" instance=ExtResource("7_6rs4l")]
+[node name="iron_block" parent="alliron" instance=ExtResource("7_6rs4l")]
 light_mask = 2
 position = Vector2(-114.5, 86.5)
+
+[node name="alltree" type="Node2D" parent="."]
+
+[node name="tree_block" parent="alltree" instance=ExtResource("15_5jhu1")]
+position = Vector2(190, -65.5)
+
+[node name="tree_block2" parent="alltree" instance=ExtResource("15_5jhu1")]
+position = Vector2(376.5, -13)
 
 [connection signal="area_shape_exited" from="Area2D" to="Area2D" method="_on_area_shape_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwbjcat8e4j7n"]
+[gd_scene load_steps=5 format=3 uid="uid://cwbjcat8e4j7n"]
 
 [ext_resource type="Script" path="res://scripts/crafting.gd" id="1_cpp4s"]
 [ext_resource type="Script" path="res://scripts/table.gd" id="2_qrt3n"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="2_udjdx"]
+[ext_resource type="Texture2D" uid="uid://d3tq7ltk53a5a" path="res://art/mainart/fire spaceship.png" id="4_3kwax"]
 
 [node name="crafting" type="Node2D"]
 script = ExtResource("1_cpp4s")
@@ -19,15 +20,39 @@ offset_top = 2.0
 offset_right = -1.0
 offset_bottom = 66.0
 
-[node name="0" type="Button" parent="GridContainer"]
+[node name="Stick" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "stick"
 script = ExtResource("2_udjdx")
 metadata/_edit_use_anchors_ = true
 
+[node name="stickrecipe" type="Label" parent="GridContainer/Stick"]
+visible = false
+layout_mode = 0
+offset_left = -70.0
+offset_top = 8.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+text = "- 2x Gold Ingot"
+
 [node name="gold_pick" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 
-[connection signal="pressed" from="GridContainer/0" to="." method="_on__pressed"]
-[connection signal="pressed" from="GridContainer/0" to="GridContainer/0" method="_on_pressed"]
+[node name="Wooden Pickaxe" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_3kwax")
+
+[node name="woodenpickaxerecipe" type="Label" parent="GridContainer/Wooden Pickaxe"]
+visible = false
+offset_left = -70.0
+offset_top = 8.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+text = "- 2x Gold Ingot"
+
+[connection signal="mouse_entered" from="GridContainer/Stick" to="." method="_on_stick_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Stick" to="." method="_on_stick_mouse_exited"]
+[connection signal="pressed" from="GridContainer/Stick" to="." method="_on__pressed"]
+[connection signal="pressed" from="GridContainer/Stick" to="GridContainer/Stick" method="_on_pressed"]
 [connection signal="pressed" from="GridContainer/gold_pick" to="." method="_on_gold_pick_pressed"]
+[connection signal="pressed" from="GridContainer/Wooden Pickaxe" to="." method="_on_texture_button_pressed"]
