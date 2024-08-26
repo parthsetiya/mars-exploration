@@ -24,7 +24,6 @@ StageManager="*res://scenes/StageManager.tscn"
 SaveLoadManager="*res://scripts/SaveLoadManager.gd"
 DialogueQuest="*res://addons/dialogue_quest/scripts/dialogue_quest_interface.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Inventory="*res://Inventory/inventory.gd"
 
 [dialogue_quest]
 

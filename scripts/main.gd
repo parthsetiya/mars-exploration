@@ -99,18 +99,6 @@ func _ready():
 	inv_gui_show_hotbar = get_node("Player/Camera2D/InventoryGui/NinePatchRect2")
 	inv_crafting = get_node("Player/Camera2D/InventoryGui/crafting")
 	recipe_gui_show = get_node("Player/Camera2D/crafting")
-	#iniron = get_node("iron_block/Area2D")
-	#ingold = get_node("gold_block/Area2D")
-	#ingold2 = get_node("gold_block2/Area2D")
-	#intree = get_node("tree_block/Area2D")
-	#iniron.connect("body_entered", Callable(self,"inironcollectable"))
-	#ingold.connect("body_entered", Callable(self,"ingoldcollectable"))
-	##ingold2.connect("body_entered", Callable(self,"ingoldcollectable"))
-	#intree.connect("body_entered", Callable(self,"intreecollectable"))
-	#iniron.connect("body_exited", Callable(self,"leaveironcollectable"))
-	#ingold.connect("body_exited", Callable(self,"leavegoldcollectable"))
-	##ingold2.connect("body_exited", Callable(self,"leavegoldcollectable"))
-	#intree.connect("body_exited", Callable(self,"leavetreecollectable"))
 	playerdata.load_data()
 	playerdata.SavePos = player.position
 
