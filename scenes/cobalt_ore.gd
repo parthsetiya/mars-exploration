@@ -43,8 +43,6 @@ func _process(delta):
 			state = "no_iron"
 			drop_iron()
 			add_item_to_inventory(item.name, 1)
-	if player_in_area == true:
-		animated_sprite.play("cobalt_outline")
 
 func popfromground(iron_collectable):
 	iron_collectable.get_node("AnimatedSprite2D").show()
