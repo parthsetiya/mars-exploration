@@ -15,7 +15,6 @@ var title = load("res://dialogue/testing.dialogue")
 
 func _on_talkablearea_body_entered(body):
 	in_talkable = true
-	player = body
 	if has_gottenintro == false:
 		print("why is this not running")
 		DialogueManager.show_example_dialogue_balloon(resource, "start")
