@@ -1163,7 +1163,7 @@ layer_2/name = "gold"
 layer_2/tile_data = PackedInt32Array(458762, 655360, 10, 589837, 655360, 10, 327693, 655360, 10, 524303, 655360, 10)
 
 [node name="Player" parent="." instance=ExtResource("2_kf5yp")]
-position = Vector2(153, -12)
+position = Vector2(-5.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
@@ -1171,10 +1171,11 @@ position = Vector2(153, -12)
 visible = false
 
 [node name="InventoryGui" parent="Player/Camera2D" instance=ExtResource("5_xi8iw")]
+visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
-position = Vector2(7.72727, -12.5)
-scale = Vector2(0.909091, 1)
+position = Vector2(6.13635, -12.5)
+scale = Vector2(0.896662, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_2vkqu")
 
@@ -1200,5 +1201,8 @@ navigation_polygon = SubResource("NavigationPolygon_o1fds")
 position = Vector2(673, 161)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(194, -41.5)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

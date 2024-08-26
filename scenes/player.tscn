@@ -637,15 +637,18 @@ collision_mask = 3
 script = ExtResource("1_rv08x")
 metadata/_edit_horizontal_guides_ = [-48.0]
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -16)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.09091, -25)
+position = Vector2(2.72727, -26)
 scale = Vector2(1.45996, 1.50856)
 texture = ExtResource("2_dxfbu")
 hframes = 64
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.45455, 8)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_1u2gu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
