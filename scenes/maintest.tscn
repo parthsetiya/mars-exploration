@@ -929,9 +929,9 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = -88.0
-offset_top = -55.0
+offset_top = -132.0
 offset_right = 114.0
-offset_bottom = 251.0
+offset_bottom = 174.0
 
 [node name="recipeGui" parent="Player/Camera2D" instance=ExtResource("7_lua2c")]
 visible = false
@@ -941,7 +941,7 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("12_3kb63")]
-position = Vector2(67.5, -138.5)
+position = Vector2(77.5, -133)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(5.5, -443.499)
