@@ -428,7 +428,6 @@ func _process(delta):
 			recipe_gui.show()
 		else:
 			recipe_gui.hide()
-	playerdata.save()
 	
 
 func highlight_slot(index):

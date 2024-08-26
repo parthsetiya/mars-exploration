@@ -13,6 +13,9 @@ var invironingot : int
 var invGoldIngot : int
 var invlogingot : int
 var invstick : int
+var xvaluesave
+var yvaluesave
+var player = preload("res://scenes/player.tscn")
 
 @export var jsongoldvalue : int
 var jsonironvalue
@@ -20,6 +23,7 @@ var jsonlogvalue
 var jsonstickvalue
 
 signal inventory_loaded(gold_amount, iron_amount, log_amount)
+
 
 func add_invGoldIngot(value : int):
 	invGoldIngot += value
@@ -53,11 +57,11 @@ func UpdatePos(value : Vector2):
 func save():
 	print("Saving data...")
 	var data = {
-		"gold_amount" : invGoldIngot,
-		"iron_amount" : invironingot,
-		"log_amount" : invlogingot, 
+		"gold_amount": invGoldIngot,
+		"iron_amount": invironingot,
+		"log_amount": invlogingot,
 		"stick_amount": invstick,
-		"position": SavePos
+		"position": [SavePos.x, SavePos.y]  # Convert Vector2 to array
 	}
 	
 	var json = JSON.new()
@@ -66,15 +70,18 @@ func save():
 	file.store_line(json_string)
 	file.close()
 	print("Data saved to res://Inventory/saveitems.json")
+	
 	jsongoldvalue = data["gold_amount"]
 	jsonironvalue = data["iron_amount"]
 	jsonlogvalue = data["log_amount"]
 	jsonstickvalue = data["stick_amount"]
 
+
 func load_data():
 	if not FileAccess.file_exists("res://Inventory/saveitems.json"):
-		save()
+		save()  # Save default data if file doesn't exist
 		return
+
 	var file = FileAccess.open("res://Inventory/saveitems.json", FileAccess.READ)
 	var file_data = JSON.parse_string(file.get_as_text())
 	file.close()
@@ -82,6 +89,7 @@ func load_data():
 	data = file_data
 	print("Loaded data: " + str(data))
 	
+	# Load inventory values
 	jsongoldvalue = data["gold_amount"]
 	jsonironvalue = data["iron_amount"]
 	jsonlogvalue = data["log_amount"]
@@ -90,7 +98,11 @@ func load_data():
 	invironingot = jsonironvalue
 	invGoldIngot = jsongoldvalue
 	invstick = jsonstickvalue
+
 	emit_signal("inventory_loaded", invGoldIngot, invironingot, invlogingot, invstick)
 	
 	var pos_array = data["position"]
-	UpdatePos(Vector2(pos_array))
+	SavePos = Vector2(pos_array[0], pos_array[1])
+	 
+
+
