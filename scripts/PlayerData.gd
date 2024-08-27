@@ -3,6 +3,7 @@ class_name PlayerData
 
 @export var speed = 100
 @export var health = 100
+@export var current_item: String
 
 var data = {}
 

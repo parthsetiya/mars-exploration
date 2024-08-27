@@ -67,6 +67,7 @@ var alliron
 var allgold
 var player_node
 
+
 func _ready():
 	allgold = allgoldfolder.get_children()
 	alliron = allironfolder.get_children()
@@ -416,21 +417,32 @@ func _process(delta):
 			recipe_gui.show()
 		else:
 			recipe_gui.hide()
-	
+	print(playerdata.current_item)
 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:
 		if slot.has_node("background"):
 			var slot_background = slot.get_node("background")
 			if slot_background is Sprite2D:
-				slot_background.texture = DEFAULTSLOT.texture  # Set to default texture
+				slot_background.texture = DEFAULTSLOT.texture
 				
 	if index < inventory_hotbar_slots.size():
 		var selected_slot = inventory_hotbar_slots[index]
-		if selected_slot.has_node("background"):
-			var selected_slot_background = selected_slot.get_node("background")
-			if selected_slot_background is Sprite2D:
-				selected_slot_background.texture = SELECTEDSLOT.texture
+		if selected_slot.get_child_count() != 0:
+			var centre_container = selected_slot.get_children()[1]
+			var item = centre_container.get_children()[0].get_children()[0]
+			if item.texture != null:
+				if selected_slot.has_node("background"):
+					var selected_slot_background = selected_slot.get_node("background")
+					if selected_slot_background is Sprite2D:
+						selected_slot_background.texture = SELECTEDSLOT.texture
+				playerdata.current_item = str(item.texture)
+			else: 
+				playerdata.current_item = ""
+
+
+			
+
 	
 	
 func pausemenu():
