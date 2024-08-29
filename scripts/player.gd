@@ -7,7 +7,7 @@ class_name Player
 
 @onready var deathscreen = $Deathscreen
 @onready var death_screen_color_rect = $Deathscreen/ColorRect
-
+const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 var gun_equiped = true
 var gun_cooldown = true
 var bullet =  preload("res://scenes/bullet.tscn")
@@ -26,16 +26,21 @@ var direction = "right"
 @onready var toolanim = $Node2D/AnimationPlayer
 @onready var node_2d = $Node2D
 signal update_ui(health, position)
+@export var current_item: String
 #var respawn_position = Vector2(playerData.SavePos)
 
+func updatecurrent_item(value : String):
+	current_item = value
+	print(current_item)
+
 func _ready():
-	
 	verify_save_directory(save_file_path)
 	
 func verify_save_directory(path: String):
 	DirAccess.make_dir_absolute(path)
 	
 func _process(delta):
+	print(current_item, "here")
 	position += velocity * delta
 	if Input.is_action_just_pressed("save"):
 		save()
@@ -50,10 +55,14 @@ func _process(delta):
 		direction = "left"
 	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
 	if Input.is_action_just_pressed("swing") and not is_swinging:
-		swing_tool()
+		print(GOLD_PICKAXE.texture, " pick_texture")
+		print(current_item, " current_item")
+		if current_item == str(GOLD_PICKAXE.texture):
+			swing_tool()
+			
+	playerData.UpdatePos(self.position)
 	
 func swing_tool():
-	
 	is_swinging = true
 	node_2d.show()
 	

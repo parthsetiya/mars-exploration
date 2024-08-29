@@ -3,7 +3,7 @@ class_name PlayerData
 
 @export var speed = 100
 @export var health = 100
-@export var current_item: String
+#@export var current_item: String
 
 var data = {}
 
@@ -54,6 +54,7 @@ func change_health(value : int):
 
 func UpdatePos(value : Vector2):
 	SavePos = value 
+	
 	
 func save():
 	print("Saving data...")

@@ -23,6 +23,7 @@ var is_showing_thiswaytomines = false
 var playerdata = PlayerData.new()
 @onready var character_body_2d = $CharacterBody2D
 var inventory = Inventory.new()
+var playerscript = Player.new()
 @onready var inventory_gui = $Player/Camera2D/InventoryGui
 var inv_open = false
 const SELECTEDSLOT = preload("res://art/mainart/selectedslot.tres")
@@ -392,18 +393,6 @@ func inventoryopen():
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pausemenu()
-	#if start_sign_post_entered:
-		#interact_to_read.show()
-		#if Input.is_action_just_pressed("Interact"):
-			#if is_showing_thiswaytomines == true:
-				#thiswaytomines.hide()
-				#is_showing_thiswaytomines = false
-			#else:
-				#interact_to_read.hide()
-				#thiswaytomines.show()
-				#is_showing_thiswaytomines = true
-	#else:
-		#interact_to_read.hide()
 	if Input.is_action_just_pressed("Inventory"):
 		inventoryopen()
 	for i in range(5):
@@ -417,8 +406,7 @@ func _process(delta):
 			recipe_gui.show()
 		else:
 			recipe_gui.hide()
-	print(playerdata.current_item)
-
+	
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:
 		if slot.has_node("background"):
@@ -436,9 +424,9 @@ func highlight_slot(index):
 					var selected_slot_background = selected_slot.get_node("background")
 					if selected_slot_background is Sprite2D:
 						selected_slot_background.texture = SELECTEDSLOT.texture
-				playerdata.current_item = str(item.texture)
+				playerscript.updatecurrent_item(str(item.texture))
 			else: 
-				playerdata.current_item = ""
+				playerscript.updatecurrent_item("")
 
 
 			

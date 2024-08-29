@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwbjcat8e4j7n"]
+[gd_scene load_steps=5 format=3 uid="uid://cwbjcat8e4j7n"]
 
 [ext_resource type="Script" path="res://scripts/crafting.gd" id="1_cpp4s"]
 [ext_resource type="Script" path="res://scripts/table.gd" id="2_qrt3n"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="2_udjdx"]
+[ext_resource type="Texture2D" uid="uid://cbtts4xwrjacl" path="res://art/mainart/pickaxegold.png" id="4_gevwg"]
 
 [node name="crafting" type="Node2D"]
 script = ExtResource("1_cpp4s")
@@ -27,6 +28,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="gold_pick" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+texture_normal = ExtResource("4_gevwg")
 
 [connection signal="pressed" from="GridContainer/0" to="." method="_on__pressed"]
 [connection signal="pressed" from="GridContainer/0" to="GridContainer/0" method="_on_pressed"]
