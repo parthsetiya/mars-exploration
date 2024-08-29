@@ -424,9 +424,9 @@ func highlight_slot(index):
 					var selected_slot_background = selected_slot.get_node("background")
 					if selected_slot_background is Sprite2D:
 						selected_slot_background.texture = SELECTEDSLOT.texture
-				playerscript.updatecurrent_item(str(item.texture))
+				playerdata.updatecurrent_item(str(item.texture))
 			else: 
-				playerscript.updatecurrent_item("")
+				playerdata.updatecurrent_item("")
 
 
 			

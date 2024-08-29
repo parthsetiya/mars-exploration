@@ -8,7 +8,7 @@ var playerscript = Player.new()
 var player = null
 var collectable = false
 var gold_collected = false
-
+const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 
 @export var inventory_manager: Node
 

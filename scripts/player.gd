@@ -26,21 +26,19 @@ var direction = "right"
 @onready var toolanim = $Node2D/AnimationPlayer
 @onready var node_2d = $Node2D
 signal update_ui(health, position)
-@export var current_item: String
 #var respawn_position = Vector2(playerData.SavePos)
 
-func updatecurrent_item(value : String):
-	current_item = value
-	print(current_item)
+
 
 func _ready():
 	verify_save_directory(save_file_path)
+	playerData.load_data()
+	self.position = playerData.SavePos
 	
 func verify_save_directory(path: String):
 	DirAccess.make_dir_absolute(path)
 	
 func _process(delta):
-	print(current_item, "here")
 	position += velocity * delta
 	if Input.is_action_just_pressed("save"):
 		save()
@@ -55,12 +53,15 @@ func _process(delta):
 		direction = "left"
 	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
 	if Input.is_action_just_pressed("swing") and not is_swinging:
-		print(GOLD_PICKAXE.texture, " pick_texture")
-		print(current_item, " current_item")
-		if current_item == str(GOLD_PICKAXE.texture):
+		playerData.load_data()
+		print(playerData.current_item)
+		if playerData.current_item == str(GOLD_PICKAXE.texture):
 			swing_tool()
 			
 	playerData.UpdatePos(self.position)
+	playerData.save()
+
+	
 	
 func swing_tool():
 	is_swinging = true
