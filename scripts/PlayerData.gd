@@ -95,7 +95,7 @@ func load_data():
 	file.close()
 	
 	data = file_data
-	print("Loaded data: " + str(data))
+	print("Loaded data:" + str(data))
 	
 	# Load inventory values
 	jsongoldvalue = data["gold_amount"]
