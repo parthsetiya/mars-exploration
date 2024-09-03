@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://doyy78nugy8j5"]
+
+[ext_resource type="AudioStream" uid="uid://6mpfcjj0ifpu" path="res://Dopplerette.wav" id="1_oehu6"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_oehu6")
+autoplay = true
