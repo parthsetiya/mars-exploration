@@ -11,7 +11,7 @@ const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 var gun_equiped = true
 var gun_cooldown = true
 var bullet =  preload("res://scenes/bullet.tscn")
-
+#var main = Main.new()
 var GOLD = load("res://Inventory/items/gold.tres")
 
 var speed = 100
@@ -23,10 +23,11 @@ var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
 var input_direction
 var direction = "right"
+var playerholdingpick
 @onready var toolanim = $Node2D/AnimationPlayer
 @onready var node_2d = $Node2D
 signal update_ui(health, position)
-#var respawn_position = Vector2(playerData.SavePos)
+
 
 
 
@@ -44,25 +45,19 @@ func _process(delta):
 		save()
 	if Input.is_action_just_pressed("load"):
 		load_data()
-	#emit_signal("update_ui", playerData.health, self.position)
 	emit_signal("update_ui", playerData.health, self.position)
-	#playerData.UpdatePos(self.position)
 	if Input.is_action_just_pressed("right"):
 		direction = "right"
 	if Input.is_action_just_pressed("left"):
 		direction = "left"
 	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
 	if Input.is_action_just_pressed("swing") and not is_swinging:
-		playerData.load_data()
 		print(playerData.current_item)
-		if playerData.current_item == str(GOLD_PICKAXE.texture):
+		if playerholdingpick:
 			swing_tool()
-			
-	playerData.UpdatePos(self.position)
-	playerData.save()
+	if playerData.SavePos != self.position:
+		playerData.UpdatePos(self.position)
 
-	
-	
 func swing_tool():
 	is_swinging = true
 	node_2d.show()
@@ -159,17 +154,9 @@ func _physics_process(delta):
 	move_and_slide()
 	updateAnimation()
 	 
-	#var mouse_pos = get_global_mouse_position()
-	#$Marker2D.look_at(mouse_pos)
-	#
-	#if Input.is_action_just_pressed("left_mouse") and gun_equiped and gun_cooldown:
-		#gun_cooldown = false 
-		#var bullet_instance = bullet.instantiate()
-		#bullet_instance.rotation = $Marker2D.rotation
-		#bullet_instance.global_position = $Marker2D.global_position
-		#add_child(bullet_instance)
-		#
-		#await get_tree().create_timer(0.2).timeout
-		#gun_cooldown = true
-	#print("Marker2D global position: ", $Marker2D.global_position)
+	
+func player_hold_pick():
+	playerholdingpick = true
+
+
 

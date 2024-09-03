@@ -64,6 +64,7 @@ func UpdatePos(value : Vector2):
 	save()
 	
 func save():
+	print("saving data...")
 	var data = {
 		"gold_amount": invGoldIngot,
 		"iron_amount": invironingot,

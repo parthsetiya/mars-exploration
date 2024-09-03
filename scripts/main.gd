@@ -67,6 +67,8 @@ var npc
 var alliron
 var allgold
 var player_node
+var playerholding_pick = false
+signal player_holding_pick
 
 
 func _ready():
@@ -406,7 +408,10 @@ func _process(delta):
 			recipe_gui.show()
 		else:
 			recipe_gui.hide()
-	
+	if playerdata.current_item == str(GOLD_PICKAXE.texture):
+		playerscript.playerholdingpick = true
+
+
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:
 		if slot.has_node("background"):
