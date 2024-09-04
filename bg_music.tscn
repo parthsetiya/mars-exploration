@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://e005sbjx0kb2"]
+
+[ext_resource type="AudioStream" uid="uid://cku7bphlf2vx2" path="res://Soaring.wav" id="1_lvjy0"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_lvjy0")
+autoplay = true

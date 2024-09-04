@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
-[ext_resource type="Texture2D" uid="uid://bhivtymjpyglj" path="res://dialogue/edmundmaccassmall.png" id="2_03wyh"]
+[ext_resource type="Texture2D" uid="uid://b08rb20kbxvf5" path="res://art/mainart/npc1head.png" id="2_2y0jq"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 
@@ -103,9 +103,9 @@ layout_mode = 2
 theme_override_constants/separation = 30
 
 [node name="Portrait" type="TextureRect" parent="Balloon/Panel/Dialogue/HBoxContainer"]
-custom_minimum_size = Vector2(150, 2.08165e-12)
+custom_minimum_size = Vector2(180, 120)
 layout_mode = 2
-texture = ExtResource("2_03wyh")
+texture = ExtResource("2_2y0jq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue/HBoxContainer"]
 layout_mode = 2

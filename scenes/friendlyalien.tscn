@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://crlao84s5ynxx"]
 
-[ext_resource type="Texture2D" uid="uid://cvv1cpp0kkjel" path="res://art/friendlyalienttest.png" id="1_6ucnm"]
 [ext_resource type="Script" path="res://scripts/friendlyalien.gd" id="1_yojhl"]
+[ext_resource type="Texture2D" uid="uid://dwttnfaqes4jh" path="res://art/mainart/npc1.png" id="2_xoo5m"]
 [ext_resource type="PackedScene" uid="uid://bhnojfecol1ou" path="res://scenes/dialogue.tscn" id="3_5ud7g"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://dialogue/balloon.tscn" id="4_x3phw"]
 
@@ -12,7 +12,7 @@ radius = 54.0
 script = ExtResource("1_yojhl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_6ucnm")
+texture = ExtResource("2_xoo5m")
 
 [node name="talkablearea" type="Area2D" parent="."]
 
