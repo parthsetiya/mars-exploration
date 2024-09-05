@@ -23,6 +23,7 @@ var is_showing_thiswaytomines = false
 var playerdata = PlayerData.new()
 @onready var character_body_2d = $CharacterBody2D
 var inventory = Inventory.new()
+var playerscript = Player.new()
 @onready var inventory_gui = $Player/Camera2D/InventoryGui
 var inv_open = false
 const SELECTEDSLOT = preload("res://art/mainart/selectedslot.tres")
@@ -69,6 +70,9 @@ var alliron
 var allgold
 var alltree
 var player_node
+var playerholding_pick = false
+signal player_holding_pick
+
 
 func _ready():
 	allgold = allgoldfolder.get_children()
@@ -419,18 +423,6 @@ func inventoryopen():
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pausemenu()
-	#if start_sign_post_entered:
-		#interact_to_read.show()
-		#if Input.is_action_just_pressed("Interact"):
-			#if is_showing_thiswaytomines == true:
-				#thiswaytomines.hide()
-				#is_showing_thiswaytomines = false
-			#else:
-				#interact_to_read.hide()
-				#thiswaytomines.show()
-				#is_showing_thiswaytomines = true
-	#else:
-		#interact_to_read.hide()
 	if Input.is_action_just_pressed("Inventory"):
 		inventoryopen()
 	for i in range(5):
@@ -444,21 +436,34 @@ func _process(delta):
 			recipe_gui.show()
 		else:
 			recipe_gui.hide()
-	
+	if playerdata.current_item == str(GOLD_PICKAXE.texture):
+		playerscript.playerholdingpick = true
+
 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:
 		if slot.has_node("background"):
 			var slot_background = slot.get_node("background")
 			if slot_background is Sprite2D:
-				slot_background.texture = DEFAULTSLOT.texture  # Set to default texture
+				slot_background.texture = DEFAULTSLOT.texture
 				
 	if index < inventory_hotbar_slots.size():
 		var selected_slot = inventory_hotbar_slots[index]
-		if selected_slot.has_node("background"):
-			var selected_slot_background = selected_slot.get_node("background")
-			if selected_slot_background is Sprite2D:
-				selected_slot_background.texture = SELECTEDSLOT.texture
+		if selected_slot.get_child_count() != 0:
+			var centre_container = selected_slot.get_children()[1]
+			var item = centre_container.get_children()[0].get_children()[0]
+			if item.texture != null:
+				if selected_slot.has_node("background"):
+					var selected_slot_background = selected_slot.get_node("background")
+					if selected_slot_background is Sprite2D:
+						selected_slot_background.texture = SELECTEDSLOT.texture
+				playerdata.updatecurrent_item(str(item.texture))
+			else: 
+				playerdata.updatecurrent_item("")
+
+
+			
+
 	
 	
 func pausemenu():

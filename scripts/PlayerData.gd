@@ -3,6 +3,7 @@ class_name PlayerData
 
 @export var speed = 100
 @export var health = 100
+#@export var current_item: String
 
 var data = {}
 
@@ -16,6 +17,7 @@ var invstick : int
 var xvaluesave
 var yvaluesave
 var player = preload("res://scenes/player.tscn")
+var current_item
 
 @export var jsongoldvalue : int
 var jsonironvalue
@@ -25,9 +27,15 @@ var jsonstickvalue
 signal inventory_loaded(gold_amount, iron_amount, log_amount)
 
 
+func updatecurrent_item(value):
+	current_item = value
+	print(current_item)
+
+
 func add_invGoldIngot(value : int):
 	invGoldIngot += value
-	save()  
+	save() 
+
 
 func add_invironingot(value : int):
 	invironingot += value
@@ -46,22 +54,23 @@ func remove_invGoldIngot(value : int):
 	invGoldIngot -= value
 	print("running remove gold ingot")
 	print("new no of gold: " + str(invGoldIngot))
-	save()  # Save after removing gold
+	save() 
 
 func change_health(value : int):
 	health += value
 
 func UpdatePos(value : Vector2):
 	SavePos = value 
+	save()
 	
 func save():
-	print("Saving data...")
+	print("saving data...")
 	var data = {
 		"gold_amount": invGoldIngot,
 		"iron_amount": invironingot,
 		"log_amount": invlogingot,
 		"stick_amount": invstick,
-		"position": [SavePos.x, SavePos.y]  # Convert Vector2 to array
+		"position": [SavePos.x, SavePos.y]  
 	}
 	
 	var json = JSON.new()
@@ -69,7 +78,7 @@ func save():
 	var file = FileAccess.open("res://Inventory/saveitems.json", FileAccess.WRITE)
 	file.store_line(json_string)
 	file.close()
-	print("Data saved to res://Inventory/saveitems.json")
+	#print("Data saved to res://Inventory/saveitems.json")
 	
 	jsongoldvalue = data["gold_amount"]
 	jsonironvalue = data["iron_amount"]
@@ -87,7 +96,7 @@ func load_data():
 	file.close()
 	
 	data = file_data
-	print("Loaded data: " + str(data))
+	print("Loaded data:" + str(data))
 	
 	# Load inventory values
 	jsongoldvalue = data["gold_amount"]
@@ -103,6 +112,7 @@ func load_data():
 	
 	var pos_array = data["position"]
 	SavePos = Vector2(pos_array[0], pos_array[1])
+	print(current_item)
 	 
 
 
