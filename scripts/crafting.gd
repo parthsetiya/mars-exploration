@@ -8,6 +8,8 @@ var main = Main.new()
 const gold_stick = preload("res://art/mainart/gold_stick.tres")
 const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 signal request_inventory_update
+@onready var stickrecipe = $GridContainer/Stick/stickrecipe
+const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
 
 var items = { 3 : "Stick",
 			  1 : "Cobble",
@@ -71,3 +73,19 @@ func _on_gold_pick_pressed():
 	if playerdata.invGoldIngot >= 3 and playerdata.invstick >= 2:
 		print("making gold stick")
 		add_item_to_inventory(GOLD_PICKAXE.name, 1)
+
+
+func _on_stick_mouse_entered():
+	stickrecipe.show()
+	
+
+
+func _on_stick_mouse_exited():
+	stickrecipe.hide()
+
+
+func _on_texture_button_pressed():
+	playerdata.load_data()
+	if playerdata.invlogingot >= 3 and playerdata.invstick >= 2:
+		print("making gold stick")
+		add_item_to_inventory(WOODEN_PICKAXE.name, 1)
