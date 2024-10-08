@@ -52,6 +52,7 @@ func _process(delta):
 		direction = "left"
 	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
 	if Input.is_action_just_pressed("swing") and not is_swinging:
+		$AudioStreamPlayer2D.play()
 		print(playerData.current_item)
 		if playerholdingpick:
 			swing_tool()

@@ -35,7 +35,8 @@ const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
 const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 const REMOVE_GOLD = preload("res://Inventory/items/remove_gold.tres")
 const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
-
+@onready var marker_2d_2 = $Area2D2/Marker2D2
+@onready var marker_2d = $areaback/Marker2D
 @onready var allgoldfolder = $allgold
 @onready var allironfolder = $alliron
 # Node definitions
@@ -508,3 +509,13 @@ func _on_spaceshiparea_body_exited(body):
 		crashmessage.hide()
 
 
+
+
+func _on_areaback_body_entered(body):
+	if body == player:
+		player.global_position = marker_2d.global_position
+
+
+func _on_area_2d_2_body_entered(body):
+	if body == player:
+		player.global_position = marker_2d_2.global_position
