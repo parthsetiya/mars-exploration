@@ -112,7 +112,7 @@ func load_data():
 	
 	var pos_array = data["position"]
 	SavePos = Vector2(pos_array[0], pos_array[1])
-	print(current_item)
+	
 	 
 
 

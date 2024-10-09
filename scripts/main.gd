@@ -17,6 +17,9 @@ var paused = false
 @onready var start_sign_post_entered = false
 
 var is_showing_thiswaytomines = false
+@onready var listofitems = $Control
+@onready var tocavemarker = $tocavemarker
+
 
 @onready var player = $Player
 @onready var alltreegolder = $alltree
@@ -39,6 +42,8 @@ const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
 @onready var marker_2d = $areaback/Marker2D
 @onready var allgoldfolder = $allgold
 @onready var allironfolder = $alliron
+@onready var cavetomainmarker = $cavetomainmarker
+
 # Node definitions
 var gold_node
 var gold_node2
@@ -500,13 +505,13 @@ func _on_area_2d_body_entered(body):
 func _on_spaceshiparea_body_entered(body):
 	if body == player:
 		spaceship_entered = true
-		crashmessage.show()
+		listofitems.show()
 
 
 func _on_spaceshiparea_body_exited(body):
 	if body == player:
 		spaceship_entered = false
-		crashmessage.hide()
+		listofitems.hide()
 
 
 
@@ -519,3 +524,20 @@ func _on_areaback_body_entered(body):
 func _on_area_2d_2_body_entered(body):
 	if body == player:
 		player.global_position = marker_2d_2.global_position
+		
+
+
+
+func _on_tocave_body_entered(body):
+	if body == player:
+		player.global_position = tocavemarker.global_position
+		
+
+
+
+
+
+
+func _on_cavetomain_body_exited(body):
+	if body == player:
+		player.global_position = cavetomainmarker.global_position

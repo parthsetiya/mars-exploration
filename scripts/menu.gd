@@ -27,7 +27,7 @@ func _on_texture_button_2_pressed():
 
 func _on_texture_button_3_pressed():
 	get_tree().quit()
-	playerdata.save()
+
 	
 
 func _on_playbutton_pressed():
