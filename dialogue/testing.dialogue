@@ -1,8 +1,12 @@
 ~ start
 Engineer: [speed=0.5][[Hi|Hello|Hello]]! [wait=1]Your spaceship has crashed sir! You'll need to fix it up to return home!
-- How can I help?
-	Engineer: [speed=0.5]I have compiled a list of parts you need and the materials to craft them. Press C to open the crafting menu
-- Eh I don't wanna help
-	Engineer: [speed=0.5]We will be stuck here then!
+- next
+	Engineer: [speed=0.5]Walk near the broken spaceship to see which items are required to repair it, if the items are available in your inventory, you may press "g" to deposit them into the spaceship
+	- next
+		Engineer: [speed=0.5]Try scavenge around to locate a house, in which my friend will great you and offer you a teleport to the city!
+=> END
 
-Engineer: [speed=0.5] Please find the necessary materials to repair the ship and bring them to me!
+~ housealien
+Ursa: [speed=0.5]Greetings traveller, I see you have come to me in search of a way to the city. Take this glove, it can be used to harvest materials.
+Ursa: [speed=0.5]Locate the cave and enter it, then use your newfound tool to harvest 5 pieces of gold and iron, deliver those to me and I will teleport you into the city
+set PlayerData.recieved_glove == true

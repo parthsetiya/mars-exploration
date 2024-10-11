@@ -38,6 +38,7 @@ const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
 const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 const REMOVE_GOLD = preload("res://Inventory/items/remove_gold.tres")
 const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
+const GLOVE = preload("res://Inventory/items/glove.tres")
 @onready var marker_2d_2 = $Area2D2/Marker2D2
 @onready var marker_2d = $areaback/Marker2D
 @onready var allgoldfolder = $allgold
@@ -72,6 +73,7 @@ var making_stick = false
 var slotonetexture
 var collectediron = false
 var npc
+var housealien
 var alliron
 var allgold
 var alltree
@@ -100,6 +102,8 @@ func _ready():
 	playerdata.connect("inventory_loaded", Callable(self, "_on_inventory_loaded"))
 	npc = get_node("CharacterBody2D")
 	npc.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	housealien = get_node("housealien")
+	housealien.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	player_node = get_node("Player")
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25) 
@@ -343,8 +347,28 @@ func update_inventory_ui(item_name, updated_quantity):
 					if int(label.text) == 0:
 						item.hide()
 						label.hide()
-						
-					
+	if item_name == GLOVE.name:
+		print("ASDFASDFASFDASFD")
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == GLOVE.texture:
+					label.text = str(int(label.text) + 1)
+					return
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = GLOVE.texture
+					label.text = str(1)
+					return
 
 
 

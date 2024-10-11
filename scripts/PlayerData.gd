@@ -18,6 +18,7 @@ var xvaluesave
 var yvaluesave
 var player = preload("res://scenes/player.tscn")
 var current_item
+var recieved_glove = false
 
 @export var jsongoldvalue : int
 var jsonironvalue
@@ -64,7 +65,7 @@ func UpdatePos(value : Vector2):
 	save()
 	
 func save():
-	print("saving data...")
+	#print("saving data...")
 	var data = {
 		"gold_amount": invGoldIngot,
 		"iron_amount": invironingot,

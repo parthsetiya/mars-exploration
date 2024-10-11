@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c5xshof18ef8s"
+path="res://.godot/imported/housealien.dialogue-1d303362f8054e4f8246b7b3a402ee3e.tres"
+
+[deps]
+
+source_file="res://dialogue/housealien.dialogue"
+dest_files=["res://.godot/imported/housealien.dialogue-1d303362f8054e4f8246b7b3a402ee3e.tres"]
+
+[params]
+
+defaults=true
