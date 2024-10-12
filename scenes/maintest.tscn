@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=26 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b40cachjw03ub" path="res://listofitems.tscn" id="13_ejr1y"]
 [ext_resource type="PackedScene" uid="uid://qmaml7nd0140" path="res://housealien.tscn" id="14_edeqe"]
 [ext_resource type="PackedScene" uid="uid://kfgimtoe72hl" path="res://scenes/amethyst_block.tscn" id="14_u0j5j"]
+[ext_resource type="PackedScene" uid="uid://b601k4v85jj8e" path="res://blacksmith.tscn" id="15_5e6i8"]
 [ext_resource type="PackedScene" uid="uid://cy45fnv5txv60" path="res://scenes/tree_block.tscn" id="15_5jhu1"]
 [ext_resource type="Texture2D" uid="uid://108k0hdoohuq" path="res://art/mainart/crashed shadows.png" id="15_nc7go"]
 
@@ -1218,11 +1219,10 @@ position = Vector2(7.5, -0.5)
 shape = SubResource("CircleShape2D_igvuk")
 
 [node name="Control" parent="." instance=ExtResource("13_ejr1y")]
-visible = false
-offset_left = 98.0
-offset_top = 226.5
-offset_right = 98.0
-offset_bottom = 226.5
+offset_left = 68.5
+offset_top = 133.5
+offset_right = 68.5
+offset_bottom = 133.5
 
 [node name="tocavemarker" type="Marker2D" parent="."]
 position = Vector2(-1283, -7180)
@@ -1246,6 +1246,9 @@ shape = SubResource("RectangleShape2D_l5f31")
 
 [node name="housealien" parent="." instance=ExtResource("14_edeqe")]
 position = Vector2(640, -116)
+
+[node name="blacksmith" parent="." instance=ExtResource("15_5e6i8")]
+position = Vector2(3774.5, -198)
 
 [connection signal="body_entered" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_entered"]
 [connection signal="body_exited" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_exited"]

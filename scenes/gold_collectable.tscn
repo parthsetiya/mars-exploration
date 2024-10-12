@@ -1,17 +1,17 @@
 [gd_scene load_steps=8 format=3 uid="uid://daflkqadevkq6"]
 
 [ext_resource type="Script" path="res://scenes/gold_collectable.gd" id="1_6afem"]
-[ext_resource type="Texture2D" uid="uid://dfg77f6x8nady" path="res://Inventory/goldbartest.png" id="1_oq2pv"]
+[ext_resource type="Texture2D" uid="uid://duxa2xetlw03o" path="res://art/goldbar.png" id="2_ngp7m"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vacdt"]
-atlas = ExtResource("1_oq2pv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5txjq"]
+atlas = ExtResource("2_ngp7m")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yc27w"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vacdt")
+"texture": SubResource("AtlasTexture_5txjq")
 }],
 "loop": true,
 "name": &"gold",
@@ -108,7 +108,6 @@ script = ExtResource("1_6afem")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yc27w")
 animation = &"gold"
-frame_progress = 0.807726
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {

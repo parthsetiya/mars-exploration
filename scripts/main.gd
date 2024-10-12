@@ -15,11 +15,12 @@ var paused = false
 @onready var recipe_gui = $Player/Camera2D/recipeGui
 
 @onready var start_sign_post_entered = false
-
+var blacksmithshopopen = false
 var is_showing_thiswaytomines = false
 @onready var listofitems = $Control
 @onready var tocavemarker = $tocavemarker
 
+@onready var blacksmithshop = $Player/Camera2D/blacksmithshop
 
 @onready var player = $Player
 @onready var alltreegolder = $alltree
@@ -459,8 +460,6 @@ func _process(delta):
 		var action_name = "ui_hotbar_" + str(i + 1)  # Define action names like ui_hotbar_1, ui_hotbar_2, etc.
 		if Input.is_action_just_pressed(action_name):
 			highlight_slot(i)
-	if spaceship_entered:
-		crashmessage.show()
 	if Input.is_action_just_pressed("craftinglist"):
 		if not recipe_gui.visible:
 			recipe_gui.show()
@@ -469,6 +468,8 @@ func _process(delta):
 	if playerdata.current_item == str(GOLD_PICKAXE.texture):
 		playerscript.playerholdingpick = true
 
+		
+		
 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:

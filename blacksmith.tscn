@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b601k4v85jj8e"]
+
+[ext_resource type="Script" path="res://blacksmith.gd" id="1_it8hb"]
+[ext_resource type="Texture2D" uid="uid://dwttnfaqes4jh" path="res://art/mainart/npc1.png" id="1_mq42w"]
+[ext_resource type="PackedScene" uid="uid://bw25qskwak7la" path="res://blacksmithshop.tscn" id="3_ec4xg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wytt"]
+radius = 31.6228
+
+[node name="blacksmith" type="CharacterBody2D"]
+script = ExtResource("1_it8hb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mq42w")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6wytt")
+
+[node name="blacksmithshop" parent="." instance=ExtResource("3_ec4xg")]
+visible = false
+offset_left = -250.0
+offset_top = -105.0
+offset_right = -250.0
+offset_bottom = -105.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
