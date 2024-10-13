@@ -1,9 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://cd8a1b041m6tj"]
+[gd_scene load_steps=34 format=3 uid="uid://cd8a1b041m6tj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_rv08x"]
 [ext_resource type="Texture2D" uid="uid://by2an801le88g" path="res://art/mainart/spritesheet (11).png" id="2_dxfbu"]
 [ext_resource type="Texture2D" uid="uid://3udm4eu3ldbv" path="res://art/mainart/toolspritesheet.png" id="3_71ui5"]
-[ext_resource type="AudioStream" uid="uid://4kxamokwndl5" path="res://422513__nightflame__swinging-staff-whoosh-strong-04.wav" id="4_vog4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u2gu"]
 size = Vector2(21.3636, 7.75)
@@ -717,4 +716,3 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_vog4f")
