@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bw25qskwak7la" path="res://blacksmithshop.tscn" id="3_ec4xg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wytt"]
-radius = 31.6228
+radius = 55.0364
 
 [node name="blacksmith" type="CharacterBody2D"]
 script = ExtResource("1_it8hb")
@@ -20,6 +20,7 @@ shape = SubResource("CircleShape2D_6wytt")
 
 [node name="blacksmithshop" parent="." instance=ExtResource("3_ec4xg")]
 visible = false
+z_index = 1000
 offset_left = -250.0
 offset_top = -105.0
 offset_right = -250.0

@@ -15,12 +15,10 @@ var paused = false
 @onready var recipe_gui = $Player/Camera2D/recipeGui
 
 @onready var start_sign_post_entered = false
-var blacksmithshopopen = false
 var is_showing_thiswaytomines = false
 @onready var listofitems = $Control
 @onready var tocavemarker = $tocavemarker
 
-@onready var blacksmithshop = $Player/Camera2D/blacksmithshop
 
 @onready var player = $Player
 @onready var alltreegolder = $alltree
@@ -40,6 +38,7 @@ const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 const REMOVE_GOLD = preload("res://Inventory/items/remove_gold.tres")
 const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
 const GLOVE = preload("res://Inventory/items/glove.tres")
+const GEAR = preload("res://Inventory/items/gear.tres")
 @onready var marker_2d_2 = $Area2D2/Marker2D2
 @onready var marker_2d = $areaback/Marker2D
 @onready var allgoldfolder = $allgold
@@ -80,6 +79,7 @@ var allgold
 var alltree
 var player_node
 var playerholding_pick = false
+var blacksmithshop
 signal player_holding_pick
 
 
@@ -106,6 +106,8 @@ func _ready():
 	housealien = get_node("housealien")
 	housealien.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	player_node = get_node("Player")
+	blacksmithshop = get_node("blacksmith/blacksmithshop")
+	blacksmithshop.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25) 
 	
@@ -370,6 +372,34 @@ func update_inventory_ui(item_name, updated_quantity):
 					item.texture = GLOVE.texture
 					label.text = str(1)
 					return
+					
+	if item_name == GEAR.name:
+		playerdata.add_invGoldIngot(-4)
+		playerdata.add_invironingot(-6)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == GEAR.texture:
+					label.text = str(int(label.text) + 1)
+					return
+				if item.texture == GOLD.texture:
+					label.text = str(int(label.text) - 4)
+				if item.texture == IRON.texture:
+					label.text = str(int(label.text) - 6)
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = GEAR.texture
+					label.text = str(1)
+					return
 
 
 
@@ -457,7 +487,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("Inventory"):
 		inventoryopen()
 	for i in range(5):
-		var action_name = "ui_hotbar_" + str(i + 1)  # Define action names like ui_hotbar_1, ui_hotbar_2, etc.
+		var action_name = "ui_hotbar_" + str(i + 1)  
 		if Input.is_action_just_pressed(action_name):
 			highlight_slot(i)
 	if Input.is_action_just_pressed("craftinglist"):
