@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://blacksmithshop.gd" id="1_3ytjd"]
 [ext_resource type="Texture2D" uid="uid://r77ltypqkvmf" path="res://art/mainart/hotbartseterbolt.png" id="2_fl5o4"]
-[ext_resource type="Texture2D" uid="uid://cribxy3nwkbn6" path="res://art/gear.png" id="3_3rynk"]
-[ext_resource type="Texture2D" uid="uid://c0rw4jcr7yskf" path="res://art/toolbox.png" id="4_5n0od"]
-[ext_resource type="Texture2D" uid="uid://3b0f5ox18jb8" path="res://art/toolkit.png" id="5_ayxur"]
+[ext_resource type="Texture2D" uid="uid://d2admtldbxoag" path="res://art/amythest gear.png" id="3_1sabu"]
+[ext_resource type="Texture2D" uid="uid://belcal14vhfr1" path="res://art/cobalt gear.png" id="4_lq388"]
+[ext_resource type="Texture2D" uid="uid://bplqmd5m04ko" path="res://art/gold gear.png" id="5_5kec2"]
 [ext_resource type="Texture2D" uid="uid://d2304fs56eie2" path="res://art/pixil-frame-0(1).png" id="6_qji5p"]
 
 [node name="blacksmithshop" type="Control"]
@@ -34,34 +34,34 @@ custom_minimum_size = Vector2(80, 79.225)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(30, 60)
+custom_minimum_size = Vector2(30, 72)
 layout_mode = 2
-texture = ExtResource("3_3rynk")
+texture = ExtResource("3_1sabu")
 
 [node name="TextureRect2" type="TextureRect" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(30, 80)
+custom_minimum_size = Vector2(30, 72)
 layout_mode = 2
-texture = ExtResource("4_5n0od")
+texture = ExtResource("4_lq388")
 
 [node name="TextureRect3" type="TextureRect" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(30, 80)
+custom_minimum_size = Vector2(30, 72)
 layout_mode = 2
-texture = ExtResource("5_ayxur")
+texture = ExtResource("5_5kec2")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="NinePatchRect/HBoxContainer"]
 custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
 
-[node name="TextEdit" type="TextEdit" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 75)
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
-[node name="TextEdit2" type="TextEdit" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 75)
+[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
-[node name="TextEdit3" type="TextEdit" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 75)
+[node name="RichTextLabel3" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="NinePatchRect/HBoxContainer"]

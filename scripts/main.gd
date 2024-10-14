@@ -26,7 +26,7 @@ var playerdata = PlayerData.new()
 @onready var character_body_2d = $CharacterBody2D
 var inventory = Inventory.new()
 var playerscript = Player.new()
-@onready var inventory_gui = $Player/Camera2D/InventoryGui
+@onready var inventory_gui = get_node("/root/main/CanvasLayer/InventoryGui")
 var inv_open = false
 const SELECTEDSLOT = preload("res://art/mainart/selectedslot.tres")
 const DEFAULTSLOT = preload("res://art/mainart/defaultslot.tres")
@@ -96,8 +96,8 @@ func _ready():
 	tree_node = get_node("tree_block")
 	tree_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui.connect("slot_clicked", Callable(self, "_on_slot_clicked"))
-	inventory_slots = get_node("Player/Camera2D/InventoryGui/GridContainer").get_children()
-	inventory_crafting = get_node("Player/Camera2D/InventoryGui/crafting")
+	inventory_slots = get_node("/root/main/CanvasLayer/InventoryGui/GridContainer").get_children()
+	inventory_crafting = get_node("/root/main/CanvasLayer/InventoryGui/crafting")
 	inventory_crafting.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	#inventory_crafting.connect("request_inventory_update", Callable(self, "remove_inventory_items"))
 	playerdata.connect("inventory_loaded", Callable(self, "_on_inventory_loaded"))
@@ -118,9 +118,9 @@ func _ready():
 				slot_background.texture = DEFAULTSLOT.texture 
 	 
 	
-	inv_gui_show = get_node("Player/Camera2D/InventoryGui/NinePatchRect")
-	inv_gui_show_hotbar = get_node("Player/Camera2D/InventoryGui/NinePatchRect2")
-	inv_crafting = get_node("Player/Camera2D/InventoryGui/crafting")
+	inv_gui_show = get_node("/root/main/CanvasLayer/InventoryGui/NinePatchRect")
+	inv_gui_show_hotbar = get_node("/root/main/CanvasLayer/InventoryGui/NinePatchRect2")
+	inv_crafting = get_node("/root/main/CanvasLayer/InventoryGui/crafting")
 	recipe_gui_show = get_node("Player/Camera2D/crafting")
 	playerdata.load_data()
 	playerdata.SavePos = player.position
