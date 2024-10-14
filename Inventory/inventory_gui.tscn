@@ -13,21 +13,22 @@ offset_bottom = 0.0399995
 script = ExtResource("1_egmnt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(213, 132)
+visible = false
+custom_minimum_size = Vector2(200, 120)
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.383
-anchor_bottom = 3.3
-offset_right = 0.0180186
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 207.0
+offset_bottom = 140.0
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
-visible = false
 z_index = -1
 layout_mode = 0
-offset_left = 8.0
-offset_top = 271.0
+offset_left = 6.0
+offset_top = 262.0
 offset_right = 207.0
-offset_bottom = 311.0
+offset_bottom = 322.0
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
