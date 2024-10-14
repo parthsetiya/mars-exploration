@@ -471,6 +471,7 @@ func inventoryopen():
 		for slot in inventory_gui_slots:
 			slot.hide()
 		inv_gui_show_hotbar.hide()
+		get_tree().set_deferred("pause", false)
 		
 	else:
 		inv_gui_show.show()
@@ -478,6 +479,7 @@ func inventoryopen():
 		for slot in inventory_gui_slots:
 			slot.show()
 		inv_gui_show_hotbar.show()
+		get_tree().set_deferred("pause", true)
 	inv_open = !inv_open
 
 	

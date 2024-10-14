@@ -889,7 +889,6 @@ scale = Vector2(2, 2)
 script = ExtResource("1_6jpb6")
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 position = Vector2(-29.5, -10.5)
 tile_set = SubResource("TileSet_duuyq")
 format = 2
