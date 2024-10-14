@@ -55,24 +55,14 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-text = "Required items:
-5x amethyst
-2x Log"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-text = "Required items:
-5x cobalt
-2x Log
-"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-text = "Required Items:
-5x Gold
-2x Log"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="NinePatchRect/HBoxContainer"]
 layout_mode = 2

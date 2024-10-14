@@ -1,7 +1,7 @@
 extends Node2D
 class_name Main
 
-@onready var pause_menu = $Player/Camera2D/Pausemenu
+@onready var pause_menu = $CanvasLayer/Pausemenu
 var paused = false
 
 @onready var interact_to_read = $Sprite2D/startsignpostarea/interact_to_read
@@ -471,7 +471,6 @@ func inventoryopen():
 		for slot in inventory_gui_slots:
 			slot.hide()
 		inv_gui_show_hotbar.hide()
-		get_tree().set_deferred("pause", false)
 		
 	else:
 		inv_gui_show.show()
@@ -479,7 +478,6 @@ func inventoryopen():
 		for slot in inventory_gui_slots:
 			slot.show()
 		inv_gui_show_hotbar.show()
-		get_tree().set_deferred("pause", true)
 	inv_open = !inv_open
 
 	
