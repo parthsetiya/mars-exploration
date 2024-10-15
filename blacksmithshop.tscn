@@ -112,3 +112,5 @@ text = "Required items:
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 text = "BUY"
+
+[connection signal="pressed" from="NinePatchRect/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
