@@ -470,14 +470,13 @@ func inventoryopen():
 		inv_crafting.hide()
 		for slot in inventory_gui_slots:
 			slot.hide()
-		inv_gui_show_hotbar.hide()
+
 		
 	else:
 		inv_gui_show.show()
 		inv_crafting.show()
 		for slot in inventory_gui_slots:
 			slot.show()
-		inv_gui_show_hotbar.show()
 	inv_open = !inv_open
 
 	

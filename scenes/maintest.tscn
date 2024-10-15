@@ -1204,6 +1204,7 @@ position = Vector2(7.5, -0.5)
 shape = SubResource("CircleShape2D_igvuk")
 
 [node name="Control" parent="." instance=ExtResource("13_ejr1y")]
+visible = false
 offset_left = 68.5
 offset_top = 133.5
 offset_right = 68.5
@@ -1238,10 +1239,11 @@ position = Vector2(3774.5, -198)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pausemenu" parent="CanvasLayer" instance=ExtResource("4_b4hsc")]
-offset_left = -61.0
-offset_top = 59.0
-offset_right = -61.0
-offset_bottom = 59.0
+visible = false
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -39.0
+offset_bottom = 3.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
