@@ -46,7 +46,13 @@ const GEAR = preload("res://Inventory/items/gear.tres")
 @onready var allironfolder = $alliron
 @onready var cavetomainmarker = $cavetomainmarker
 var player_in_collect_pick_axe_head_area = false
-
+const AMETHYST_GEAR = preload("res://Inventory/items/amethyst_gear.tres")
+const COBALT_GEAR = preload("res://Inventory/items/cobalt_gear.tres")
+const GOLD_GEAR = preload("res://Inventory/items/gold_gear.tres")
+const OIL = preload("res://Inventory/items/oil.tres")
+const TOOLBOX = preload("res://Inventory/items/toolbox.tres")
+const TOOLKIT = preload("res://Inventory/items/toolkit.tres")
+const WIRES = preload("res://Inventory/items/wires.tres")
 
 # Node definitions
 var gold_node
@@ -297,8 +303,9 @@ func update_inventory_ui(item_name, updated_quantity):
 					return
 					
 	if item_name == GOLD_PICKAXE.name:
-		playerdata.add_invGoldIngot(-3)
-		playerdata.add_invstick(-2)
+		playerdata.add_pickaxe(1)
+		playerdata.add_invstick(-1)
+		playerdata.add_pickaxehead(-1)
 		var pickaxe_crafted = false
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -310,11 +317,11 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(1)
 					pickaxe_crafted = true
 				if item.texture == GOLD_STICK.texture:
-					label.text = str(int(label.text) - 2) 
+					label.text = str(int(label.text) - 1) 
 					if label.text == "0":
 						item.texture == null
-				elif item.texture == GOLD.texture:
-					label.text = str(int(label.text) - 3) 
+				elif item.texture == PICK_AXE_HEAD.texture:
+					label.text = str(int(label.text) - 1) 
 					if label.text == "0":
 						item.texture = null
 						
@@ -428,7 +435,7 @@ func update_inventory_ui(item_name, updated_quantity):
 
 
 	
-func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pick_axe_head_amount):
+func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount):
 	for slot in inventory_slots:
 		if slot.get_child_count() != 0:
 			var centre_container = slot.get_children()[1]
@@ -484,6 +491,7 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pi
 					item.texture = GOLD_STICK.texture
 					label.text = str(stick_amount)
 					break
+
 	if pick_axe_head_amount > 0:
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
@@ -495,6 +503,103 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pi
 					item.texture = PICK_AXE_HEAD.texture
 					label.text = str(pick_axe_head_amount)
 					break
+
+	if pick_axe_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = GOLD_PICKAXE.texture
+					label.text = str(pick_axe_amount)
+					break
+
+	if toolbox_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = TOOLBOX.texture
+					label.text = str(toolbox_amount)
+					break
+
+	if toolkit_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = TOOLKIT.texture
+					label.text = str(toolkit_amount)
+					break
+
+	if wires_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = WIRES.texture
+					label.text = str(wires_amount)
+					break
+
+	if oil_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = OIL.texture
+					label.text = str(oil_amount)
+					break
+
+	if gold_gear_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = GOLD_GEAR.texture
+					label.text = str(gold_gear_amount)
+					break
+
+	if amethyst_gear_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = AMETHYST_GEAR.texture
+					label.text = str(amethyst_gear_amount)
+					break
+
+	if cobalt_gear_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = COBALT_GEAR.texture
+					label.text = str(cobalt_gear_amount)
+					break
+
 		
 
 	

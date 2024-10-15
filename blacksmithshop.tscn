@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bw25qskwak7la"]
 
 [ext_resource type="Script" path="res://blacksmithshop.gd" id="1_3ytjd"]
-[ext_resource type="Texture2D" uid="uid://r77ltypqkvmf" path="res://art/mainart/hotbartseterbolt.png" id="2_fl5o4"]
-[ext_resource type="Texture2D" uid="uid://d2admtldbxoag" path="res://art/amythest gear.png" id="3_1sabu"]
+[ext_resource type="Texture2D" uid="uid://btsgl2go21lfk" path="res://art/inv back.png" id="2_j4c53"]
+[ext_resource type="Texture2D" uid="uid://cp1wa3wcxvfrb" path="res://art/mainart/pixil-frame-0 (56).png" id="3_h7jwc"]
 [ext_resource type="Texture2D" uid="uid://belcal14vhfr1" path="res://art/cobalt gear.png" id="4_lq388"]
 [ext_resource type="Texture2D" uid="uid://bplqmd5m04ko" path="res://art/gold gear.png" id="5_5kec2"]
 [ext_resource type="Texture2D" uid="uid://d2304fs56eie2" path="res://art/pixil-frame-0(1).png" id="6_qji5p"]
@@ -18,16 +18,16 @@ script = ExtResource("1_3ytjd")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 543.0
-offset_bottom = 252.0
-texture = ExtResource("2_fl5o4")
+offset_right = 606.0
+offset_bottom = 305.0
+texture = ExtResource("2_j4c53")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 13.0
-offset_right = 545.0
-offset_bottom = 245.0
+offset_left = 29.0
+offset_top = 37.0
+offset_right = 573.0
+offset_bottom = 270.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/HBoxContainer"]
 custom_minimum_size = Vector2(80, 79.225)
@@ -36,7 +36,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(30, 72)
 layout_mode = 2
-texture = ExtResource("3_1sabu")
+texture = ExtResource("3_h7jwc")
 
 [node name="TextureRect2" type="TextureRect" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(30, 72)
@@ -55,6 +55,10 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+text = "Required items:
+1x pick-axe head
+1x stick 
+"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)

@@ -1257,10 +1257,10 @@ offset_right = 89.2
 offset_bottom = 563.0
 
 [node name="InventoryGui" parent="CanvasLayer" instance=ExtResource("12_tamxu")]
-offset_left = 602.0
-offset_top = 227.0
-offset_right = 602.4
-offset_bottom = 227.04
+offset_left = 616.0
+offset_top = 134.0
+offset_right = 616.4
+offset_bottom = 134.04
 scale = Vector2(3, 3)
 size_flags_horizontal = 4
 
