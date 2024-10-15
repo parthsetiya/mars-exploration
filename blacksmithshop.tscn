@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bw25qskwak7la"]
 
 [ext_resource type="Script" path="res://blacksmithshop.gd" id="1_3ytjd"]
-[ext_resource type="Texture2D" uid="uid://btsgl2go21lfk" path="res://art/inv back.png" id="2_j4c53"]
+[ext_resource type="Texture2D" uid="uid://b1qelthn8r2a4" path="res://art/inv back.png" id="2_j4c53"]
 [ext_resource type="Texture2D" uid="uid://cp1wa3wcxvfrb" path="res://art/mainart/pixil-frame-0 (56).png" id="3_h7jwc"]
 [ext_resource type="Texture2D" uid="uid://belcal14vhfr1" path="res://art/cobalt gear.png" id="4_lq388"]
 [ext_resource type="Texture2D" uid="uid://bplqmd5m04ko" path="res://art/gold gear.png" id="5_5kec2"]

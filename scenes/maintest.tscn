@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b601k4v85jj8e" path="res://blacksmith.tscn" id="15_5e6i8"]
 [ext_resource type="PackedScene" uid="uid://cy45fnv5txv60" path="res://scenes/tree_block.tscn" id="15_5jhu1"]
 [ext_resource type="Texture2D" uid="uid://108k0hdoohuq" path="res://art/mainart/crashed shadows.png" id="15_nc7go"]
-[ext_resource type="Texture2D" uid="uid://cpyrblkkykt4d" path="res://dialogue/edmund_maccas.png" id="16_1o2l5"]
+[ext_resource type="Texture2D" uid="uid://bmoitxm6luwvj" path="res://art/pickaxe head.png" id="16_6i52b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddf6d"]
 texture = ExtResource("11_6wovd")
@@ -1267,7 +1267,7 @@ size_flags_horizontal = 4
 [node name="pick-axe-head" type="Sprite2D" parent="."]
 position = Vector2(-49, -611.5)
 scale = Vector2(0.0273892, 0.041605)
-texture = ExtResource("16_1o2l5")
+texture = ExtResource("16_6i52b")
 
 [node name="pickaxearea" type="Area2D" parent="pick-axe-head"]
 
