@@ -19,7 +19,8 @@ var is_showing_thiswaytomines = false
 @onready var listofitems = $Control
 @onready var tocavemarker = $tocavemarker
 
-
+@onready var pick_axe_head = $"pick-axe-head"
+const PICK_AXE_HEAD = preload("res://Inventory/items/pick-axe-head.tres")
 @onready var player = $Player
 @onready var alltreegolder = $alltree
 var playerdata = PlayerData.new()
@@ -44,6 +45,8 @@ const GEAR = preload("res://Inventory/items/gear.tres")
 @onready var allgoldfolder = $allgold
 @onready var allironfolder = $alliron
 @onready var cavetomainmarker = $cavetomainmarker
+var player_in_collect_pick_axe_head_area = false
+
 
 # Node definitions
 var gold_node
@@ -400,11 +403,32 @@ func update_inventory_ui(item_name, updated_quantity):
 					item.texture = GEAR.texture
 					label.text = str(1)
 					return
+	if item_name == PICK_AXE_HEAD.name:
+		playerdata.add_pickaxehead(1)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
 
+				if item.texture == PICK_AXE_HEAD.texture:
+					label.text = str(int(label.text) + 1)
+					return
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = PICK_AXE_HEAD.texture
+					label.text = str(1)
+					return
 
 
 	
-func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount):
+func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pick_axe_head_amount):
 	for slot in inventory_slots:
 		if slot.get_child_count() != 0:
 			var centre_container = slot.get_children()[1]
@@ -460,6 +484,17 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount):
 					item.texture = GOLD_STICK.texture
 					label.text = str(stick_amount)
 					break
+	if pick_axe_head_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = PICK_AXE_HEAD.texture
+					label.text = str(pick_axe_head_amount)
+					break
 		
 
 	
@@ -496,6 +531,12 @@ func _process(delta):
 			recipe_gui.hide()
 	if playerdata.current_item == str(GOLD_PICKAXE.texture):
 		playerscript.playerholdingpick = true
+	
+	if player_in_collect_pick_axe_head_area == true && Input.is_action_just_pressed("g"):
+		_on_request_inventory_update(PICK_AXE_HEAD.name, 1)
+		pick_axe_head.queue_free()
+		
+		
 
 		
 		
@@ -587,11 +628,16 @@ func _on_tocave_body_entered(body):
 		player.global_position = tocavemarker.global_position
 		
 
-
-
-
-
-
 func _on_cavetomain_body_exited(body):
 	if body == player:
 		player.global_position = cavetomainmarker.global_position
+
+
+func _on_pickaxearea_body_entered(body):
+	if body == player:
+		player_in_collect_pick_axe_head_area = true
+
+
+func _on_pickaxearea_body_exited(body):
+		if body == player:
+			player_in_collect_pick_axe_head_area = false

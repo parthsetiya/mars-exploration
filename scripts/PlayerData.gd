@@ -14,6 +14,8 @@ var invironingot : int
 var invGoldIngot : int
 var invlogingot : int
 var invstick : int
+var invpickaxe : int
+var invpickaxehead : int
 var xvaluesave
 var yvaluesave
 var player = preload("res://scenes/player.tscn")
@@ -50,6 +52,13 @@ func add_invstick(value: int):
 	invstick += value
 	save()
 	
+func add_pickaxe(value: int):
+	invpickaxe += value
+	save()
+
+func add_pickaxehead(value: int):
+	invpickaxehead += value
+	save()
 
 func remove_invGoldIngot(value : int):
 	invGoldIngot -= value
@@ -71,7 +80,9 @@ func save():
 		"iron_amount": invironingot,
 		"log_amount": invlogingot,
 		"stick_amount": invstick,
-		"position": [SavePos.x, SavePos.y]  
+		"position": [SavePos.x, SavePos.y],
+		"pick-axe_amount": invpickaxe,
+		"pick-axe-head_amount": invpickaxehead
 	}
 	
 	var json = JSON.new()
@@ -108,8 +119,9 @@ func load_data():
 	invironingot = jsonironvalue
 	invGoldIngot = jsongoldvalue
 	invstick = jsonstickvalue
+	invpickaxehead = data["pick-axe-head_amount"]
 
-	emit_signal("inventory_loaded", invGoldIngot, invironingot, invlogingot, invstick)
+	emit_signal("inventory_loaded", invGoldIngot, invironingot, invlogingot, invstick, invpickaxehead)
 	
 	var pos_array = data["position"]
 	SavePos = Vector2(pos_array[0], pos_array[1])

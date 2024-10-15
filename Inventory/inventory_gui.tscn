@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://booto5uhhl2kr"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_gui.gd" id="1_egmnt"]
-[ext_resource type="Texture2D" uid="uid://btsgl2go21lfk" path="res://art/inv back.png" id="2_81a1c"]
+[ext_resource type="Texture2D" uid="uid://b1qelthn8r2a4" path="res://art/inv back.png" id="2_81a1c"]
 [ext_resource type="PackedScene" uid="uid://chpj76y4h6uxx" path="res://scenes/slot.tscn" id="3_meoxf"]
-[ext_resource type="Texture2D" uid="uid://bm72khgtiohcd" path="res://art/slot backg.png" id="4_pl8nr"]
+[ext_resource type="Texture2D" uid="uid://cqbgo7nkltvgj" path="res://art/slot backg.png" id="4_pl8nr"]
 [ext_resource type="PackedScene" uid="uid://cwbjcat8e4j7n" path="res://scenes/crafting.tscn" id="4_qikhw"]
 
 [node name="InventoryGui" type="Control"]
@@ -15,6 +15,7 @@ offset_bottom = 0.0399995
 script = ExtResource("1_egmnt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(170, 100)
 layout_mode = 1
 anchors_preset = -1
@@ -39,48 +40,63 @@ theme_override_constants/v_separation = 2
 columns = 5
 
 [node name="slot" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot2" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot3" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot4" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot5" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot6" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot7" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot8" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot9" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot10" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot11" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot12" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot13" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot14" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="slot15" parent="GridContainer" instance=ExtResource("3_meoxf")]
+visible = false
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="GridContainer"]

@@ -54,8 +54,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("swing") and not is_swinging:
 		$AudioStreamPlayer2D.play()
 		print(playerData.current_item)
-		if playerholdingpick:
-			swing_tool()
+		swing_tool()
 	if playerData.SavePos != self.position:
 		playerData.UpdatePos(self.position)
 

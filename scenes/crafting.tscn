@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/crafting.gd" id="1_cpp4s"]
 [ext_resource type="Script" path="res://scripts/table.gd" id="2_qrt3n"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="2_udjdx"]
-[ext_resource type="Texture2D" uid="uid://d3tq7ltk53a5a" path="res://art/mainart/fire spaceship.png" id="4_3kwax"]
+[ext_resource type="Texture2D" uid="uid://cbtts4xwrjacl" path="res://art/mainart/pickaxegold.png" id="4_qb7ql"]
 
 [node name="crafting" type="Node2D"]
 script = ExtResource("1_cpp4s")
@@ -37,13 +37,14 @@ text = "- 2x Gold Ingot"
 
 [node name="gold_pick" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+texture_normal = ExtResource("4_qb7ql")
 
 [node name="Wooden Pickaxe" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_3kwax")
 
 [node name="woodenpickaxerecipe" type="Label" parent="GridContainer/Wooden Pickaxe"]
 visible = false
+layout_mode = 0
 offset_left = -70.0
 offset_top = 8.0
 offset_bottom = 22.0
