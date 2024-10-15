@@ -158,6 +158,6 @@ func _physics_process(delta):
 	
 func player_hold_pick():
 	playerholdingpick = true
-
+	print("parth has autism") 
 
 
