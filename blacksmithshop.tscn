@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw25qskwak7la"]
+[gd_scene load_steps=9 format=3 uid="uid://bw25qskwak7la"]
 
 [ext_resource type="Script" path="res://blacksmithshop.gd" id="1_3ytjd"]
-[ext_resource type="Texture2D" uid="uid://oybwqw8m3qur" path="res://art/shop back.png" id="2_afk55"]
+[ext_resource type="Texture2D" uid="uid://dcl71oup7m15i" path="res://art/shop back.png" id="2_afk55"]
 [ext_resource type="Texture2D" uid="uid://cu36tw88h57i3" path="res://art/pickAxe.png" id="3_585li"]
 [ext_resource type="Texture2D" uid="uid://belcal14vhfr1" path="res://art/cobalt gear.png" id="4_lq388"]
 [ext_resource type="Texture2D" uid="uid://bplqmd5m04ko" path="res://art/gold gear.png" id="5_5kec2"]
 [ext_resource type="Texture2D" uid="uid://d2admtldbxoag" path="res://art/amythest gear.png" id="6_6x76b"]
+[ext_resource type="Texture2D" uid="uid://cma3ps4py0qi7" path="res://art/shop slot.png" id="7_iljbb"]
+[ext_resource type="Texture2D" uid="uid://lyluafveqa1x" path="res://art/shop buycost.png" id="8_xjqdq"]
 
 [node name="blacksmithshop" type="Control"]
 layout_mode = 3
@@ -16,101 +18,190 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3ytjd")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+z_index = 1
 layout_mode = 0
-offset_right = 558.0
-offset_bottom = 423.0
-texture = ExtResource("2_afk55")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 37.0
+offset_left = 44.0
 offset_top = 25.0
-offset_right = 427.0
-offset_bottom = 258.0
+offset_right = 536.0
+offset_bottom = 244.0
+theme_override_constants/separation = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/HBoxContainer"]
-custom_minimum_size = Vector2(120, 79.225)
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(110, 79.225)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("3_585li")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
 text = "Required items:
 1x pick-axe-head
 1x stick"
 
-[node name="Button" type="Button" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 text = "BUY"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="NinePatchRect/HBoxContainer"]
-custom_minimum_size = Vector2(120, 2.08165e-12)
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(110, 2.08165e-12)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("5_5kec2")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
 text = "Required items:
 1x pick-axe-head
 1x stick"
 
-[node name="Button" type="Button" parent="NinePatchRect/HBoxContainer/VBoxContainer2"]
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 text = "BUY"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="NinePatchRect/HBoxContainer"]
-custom_minimum_size = Vector2(120, 2.08165e-12)
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(110, 2.08165e-12)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/HBoxContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("4_lq388")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
 text = "Required items:
 1x pick-axe-head
 1x stick"
 
-[node name="Button" type="Button" parent="NinePatchRect/HBoxContainer/VBoxContainer3"]
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 text = "BUY"
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="NinePatchRect/HBoxContainer"]
-custom_minimum_size = Vector2(120, 2.08165e-12)
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(110, 2.08165e-12)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/HBoxContainer/VBoxContainer4"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("6_6x76b")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/VBoxContainer4"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
 text = "Required items:
 1x pick-axe-head
 1x stick"
 
-[node name="Button" type="Button" parent="NinePatchRect/HBoxContainer/VBoxContainer4"]
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 text = "BUY"
 
-[connection signal="pressed" from="NinePatchRect/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_right = 535.0
+offset_bottom = 423.0
+texture = ExtResource("2_afk55")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="."]
+offset_left = 164.0
+offset_top = -131.0
+offset_right = 566.0
+offset_bottom = 262.0
+texture = ExtResource("7_iljbb")
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="."]
+offset_left = 404.0
+offset_top = -130.0
+offset_right = 806.0
+offset_bottom = 263.0
+texture = ExtResource("7_iljbb")
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="."]
+offset_left = 284.0
+offset_top = -131.0
+offset_right = 686.0
+offset_bottom = 262.0
+texture = ExtResource("7_iljbb")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -130.0
+offset_right = 446.0
+offset_bottom = 263.0
+texture = ExtResource("7_iljbb")
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -67.0
+offset_right = 442.0
+offset_bottom = 331.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6"]
+offset_top = 58.0
+offset_right = 398.0
+offset_bottom = 456.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6"]
+offset_left = 120.0
+offset_top = -58.0
+offset_right = 518.0
+offset_bottom = 340.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+offset_top = 58.0
+offset_right = 398.0
+offset_bottom = 456.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+offset_left = 120.0
+offset_top = -58.0
+offset_right = 518.0
+offset_bottom = 340.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+offset_top = 58.0
+offset_right = 398.0
+offset_bottom = 456.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+offset_left = 120.0
+offset_top = -59.0
+offset_right = 518.0
+offset_bottom = 339.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+offset_top = 59.0
+offset_right = 398.0
+offset_bottom = 457.0
+texture = ExtResource("8_xjqdq")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

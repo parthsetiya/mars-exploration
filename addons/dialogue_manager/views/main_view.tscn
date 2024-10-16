@@ -36,7 +36,7 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_wmrmd"]
 image = SubResource("Image_dw5wm")
 
-[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_xpm17"]
+[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_d56o6"]
 script = ExtResource("7_necsa")
 
 [node name="MainView" type="Control"]
@@ -328,7 +328,7 @@ Nathan: For more information see the online documentation.
 
 => END"
 scroll_smooth = true
-syntax_highlighter = SubResource("SyntaxHighlighter_xpm17")
+syntax_highlighter = SubResource("SyntaxHighlighter_d56o6")
 
 [node name="ErrorsPanel" parent="Margin/Content/CodePanel" instance=ExtResource("7_5cvl4")]
 unique_name_in_owner = true
