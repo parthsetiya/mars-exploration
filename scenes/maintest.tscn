@@ -937,7 +937,7 @@ position = Vector2(-63.5, 50)
 [node name="tree_block" parent="." instance=ExtResource("15_5jhu1")]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(153, -277)
+position = Vector2(-114.5, -109.5)
 
 [node name="spaceship" type="Sprite2D" parent="."]
 position = Vector2(189, 126.5)
@@ -1183,10 +1183,10 @@ inventory_manager = NodePath("../iron_block/AnimatedSprite2D")
 [node name="alltree" type="Node2D" parent="."]
 
 [node name="tree_block" parent="alltree" instance=ExtResource("15_5jhu1")]
-position = Vector2(190, -65.5)
+position = Vector2(166, -65.5)
 
 [node name="tree_block2" parent="alltree" instance=ExtResource("15_5jhu1")]
-position = Vector2(376.5, -13)
+position = Vector2(126, -251)
 
 [node name="areaback" type="Area2D" parent="."]
 position = Vector2(2720, -111)
@@ -1208,6 +1208,7 @@ position = Vector2(7.5, -0.5)
 shape = SubResource("CircleShape2D_igvuk")
 
 [node name="Control" parent="." instance=ExtResource("13_ejr1y")]
+visible = false
 offset_left = 68.5
 offset_top = 133.5
 offset_right = 68.5

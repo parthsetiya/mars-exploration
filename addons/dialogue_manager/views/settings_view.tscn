@@ -16,11 +16,9 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_3a8rc")
-current_tab = 2
 script = ExtResource("1_06uxa")
 
 [node name="Editor" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 
 [node name="NewTemplateButton" type="CheckBox" parent="Editor"]
@@ -103,7 +101,7 @@ text = "State Shortcuts"
 
 [node name="StatesMessage" type="Label" parent="Runtime"]
 layout_mode = 2
-text = "If an autoload is enabled here you can refer to its properties and methods without having to use its name."
+text = "If an autoload is enabled here you can refer to its properties, methods, and signals without having to use its name."
 
 [node name="StatesHint" type="Label" parent="Runtime"]
 modulate = Color(1, 1, 1, 0.501961)
@@ -123,6 +121,7 @@ hide_root = true
 select_mode = 1
 
 [node name="Advanced" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 
 [node name="CheckForUpdates" type="CheckBox" parent="Advanced"]
