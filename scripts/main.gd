@@ -40,6 +40,9 @@ const REMOVE_GOLD = preload("res://Inventory/items/remove_gold.tres")
 const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
 const GLOVE = preload("res://Inventory/items/glove.tres")
 const GEAR = preload("res://Inventory/items/gear.tres")
+const COMPUTER_CHIP = preload("res://Inventory/items/computer_chip.tres")
+const METAL_PLATE = preload("res://Inventory/items/metal_plate.tres")
+const REMOVE_PARTS = preload("res://Inventory/items/remove_parts.tres")
 @onready var marker_2d_2 = $Area2D2/Marker2D2
 @onready var marker_2d = $areaback/Marker2D
 @onready var allgoldfolder = $allgold
@@ -432,10 +435,52 @@ func update_inventory_ui(item_name, updated_quantity):
 					item.texture = PICK_AXE_HEAD.texture
 					label.text = str(1)
 					return
+	if item_name == REMOVE_PARTS.name:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == COMPUTER_CHIP.texture:
+					label.text = str(int(label.text) - playerdata.invcomputerchip)
+					if int(label.text) <= 0:
+						slot.queue_free()
+				if item.texture == TOOLKIT.texture:
+					label.text = str(int(label.text) - playerdata.invtoolkit)
+					if int(label.text) <= 0:
+						slot.queue_free()
+				if item.texture == TOOLBOX.texture:
+					label.text = str(int(label.text) - playerdata.invtoolbox)
+					if int(label.text) <= 0:
+						slot.queue_free()
+				if item.texture == OIL.texture:
+					label.text = str(int(label.text) - playerdata.invoil)
+					if int(label.text) <= 0:
+						slot.queue_free()
+				if item.texture == METAL_PLATE.texture:
+					label.text = str(int(label.text) - playerdata.invmetalplate)
+					if int(label.text) <= 0:
+						slot.queue_free()
+				if item.texture == GOLD_GEAR.texture: 
+					label.text = str(int(label.text) - playerdata.invgoldgear)
+					if int(label.text) <= 0:
+						slot.queue_free()
+				if item.texture == COBALT_GEAR:
+					label.text = str(int(label.text) - playerdata.invcobaltgear)
+					if int(label.text) <= 0:
+						slot.queue_free()
+				if item.texture == AMETHYST_GEAR:
+					label.text = str(int(label.text) - playerdata.invamethystgear)
+					if int(label.text) <= 0:
+						slot.queue_free()
+				if item.texture == WIRES.texture:
+					label.text = str(int(label.text) - playerdata.invwires)
+					if int(label.text) <= 0:
+						slot.queue_free()
 
 
 	
-func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount):
+func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount, metal_plate_amount, computer_chip_amount):
 	for slot in inventory_slots:
 		if slot.get_child_count() != 0:
 			var centre_container = slot.get_children()[1]
@@ -599,6 +644,30 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pi
 					item.texture = COBALT_GEAR.texture
 					label.text = str(cobalt_gear_amount)
 					break
+					
+	if metal_plate_amount> 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = METAL_PLATE.texture
+					label.text = str(cobalt_gear_amount)
+					break
+					
+	if computer_chip_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = COMPUTER_CHIP.texture
+					label.text = str(cobalt_gear_amount)
+					break
 
 		
 
@@ -640,11 +709,35 @@ func _process(delta):
 	if player_in_collect_pick_axe_head_area == true && Input.is_action_just_pressed("g"):
 		_on_request_inventory_update(PICK_AXE_HEAD.name, 1)
 		pick_axe_head.queue_free()
+	if spaceship_entered == true && Input.is_action_just_pressed("g"):
+		deposititems()
 		
 		
 
 		
 		
+
+func deposititems():
+	playerdata.add_spaceship_computer_chip(playerdata.invcomputerchip)
+	playerdata.add_spaceship_machine_parts(playerdata.invtoolkit)
+	playerdata.add_spaceship_thruster_repair_kits(playerdata.invtoolbox)
+	playerdata.add_spaceship_carton_of_oil(playerdata.invoil)
+	playerdata.add_spaceship_metal_plates(playerdata.invmetalplate)
+	playerdata.add_spaceship_gold_gears(playerdata.invgoldgear)
+	playerdata.add_spaceship_cobalt_gears(playerdata.invcobaltgear)
+	playerdata.add_spaceship_amethyst_gears(playerdata.invamethystgear)
+	playerdata.add_spaceship_wires(playerdata.invwires)
+	playerdata.add_computerchip(-1 * playerdata.invcomputerchip)
+	playerdata.add_toolkit(-1 * playerdata.invtoolkit)
+	playerdata.add_toolbox(-1 * playerdata.invtoolbox)
+	playerdata.add_oil(-1 * playerdata.invoil)
+	playerdata.add_metalplate(-1 * playerdata.invmetalplate)
+	playerdata.add_goldgear(-1 * playerdata.invgoldgear)
+	playerdata.add_cobaltgear(-1 * playerdata.invcobaltgear)
+	playerdata.add_amethystgear(-1 * playerdata.invamethystgear)
+	playerdata.add_wires(-1 * playerdata.invwires)
+	_on_request_inventory_update(REMOVE_PARTS.name, 1)
+
 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:

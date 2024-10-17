@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bevtqw4uee8ew"]
+
+[ext_resource type="Script" path="res://Inventory/inventoryitem.gd" id="1_nsohc"]
+[ext_resource type="Texture2D" uid="uid://cndkypm0h0ac7" path="res://art/pixil-frame-0(8).png" id="2_lf1nr"]
+
+[resource]
+script = ExtResource("1_nsohc")
+name = "metal_plate"
+texture = ExtResource("2_lf1nr")

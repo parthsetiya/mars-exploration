@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://bw25qskwak7la"]
 
 [ext_resource type="Script" path="res://blacksmithshop.gd" id="1_3ytjd"]
-[ext_resource type="Texture2D" uid="uid://dcl71oup7m15i" path="res://art/shop back.png" id="2_afk55"]
+[ext_resource type="Texture2D" uid="uid://oybwqw8m3qur" path="res://art/shop back.png" id="2_afk55"]
 [ext_resource type="Texture2D" uid="uid://cu36tw88h57i3" path="res://art/pickAxe.png" id="3_585li"]
 [ext_resource type="Texture2D" uid="uid://belcal14vhfr1" path="res://art/cobalt gear.png" id="4_lq388"]
 [ext_resource type="Texture2D" uid="uid://bplqmd5m04ko" path="res://art/gold gear.png" id="5_5kec2"]
 [ext_resource type="Texture2D" uid="uid://d2admtldbxoag" path="res://art/amythest gear.png" id="6_6x76b"]
-[ext_resource type="Texture2D" uid="uid://cma3ps4py0qi7" path="res://art/shop slot.png" id="7_iljbb"]
-[ext_resource type="Texture2D" uid="uid://lyluafveqa1x" path="res://art/shop buycost.png" id="8_xjqdq"]
+[ext_resource type="Texture2D" uid="uid://bgahhllsskeh6" path="res://art/shop slot.png" id="7_iljbb"]
+[ext_resource type="Texture2D" uid="uid://cospvnhl8oemd" path="res://art/shop buycost.png" id="8_xjqdq"]
 
 [node name="blacksmithshop" type="Control"]
 layout_mode = 3
@@ -123,6 +123,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 164.0
 offset_top = -131.0
 offset_right = 566.0
@@ -130,6 +131,7 @@ offset_bottom = 262.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 404.0
 offset_top = -130.0
 offset_right = 806.0
@@ -137,6 +139,7 @@ offset_bottom = 263.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 284.0
 offset_top = -131.0
 offset_right = 686.0
@@ -160,12 +163,14 @@ offset_bottom = 331.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6"]
+layout_mode = 0
 offset_top = 58.0
 offset_right = 398.0
 offset_bottom = 456.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = -58.0
 offset_right = 518.0
@@ -173,12 +178,14 @@ offset_bottom = 340.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+layout_mode = 0
 offset_top = 58.0
 offset_right = 398.0
 offset_bottom = 456.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = -58.0
 offset_right = 518.0
@@ -186,12 +193,14 @@ offset_bottom = 340.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+layout_mode = 0
 offset_top = 58.0
 offset_right = 398.0
 offset_bottom = 456.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = -59.0
 offset_right = 518.0
@@ -199,6 +208,7 @@ offset_bottom = 339.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
+layout_mode = 0
 offset_top = 59.0
 offset_right = 398.0
 offset_bottom = 457.0

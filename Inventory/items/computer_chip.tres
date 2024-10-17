@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dm0rluxbrnmoq"]
+
+[ext_resource type="Script" path="res://Inventory/inventoryitem.gd" id="1_iytlp"]
+[ext_resource type="Texture2D" uid="uid://cjdiu5plq3um2" path="res://art/chip.png" id="2_pt886"]
+
+[resource]
+script = ExtResource("1_iytlp")
+name = "computer_chip"
+texture = ExtResource("2_pt886")
