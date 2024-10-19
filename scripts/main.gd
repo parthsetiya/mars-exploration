@@ -137,6 +137,12 @@ func _ready():
 	recipe_gui_show = get_node("Player/Camera2D/crafting")
 	playerdata.load_data()
 	playerdata.SavePos = player.position
+	
+	
+	
+	
+
+
 
 #func inironcollectable(body):
 	#ironcollectable = true 
@@ -827,6 +833,12 @@ func _on_areaback_body_entered(body):
 		player.speed = 0 
 		animation_player.play("fadein")
 		player.global_position = marker_2d.global_position
+		var camera = $Player/Camera2D 
+		if camera:
+			camera.limit_right = 2600 
+			camera.limit_left = -2000
+			camera.limit_bottom = 1000
+			camera.limit_top = -1800
 		animation_player.play("fadeout")
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
@@ -834,14 +846,18 @@ func _on_areaback_body_entered(body):
 
 func _on_area_2d_2_body_entered(body):
 	if body == player:
-		player.speed = 0 
-		animation_player.play("fadein")
+		player.speed = 0
+		animation_player.play("fadein")  
 		player.global_position = marker_2d_2.global_position
-		animation_player.play("fadeout")
+		var camera = $Player/Camera2D 
+		if camera:
+			camera.limit_right = 10000 
+			camera.limit_left = 3000
+		animation_player.play("fadeout") 
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
+ 
 
-		
 
 
 
@@ -851,32 +867,30 @@ func _on_tocave_body_entered(body):
 		animation_player.play("fadein")
 		player.global_position = tocavemarker.global_position
 		animation_player.play("fadeout")
+		var camera = $Player/Camera2D 
+		if camera:
+			camera.limit_right = 100000
+			camera.limit_left = -40000
+			camera.limit_bottom = 10000 
+			camera.limit_top = -100000
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
 		
 		
 
 func _on_cavetomain_body_exited(body):
-	print("Function called")  # Check if the function is triggered
-	
-	if body == player:
-		print("Player detected")  # Check if the player is detected
+	if body == player: 
 		player.speed = 0
 		animation_player.play("fadein")
 		player.global_position = cavetomainmarker.global_position
 		animation_player.play("fadeout")
-		
-		# Wait for the animations to finish
+		var camera = $Player/Camera2D 
+		if camera:
+			camera.limit_right = 2600 
+			camera.limit_left = -2000
+			camera.limit_bottom = 1000
+			camera.limit_top = -1800
 		await get_tree().create_timer(1).timeout
-		
-		# Switch to the new Camera2D (camera2dd)
-		print("Switching cameras...")
-		if $Camera2D and $camera2dd:
-			$Camera2D.current = false
-			$camera2dd.current = true
-			print("Camera switched to camera2dd")
-		else:
-			print("Camera nodes not found")
 		
 		player.speed = 100
 
@@ -892,3 +906,5 @@ func _on_pickaxearea_body_entered(body):
 func _on_pickaxearea_body_exited(body):
 		if body == player:
 			player_in_collect_pick_axe_head_area = false
+
+
