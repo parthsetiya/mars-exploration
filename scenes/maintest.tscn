@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=31 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b601k4v85jj8e" path="res://blacksmith.tscn" id="15_5e6i8"]
 [ext_resource type="PackedScene" uid="uid://cy45fnv5txv60" path="res://scenes/tree_block.tscn" id="15_5jhu1"]
 [ext_resource type="Texture2D" uid="uid://108k0hdoohuq" path="res://art/mainart/crashed shadows.png" id="15_nc7go"]
-[ext_resource type="Texture2D" uid="uid://cpyrblkkykt4d" path="res://dialogue/edmund_maccas.png" id="16_1o2l5"]
+[ext_resource type="Texture2D" uid="uid://bmoitxm6luwvj" path="res://art/pickaxe head.png" id="16_mjidj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddf6d"]
 texture = ExtResource("11_6wovd")
@@ -880,13 +880,50 @@ radius = 36.6231
 radius = 45.0694
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4n5k8"]
-size = Vector2(126, 31)
+size = Vector2(126, 40.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5f31"]
-size = Vector2(113, 27)
+size = Vector2(113, 35.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qd6lq"]
-radius = 896.531
+radius = 28.6395
+
+[sub_resource type="Animation" id="Animation_8s5jx"]
+resource_name = "fadein"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o7slx"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbguh"]
+_data = {
+"fadein": SubResource("Animation_8s5jx"),
+"fadeout": SubResource("Animation_o7slx")
+}
 
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
@@ -917,6 +954,7 @@ position = Vector2(43.5, 282)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -0.5)
 zoom = Vector2(1.5, 1.5)
+limit_right = 2600
 limit_smoothed = true
 
 [node name="PointLight2D3" type="PointLight2D" parent="Player/Camera2D"]
@@ -924,9 +962,11 @@ visible = false
 position = Vector2(-2, -8)
 texture = SubResource("GradientTexture2D_hhbug")
 
+[node name="camera2dd" type="Camera2D" parent="Player"]
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
-color = Color(0, 0, 0, 1)
+color = Color(1, 1, 1, 0)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("12_3kb63")]
 position = Vector2(-65.5, 242)
@@ -1215,23 +1255,23 @@ offset_right = 68.5
 offset_bottom = 133.5
 
 [node name="tocavemarker" type="Marker2D" parent="."]
-position = Vector2(-1283, -7180)
+position = Vector2(-1275.5, -7163)
 
 [node name="tocave" type="Area2D" parent="."]
 position = Vector2(26.5, -636)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tocave"]
-position = Vector2(10.5, -5.5)
+position = Vector2(8.5, 9.25)
 shape = SubResource("RectangleShape2D_4n5k8")
 
 [node name="cavetomainmarker" type="Marker2D" parent="."]
-position = Vector2(32.5, -539)
+position = Vector2(32, -581)
 
 [node name="cavetomain" type="Area2D" parent="."]
-position = Vector2(-1280.5, -7229)
+position = Vector2(-1190.5, -7197.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cavetomain"]
-position = Vector2(0.5, -3.5)
+position = Vector2(-86, -28)
 shape = SubResource("RectangleShape2D_l5f31")
 
 [node name="housealien" parent="." instance=ExtResource("14_edeqe")]
@@ -1239,6 +1279,10 @@ position = Vector2(640, -116)
 
 [node name="blacksmith" parent="." instance=ExtResource("15_5e6i8")]
 position = Vector2(3774.5, -198)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1313, -140)
+scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1264,16 +1308,28 @@ offset_right = 729.4
 offset_bottom = 232.04
 scale = Vector2(2.6, 2.6)
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -449.0
+offset_top = -483.0
+offset_right = 2277.0
+offset_bottom = 1277.0
+color = Color(1, 1, 1, 0)
+
 [node name="pick-axe-head" type="Sprite2D" parent="."]
-position = Vector2(-49, -611.5)
-scale = Vector2(0.0273892, 0.041605)
-texture = ExtResource("16_1o2l5")
+position = Vector2(-54.5, -602.5)
+scale = Vector2(0.857445, 0.770803)
+texture = ExtResource("16_mjidj")
 
 [node name="pickaxearea" type="Area2D" parent="pick-axe-head"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pick-axe-head/pickaxearea"]
-position = Vector2(-54.7661, 0.00146701)
+position = Vector2(1.42179, -1.51427)
 shape = SubResource("CircleShape2D_qd6lq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mbguh")
+}
 
 [connection signal="body_entered" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_entered"]
 [connection signal="body_exited" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_exited"]

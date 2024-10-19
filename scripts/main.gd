@@ -857,13 +857,32 @@ func _on_tocave_body_entered(body):
 		
 
 func _on_cavetomain_body_exited(body):
+	print("Function called")  # Check if the function is triggered
+	
 	if body == player:
-		player.speed = 0 
+		print("Player detected")  # Check if the player is detected
+		player.speed = 0
 		animation_player.play("fadein")
 		player.global_position = cavetomainmarker.global_position
 		animation_player.play("fadeout")
+		
+		# Wait for the animations to finish
 		await get_tree().create_timer(1).timeout
+		
+		# Switch to the new Camera2D (camera2dd)
+		print("Switching cameras...")
+		if $Camera2D and $camera2dd:
+			$Camera2D.current = false
+			$camera2dd.current = true
+			print("Camera switched to camera2dd")
+		else:
+			print("Camera nodes not found")
+		
 		player.speed = 100
+
+
+
+
 
 func _on_pickaxearea_body_entered(body):
 	if body == player:
