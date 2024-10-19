@@ -11,6 +11,7 @@ var paused = false
 @onready var spaceship_entered = false
 @onready var spaceshiparea_2 = $Spaceship/spaceshiparea2
 @onready var crashmessage = $spaceship/spaceshiparea/crashmessage
+@onready var animation_player = $AnimationPlayer
 
 @onready var recipe_gui = $Player/Camera2D/recipeGui
 
@@ -177,6 +178,7 @@ func _on_slot_clicked(slot_index):
 		second_slot_index = null
 
 func _swap_items(slot_index_1, slot_index_2):
+	print('im the goat')
 	if inv_open == false:
 		return
 	var slot_1 = inventory_slots[slot_index_1]
@@ -436,6 +438,7 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(1)
 					return
 	if item_name == REMOVE_PARTS.name:
+		print("REMOVING ITEMS")
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
 				var centre_container = slot.get_children()[1]
@@ -444,39 +447,48 @@ func update_inventory_ui(item_name, updated_quantity):
 				if item.texture == COMPUTER_CHIP.texture:
 					label.text = str(int(label.text) - playerdata.invcomputerchip)
 					if int(label.text) <= 0:
-						slot.queue_free()
+						label.text = null
+						item.texture = null
 				if item.texture == TOOLKIT.texture:
 					label.text = str(int(label.text) - playerdata.invtoolkit)
 					if int(label.text) <= 0:
-						slot.queue_free()
+						label.text = null
+						item.texture = null
 				if item.texture == TOOLBOX.texture:
 					label.text = str(int(label.text) - playerdata.invtoolbox)
 					if int(label.text) <= 0:
-						slot.queue_free()
+						label.text = null
+						item.texture = null
 				if item.texture == OIL.texture:
 					label.text = str(int(label.text) - playerdata.invoil)
 					if int(label.text) <= 0:
-						slot.queue_free()
+						label.text = null
+						item.texture = null
 				if item.texture == METAL_PLATE.texture:
 					label.text = str(int(label.text) - playerdata.invmetalplate)
 					if int(label.text) <= 0:
-						slot.queue_free()
+						label.text = null
+						item.texture = null
 				if item.texture == GOLD_GEAR.texture: 
 					label.text = str(int(label.text) - playerdata.invgoldgear)
 					if int(label.text) <= 0:
-						slot.queue_free()
-				if item.texture == COBALT_GEAR:
+						label.text = null
+						item.texture = null
+				if item.texture == COBALT_GEAR.texture:
 					label.text = str(int(label.text) - playerdata.invcobaltgear)
 					if int(label.text) <= 0:
-						slot.queue_free()
-				if item.texture == AMETHYST_GEAR:
+						label.text = null
+						item.texture = null
+				if item.texture == AMETHYST_GEAR.texture:
 					label.text = str(int(label.text) - playerdata.invamethystgear)
 					if int(label.text) <= 0:
-						slot.queue_free()
+						label.text = null
+						item.texture = null
 				if item.texture == WIRES.texture:
 					label.text = str(int(label.text) - playerdata.invwires)
 					if int(label.text) <= 0:
-						slot.queue_free()
+						label.text = null
+						item.texture = null
 
 
 	
@@ -718,6 +730,7 @@ func _process(delta):
 		
 
 func deposititems():
+	_on_request_inventory_update(REMOVE_PARTS.name, 1)
 	playerdata.add_spaceship_computer_chip(playerdata.invcomputerchip)
 	playerdata.add_spaceship_machine_parts(playerdata.invtoolkit)
 	playerdata.add_spaceship_thruster_repair_kits(playerdata.invtoolbox)
@@ -736,7 +749,7 @@ func deposititems():
 	playerdata.add_cobaltgear(-1 * playerdata.invcobaltgear)
 	playerdata.add_amethystgear(-1 * playerdata.invamethystgear)
 	playerdata.add_wires(-1 * playerdata.invwires)
-	_on_request_inventory_update(REMOVE_PARTS.name, 1)
+	
 
 
 func highlight_slot(index):
@@ -811,25 +824,46 @@ func _on_spaceshiparea_body_exited(body):
 
 func _on_areaback_body_entered(body):
 	if body == player:
+		player.speed = 0 
+		animation_player.play("fadein")
 		player.global_position = marker_2d.global_position
+		animation_player.play("fadeout")
+		await get_tree().create_timer(1).timeout
+		player.speed = 100
 
 
 func _on_area_2d_2_body_entered(body):
 	if body == player:
+		player.speed = 0 
+		animation_player.play("fadein")
 		player.global_position = marker_2d_2.global_position
+		animation_player.play("fadeout")
+		await get_tree().create_timer(1).timeout
+		player.speed = 100
+
 		
 
 
 
 func _on_tocave_body_entered(body):
 	if body == player:
+		player.speed = 0 
+		animation_player.play("fadein")
 		player.global_position = tocavemarker.global_position
+		animation_player.play("fadeout")
+		await get_tree().create_timer(1).timeout
+		player.speed = 100
+		
 		
 
 func _on_cavetomain_body_exited(body):
 	if body == player:
+		player.speed = 0 
+		animation_player.play("fadein")
 		player.global_position = cavetomainmarker.global_position
-
+		animation_player.play("fadeout")
+		await get_tree().create_timer(1).timeout
+		player.speed = 100
 
 func _on_pickaxearea_body_entered(body):
 	if body == player:
