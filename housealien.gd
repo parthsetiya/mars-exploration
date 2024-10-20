@@ -8,6 +8,10 @@ const GLOVE = preload("res://Inventory/items/glove.tres")
 var player_in_area = false
 signal request_inventory_update(item_name, quantity)
 const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
+@onready var animation_player = $AnimationPlayer
+
+func _ready():
+	animation_player.play("bobbing")
 
 func _process(delta):
 	if player_in_area:
@@ -34,5 +38,3 @@ func _on_area_2d_body_exited(body):
 func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
 	print("Added glove to inventory")
-
-

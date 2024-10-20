@@ -145,12 +145,12 @@ text = "BUY"
 layout_mode = 0
 offset_left = 17.0
 offset_right = 535.0
-offset_bottom = 311.0
+offset_bottom = 423.0
 texture = ExtResource("2_afk55")
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
-patch_margin_bottom = 100
+patch_margin_bottom = 5
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="."]
 layout_mode = 0
