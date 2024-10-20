@@ -964,8 +964,7 @@ func _on_pickaxearea_body_exited(body):
 			player_in_collect_pick_axe_head_area = false
 
 
-
-func _on_area_2df_body_entered(body):
+func _on_area_2d_3_body_entered(body):
 	if body == player:
 		var camera = $Player/Camera2D
 		if camera:
@@ -975,7 +974,7 @@ func _on_area_2df_body_entered(body):
 			camera.limit_top = -1800
 
 
-func _on_area_2da_body_entered(body):
+func _on_area_2d_4_body_entered(body):
 	if body == player:
 		var camera = $Player/Camera2D
 		if camera:

@@ -7,6 +7,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wytt"]
 radius = 55.0364
 
+[sub_resource type="Animation" id="Animation_jerrj"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_idda2"]
 resource_name = "bobbing"
 loop_mode = 1
@@ -22,9 +25,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1]
 }
-
-[sub_resource type="Animation" id="Animation_jerrj"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hda5v"]
 _data = {
