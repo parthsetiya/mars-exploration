@@ -1,16 +1,16 @@
 [gd_scene load_steps=8 format=3 uid="uid://b3n7abpn4yivd"]
 
-[ext_resource type="Texture2D" uid="uid://dgw4bn2ocyrgn" path="res://art/ironbar.png" id="1_6yxt1"]
+[ext_resource type="Texture2D" uid="uid://22efm5s3wqct" path="res://art/cobalt.png" id="1_hghur"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysr3j"]
-atlas = ExtResource("1_6yxt1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6xf2"]
+atlas = ExtResource("1_hghur")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oymuh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ysr3j")
+"texture": SubResource("AtlasTexture_c6xf2")
 }],
 "loop": true,
 "name": &"iron",

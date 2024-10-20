@@ -1087,5 +1087,62 @@ func _on_area_2d_cave_body_exited(body):
 		var point_light = $Player/Camera2D/PointLight2D
 		if point_light:
 			point_light.visible = false  
-		else:
-			print("PointLight2D node not found")
+
+
+@onready var animation_rocket = $AnimationPlayer
+var screen_shake_strength = 10  
+var fade_duration = 1.0  
+var move_speed = 200  
+var exit_delay = 2.0  
+var player_exit_position = Vector2(-500, -500)
+
+func _on_area_2d_rocket_body_entered(body):
+	if body == player:  
+		move_player_off_rocket()
+		hide_player()
+		player.speed = 0
+		var spaceship = $spaceship  
+		if spaceship:
+			spaceship.visible = false  
+		animation_rocket.play("fadein") 
+		var rocket_sprite = $Rocket 
+		if rocket_sprite:
+			rocket_sprite.visible = true  
+		await screen_shake()
+		await move_rocket_up(rocket_sprite)
+		animation_rocket.play("fadein")  
+		await _wait_for_animation("fadein")  
+		animation_rocket.play("fadeout")
+		await _wait_for_animation("fadeout")  
+		await get_tree().create_timer(exit_delay).timeout  
+		get_tree().quit()
+
+func move_player_off_rocket():
+	if player:
+		player.position.x -= 50  
+
+func hide_player():
+	if player:
+		player.visible = false  
+
+func screen_shake():
+	var camera = $Player/Camera2D  
+	if camera:
+		for i in range(10):  
+			var shake_offset = Vector2(randi() % screen_shake_strength, randi() % screen_shake_strength)
+			camera.offset = shake_offset
+			await get_tree().create_timer(0.05).timeout
+		camera.offset = Vector2(0, 0)  
+
+func move_rocket_up(sprite):
+	var sprite_frames = sprite.sprite_frames  
+	if sprite_frames:
+		var frame_size = sprite_frames.get_frame_texture(sprite.animation, 0).get_size()  
+		while sprite.position.y > -frame_size.y:  
+			sprite.position.y -= move_speed * get_process_delta_time()  
+			await get_tree().create_timer(0.01).timeout
+		sprite.visible = false
+
+func _wait_for_animation(anim_name):
+	if animation_rocket:
+		await animation_rocket.animation_finished  
