@@ -74,14 +74,14 @@ func _on_gold_pick_pressed():
 		print("making gold stick")
 		add_item_to_inventory(GOLD_PICKAXE.name, 1)
 
-
-func _on_stick_mouse_entered():
-	stickrecipe.show()
-	
-
-
-func _on_stick_mouse_exited():
-	stickrecipe.hide()
+#
+#func _on_stick_mouse_entered():
+	#stickrecipe.show()
+	#
+#
+#
+#func _on_stick_mouse_exited():
+	#stickrecipe.hide()
 
 
 func _on_texture_button_pressed():

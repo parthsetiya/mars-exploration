@@ -38,6 +38,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3x0rg")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+offset_left = 49.0
+offset_top = 144.0
+offset_right = 159.0
+offset_bottom = 224.0
+text = "Required items:
+1x pick-axe-head
+1x stick"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+offset_left = 169.0
+offset_top = 144.0
+offset_right = 279.0
+offset_bottom = 224.0
+text = "Required items:
+1x pick-axe-head
+1x stick"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+offset_left = 289.0
+offset_top = 144.0
+offset_right = 399.0
+offset_bottom = 224.0
+text = "Required items:
+1x pick-axe-head
+1x stick"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+offset_left = 409.0
+offset_top = 144.0
+offset_right = 519.0
+offset_bottom = 224.0
+text = "Required items:
+1x pick-axe-head
+1x stick"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 z_index = 1
 layout_mode = 0
@@ -56,12 +104,9 @@ custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("2_4p7gb")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 80)
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Required items:
-1x pick-axe-head
-1x stick"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
@@ -82,12 +127,9 @@ custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("3_o87w2")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(2.08165e-12, 80)
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Required items:
-1x pick-axe-head
-1x stick"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
@@ -108,12 +150,9 @@ custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("4_exd8w")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(2.08165e-12, 80)
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Required items:
-1x pick-axe-head
-1x stick"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
@@ -134,12 +173,9 @@ custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("5_q4ll8")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4"]
-custom_minimum_size = Vector2(2.08165e-12, 80)
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Required items:
-1x pick-axe-head
-1x stick"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
@@ -253,5 +289,3 @@ offset_top = 59.0
 offset_right = 398.0
 offset_bottom = 457.0
 texture = ExtResource("8_x0obq")
-
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

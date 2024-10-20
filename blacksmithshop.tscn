@@ -28,6 +28,50 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3ytjd")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+offset_left = 49.0
+offset_top = 145.0
+offset_right = 159.0
+offset_bottom = 225.0
+text = "Required items:
+6x Log "
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+offset_left = 169.0
+offset_top = 145.0
+offset_right = 279.0
+offset_bottom = 225.0
+text = "Required items:
+3x Gold Ingot "
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+offset_left = 289.0
+offset_top = 145.0
+offset_right = 399.0
+offset_bottom = 225.0
+text = "Required items:
+3x Cobalt Ingot "
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+offset_left = 409.0
+offset_top = 145.0
+offset_right = 519.0
+offset_bottom = 225.0
+text = "Required items:
+3x Amethyst Ingot"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 z_index = 1
 layout_mode = 0
@@ -46,12 +90,9 @@ custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("2_ydb7t")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 80)
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Required items:
-1x pick-axe-head
-1x stick"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
@@ -72,14 +113,11 @@ custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("3_syfyv")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(2.08165e-12, 80)
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Required items:
-1x pick-axe-head
-1x stick"
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
+[node name="goldplate" type="Button" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
@@ -98,14 +136,11 @@ custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("4_ltk5c")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(2.08165e-12, 80)
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Required items:
-1x pick-axe-head
-1x stick"
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer3"]
+[node name="coplate" type="Button" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
@@ -124,14 +159,11 @@ custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 texture = ExtResource("5_6dfjq")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4"]
-custom_minimum_size = Vector2(2.08165e-12, 80)
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Required items:
-1x pick-axe-head
-1x stick"
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer4"]
+[node name="amplate" type="Button" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
@@ -184,6 +216,62 @@ offset_right = 446.0
 offset_bottom = 263.0
 texture = ExtResource("7_iljbb")
 
+[node name="NinePatchRect10" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = -10.0
+offset_right = 682.0
+offset_bottom = 388.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = -70.0
+offset_right = 683.0
+offset_bottom = 328.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 404.0
+offset_top = -10.0
+offset_right = 802.0
+offset_bottom = 388.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 404.0
+offset_top = -69.0
+offset_right = 802.0
+offset_bottom = 329.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -10.0
+offset_right = 562.0
+offset_bottom = 388.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -68.0
+offset_right = 562.0
+offset_bottom = 330.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -10.0
+offset_right = 442.0
+offset_bottom = 388.0
+texture = ExtResource("8_xjqdq")
+
 [node name="NinePatchRect6" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_left = 44.0
@@ -192,56 +280,7 @@ offset_right = 442.0
 offset_bottom = 331.0
 texture = ExtResource("8_xjqdq")
 
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6"]
-layout_mode = 0
-offset_top = 58.0
-offset_right = 398.0
-offset_bottom = 456.0
-texture = ExtResource("8_xjqdq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = -58.0
-offset_right = 518.0
-offset_bottom = 340.0
-texture = ExtResource("8_xjqdq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_top = 58.0
-offset_right = 398.0
-offset_bottom = 456.0
-texture = ExtResource("8_xjqdq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = -58.0
-offset_right = 518.0
-offset_bottom = 340.0
-texture = ExtResource("8_xjqdq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_top = 58.0
-offset_right = 398.0
-offset_bottom = 456.0
-texture = ExtResource("8_xjqdq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = -59.0
-offset_right = 518.0
-offset_bottom = 339.0
-texture = ExtResource("8_xjqdq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_top = 59.0
-offset_right = 398.0
-offset_bottom = 457.0
-texture = ExtResource("8_xjqdq")
-
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/goldplate" to="." method="_on_goldplate_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer3/coplate" to="." method="_on_coplate_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer4/amplate" to="." method="_on_amplate_pressed"]

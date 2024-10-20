@@ -313,7 +313,46 @@ func update_inventory_ui(item_name, updated_quantity):
 					item.texture = LOG.texture
 					label.text = str(1)
 					return
+	if item_name == GOLD_GEAR.name:
+		playerdata.add_goldgear(1)
+		playerdata.add_invGoldIngot(-3)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 
+	if item_name == AMETHYST_GEAR.name:
+		playerdata.add_amethystgear(1)
+		playerdata.add_invamethystingot(-3)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
+				
+	if item_name == COBALT_GEAR.name:
+		playerdata.add_cobaltgear(1)
+		playerdata.add_invironingot(-3)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
+
+					
+	if item_name == OIL.name:
+		playerdata.add_oil(1)
+		playerdata.add_invlogingot(-6)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 
 	if item_name == GOLD_STICK.name:
 		playerdata.add_invGoldIngot(-2)
@@ -507,7 +546,7 @@ func update_inventory_ui(item_name, updated_quantity):
 				if item.texture == GOLD_GEAR.texture: 
 					label.text = str(int(label.text) - playerdata.invgoldgear)
 					if int(label.text) <= 0:
-						label.text = "null"
+						label.text = ""
 						item.texture = null
 				if item.texture == COBALT_GEAR.texture:
 					label.text = str(int(label.text) - playerdata.invcobaltgear)

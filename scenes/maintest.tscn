@@ -2042,7 +2042,7 @@ resource_name = "fadein"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/path = NodePath("Player/Camera2D/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -2057,7 +2057,7 @@ resource_name = "fadeout"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/path = NodePath("Player/Camera2D/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -2127,6 +2127,13 @@ position = Vector2(6.13635, -12.5)
 scale = Vector2(0.896662, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_8106j")
+
+[node name="ColorRect" type="ColorRect" parent="Player/Camera2D"]
+offset_left = -3741.0
+offset_top = -4878.0
+offset_right = 6222.0
+offset_bottom = 3511.0
+color = Color(0, 0, 0, 0)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -2211,7 +2218,7 @@ shape = SubResource("RectangleShape2D_d4pvv")
 position = Vector2(-875, -811)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
-position = Vector2(4611.5, 589.875)
+position = Vector2(4574, 590)
 shape = SubResource("RectangleShape2D_d4pvv")
 
 [node name="allamethyst" type="Node2D" parent="."]
@@ -2290,10 +2297,10 @@ position = Vector2(3774.5, -198)
 
 [node name="Pausemenu" parent="CanvasLayer" instance=ExtResource("4_b4hsc")]
 visible = false
-offset_left = 89.2
-offset_top = 563.0
-offset_right = 89.2
-offset_bottom = 563.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = -5.0
+offset_bottom = -5.0
 size_flags_horizontal = 4
 
 [node name="recipeGui" parent="CanvasLayer" instance=ExtResource("7_lua2c")]
@@ -2309,13 +2316,6 @@ offset_top = 173.0
 offset_right = 729.4
 offset_bottom = 232.04
 scale = Vector2(2.6, 2.6)
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -552.0
-offset_top = -767.0
-offset_right = 2810.0
-offset_bottom = 1535.0
-color = Color(0, 0, 0, 0)
 
 [node name="pick-axe-head" type="Sprite2D" parent="."]
 position = Vector2(-43.5, -601)
@@ -2337,6 +2337,7 @@ libraries = {
 position = Vector2(3527.5, 158.5)
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0687983, 0.0687983, 0.0687983, 1)
 
 [node name="Area2DCave" type="Area2D" parent="."]
