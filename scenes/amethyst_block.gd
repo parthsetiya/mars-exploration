@@ -1,6 +1,6 @@
 extends Node2D
 
-
+@onready var player_sound = $AudioStreamPlayer2D
 var state = "no_amethyst"
 var player_in_area = false
 var amethyst_scene = preload("res://scenes/amethyst_collectable.tscn") as PackedScene
@@ -41,6 +41,7 @@ func _process(delta):
 		if player_in_area and Input.is_action_just_pressed("swing"):
 			state = "no_amethyst"
 			drop_amethyst()
+			player_sound.play()
 			add_item_to_inventory(item.name, 1)
 
 func popfromground(amethyst_collectable):

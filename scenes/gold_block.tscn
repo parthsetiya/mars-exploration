@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvtistcsm3ds0"]
+[gd_scene load_steps=11 format=3 uid="uid://bvtistcsm3ds0"]
 
 [ext_resource type="Script" path="res://scenes/gold_block.gd" id="1_ej74l"]
 [ext_resource type="Texture2D" uid="uid://ch7fbuhmrm1yq" path="res://art/mainart/gold.png" id="2_k44p7"]
 [ext_resource type="Script" path="res://scenes/pickable_area.gd" id="4_yqus4"]
+[ext_resource type="AudioStream" uid="uid://1gf0jh0gbx20" path="res://art/390771__d00121058__fx_013_sword_contact_stone_1.wav" id="5_jdb6v"]
 [ext_resource type="PackedScene" uid="uid://daflkqadevkq6" path="res://scenes/gold_collectable.tscn" id="5_scnpm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0tdoc"]
@@ -59,7 +60,7 @@ visible = false
 position = Vector2(-1, -3)
 
 [node name="respawn_timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 30.0
 one_shot = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -72,6 +73,9 @@ metadata/Gold = ""
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_yhpvt")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jdb6v")
 
 [connection signal="body_entered" from="pickable_area" to="pickable_area" method="_on_body_entered"]
 [connection signal="body_exited" from="pickable_area" to="pickable_area" method="_on_body_exited"]

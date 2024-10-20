@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
+
 var state = "no_gold"
 var player_in_area = false
 var gold_scene = preload("res://scenes/tree_collectable.tscn") as PackedScene
@@ -40,10 +42,12 @@ func _process(delta):
 			treefallinganimplayer()
 
 func treefallinganimplayer():
+	audio_stream_player_2d.play()
 	treefallinganim.play("treefalling")
 	await get_tree().create_timer(1.5).timeout
 	treefallinganim.play("treefading")
 	drop_gold()
+
 
 func drop_gold():
 	var gold_instance = gold_scene.instantiate()

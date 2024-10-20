@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var player_break = $AudioStreamPlayer2D
+
 var state = "no_iron"
 var player_in_area = false
 var iron_scene = preload("res://scenes/iron_collectable.tscn") as PackedScene
@@ -42,6 +44,7 @@ func _process(delta):
 		if player_in_area and Input.is_action_just_pressed("swing"):
 			state = "no_iron"
 			drop_iron()
+			player_break.play()
 			add_item_to_inventory(item.name, 1)
 
 func popfromground(iron_collectable):

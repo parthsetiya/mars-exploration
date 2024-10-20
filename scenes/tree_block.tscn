@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy45fnv5txv60"]
+[gd_scene load_steps=15 format=3 uid="uid://cy45fnv5txv60"]
 
 [ext_resource type="Texture2D" uid="uid://ccxsvq2btowku" path="res://art/treespritesheet.png" id="1_fg20q"]
 [ext_resource type="Script" path="res://scripts/tree_block.gd" id="1_n8dsu"]
 [ext_resource type="PackedScene" uid="uid://lkw70av67ao6" path="res://scenes/tree_collectable.tscn" id="2_5wokc"]
+[ext_resource type="AudioStream" uid="uid://dfhwvx4kbbqeu" path="res://art/712096__birdswkaren__axe-cut-2.wav" id="4_l0rm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpmve"]
 atlas = ExtResource("1_fg20q")
@@ -196,7 +197,7 @@ shape = SubResource("CircleShape2D_qjadx")
 [node name="tree_collectable" parent="pickablearea" instance=ExtResource("2_5wokc")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.001
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
@@ -209,6 +210,9 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intreearea"]
 shape = SubResource("CircleShape2D_82jtq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_l0rm5")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="intreearea" to="." method="_on_intreearea_body_entered"]

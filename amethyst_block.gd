@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var pickaxe_sound = $AudioStreamPlayer2D
 var state = "no_gold"
 var player_in_area = false
 var gold_scene = preload("res://amethyst_collectable.tscn") as PackedScene
@@ -42,6 +43,7 @@ func _process(delta):
 			await get_tree().create_timer(0.6).timeout
 			state = "no_gold"
 			drop_gold()
+			pickaxe_sound.play()
 			add_item_to_inventory(item.name, 1)
 
 func popfromground(amethyst_collectable):
