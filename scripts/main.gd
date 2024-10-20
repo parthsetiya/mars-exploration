@@ -398,31 +398,14 @@ func update_inventory_ui(item_name, updated_quantity):
 				playerdata.load_data()
 				
 	if item_name == GOLD_STICK.name:
-		playerdata.add_invGoldIngot(-2)
+		playerdata.add_invlogingot(-2)
 		playerdata.add_invstick(1)
-		print("ADDING STICK INTO INVENTORY")
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
 				var centre_container = slot.get_children()[1]
 				var item = centre_container.get_children()[0].get_children()[0]
 				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == GOLD_STICK.texture:
-					label.text = str(int(label.text) + 1)
-					return
-				if item.texture == GOLD.texture:
-					label.text = str(int(label.text) - 2)
-
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = GOLD_STICK.texture
-					label.text = str(1)
-					return
+				playerdata.load_data()
 					
 	if item_name == GOLD_PICKAXE.name:
 		playerdata.add_pickaxe(1)
@@ -834,6 +817,7 @@ func inventoryopen():
 	if inv_open:
 		inv_gui_show.hide()
 		inv_crafting.hide()
+		player.speed = 100
 		for slot in inventory_gui_slots:
 			slot.hide()
 
@@ -841,6 +825,7 @@ func inventoryopen():
 	else:
 		inv_gui_show.show()
 		inv_crafting.show()
+		player.speed = 0
 		for slot in inventory_gui_slots:
 			slot.show()
 	inv_open = !inv_open
@@ -890,25 +875,25 @@ func _process(delta):
 		
 
 func deposititems():
-	_on_request_inventory_update(REMOVE_PARTS.name, 1)
-	playerdata.add_spaceship_computer_chip(playerdata.invcomputerchip)
-	playerdata.add_spaceship_machine_parts(playerdata.invtoolkit)
-	playerdata.add_spaceship_thruster_repair_kits(playerdata.invtoolbox)
-	playerdata.add_spaceship_carton_of_oil(playerdata.invoil)
-	playerdata.add_spaceship_metal_plates(playerdata.invmetalplate)
-	playerdata.add_spaceship_gold_gears(playerdata.invgoldgear)
-	playerdata.add_spaceship_cobalt_gears(playerdata.invcobaltgear)
-	playerdata.add_spaceship_amethyst_gears(playerdata.invamethystgear)
-	playerdata.add_spaceship_wires(playerdata.invwires)
-	playerdata.add_computerchip(-1 * playerdata.invcomputerchip)
-	playerdata.add_toolkit(-1 * playerdata.invtoolkit)
-	playerdata.add_toolbox(-1 * playerdata.invtoolbox)
-	playerdata.add_oil(-1 * playerdata.invoil)
-	playerdata.add_metalplate(-1 * playerdata.invmetalplate)
-	playerdata.add_goldgear(-1 * playerdata.invgoldgear)
-	playerdata.add_cobaltgear(-1 * playerdata.invcobaltgear)
-	playerdata.add_amethystgear(-1 * playerdata.invamethystgear)
-	playerdata.add_wires(-1 * playerdata.invwires)
+	if playerdata.invamethystgear >= 5 and playerdata.invoil >= 3 and playerdata.invcobaltgear >= 5 and playerdata.invcomputerchip >= 1 and playerdata.invgoldgear >=5 and playerdata.invtoolbox >= 4 and playerdata.invtoolkit >= 2 and playerdata.invwires >=10: 
+		_on_request_inventory_update(REMOVE_PARTS.name, 1)
+		playerdata.add_spaceship_computer_chip(playerdata.invcomputerchip)
+		playerdata.add_spaceship_machine_parts(playerdata.invtoolkit)
+		playerdata.add_spaceship_thruster_repair_kits(playerdata.invtoolbox)
+		playerdata.add_spaceship_carton_of_oil(playerdata.invoil)
+		playerdata.add_spaceship_metal_plates(playerdata.invmetalplate)
+		playerdata.add_spaceship_gold_gears(playerdata.invgoldgear)
+		playerdata.add_spaceship_cobalt_gears(playerdata.invcobaltgear)
+		playerdata.add_spaceship_amethyst_gears(playerdata.invamethystgear)
+		playerdata.add_spaceship_wires(playerdata.invwires)
+		playerdata.add_computerchip(-1 * playerdata.invcomputerchip)
+		playerdata.add_toolkit(-1 * playerdata.invtoolkit)
+		playerdata.add_toolbox(-1 * playerdata.invtoolbox)
+		playerdata.add_oil(-1 * playerdata.invoil)
+		playerdata.add_goldgear(-1 * playerdata.invgoldgear)
+		playerdata.add_cobaltgear(-1 * playerdata.invcobaltgear)
+		playerdata.add_amethystgear(-1 * playerdata.invamethystgear)
+		playerdata.add_wires(-1 * playerdata.invwires)
 	
 
 

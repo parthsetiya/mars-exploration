@@ -30,6 +30,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjpji"]
 
 [node name="electricianshop" type="Control"]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
