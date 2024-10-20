@@ -42,49 +42,53 @@ script = ExtResource("1_3x0rg")
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
-offset_left = 49.0
-offset_top = 144.0
-offset_right = 159.0
-offset_bottom = 224.0
+offset_left = 51.0
+offset_top = 151.0
+offset_right = 161.0
+offset_bottom = 231.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 1
 text = "Required items:
-1x pick-axe-head
-1x stick"
+1x Gold"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
-offset_left = 169.0
-offset_top = 144.0
-offset_right = 279.0
-offset_bottom = 224.0
+offset_left = 170.0
+offset_top = 151.0
+offset_right = 280.0
+offset_bottom = 231.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 1
 text = "Required items:
-1x pick-axe-head
-1x stick"
+2x Gold + 2x Wire"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
-offset_left = 289.0
-offset_top = 144.0
-offset_right = 399.0
-offset_bottom = 224.0
+offset_left = 290.0
+offset_top = 152.0
+offset_right = 400.0
+offset_bottom = 232.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 1
 text = "Required items:
-1x pick-axe-head
-1x stick"
+5x Stick + 2x Cobalt"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
-offset_left = 409.0
-offset_top = 144.0
-offset_right = 519.0
-offset_bottom = 224.0
+offset_left = 407.0
+offset_top = 151.0
+offset_right = 517.0
+offset_bottom = 231.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 1
 text = "Required items:
-1x pick-axe-head
-1x stick"
+2x Gold Plate + 4x Cobalt"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 z_index = 1
@@ -131,7 +135,7 @@ texture = ExtResource("3_o87w2")
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
+[node name="chipbutton" type="Button" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_18702")
@@ -154,7 +158,7 @@ texture = ExtResource("4_exd8w")
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer3"]
+[node name="toolkitbutton" type="Button" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_18702")
@@ -177,7 +181,7 @@ texture = ExtResource("5_q4ll8")
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer4"]
+[node name="toolboxbutton" type="Button" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_up8s2")
@@ -289,3 +293,7 @@ offset_top = 59.0
 offset_right = 398.0
 offset_bottom = 457.0
 texture = ExtResource("8_x0obq")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/chipbutton" to="." method="_on_chipbutton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer3/toolkitbutton" to="." method="_on_toolkitbutton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer4/toolboxbutton" to="." method="_on_toolboxbutton_pressed"]

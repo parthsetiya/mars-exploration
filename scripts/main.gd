@@ -52,6 +52,7 @@ const AMETHYST = preload("res://Inventory/items/amethyst.tres")
 @onready var allgoldfolder = $allgold
 @onready var allironfolder = $alliron
 @onready var cavetomainmarker = $cavetomainmarker
+@onready var rich_text_label = $RichTextLabel
 var player_in_collect_pick_axe_head_area = false
 const AMETHYST_GEAR = preload("res://Inventory/items/amethyst_gear.tres")
 const COBALT_GEAR = preload("res://Inventory/items/cobalt_gear.tres")
@@ -342,7 +343,6 @@ func update_inventory_ui(item_name, updated_quantity):
 				var item = centre_container.get_children()[0].get_children()[0]
 				var label = centre_container.get_children()[0].get_children()[1]
 				playerdata.load_data()
-
 					
 	if item_name == OIL.name:
 		playerdata.add_oil(1)
@@ -353,7 +353,50 @@ func update_inventory_ui(item_name, updated_quantity):
 				var item = centre_container.get_children()[0].get_children()[0]
 				var label = centre_container.get_children()[0].get_children()[1]
 				playerdata.load_data()
-
+				
+	if item_name == WIRES.name:
+		playerdata.add_wires(2)
+		playerdata.add_invGoldIngot(-1)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
+				
+	if item_name == COMPUTER_CHIP.name:
+		playerdata.add_computerchip(1)
+		playerdata.add_invGoldIngot(-2)
+		playerdata.add_wires(-2)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
+				
+	if item_name == TOOLKIT.name:
+		playerdata.add_toolkit(1)
+		playerdata.add_invstick(-5)
+		playerdata.add_invironingot(-2)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
+				
+	if item_name == TOOLBOX.name:
+		playerdata.add_toolbox(1)
+		playerdata.add_goldgear(-2)
+		playerdata.add_invironingot(-4)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
+				
 	if item_name == GOLD_STICK.name:
 		playerdata.add_invGoldIngot(-2)
 		playerdata.add_invstick(1)
@@ -827,6 +870,18 @@ func _process(delta):
 		deposititems()
 		if playerdata.spaceship_amethyst_gears >= 5 and playerdata.spaceship_carton_of_oil >= 3 and playerdata.spaceship_cobalt_gears >= 5 and playerdata.spaceship_computer_chip >= 1 and playerdata.spaceship_gold_gears >= 5 and playerdata.spaceship_machine_parts >= 4 and playerdata.spaceship_thruster_repair_kits >= 2 and playerdata.spaceship_wires >= 10:
 			get_tree().change_scene_to_file("res://end_scene.tscn")
+	var text = ""
+	text += "Amethyst Gears: " + str(playerdata.spaceship_amethyst_gears) + "/5\n"
+	text += "Cartons of Oil: " + str(playerdata.spaceship_carton_of_oil) + "/3\n"
+	text += "Cobalt Gears: " + str(playerdata.spaceship_cobalt_gears) + "/5\n"
+	text += "Computer Chips: " + str(playerdata.spaceship_computer_chip) + "/1\n"
+	text += "Gold Gears: " + str(playerdata.spaceship_gold_gears) + "/5\n"
+	text += "Machine Parts: " + str(playerdata.spaceship_machine_parts) + "/4\n"
+	text += "Thruster Repair Kits: " + str(playerdata.spaceship_thruster_repair_kits) + "/2\n"
+	text += "Wires: " + str(playerdata.spaceship_wires) + "/10\n"
+
+	rich_text_label.text = text
+
 	
 		
 		
@@ -916,13 +971,13 @@ func _on_area_2d_body_entered(body):
 func _on_spaceshiparea_body_entered(body):
 	if body == player:
 		spaceship_entered = true
-		listofitems.show()
+		rich_text_label.show()
 
 
 func _on_spaceshiparea_body_exited(body):
 	if body == player:
 		spaceship_entered = false
-		listofitems.hide()
+		rich_text_label.hide()
 
 
 

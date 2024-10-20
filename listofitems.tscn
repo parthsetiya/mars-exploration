@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b40cachjw03ub"]
+[gd_scene load_steps=2 format=3 uid="uid://b40cachjw03ub"]
+
+[ext_resource type="Script" path="res://listofitems.gd" id="1_dw1sb"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,20 +9,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dw1sb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_right = 395.0
 offset_bottom = 325.0
-text = "List of items:
-5x iron-gold alloy
-10x machine parts
-2x thruster repair kits
-1x carton of oil 
-7x metal plates 
-5x iron-gold alloy gears
-5x wires 
-2x wire connectors 
+text = "
 
 
 "
