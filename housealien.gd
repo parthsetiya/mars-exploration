@@ -10,9 +10,6 @@ signal request_inventory_update(item_name, quantity)
 const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
 @onready var animation_player = $AnimationPlayer
 
-func _ready():
-	animation_player.play("bobbing")
-	print("SODJKFH")
 
 func _process(delta):
 	if player_in_area:
