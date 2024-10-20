@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=46 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://108k0hdoohuq" path="res://art/mainart/crashed shadows.png" id="15_nc7go"]
 [ext_resource type="Texture2D" uid="uid://bmoitxm6luwvj" path="res://art/pickaxe head.png" id="16_brmdr"]
 [ext_resource type="PackedScene" uid="uid://cm5dh2olqycmx" path="res://electrician.tscn" id="17_ghbfs"]
-[ext_resource type="Texture2D" uid="uid://b2mtff8ikx4qe" path="res://art/mainart/spaceship fire animation/spritesheet (1).png" id="19_v0toq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqiey"]
 texture = ExtResource("11_6wovd")
@@ -2004,27 +2003,21 @@ _data = {
 size = Vector2(97.7273, 56.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vfng"]
-atlas = ExtResource("19_v0toq")
 region = Rect2(0, 0, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1qbjt"]
-atlas = ExtResource("19_v0toq")
 region = Rect2(66, 0, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0tqle"]
-atlas = ExtResource("19_v0toq")
 region = Rect2(132, 0, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40v51"]
-atlas = ExtResource("19_v0toq")
 region = Rect2(0, 66, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxcgd"]
-atlas = ExtResource("19_v0toq")
 region = Rect2(66, 66, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b20bg"]
-atlas = ExtResource("19_v0toq")
 region = Rect2(132, 66, 66, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p8nro"]
@@ -2341,7 +2334,6 @@ libraries = {
 position = Vector2(3527.5, 158.5)
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0687983, 0.0687983, 0.0687983, 1)
 
 [node name="Area2DRocket" type="Area2D" parent="."]

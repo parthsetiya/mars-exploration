@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://bw25qskwak7la"]
 
 [ext_resource type="Script" path="res://blacksmithshop.gd" id="1_3ytjd"]
-[ext_resource type="Texture2D" uid="uid://oybwqw8m3qur" path="res://art/shop back.png" id="2_afk55"]
+[ext_resource type="Texture2D" uid="uid://dcl71oup7m15i" path="res://art/shop back.png" id="2_afk55"]
 [ext_resource type="Texture2D" uid="uid://de3a7oyvngt40" path="res://art/oil.png" id="2_ydb7t"]
-[ext_resource type="Texture2D" uid="uid://ckiivsisj7ony" path="res://art/gold plate.png" id="3_syfyv"]
-[ext_resource type="Texture2D" uid="uid://cdyv0j4jw7ujt" path="res://art/cobalt plate.png" id="4_ltk5c"]
-[ext_resource type="Texture2D" uid="uid://cnbvxs2oa0j0b" path="res://art/amythest plate.png" id="5_6dfjq"]
-[ext_resource type="Texture2D" uid="uid://bgahhllsskeh6" path="res://art/shop slot.png" id="7_iljbb"]
-[ext_resource type="Texture2D" uid="uid://cospvnhl8oemd" path="res://art/shop buycost.png" id="8_xjqdq"]
+[ext_resource type="Texture2D" uid="uid://ckiivsisj7ony" path="res://art/gold plate.png" id="3_oxdpu"]
+[ext_resource type="Texture2D" uid="uid://cdyv0j4jw7ujt" path="res://art/cobalt plate.png" id="4_15fwt"]
+[ext_resource type="Texture2D" uid="uid://cnbvxs2oa0j0b" path="res://art/amythest plate.png" id="5_aa77a"]
+[ext_resource type="Texture2D" uid="uid://cma3ps4py0qi7" path="res://art/shop slot.png" id="7_iljbb"]
+[ext_resource type="Texture2D" uid="uid://lyluafveqa1x" path="res://art/shop buycost.png" id="8_xjqdq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y0swj"]
 
@@ -86,7 +86,7 @@ custom_minimum_size = Vector2(110, 79.225)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 100)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 texture = ExtResource("2_ydb7t")
 
@@ -109,9 +109,9 @@ custom_minimum_size = Vector2(110, 2.08165e-12)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(2.08165e-12, 100)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture = ExtResource("3_syfyv")
+texture = ExtResource("3_oxdpu")
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 80)
@@ -134,14 +134,14 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-texture = ExtResource("4_ltk5c")
+texture = ExtResource("4_15fwt")
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
 [node name="coplate" type="Button" parent="HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(2.08165e-12, 30)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c2s1y")
@@ -155,9 +155,9 @@ custom_minimum_size = Vector2(110, 2.08165e-12)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer4"]
-custom_minimum_size = Vector2(2.08165e-12, 100)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture = ExtResource("5_6dfjq")
+texture = ExtResource("5_aa77a")
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(0, 80)

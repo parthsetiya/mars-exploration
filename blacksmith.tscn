@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b601k4v85jj8e"]
+[gd_scene load_steps=7 format=3 uid="uid://b601k4v85jj8e"]
 
 [ext_resource type="Script" path="res://blacksmith.gd" id="1_it8hb"]
-[ext_resource type="Texture2D" uid="uid://c75p3y3d5bn04" path="res://art/mainart/pixilart-sprite (1).png" id="2_2e20m"]
 [ext_resource type="PackedScene" uid="uid://bw25qskwak7la" path="res://blacksmithshop.tscn" id="3_ec4xg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wytt"]
@@ -36,7 +35,6 @@ _data = {
 script = ExtResource("1_it8hb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_2e20m")
 hframes = 2
 
 [node name="Area2D" type="Area2D" parent="."]
