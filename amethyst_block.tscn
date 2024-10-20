@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8jmpdg8ah33j"]
+
+[ext_resource type="Script" path="res://amethyst_block.gd" id="1_s7oot"]
+[ext_resource type="Texture2D" uid="uid://bf0f76pe3s568" path="res://art/mainart/amythest.png" id="2_2ejfa"]
+[ext_resource type="PackedScene" uid="uid://dyk6ks6wa1o50" path="res://amethyst_collectable.tscn" id="3_4pull"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sddmn"]
+atlas = ExtResource("2_2ejfa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00ksx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sddmn")
+}],
+"loop": true,
+"name": &"gold",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"no_gold",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2exkv"]
+radius = 23.0868
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4vyx"]
+radius = 23.0868
+
+[node name="amethyst_block" type="Node2D"]
+script = ExtResource("1_s7oot")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_00ksx")
+animation = &"gold"
+
+[node name="pickablearea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickablearea"]
+shape = SubResource("CircleShape2D_2exkv")
+
+[node name="amethyst_collectable" parent="pickablearea" instance=ExtResource("3_4pull")]
+visible = false
+
+[node name="respawn_timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_w4vyx")
+
+[connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

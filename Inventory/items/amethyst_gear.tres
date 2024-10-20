@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://c5g38o2ym7kxj"]
 
 [ext_resource type="Script" path="res://Inventory/inventoryitem.gd" id="1_mp7fh"]
-[ext_resource type="Texture2D" uid="uid://d2admtldbxoag" path="res://art/amythest gear.png" id="2_evxoa"]
+[ext_resource type="Texture2D" uid="uid://cnbvxs2oa0j0b" path="res://art/amythest plate.png" id="2_s4dc1"]
 
 [resource]
 script = ExtResource("1_mp7fh")
 name = "amethyst_gear"
-texture = ExtResource("2_evxoa")
+texture = ExtResource("2_s4dc1")

@@ -23,7 +23,8 @@ var is_showing_thiswaytomines = false
 @onready var pick_axe_head = $"pick-axe-head"
 const PICK_AXE_HEAD = preload("res://Inventory/items/pick-axe-head.tres")
 @onready var player = $Player
-@onready var alltreegolder = $alltree
+@onready var alltreefolder = $alltree
+@onready var allamethystfolder = $allamethyst
 var playerdata = PlayerData.new()
 @onready var character_body_2d = $CharacterBody2D
 var inventory = Inventory.new()
@@ -45,6 +46,7 @@ const COMPUTER_CHIP = preload("res://Inventory/items/computer_chip.tres")
 const METAL_PLATE = preload("res://Inventory/items/metal_plate.tres")
 const REMOVE_PARTS = preload("res://Inventory/items/remove_parts.tres")
 const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
+const AMETHYST = preload("res://Inventory/items/amethyst.tres")
 @onready var marker_2d_2 = $Area2D2/Marker2D2
 @onready var marker_2d = $areaback/Marker2D
 @onready var allgoldfolder = $allgold
@@ -91,6 +93,7 @@ var housealien
 var alliron
 var allgold
 var alltree
+var allamethyst
 var player_node
 var playerholding_pick = false
 var blacksmithshop
@@ -100,13 +103,16 @@ signal player_holding_pick
 func _ready():
 	allgold = allgoldfolder.get_children()
 	alliron = allironfolder.get_children()
-	alltree = alltreegolder.get_children()
+	alltree = alltreefolder.get_children()
+	allamethyst = allamethystfolder.get_children()
 	for gold in allgold:
 		gold.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	for iron in alliron:
 		iron.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	for tree in alltree:
 		tree.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	for amethyst in allamethyst:
+		amethyst.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	tree_node = get_node("tree_block")
 	tree_node.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui.connect("slot_clicked", Callable(self, "_on_slot_clicked"))
@@ -237,6 +243,28 @@ func update_inventory_ui(item_name, updated_quantity):
 					label.text = str(1)
 					return
 
+	if item_name == AMETHYST.name:
+		playerdata.add_invironingot(1)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == AMETHYST.texture:
+					label.text = str(int(label.text) + 1)
+					return
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = AMETHYST.texture
+					label.text = str(1)
+					return
 	if item_name == GOLD.name:
 		playerdata.add_invGoldIngot(1)
 		for slot in inventory_slots:
@@ -515,7 +543,7 @@ func update_inventory_ui(item_name, updated_quantity):
 						label.text = null
 
 	
-func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount, metal_plate_amount, computer_chip_amount):
+func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, amethyst_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount, metal_plate_amount, computer_chip_amount):
 	for slot in inventory_slots:
 		if slot.get_child_count() != 0:
 			var centre_container = slot.get_children()[1]
@@ -571,7 +599,18 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pi
 					item.texture = GOLD_STICK.texture
 					label.text = str(stick_amount)
 					break
+	if amethyst_amount > 0:
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
 
+				if item.texture == null:
+					item.texture = AMETHYST.texture
+					label.text = str(amethyst_amount)
+					break
+					
 	if pick_axe_head_amount > 0:
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:

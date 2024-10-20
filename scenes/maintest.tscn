@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=33 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
 [ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/cobalt_block.tscn" id="7_6rs4l"]
 [ext_resource type="PackedScene" uid="uid://b2tn12fbfracb" path="res://scenes/recipeGui.tscn" id="7_lua2c"]
+[ext_resource type="PackedScene" uid="uid://c8jmpdg8ah33j" path="res://amethyst_block.tscn" id="10_rr0k7"]
 [ext_resource type="Texture2D" uid="uid://c73iwh4m45alj" path="res://art/terrain/Tilemap.png" id="11_6wovd"]
 [ext_resource type="PackedScene" uid="uid://crlao84s5ynxx" path="res://scenes/friendlyalien.tscn" id="12_3kb63"]
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="12_tamxu"]
@@ -1042,56 +1043,11 @@ position = Vector2(-1279.5, -7069.5)
 [node name="gold_block18" parent="allgold" instance=ExtResource("6_rrp7u")]
 position = Vector2(-553.5, -6971.5)
 
-[node name="gold_block19" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1109, -6342.5)
-
-[node name="gold_block20" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1055.5, -6282.5)
-
-[node name="gold_block21" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1408.5, -6211)
-
 [node name="gold_block22" parent="allgold" instance=ExtResource("6_rrp7u")]
 position = Vector2(-1099.5, -6670.5)
 
-[node name="gold_block23" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1199, -6556)
-
 [node name="gold_block24" parent="allgold" instance=ExtResource("6_rrp7u")]
 position = Vector2(-665, -6210)
-
-[node name="gold_block25" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-775.5, -6468)
-
-[node name="gold_block26" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-976, -6374.5)
-
-[node name="gold_block27" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-905.5, -6201.5)
-
-[node name="gold_block28" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1042.5, -6545)
-
-[node name="gold_block29" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1378, -6398.5)
-
-[node name="gold_block30" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-765, -6331)
-
-[node name="gold_block31" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1121.5, -6447)
-
-[node name="gold_block32" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1055.5, -6125.5)
-
-[node name="gold_block33" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1224.5, -6190.5)
-
-[node name="gold_block34" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1274.5, -6337)
-
-[node name="gold_block35" parent="allgold" instance=ExtResource("6_rrp7u")]
-position = Vector2(-1332, -6562)
 
 [node name="gold_block36" parent="allgold" instance=ExtResource("6_rrp7u")]
 position = Vector2(-606, -6464)
@@ -1224,6 +1180,44 @@ position = Vector2(166, -65.5)
 
 [node name="tree_block2" parent="alltree" instance=ExtResource("15_5jhu1")]
 position = Vector2(126, -251)
+
+[node name="allamethyst" type="Node2D" parent="."]
+
+[node name="amethyst_block" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-854, -6440)
+
+[node name="amethyst_block2" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-961.5, -6527.5)
+
+[node name="amethyst_block3" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-1066, -6400)
+
+[node name="amethyst_block4" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-974.5, -6249)
+
+[node name="amethyst_block5" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-1158, -6227.5)
+
+[node name="amethyst_block6" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-1311, -6217.5)
+
+[node name="amethyst_block7" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-1118.5, -6502)
+
+[node name="amethyst_block8" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-872.5, -6307)
+
+[node name="amethyst_block9" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-1365, -6484)
+
+[node name="amethyst_block10" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-1457, -6355)
+
+[node name="amethyst_block11" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-1262, -6547.5)
+
+[node name="amethyst_block12" parent="allamethyst" instance=ExtResource("10_rr0k7")]
+position = Vector2(-1243.5, -6366.5)
 
 [node name="areaback" type="Area2D" parent="."]
 position = Vector2(2720, -111)

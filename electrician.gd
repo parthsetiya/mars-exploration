@@ -6,6 +6,10 @@ var resource = load("res://dialogue/testing.dialogue")
 @onready var electricianshop = $electricianshop
 var playerinarea = false
 var shopshow = false
+@onready var animation_player = $AnimationPlayer
+
+func _ready():
+	animation_player.play("bobbing")
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":

@@ -25,6 +25,7 @@ var invamethystgear : int
 var invcobaltgear : int
 var invcomputerchip: int
 var invmetalplate: int
+var invamethystingot: int
 
 # Spaceship repair items
 var spaceship_computer_chip : int
@@ -56,6 +57,10 @@ func update_given_item_to_alien(value : bool):
 
 func add_invGoldIngot(value : int):
 	invGoldIngot += value
+	save()
+
+func add_invamethystingot(value : int):
+	invamethystingot += value
 	save()
 
 func add_invironingot(value : int):
@@ -171,6 +176,7 @@ func save():
 		"iron_amount": invironingot,
 		"log_amount": invlogingot,
 		"stick_amount": invstick,
+		"amethyst_amount": invamethystingot,
 		"position": [SavePos.x, SavePos.y],
 		"pick-axe_amount": invpickaxe,
 		"pick-axe-head_amount": invpickaxehead,
@@ -217,6 +223,7 @@ func load_data():
 	invGoldIngot = data["gold_amount"]
 	invironingot = data["iron_amount"]
 	invlogingot = data["log_amount"]
+	invamethystingot = data["amethyst_amount"]
 	invstick = data["stick_amount"]
 	invpickaxehead = data["pick-axe-head_amount"]
 	invpickaxe =  data["pick-axe_amount"]
@@ -239,7 +246,7 @@ func load_data():
 	spaceship_amethyst_gears = data["spaceship_amethyst_gears"]
 	spaceship_wires = data["spaceship_wires"]
 
-	emit_signal("inventory_loaded", invGoldIngot, invironingot, invlogingot, invstick, invpickaxehead, invpickaxe, invtoolbox, invtoolkit, invwires, invoil, invgoldgear, invamethystgear, invcobaltgear, invmetalplate, invcomputerchip)
+	emit_signal("inventory_loaded", invGoldIngot, invironingot, invlogingot, invstick, invamethystingot,  invpickaxehead, invpickaxe, invtoolbox, invtoolkit, invwires, invoil, invgoldgear, invamethystgear, invcobaltgear, invmetalplate, invcomputerchip)
 	
 	var pos_array = data["position"]
 	SavePos = Vector2(pos_array[0], pos_array[1])

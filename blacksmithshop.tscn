@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://blacksmithshop.gd" id="1_3ytjd"]
 [ext_resource type="Texture2D" uid="uid://oybwqw8m3qur" path="res://art/shop back.png" id="2_afk55"]
-[ext_resource type="Texture2D" uid="uid://cu36tw88h57i3" path="res://art/pickAxe.png" id="3_585li"]
-[ext_resource type="Texture2D" uid="uid://belcal14vhfr1" path="res://art/cobalt gear.png" id="4_lq388"]
-[ext_resource type="Texture2D" uid="uid://bplqmd5m04ko" path="res://art/gold gear.png" id="5_5kec2"]
-[ext_resource type="Texture2D" uid="uid://d2admtldbxoag" path="res://art/amythest gear.png" id="6_6x76b"]
+[ext_resource type="Texture2D" uid="uid://de3a7oyvngt40" path="res://art/oil.png" id="2_ydb7t"]
+[ext_resource type="Texture2D" uid="uid://ckiivsisj7ony" path="res://art/gold plate.png" id="3_syfyv"]
+[ext_resource type="Texture2D" uid="uid://cdyv0j4jw7ujt" path="res://art/cobalt plate.png" id="4_ltk5c"]
+[ext_resource type="Texture2D" uid="uid://cnbvxs2oa0j0b" path="res://art/amythest plate.png" id="5_6dfjq"]
 [ext_resource type="Texture2D" uid="uid://bgahhllsskeh6" path="res://art/shop slot.png" id="7_iljbb"]
 [ext_resource type="Texture2D" uid="uid://cospvnhl8oemd" path="res://art/shop buycost.png" id="8_xjqdq"]
 
@@ -44,7 +44,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-texture = ExtResource("3_585li")
+texture = ExtResource("2_ydb7t")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
@@ -70,7 +70,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-texture = ExtResource("5_5kec2")
+texture = ExtResource("3_syfyv")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
@@ -96,7 +96,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-texture = ExtResource("4_lq388")
+texture = ExtResource("4_ltk5c")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
@@ -122,7 +122,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-texture = ExtResource("6_6x76b")
+texture = ExtResource("5_6dfjq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 80)

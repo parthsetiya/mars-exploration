@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dlw7mtehserbg"]
 
 [ext_resource type="Script" path="res://Inventory/inventoryitem.gd" id="1_c6et5"]
-[ext_resource type="Texture2D" uid="uid://belcal14vhfr1" path="res://art/cobalt gear.png" id="2_mo134"]
+[ext_resource type="Texture2D" uid="uid://cdyv0j4jw7ujt" path="res://art/cobalt plate.png" id="2_on6se"]
 
 [resource]
 script = ExtResource("1_c6et5")
 name = "cobalt_gear"
-texture = ExtResource("2_mo134")
+texture = ExtResource("2_on6se")
