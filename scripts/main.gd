@@ -7,12 +7,12 @@ var paused = false
 @onready var interact_to_read = $Sprite2D/startsignpostarea/interact_to_read
 
 @onready var thiswaytomines = $Sprite2D/thiswaytomines
-
+@onready var spaceship = $spaceship
 @onready var spaceship_entered = false
 @onready var spaceshiparea_2 = $Spaceship/spaceshiparea2
 @onready var crashmessage = $spaceship/spaceshiparea/crashmessage
 @onready var animation_player = $AnimationPlayer
-
+const SPACESHIPFINISH = preload("res://art/spaceshipfinish.tres")
 @onready var recipe_gui = $Player/Camera2D/recipeGui
 
 @onready var start_sign_post_entered = false
@@ -830,6 +830,7 @@ func inventoryopen():
 			slot.show()
 	inv_open = !inv_open
 
+
 	
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
@@ -854,6 +855,9 @@ func _process(delta):
 	if spaceship_entered == true && Input.is_action_just_pressed("g"):
 		deposititems()
 		if playerdata.spaceship_amethyst_gears >= 5 and playerdata.spaceship_carton_of_oil >= 3 and playerdata.spaceship_cobalt_gears >= 5 and playerdata.spaceship_computer_chip >= 1 and playerdata.spaceship_gold_gears >= 5 and playerdata.spaceship_machine_parts >= 4 and playerdata.spaceship_thruster_repair_kits >= 2 and playerdata.spaceship_wires >= 10:
+			spaceship.texture = SPACESHIPFINISH.texture
+			player.speed = 0
+			await get_tree().create_timer(1.5).timeout 
 			get_tree().change_scene_to_file("res://end_scene.tscn")
 	var text = ""
 	text += "Amethyst Gears: " + str(playerdata.spaceship_amethyst_gears) + "/5\n"
