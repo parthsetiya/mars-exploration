@@ -39,6 +39,6 @@ shape = SubResource("CircleShape2D_r7jkj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s4obp")
 autoplay = "default"
-frame_progress = 0.72081
+frame_progress = 0.0564757
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
