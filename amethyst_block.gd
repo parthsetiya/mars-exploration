@@ -38,7 +38,6 @@ func _process(delta):
 	elif state == "gold":
 		animated_sprite.play("gold")
 		if player_in_area and Input.is_action_just_pressed("swing") and not gold_collected:
-			animated_sprite.play("no_gold")
 			gold_collected = true
 			await get_tree().create_timer(0.6).timeout
 			state = "no_gold"

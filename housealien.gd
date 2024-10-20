@@ -12,6 +12,7 @@ const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
 
 func _ready():
 	animation_player.play("bobbing")
+	print("SODJKFH")
 
 func _process(delta):
 	if player_in_area:
