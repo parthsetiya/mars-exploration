@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://qmaml7nd0140"]
+[gd_scene load_steps=7 format=3 uid="uid://qmaml7nd0140"]
 
 [ext_resource type="Script" path="res://housealien.gd" id="1_d0xuu"]
 [ext_resource type="Texture2D" uid="uid://cd6shdfy4o8b" path="res://art/mainart/pixilart-sprite (2).png" id="2_jeeob"]
@@ -6,41 +6,39 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7jkj"]
 radius = 44.0454
 
-[sub_resource type="Animation" id="Animation_xqya7"]
-resource_name = "bobbing"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr4q7"]
+atlas = ExtResource("2_jeeob")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_edx43"]
-_data = {
-"bobbing": SubResource("Animation_xqya7")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn3qk"]
+atlas = ExtResource("2_jeeob")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s4obp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr4q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn3qk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
 
 [node name="housealien" type="CharacterBody2D"]
 script = ExtResource("1_d0xuu")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_jeeob")
-hframes = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_r7jkj")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_edx43")
-}
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s4obp")
+autoplay = "default"
+frame_progress = 0.72081
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
