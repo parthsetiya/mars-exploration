@@ -1,20 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://qmaml7nd0140"]
+[gd_scene load_steps=7 format=3 uid="uid://qmaml7nd0140"]
 
 [ext_resource type="Script" path="res://housealien.gd" id="1_d0xuu"]
-[ext_resource type="Texture2D" uid="uid://dwttnfaqes4jh" path="res://art/mainart/npc1.png" id="2_q4gbl"]
+[ext_resource type="Texture2D" uid="uid://c8js3sandn3j7" path="res://art/mainart/spritesheet.png" id="2_ivaan"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7jkj"]
 radius = 33.1361
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsmla"]
+atlas = ExtResource("2_ivaan")
+region = Rect2(66, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_celgs"]
+atlas = ExtResource("2_ivaan")
+region = Rect2(0, 0, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kdvj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsmla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_celgs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
 [node name="housealien" type="CharacterBody2D"]
 script = ExtResource("1_d0xuu")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_q4gbl")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_r7jkj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8kdvj")
+autoplay = "default"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

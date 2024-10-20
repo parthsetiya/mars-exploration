@@ -853,7 +853,7 @@ func _on_areaback_body_entered(body):
 		var camera = $Player/Camera2D 
 		if camera:
 			camera.limit_right = 2600 
-			camera.limit_left = -2000
+			camera.limit_left = -2600
 			camera.limit_bottom = 1000
 			camera.limit_top = -1800
 		animation_player.play("fadeout")
@@ -869,7 +869,7 @@ func _on_area_2d_2_body_entered(body):
 		var camera = $Player/Camera2D 
 		if camera:
 			camera.limit_right = 10000 
-			camera.limit_left = 3000
+			camera.limit_left = 5400
 		animation_player.play("fadeout") 
 		await get_tree().create_timer(1).timeout
 		player.speed = 100

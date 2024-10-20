@@ -1,17 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://b601k4v85jj8e"]
+[gd_scene load_steps=8 format=3 uid="uid://b601k4v85jj8e"]
 
 [ext_resource type="Script" path="res://blacksmith.gd" id="1_it8hb"]
-[ext_resource type="Texture2D" uid="uid://dwttnfaqes4jh" path="res://art/mainart/npc1.png" id="1_mq42w"]
 [ext_resource type="PackedScene" uid="uid://bw25qskwak7la" path="res://blacksmithshop.tscn" id="3_ec4xg"]
+[ext_resource type="Texture2D" uid="uid://c75p3y3d5bn04" path="res://art/mainart/pixilart-sprite (1).png" id="3_fllny"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wytt"]
 radius = 55.0364
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruapy"]
+atlas = ExtResource("3_fllny")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mng3"]
+atlas = ExtResource("3_fllny")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1wsq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruapy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mng3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
 [node name="blacksmith" type="CharacterBody2D"]
 script = ExtResource("1_it8hb")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_mq42w")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -25,6 +44,11 @@ offset_left = -250.0
 offset_top = -105.0
 offset_right = -250.0
 offset_bottom = -105.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g1wsq")
+autoplay = "default"
+frame_progress = 0.19098
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
