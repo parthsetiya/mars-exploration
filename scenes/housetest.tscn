@@ -10,12 +10,12 @@
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 
-[sub_resource type="Gradient" id="Gradient_x284b"]
+[sub_resource type="Gradient" id="Gradient_ck4j2"]
 offsets = PackedFloat32Array(0.718563, 0.988024)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2vkqu"]
-gradient = SubResource("Gradient_x284b")
+gradient = SubResource("Gradient_ck4j2")
 width = 256
 height = 256
 fill = 1
@@ -68,7 +68,6 @@ position = Vector2(6.36364, -38)
 shape = SubResource("RectangleShape2D_w05k3")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0687983, 0.0687983, 0.0687983, 1)
 
 [node name="Area2D" type="Area2D" parent="."]

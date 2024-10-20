@@ -145,7 +145,8 @@ func _ready():
 	playerdata.load_data()
 	playerdata.SavePos = player.position
 	
-	
+	var canvas_modulate = $CanvasModulate2
+	canvas_modulate.color = Color(1, 1, 1, 1) 
 	
 	
 
@@ -982,3 +983,27 @@ func _on_area_2d_4_body_entered(body):
 			camera.limit_left = 5400
 			camera.limit_bottom = 1000
 			camera.limit_top = -1800
+
+
+func _on_area_2d_cave_body_entered(body):
+	pass
+	if body == player: 
+		var canvas_modulate = $CanvasModulate2
+		if canvas_modulate:
+			canvas_modulate.color = Color(0, 0, 1, 1) 
+		var point_light = $Player/Camera2D/PointLight2D
+		if point_light:
+			point_light.visible = true 
+
+
+
+func _on_area_2d_cave_body_exited(body):
+	if body == player:  
+		var canvas_modulate = $CanvasModulate2
+		if canvas_modulate:
+			canvas_modulate.color = Color(1, 1, 1, 1) 
+		var point_light = $Player/Camera2D/PointLight2D
+		if point_light:
+			point_light.visible = false  
+		else:
+			print("PointLight2D node not found")
