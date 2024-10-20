@@ -14,7 +14,7 @@ var bullet =  preload("res://scenes/bullet.tscn")
 #var main = Main.new()
 var GOLD = load("res://Inventory/items/gold.tres")
 
-var speed = 100
+@onready var speed = 100
 var health = 100
 #var inv_open = false
 var is_swinging = false
@@ -157,6 +157,5 @@ func _physics_process(delta):
 	
 func player_hold_pick():
 	playerholdingpick = true
-	print("parth has autism") 
 
 

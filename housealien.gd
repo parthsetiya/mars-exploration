@@ -7,13 +7,17 @@ const GLOVE = preload("res://Inventory/items/glove.tres")
 
 var player_in_area = false
 signal request_inventory_update(item_name, quantity)
-
+const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
 
 func _process(delta):
-	if player_in_area and not player_has_recieved_glove:
+	if player_in_area:
 		if Input.is_action_just_pressed("g"):
-			add_item_to_inventory(GLOVE.name, 1)
-			player_has_recieved_glove = true  
+			playerdata.load_data()
+			if playerdata.invGoldIngot >= 5 and playerdata.invironingot >= 5 and playerdata.givenitemtoalien == false:
+				add_item_to_inventory(REMOVEFROMNPC.name, 1)
+				print("giving items to alien and turning var true")
+				playerdata.update_given_item_to_alien(true)
+				
 
 
 func _on_area_2d_body_entered(body):

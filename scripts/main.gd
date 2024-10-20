@@ -44,6 +44,7 @@ const GEAR = preload("res://Inventory/items/gear.tres")
 const COMPUTER_CHIP = preload("res://Inventory/items/computer_chip.tres")
 const METAL_PLATE = preload("res://Inventory/items/metal_plate.tres")
 const REMOVE_PARTS = preload("res://Inventory/items/remove_parts.tres")
+const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
 @onready var marker_2d_2 = $Area2D2/Marker2D2
 @onready var marker_2d = $areaback/Marker2D
 @onready var allgoldfolder = $allgold
@@ -178,7 +179,6 @@ func _on_slot_clicked(slot_index):
 		second_slot_index = null
 
 func _swap_items(slot_index_1, slot_index_2):
-	print('im the goat')
 	if inv_open == false:
 		return
 	var slot_1 = inventory_slots[slot_index_1]
@@ -489,7 +489,24 @@ func update_inventory_ui(item_name, updated_quantity):
 					if int(label.text) <= 0:
 						label.text = null
 						item.texture = null
-
+	if item_name == REMOVEFROMNPC.name:
+		playerdata.add_invGoldIngot(-5)
+		playerdata.add_invironingot(-5)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == GOLD.texture:
+					label.text = str(int(label.text) - 5)
+					if int(label.text) <= 0:
+						item.texture = null
+						label.text = null
+				if item.texture == IRON.texture:
+					label.text = str(int(label.text) - 5)
+					if int(label.text) <= 0:
+						item.texture = null
+						label.text = null
 
 	
 func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount, metal_plate_amount, computer_chip_amount):

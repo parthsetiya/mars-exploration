@@ -1,32 +1,42 @@
-[gd_scene load_steps=14 format=3 uid="uid://bw25qskwak7la"]
+[gd_scene load_steps=19 format=3 uid="uid://codgfhbhs8ppm"]
 
-[ext_resource type="Script" path="res://blacksmithshop.gd" id="1_3ytjd"]
-[ext_resource type="Texture2D" uid="uid://oybwqw8m3qur" path="res://art/shop back.png" id="2_afk55"]
-[ext_resource type="Texture2D" uid="uid://cu36tw88h57i3" path="res://art/pickAxe.png" id="3_585li"]
-[ext_resource type="Texture2D" uid="uid://belcal14vhfr1" path="res://art/cobalt gear.png" id="4_lq388"]
-[ext_resource type="Texture2D" uid="uid://bplqmd5m04ko" path="res://art/gold gear.png" id="5_5kec2"]
-[ext_resource type="Texture2D" uid="uid://d2admtldbxoag" path="res://art/amythest gear.png" id="6_6x76b"]
-[ext_resource type="Texture2D" uid="uid://bgahhllsskeh6" path="res://art/shop slot.png" id="7_iljbb"]
-[ext_resource type="Texture2D" uid="uid://cospvnhl8oemd" path="res://art/shop buycost.png" id="8_xjqdq"]
+[ext_resource type="Script" path="res://electricianshop.gd" id="1_3x0rg"]
+[ext_resource type="Texture2D" uid="uid://cdtjf1kwmw7p1" path="res://art/wires.png" id="2_4p7gb"]
+[ext_resource type="Texture2D" uid="uid://cjdiu5plq3um2" path="res://art/chip.png" id="3_o87w2"]
+[ext_resource type="Texture2D" uid="uid://3b0f5ox18jb8" path="res://art/toolkit.png" id="4_exd8w"]
+[ext_resource type="Texture2D" uid="uid://c0rw4jcr7yskf" path="res://art/toolbox.png" id="5_q4ll8"]
+[ext_resource type="Texture2D" uid="uid://oybwqw8m3qur" path="res://art/shop back.png" id="6_kpxn4"]
+[ext_resource type="Texture2D" uid="uid://bgahhllsskeh6" path="res://art/shop slot.png" id="7_kn3rj"]
+[ext_resource type="Texture2D" uid="uid://cospvnhl8oemd" path="res://art/shop buycost.png" id="8_x0obq"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y0swj"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18702"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2s1y"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u50bb"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nj8c7"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fkre8"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tdpp8"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gahru"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1i475"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51cpp"]
 
-[node name="blacksmithshop" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_up8s2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d7pa4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upteh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dbe7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjpji"]
+
+[node name="electricianshop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3ytjd")
+script = ExtResource("1_3x0rg")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 z_index = 1
@@ -44,7 +54,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-texture = ExtResource("3_585li")
+texture = ExtResource("2_4p7gb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
@@ -56,11 +66,11 @@ text = "Required items:
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_c2s1y")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_nj8c7")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_tdpp8")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_1i475")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_18702")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u50bb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fkre8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gahru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_51cpp")
 text = "BUY"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
@@ -70,7 +80,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-texture = ExtResource("5_5kec2")
+texture = ExtResource("3_o87w2")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
@@ -82,11 +92,11 @@ text = "Required items:
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_c2s1y")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_nj8c7")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_tdpp8")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_1i475")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_18702")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u50bb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fkre8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gahru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_51cpp")
 text = "BUY"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
@@ -96,7 +106,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-texture = ExtResource("4_lq388")
+texture = ExtResource("4_exd8w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
@@ -108,11 +118,11 @@ text = "Required items:
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_c2s1y")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_nj8c7")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_tdpp8")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_1i475")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_18702")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u50bb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fkre8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gahru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_51cpp")
 text = "BUY"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer"]
@@ -122,7 +132,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-texture = ExtResource("6_6x76b")
+texture = ExtResource("5_q4ll8")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 80)
@@ -134,11 +144,11 @@ text = "Required items:
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_c2s1y")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_nj8c7")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_tdpp8")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_1i475")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_up8s2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d7pa4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_upteh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5dbe7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gjpji")
 text = "BUY"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -146,7 +156,7 @@ layout_mode = 0
 offset_left = 17.0
 offset_right = 535.0
 offset_bottom = 423.0
-texture = ExtResource("2_afk55")
+texture = ExtResource("6_kpxn4")
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -158,7 +168,7 @@ offset_left = 164.0
 offset_top = -131.0
 offset_right = 566.0
 offset_bottom = 262.0
-texture = ExtResource("7_iljbb")
+texture = ExtResource("7_kn3rj")
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -166,7 +176,7 @@ offset_left = 404.0
 offset_top = -130.0
 offset_right = 806.0
 offset_bottom = 263.0
-texture = ExtResource("7_iljbb")
+texture = ExtResource("7_kn3rj")
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -174,7 +184,7 @@ offset_left = 284.0
 offset_top = -131.0
 offset_right = 686.0
 offset_bottom = 262.0
-texture = ExtResource("7_iljbb")
+texture = ExtResource("7_kn3rj")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -182,7 +192,7 @@ offset_left = 44.0
 offset_top = -130.0
 offset_right = 446.0
 offset_bottom = 263.0
-texture = ExtResource("7_iljbb")
+texture = ExtResource("7_kn3rj")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -190,14 +200,14 @@ offset_left = 44.0
 offset_top = -67.0
 offset_right = 442.0
 offset_bottom = 331.0
-texture = ExtResource("8_xjqdq")
+texture = ExtResource("8_x0obq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6"]
 layout_mode = 0
 offset_top = 58.0
 offset_right = 398.0
 offset_bottom = 456.0
-texture = ExtResource("8_xjqdq")
+texture = ExtResource("8_x0obq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6"]
 layout_mode = 0
@@ -205,14 +215,14 @@ offset_left = 120.0
 offset_top = -58.0
 offset_right = 518.0
 offset_bottom = 340.0
-texture = ExtResource("8_xjqdq")
+texture = ExtResource("8_x0obq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6"]
 layout_mode = 0
 offset_top = 58.0
 offset_right = 398.0
 offset_bottom = 456.0
-texture = ExtResource("8_xjqdq")
+texture = ExtResource("8_x0obq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
 layout_mode = 0
@@ -220,14 +230,14 @@ offset_left = 120.0
 offset_top = -58.0
 offset_right = 518.0
 offset_bottom = 340.0
-texture = ExtResource("8_xjqdq")
+texture = ExtResource("8_x0obq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
 layout_mode = 0
 offset_top = 58.0
 offset_right = 398.0
 offset_bottom = 456.0
-texture = ExtResource("8_xjqdq")
+texture = ExtResource("8_x0obq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
 layout_mode = 0
@@ -235,13 +245,13 @@ offset_left = 120.0
 offset_top = -59.0
 offset_right = 518.0
 offset_bottom = 339.0
-texture = ExtResource("8_xjqdq")
+texture = ExtResource("8_x0obq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
 layout_mode = 0
 offset_top = 59.0
 offset_right = 398.0
 offset_bottom = 457.0
-texture = ExtResource("8_xjqdq")
+texture = ExtResource("8_x0obq")
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 var playerdata = PlayerData.new()
+var playerscript = Player.new()
 var resource = load("res://dialogue/testing.dialogue")
 @onready var blacksmithshop = $blacksmithshop
 var playerinarea = false
+var shopshow = false
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
@@ -14,10 +16,15 @@ func _on_area_2d_body_entered(body):
 
 func _process(delta):
 	if playerinarea && Input.is_action_just_pressed("g"):
-		blacksmithshop.show()
-	#if not playerinarea or Input.is_action_just_pressed("left_mouse"):
-		#blacksmithshop.hide()
+		shopopen()
 
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		playerinarea = false
+
+func shopopen():
+	if shopshow:
+		blacksmithshop.hide()
+	else:
+		blacksmithshop.show()
+	shopshow = !shopshow

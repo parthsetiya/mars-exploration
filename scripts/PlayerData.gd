@@ -8,6 +8,7 @@ var data = {}
 
 var file_json = "res://Inventory/saveitems.json"
 
+@export var givenitemtoalien : bool
 @export var SavePos : Vector2
 var invironingot : int
 var invGoldIngot : int
@@ -48,6 +49,11 @@ var jsonlogvalue
 var jsonstickvalue
 
 signal inventory_loaded(gold_amount, iron_amount, log_amount)
+
+func update_given_item_to_alien(value : bool):
+	givenitemtoalien = value
+	save()
+
 func add_invGoldIngot(value : int):
 	invGoldIngot += value
 	save()
@@ -111,8 +117,6 @@ func add_computerchip(value: int):
 
 func remove_invGoldIngot(value : int):
 	invGoldIngot -= value
-	print("running remove gold ingot")
-	print("new no of gold: " + str(invGoldIngot))
 	save()
 
 func change_health(value : int):
@@ -187,7 +191,8 @@ func save():
 		"spaceship_gold_gears": spaceship_gold_gears,
 		"spaceship_cobalt_gears": spaceship_cobalt_gears,
 		"spaceship_amethyst_gears": spaceship_amethyst_gears,
-		"spaceship_wires": spaceship_wires
+		"spaceship_wires": spaceship_wires,
+		"given_item_to_alien": givenitemtoalien
 	}
 	
 	var json = JSON.new()
