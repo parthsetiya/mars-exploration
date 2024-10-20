@@ -89,7 +89,6 @@ _data = {
 [node name="amethyst_collectable" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
 position = Vector2(0, 20)
 rotation = 0.261799
 texture = ExtResource("1_w5s51")

@@ -482,47 +482,47 @@ func update_inventory_ui(item_name, updated_quantity):
 				if item.texture == COMPUTER_CHIP.texture:
 					label.text = str(int(label.text) - playerdata.invcomputerchip)
 					if int(label.text) <= 0:
-						label.text = null
+						label.text = ""
 						item.texture = null
 				if item.texture == TOOLKIT.texture:
 					label.text = str(int(label.text) - playerdata.invtoolkit)
 					if int(label.text) <= 0:
-						label.text = null
+						label.text = ""
 						item.texture = null
 				if item.texture == TOOLBOX.texture:
 					label.text = str(int(label.text) - playerdata.invtoolbox)
 					if int(label.text) <= 0:
-						label.text = null
+						label.text = ""
 						item.texture = null
 				if item.texture == OIL.texture:
 					label.text = str(int(label.text) - playerdata.invoil)
 					if int(label.text) <= 0:
-						label.text = null
+						label.text = ""
 						item.texture = null
 				if item.texture == METAL_PLATE.texture:
 					label.text = str(int(label.text) - playerdata.invmetalplate)
 					if int(label.text) <= 0:
-						label.text = null
+						label.text = ""
 						item.texture = null
 				if item.texture == GOLD_GEAR.texture: 
 					label.text = str(int(label.text) - playerdata.invgoldgear)
 					if int(label.text) <= 0:
-						label.text = null
+						label.text = "null"
 						item.texture = null
 				if item.texture == COBALT_GEAR.texture:
 					label.text = str(int(label.text) - playerdata.invcobaltgear)
 					if int(label.text) <= 0:
-						label.text = null
+						label.text = ""
 						item.texture = null
 				if item.texture == AMETHYST_GEAR.texture:
 					label.text = str(int(label.text) - playerdata.invamethystgear)
 					if int(label.text) <= 0:
-						label.text = null
+						label.text = ""
 						item.texture = null
 				if item.texture == WIRES.texture:
 					label.text = str(int(label.text) - playerdata.invwires)
 					if int(label.text) <= 0:
-						label.text = null
+						label.text = ""
 						item.texture = null
 	if item_name == REMOVEFROMNPC.name:
 		playerdata.add_invGoldIngot(-5)
@@ -786,6 +786,9 @@ func _process(delta):
 		pick_axe_head.queue_free()
 	if spaceship_entered == true && Input.is_action_just_pressed("g"):
 		deposititems()
+		if playerdata.spaceship_amethyst_gears >= 5 and playerdata.spaceship_carton_of_oil >= 3 and playerdata.spaceship_cobalt_gears >= 5 and playerdata.spaceship_computer_chip >= 1 and playerdata.spaceship_gold_gears >= 5 and playerdata.spaceship_machine_parts >= 4 and playerdata.spaceship_thruster_repair_kits >= 2 and playerdata.spaceship_wires >= 10:
+			get_tree().change_scene_to_file("res://end_scene.tscn")
+	
 		
 		
 
