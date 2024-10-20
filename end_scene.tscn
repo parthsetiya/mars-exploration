@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwcabbveendxx"]
+
+[ext_resource type="Texture2D" uid="uid://cdyv0j4jw7ujt" path="res://art/cobalt plate.png" id="1_euxo7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_euxo7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 521.0
+offset_top = 412.0
+offset_right = 1558.0
+offset_bottom = 780.0
+theme_override_font_sizes/normal_font_size = 100
+text = "CONGRATULATIONS"
