@@ -925,3 +925,22 @@ func _on_pickaxearea_body_exited(body):
 			player_in_collect_pick_axe_head_area = false
 
 
+
+func _on_area_2df_body_entered(body):
+	if body == player:
+		var camera = $Player/Camera2D
+		if camera:
+			camera.limit_right = 2600 
+			camera.limit_left = -2000
+			camera.limit_bottom = 1000
+			camera.limit_top = -1800
+
+
+func _on_area_2da_body_entered(body):
+	if body == player:
+		var camera = $Player/Camera2D
+		if camera:
+			camera.limit_right = 10000 
+			camera.limit_left = 5400
+			camera.limit_bottom = 1000
+			camera.limit_top = -1800
