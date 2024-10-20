@@ -959,13 +959,13 @@ func _on_area_2d_body_entered(body):
 func _on_spaceshiparea_body_entered(body):
 	if body == player:
 		spaceship_entered = true
-		rich_text_label.show()
+		#rich_text_label.show()
 
 
 func _on_spaceshiparea_body_exited(body):
 	if body == player:
 		spaceship_entered = false
-		rich_text_label.hide()
+		#rich_text_label.hide()
 
 
 

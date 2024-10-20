@@ -11,6 +11,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(1592, 2.08165e-12)
+offset_right = 1592.0
+theme_override_font_sizes/normal_font_size = 60
+text = "Interact: E
+Inventory: Tab
+Pause : Escape
+Swing : Space
+Up: W
+Down: S
+Left: A
+Right: D
+Hotbar : 1, 2, 3, 4, 5
+Map: M
+"
+
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -37,13 +53,17 @@ offset_bottom = 841.0
 [node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Binds/HBoxContainer"]
 custom_minimum_size = Vector2(1592, 2.08165e-12)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 90
-text = "Interact with game : G
-Inventory : E
+theme_override_font_sizes/normal_font_size = 60
+text = "Interact: E
+Inventory: Tab
 Pause : Escape
 Swing : Space
-Movement : WASD
+Up: W
+Down: S
+Left: A
+Right: D
 Hotbar : 1, 2, 3, 4, 5
+Map: M
 "
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
