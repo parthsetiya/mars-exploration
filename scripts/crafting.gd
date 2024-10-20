@@ -59,8 +59,7 @@ func load_game():
 
 func _on__pressed():
 	playerdata.load_data()
-	if playerdata.invGoldIngot >= 2:
-		print("making gold stick")
+	if playerdata.invlogingot >= 2:
 		add_item_to_inventory(gold_stick.name, 1)
 		
 

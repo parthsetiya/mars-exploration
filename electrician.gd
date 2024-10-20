@@ -28,7 +28,9 @@ func _on_area_2d_body_exited(body):
 
 func shopopen():
 	if shopshow:
+		playerscript.speed = 0
 		electricianshop.hide()
 	else:
 		electricianshop.show()
+		playerscript.speed = 100
 	shopshow = !shopshow
