@@ -125,7 +125,6 @@ func _ready():
 	npc = get_node("CharacterBody2D")
 	npc.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	housealien = get_node("housealien")
-	housealien.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	player_node = get_node("Player")
 	blacksmithshop = get_node("blacksmith/blacksmithshop")
 	blacksmithshop.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
