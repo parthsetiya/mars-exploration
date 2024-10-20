@@ -38,6 +38,7 @@ func _process(delta):
 	elif state == "gold":
 		animated_sprite.play("gold")
 		if player_in_area and Input.is_action_just_pressed("swing") and not gold_collected:
+			animated_sprite.play("no_gold")
 			gold_collected = true
 			await get_tree().create_timer(0.6).timeout
 			state = "no_gold"
@@ -75,9 +76,6 @@ func _on_area_2d_body_exited(body):
 func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
 
-
-@export var outline_frame: int = 1  
-@export var normal_frame: int = 0  
 
 
 

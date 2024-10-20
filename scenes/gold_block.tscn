@@ -44,7 +44,7 @@ script = ExtResource("1_ej74l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_n0edj")
-animation = &"gold"
+animation = &"no_gold"
 
 [node name="pickable_area" type="Area2D" parent="."]
 position = Vector2(3, -1)
