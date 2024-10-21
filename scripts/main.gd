@@ -228,319 +228,68 @@ func _on_request_inventory_update(item_name, quantity):
 func update_inventory_ui(item_name, updated_quantity):
 	if item_name == IRON.name:
 		playerdata.add_invironingot(1)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == IRON.texture:
-					label.text = str(int(label.text) + 1)
-					return
-
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = IRON.texture
-					label.text = str(1)
-					return
+		playerdata.load_data()
 
 	if item_name == AMETHYST.name:
 		playerdata.add_invironingot(1)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == AMETHYST.texture:
-					label.text = str(int(label.text) + 1)
-					return
-
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = AMETHYST.texture
-					label.text = str(1)
-					return
+		playerdata.load_data()
+		
 	if item_name == GOLD.name:
 		playerdata.add_invGoldIngot(1)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == GOLD.texture:
-					item.show()
-					label.show()
-					label.text = str(int(label.text) + 1)
-					return
-
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = GOLD.texture
-					label.text = str(1)
-					return
+		playerdata.load_data()
 
 	if item_name == LOG.name:
 		playerdata.add_invlogingot(1)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == LOG.texture:
-					label.text = str(int(label.text) + 1)
-					return
-
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = LOG.texture
-					label.text = str(1)
-					return
+		playerdata.load_data()
+		
 	if item_name == GOLD_GEAR.name:
 		playerdata.add_goldgear(1)
 		playerdata.add_invGoldIngot(-3)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				playerdata.load_data()
+		playerdata.load_data()
 
 	if item_name == AMETHYST_GEAR.name:
 		playerdata.add_amethystgear(1)
 		playerdata.add_invamethystingot(-3)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				playerdata.load_data()
+		playerdata.load_data()
 				
 	if item_name == COBALT_GEAR.name:
 		playerdata.add_cobaltgear(1)
 		playerdata.add_invironingot(-3)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				playerdata.load_data()
+		playerdata.load_data()
 					
 	if item_name == OIL.name:
 		playerdata.add_oil(1)
 		playerdata.add_invlogingot(-6)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				playerdata.load_data()
+		playerdata.load_data()
 				
 	if item_name == WIRES.name:
 		playerdata.add_wires(2)
 		playerdata.add_invGoldIngot(-1)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				playerdata.load_data()
+		playerdata.load_data()
 				
 	if item_name == COMPUTER_CHIP.name:
 		playerdata.add_computerchip(1)
 		playerdata.add_invGoldIngot(-2)
 		playerdata.add_wires(-2)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				playerdata.load_data()
+		playerdata.load_data()
 				
 	if item_name == TOOLKIT.name:
 		playerdata.add_toolkit(1)
 		playerdata.add_invstick(-5)
 		playerdata.add_invironingot(-2)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				playerdata.load_data()
+		playerdata.load_data()
 				
 	if item_name == TOOLBOX.name:
 		playerdata.add_toolbox(1)
 		playerdata.add_goldgear(-2)
 		playerdata.add_invironingot(-4)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				playerdata.load_data()
+		playerdata.load_data()
 				
 	if item_name == GOLD_STICK.name:
 		playerdata.add_invlogingot(-2)
 		playerdata.add_invstick(1)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				playerdata.load_data()
-					
-	if item_name == GOLD_PICKAXE.name:
-		playerdata.add_pickaxe(1)
-		playerdata.add_invstick(-1)
-		playerdata.add_pickaxehead(-1)
-		var pickaxe_crafted = false
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				if item.texture == null and pickaxe_crafted == false:
-					item.texture = GOLD_PICKAXE.texture
-					label.text = str(1)
-					pickaxe_crafted = true
-				if item.texture == GOLD_STICK.texture:
-					label.text = str(int(label.text) - 1) 
-					if label.text == "0":
-						item.texture == null
-				elif item.texture == PICK_AXE_HEAD.texture:
-					label.text = str(int(label.text) - 1) 
-					if label.text == "0":
-						item.texture = null
-						
-	if item_name == WOODEN_PICKAXE.name:
-		playerdata.add_invlogingot(-3)
-		playerdata.add_invstick(-2)
-		var pickaxe_crafted = false
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				if item.texture == null and pickaxe_crafted == false:
-					item.texture = WOODEN_PICKAXE.texture
-					label.text = str(1)
-					pickaxe_crafted = true
-				if item.texture == GOLD_STICK.texture:
-					label.text = str(int(label.text) - 2) 
-					if label.text == "0":
-						item.texture == null
-				elif item.texture == LOG.texture:
-					label.text = str(int(label.text) - 3) 
-					if label.text == "0":
-						item.texture = null
-						
-	if item_name == REMOVE_GOLD.name:
-		playerdata.add_invGoldIngot(-2)
-		print("removing gold which has been taken by jhao")
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-				if item.texture == GOLD.texture:
-					label.text = str(int(label.text) - 2)
-					if int(label.text) == 0:
-						item.hide()
-						label.hide()
-	if item_name == GLOVE.name:
-		print("ASDFASDFASFDASFD")
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
+		playerdata.load_data()
 
-				if item.texture == GLOVE.texture:
-					label.text = str(int(label.text) + 1)
-					return
-
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = GLOVE.texture
-					label.text = str(1)
-					return
-					
-	if item_name == GEAR.name:
-		playerdata.add_invGoldIngot(-4)
-		playerdata.add_invironingot(-6)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == GEAR.texture:
-					label.text = str(int(label.text) + 1)
-					return
-				if item.texture == GOLD.texture:
-					label.text = str(int(label.text) - 4)
-				if item.texture == IRON.texture:
-					label.text = str(int(label.text) - 6)
-
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = GEAR.texture
-					label.text = str(1)
-					return
-	if item_name == PICK_AXE_HEAD.name:
-		playerdata.add_pickaxehead(1)
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == PICK_AXE_HEAD.texture:
-					label.text = str(int(label.text) + 1)
-					return
-
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = PICK_AXE_HEAD.texture
-					label.text = str(1)
-					return
 	if item_name == REMOVE_PARTS.name:
 		print("REMOVING ITEMS")
 		for slot in inventory_slots:
