@@ -18,7 +18,8 @@ var paused = false
 @onready var animation_player = $AnimationPlayer
 const SPACESHIPFINISH = preload("res://art/spaceshipfinish.tres")
 @onready var recipe_gui = $Player/Camera2D/recipeGui
-
+var mapshow = false
+@onready var maprough = $CanvasLayer/maprough
 @onready var start_sign_post_entered = false
 var is_showing_thiswaytomines = false
 @onready var listofitems = $Control
@@ -56,7 +57,7 @@ const AMETHYST = preload("res://Inventory/items/amethyst.tres")
 @onready var allgoldfolder = $allgold
 @onready var allironfolder = $alliron
 @onready var cavetomainmarker = $cavetomainmarker
-@onready var rich_text_label = $RichTextLabel
+@onready var rich_text_label = $CanvasLayer/RichTextLabel
 var player_in_collect_pick_axe_head_area = false
 const AMETHYST_GEAR = preload("res://Inventory/items/amethyst_gear.tres")
 const COBALT_GEAR = preload("res://Inventory/items/cobalt_gear.tres")
@@ -872,7 +873,7 @@ func _process(delta):
 	text += "Thruster Repair Kits: " + str(playerdata.spaceship_thruster_repair_kits) + "/2\n"
 	text += "Wires: " + str(playerdata.spaceship_wires) + "/10\n"
 
-	#rich_text_label.text = text
+	rich_text_label.text = text
 
 	
 		
@@ -927,7 +928,12 @@ func highlight_slot(index):
 
 
 			
-
+func mapopen():
+	if mapshow:
+		maprough.hide()
+	else:
+		maprough.show()
+	mapshow = !mapshow
 	
 	
 func pausemenu():
@@ -963,13 +969,13 @@ func _on_area_2d_body_entered(body):
 func _on_spaceshiparea_body_entered(body):
 	if body == player:
 		spaceship_entered = true
-		#rich_text_label.show()
+		rich_text_label.show()
 
 
 func _on_spaceshiparea_body_exited(body):
 	if body == player:
 		spaceship_entered = false
-		#rich_text_label.hide()
+		rich_text_label.hide()
 
 
 
