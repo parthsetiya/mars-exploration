@@ -295,6 +295,7 @@ offset_right = 398.0
 offset_bottom = 457.0
 texture = ExtResource("8_x0obq")
 
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/chipbutton" to="." method="_on_chipbutton_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer3/toolkitbutton" to="." method="_on_toolkitbutton_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer4/toolboxbutton" to="." method="_on_toolboxbutton_pressed"]

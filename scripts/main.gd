@@ -198,20 +198,21 @@ func _swap_items(slot_index_1, slot_index_2):
 		return
 	var slot_1 = inventory_slots[slot_index_1]
 	var slot_2 = inventory_slots[slot_index_2]
-	var item_1 = slot_1.get_children()[1].get_children()[0].get_children()[0]
-	var label_1 = slot_1.get_children()[1].get_children()[0].get_children()[1]
+	if slot_1.get_child_count() != 0 and slot_2.get_child_count() != 0:
+		var item_1 = slot_1.get_children()[1].get_children()[0].get_children()[0]
+		var label_1 = slot_1.get_children()[1].get_children()[0].get_children()[1]
 
-	var item_2 = slot_2.get_children()[1].get_children()[0].get_children()[0]
-	var label_2 = slot_2.get_children()[1].get_children()[0].get_children()[1]
+		var item_2 = slot_2.get_children()[1].get_children()[0].get_children()[0]
+		var label_2 = slot_2.get_children()[1].get_children()[0].get_children()[1]
 
-	var temp_texture = item_1.texture
-	var temp_text = label_1.text
+		var temp_texture = item_1.texture
+		var temp_text = label_1.text
 
-	item_1.texture = item_2.texture
-	label_1.text = label_2.text
+		item_1.texture = item_2.texture
+		label_1.text = label_2.text
 
-	item_2.texture = temp_texture
-	label_2.text = temp_text
+		item_2.texture = temp_texture
+		label_2.text = temp_text
 
 	print("Swapped items between slots " + str(slot_index_1) + " and " + str(slot_index_2))
 
@@ -286,6 +287,8 @@ func update_inventory_ui(item_name, updated_quantity):
 		playerdata.add_invlogingot(-2)
 		playerdata.add_invstick(1)
 		playerdata.load_data()
+	
+	
 				
 	if item_name == REMOVE_PARTS.name:
 		print("REMOVING ITEMS")
