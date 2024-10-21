@@ -5,8 +5,11 @@ class_name Main
 var paused = false
 
 @onready var music = $AudioStreamPlayer
+@onready var cavemusic = $AudioStreamPlayer2
+
 
 @onready var interact_to_read = $Sprite2D/startsignpostarea/interact_to_read
+
 @onready var thiswaytomines = $Sprite2D/thiswaytomines
 @onready var spaceship = $spaceship
 @onready var spaceship_entered = false
@@ -15,8 +18,7 @@ var paused = false
 @onready var animation_player = $AnimationPlayer
 const SPACESHIPFINISH = preload("res://art/spaceshipfinish.tres")
 @onready var recipe_gui = $Player/Camera2D/recipeGui
-@onready var maprough = $CanvasLayer/maprough
-var mapshow = false
+
 @onready var start_sign_post_entered = false
 var is_showing_thiswaytomines = false
 @onready var listofitems = $Control
@@ -54,7 +56,7 @@ const AMETHYST = preload("res://Inventory/items/amethyst.tres")
 @onready var allgoldfolder = $allgold
 @onready var allironfolder = $alliron
 @onready var cavetomainmarker = $cavetomainmarker
-@onready var rich_text_label = $CanvasLayer/RichTextLabel
+@onready var rich_text_label = $RichTextLabel
 var player_in_collect_pick_axe_head_area = false
 const AMETHYST_GEAR = preload("res://Inventory/items/amethyst_gear.tres")
 const COBALT_GEAR = preload("res://Inventory/items/cobalt_gear.tres")
@@ -198,21 +200,20 @@ func _swap_items(slot_index_1, slot_index_2):
 		return
 	var slot_1 = inventory_slots[slot_index_1]
 	var slot_2 = inventory_slots[slot_index_2]
-	if slot_1.get_child_count() != 0 and slot_2.get_child_count() != 0:
-		var item_1 = slot_1.get_children()[1].get_children()[0].get_children()[0]
-		var label_1 = slot_1.get_children()[1].get_children()[0].get_children()[1]
+	var item_1 = slot_1.get_children()[1].get_children()[0].get_children()[0]
+	var label_1 = slot_1.get_children()[1].get_children()[0].get_children()[1]
 
-		var item_2 = slot_2.get_children()[1].get_children()[0].get_children()[0]
-		var label_2 = slot_2.get_children()[1].get_children()[0].get_children()[1]
+	var item_2 = slot_2.get_children()[1].get_children()[0].get_children()[0]
+	var label_2 = slot_2.get_children()[1].get_children()[0].get_children()[1]
 
-		var temp_texture = item_1.texture
-		var temp_text = label_1.text
+	var temp_texture = item_1.texture
+	var temp_text = label_1.text
 
-		item_1.texture = item_2.texture
-		label_1.text = label_2.text
+	item_1.texture = item_2.texture
+	label_1.text = label_2.text
 
-		item_2.texture = temp_texture
-		label_2.text = temp_text
+	item_2.texture = temp_texture
+	label_2.text = temp_text
 
 	print("Swapped items between slots " + str(slot_index_1) + " and " + str(slot_index_2))
 
@@ -226,70 +227,319 @@ func _on_request_inventory_update(item_name, quantity):
 func update_inventory_ui(item_name, updated_quantity):
 	if item_name == IRON.name:
 		playerdata.add_invironingot(1)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == IRON.texture:
+					label.text = str(int(label.text) + 1)
+					return
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = IRON.texture
+					label.text = str(1)
+					return
 
 	if item_name == AMETHYST.name:
-		playerdata.add_invamethystingot(1)
-		playerdata.load_data()
-		
+		playerdata.add_invironingot(1)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == AMETHYST.texture:
+					label.text = str(int(label.text) + 1)
+					return
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = AMETHYST.texture
+					label.text = str(1)
+					return
 	if item_name == GOLD.name:
 		playerdata.add_invGoldIngot(1)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == GOLD.texture:
+					item.show()
+					label.show()
+					label.text = str(int(label.text) + 1)
+					return
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = GOLD.texture
+					label.text = str(1)
+					return
 
 	if item_name == LOG.name:
 		playerdata.add_invlogingot(1)
-		playerdata.load_data()
-		
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == LOG.texture:
+					label.text = str(int(label.text) + 1)
+					return
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = LOG.texture
+					label.text = str(1)
+					return
 	if item_name == GOLD_GEAR.name:
 		playerdata.add_goldgear(1)
 		playerdata.add_invGoldIngot(-3)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 
 	if item_name == AMETHYST_GEAR.name:
 		playerdata.add_amethystgear(1)
 		playerdata.add_invamethystingot(-3)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 				
 	if item_name == COBALT_GEAR.name:
 		playerdata.add_cobaltgear(1)
 		playerdata.add_invironingot(-3)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 					
 	if item_name == OIL.name:
 		playerdata.add_oil(1)
 		playerdata.add_invlogingot(-6)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 				
 	if item_name == WIRES.name:
 		playerdata.add_wires(2)
 		playerdata.add_invGoldIngot(-1)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 				
 	if item_name == COMPUTER_CHIP.name:
 		playerdata.add_computerchip(1)
 		playerdata.add_invGoldIngot(-2)
 		playerdata.add_wires(-2)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 				
 	if item_name == TOOLKIT.name:
 		playerdata.add_toolkit(1)
 		playerdata.add_invstick(-5)
 		playerdata.add_invironingot(-2)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 				
 	if item_name == TOOLBOX.name:
 		playerdata.add_toolbox(1)
 		playerdata.add_goldgear(-2)
 		playerdata.add_invironingot(-4)
-		playerdata.load_data()
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
 				
 	if item_name == GOLD_STICK.name:
 		playerdata.add_invlogingot(-2)
 		playerdata.add_invstick(1)
-		playerdata.load_data()
-	
-	
-				
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				playerdata.load_data()
+					
+	if item_name == GOLD_PICKAXE.name:
+		playerdata.add_pickaxe(1)
+		playerdata.add_invstick(-1)
+		playerdata.add_pickaxehead(-1)
+		var pickaxe_crafted = false
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == null and pickaxe_crafted == false:
+					item.texture = GOLD_PICKAXE.texture
+					label.text = str(1)
+					pickaxe_crafted = true
+				if item.texture == GOLD_STICK.texture:
+					label.text = str(int(label.text) - 1) 
+					if label.text == "0":
+						item.texture == null
+				elif item.texture == PICK_AXE_HEAD.texture:
+					label.text = str(int(label.text) - 1) 
+					if label.text == "0":
+						item.texture = null
+						
+	if item_name == WOODEN_PICKAXE.name:
+		playerdata.add_invlogingot(-3)
+		playerdata.add_invstick(-2)
+		var pickaxe_crafted = false
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == null and pickaxe_crafted == false:
+					item.texture = WOODEN_PICKAXE.texture
+					label.text = str(1)
+					pickaxe_crafted = true
+				if item.texture == GOLD_STICK.texture:
+					label.text = str(int(label.text) - 2) 
+					if label.text == "0":
+						item.texture == null
+				elif item.texture == LOG.texture:
+					label.text = str(int(label.text) - 3) 
+					if label.text == "0":
+						item.texture = null
+						
+	if item_name == REMOVE_GOLD.name:
+		playerdata.add_invGoldIngot(-2)
+		print("removing gold which has been taken by jhao")
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == GOLD.texture:
+					label.text = str(int(label.text) - 2)
+					if int(label.text) == 0:
+						item.hide()
+						label.hide()
+	if item_name == GLOVE.name:
+		print("ASDFASDFASFDASFD")
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == GLOVE.texture:
+					label.text = str(int(label.text) + 1)
+					return
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = GLOVE.texture
+					label.text = str(1)
+					return
+					
+	if item_name == GEAR.name:
+		playerdata.add_invGoldIngot(-4)
+		playerdata.add_invironingot(-6)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == GEAR.texture:
+					label.text = str(int(label.text) + 1)
+					return
+				if item.texture == GOLD.texture:
+					label.text = str(int(label.text) - 4)
+				if item.texture == IRON.texture:
+					label.text = str(int(label.text) - 6)
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = GEAR.texture
+					label.text = str(1)
+					return
+	if item_name == PICK_AXE_HEAD.name:
+		playerdata.add_pickaxehead(1)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == PICK_AXE_HEAD.texture:
+					label.text = str(int(label.text) + 1)
+					return
+
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+
+				if item.texture == null:
+					item.texture = PICK_AXE_HEAD.texture
+					label.text = str(1)
+					return
 	if item_name == REMOVE_PARTS.name:
 		print("REMOVING ITEMS")
 		for slot in inventory_slots:
@@ -342,7 +592,24 @@ func update_inventory_ui(item_name, updated_quantity):
 					if int(label.text) <= 0:
 						label.text = ""
 						item.texture = null
-
+	if item_name == REMOVEFROMNPC.name:
+		playerdata.add_invGoldIngot(-5)
+		playerdata.add_invironingot(-5)
+		for slot in inventory_slots:
+			if slot.get_child_count() != 0:
+				var centre_container = slot.get_children()[1]
+				var item = centre_container.get_children()[0].get_children()[0]
+				var label = centre_container.get_children()[0].get_children()[1]
+				if item.texture == GOLD.texture:
+					label.text = str(int(label.text) - 5)
+					if int(label.text) <= 0:
+						item.texture = null
+						label.text = null
+				if item.texture == IRON.texture:
+					label.text = str(int(label.text) - 5)
+					if int(label.text) <= 0:
+						item.texture = null
+						label.text = null
 
 	
 func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, amethyst_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount, metal_plate_amount, computer_chip_amount):
@@ -605,10 +872,7 @@ func _process(delta):
 	text += "Thruster Repair Kits: " + str(playerdata.spaceship_thruster_repair_kits) + "/2\n"
 	text += "Wires: " + str(playerdata.spaceship_wires) + "/10\n"
 
-	rich_text_label.text = text
-
-	if Input.is_action_just_pressed("map"):
-		mapopen()
+	#rich_text_label.text = text
 
 	
 		
@@ -665,13 +929,6 @@ func highlight_slot(index):
 			
 
 	
-
-func mapopen():
-	if mapshow:
-		maprough.hide()
-	else:
-		maprough.show()
-	mapshow = !mapshow
 	
 func pausemenu():
 	if paused:
@@ -706,14 +963,13 @@ func _on_area_2d_body_entered(body):
 func _on_spaceshiparea_body_entered(body):
 	if body == player:
 		spaceship_entered = true
-		rich_text_label.show()
+		#rich_text_label.show()
 
 
 func _on_spaceshiparea_body_exited(body):
 	if body == player:
 		spaceship_entered = false
-		rich_text_label.hide()
-
+		#rich_text_label.hide()
 
 
 
@@ -756,12 +1012,6 @@ func _on_tocave_body_entered(body):
 		animation_player.play("fadein")
 		player.global_position = tocavemarker.global_position
 		animation_player.play("fadeout")
-		var camera = $Player/Camera2D 
-		if camera:
-			camera.limit_right = 100000
-			camera.limit_left = -40000
-			camera.limit_bottom = 10000 
-			camera.limit_top = -100000
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
 		
@@ -773,18 +1023,8 @@ func _on_cavetomain_body_exited(body):
 		animation_player.play("fadein")
 		player.global_position = cavetomainmarker.global_position
 		animation_player.play("fadeout")
-		var camera = $Player/Camera2D 
-		if camera:
-			camera.limit_right = 2600 
-			camera.limit_left = -2000
-			camera.limit_bottom = 1000
-			camera.limit_top = -1800
 		await get_tree().create_timer(1).timeout
-		
 		player.speed = 100
-
-
-
 
 
 func _on_pickaxearea_body_entered(body):
@@ -805,7 +1045,6 @@ func _on_area_2d_3_body_entered(body):
 			camera.limit_left = -2000
 			camera.limit_bottom = 1000
 			camera.limit_top = -1800
-			music.play()
 
 
 func _on_area_2d_4_body_entered(body):
@@ -820,25 +1059,37 @@ func _on_area_2d_4_body_entered(body):
 
 
 func _on_area_2d_cave_body_entered(body):
-	pass
 	if body == player: 
+		cavemusic.play()
 		var canvas_modulate = $CanvasModulate2
 		if canvas_modulate:
 			canvas_modulate.color = Color(0, 0, 1, 1) 
 		var point_light = $Player/Camera2D/PointLight2D
 		if point_light:
 			point_light.visible = true 
+		var camera = $Player/Camera2D 
+		if camera:
+			camera.limit_right = 100000
+			camera.limit_left = -40000
+			camera.limit_bottom = 100000
+			camera.limit_top = -100000
 
 
 
 func _on_area_2d_cave_body_exited(body):
-	if body == player:  
+	if body == player: 
+		cavemusic.stop() 
 		var canvas_modulate = $CanvasModulate2
 		if canvas_modulate:
 			canvas_modulate.color = Color(1, 1, 1, 1) 
 		var point_light = $Player/Camera2D/PointLight2D
 		if point_light:
 			point_light.visible = false  
+		var camera = $Player/Camera2D
+		camera.limit_right = 2600 
+		camera.limit_left = -2000
+		camera.limit_bottom = 1000
+		camera.limit_top = -1800
 
 
 @onready var animation_rocket = $AnimationPlayer
@@ -898,3 +1149,13 @@ func move_rocket_up(sprite):
 func _wait_for_animation(anim_name):
 	if animation_rocket:
 		await animation_rocket.animation_finished  
+
+
+func _on_area_2d_music_body_entered(body):
+	if body == player:
+		music.play()
+
+
+func _on_area_2d_music_body_exited(body):
+	if body == player:
+		music.stop()
