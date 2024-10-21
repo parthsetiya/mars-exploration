@@ -873,7 +873,7 @@ func _process(delta):
 	text += "Thruster Repair Kits: " + str(playerdata.spaceship_thruster_repair_kits) + "/2\n"
 	text += "Wires: " + str(playerdata.spaceship_wires) + "/10\n"
 
-	rich_text_label.text = text
+	#rich_text_label.text = text
 
 	
 		
