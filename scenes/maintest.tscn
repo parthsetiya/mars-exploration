@@ -1,9 +1,10 @@
-[gd_scene load_steps=46 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=47 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_b4hsc"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
+[ext_resource type="AudioStream" uid="uid://cku7bphlf2vx2" path="res://Soaring.wav" id="6_y3d5e"]
 [ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/cobalt_block.tscn" id="7_6rs4l"]
 [ext_resource type="PackedScene" uid="uid://b2tn12fbfracb" path="res://scenes/recipeGui.tscn" id="7_lua2c"]
 [ext_resource type="PackedScene" uid="uid://c8jmpdg8ah33j" path="res://amethyst_block.tscn" id="10_rr0k7"]
@@ -2112,6 +2113,13 @@ color = Color(0, 0, 0, 0)
 visible = false
 color = Color(0, 0, 0, 1)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_y3d5e")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-111, -2000)
+stream = ExtResource("6_y3d5e")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("12_3kb63")]
 position = Vector2(-65.5, 242)
 
@@ -2334,6 +2342,7 @@ libraries = {
 position = Vector2(3527.5, 158.5)
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0687983, 0.0687983, 0.0687983, 1)
 
 [node name="Area2DRocket" type="Area2D" parent="."]

@@ -4,6 +4,8 @@ class_name Main
 @onready var pause_menu = $CanvasLayer/Pausemenu
 var paused = false
 
+@onready var music = $AudioStreamPlayer
+
 @onready var interact_to_read = $Sprite2D/startsignpostarea/interact_to_read
 
 @onready var thiswaytomines = $Sprite2D/thiswaytomines
@@ -1058,6 +1060,7 @@ func _on_area_2d_3_body_entered(body):
 			camera.limit_left = -2000
 			camera.limit_bottom = 1000
 			camera.limit_top = -1800
+			music.play()
 
 
 func _on_area_2d_4_body_entered(body):
@@ -1068,6 +1071,7 @@ func _on_area_2d_4_body_entered(body):
 			camera.limit_left = 5400
 			camera.limit_bottom = 1000
 			camera.limit_top = -1800
+			music.play()
 
 
 func _on_area_2d_cave_body_entered(body):
