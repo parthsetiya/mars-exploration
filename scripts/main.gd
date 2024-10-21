@@ -105,7 +105,7 @@ var playerholding_pick = false
 var blacksmithshop
 signal player_holding_pick
 
-
+#Declares all of the external files using get_nodes which allows signals to be connected, as well as declaring other variables to be used in the script. 
 func _ready():
 	allgold = allgoldfolder.get_children()
 	alliron = allironfolder.get_children()
@@ -154,39 +154,7 @@ func _ready():
 	canvas_modulate.color = Color(1, 1, 1, 1) 
 	
 	
-
-
-
-#func inironcollectable(body):
-	#ironcollectable = true 
-#
-#func ingoldcollectable(body):
-	#goldcollectable = true
-#
-#func leaveironcollectable(body):
-	#ironcollectable = false
-#
-#func leavegoldcollectable(body):
-	#goldcollectable = false 
-	#
-#func intreecollectable(body):
-	#treecollectable = true
-#
-#func leavetreecollectable():
-	#treecollectable = false
-#
-#func crafted_stick():
-	#
-	#print("running add gold")
-	#making_stick = true
-	#treecollectable = false
-	#goldcollectable = false
-	#goldcollectable2 = false
-	#ironcollectable = false
-	#_on_request_inventory_update(GOLD_STICK, 1)
-	#making_stick = false
-	
-
+#Allows items to be swapped between slots
 func _on_slot_clicked(slot_index):
 	if first_slot_index == null:
 		first_slot_index = slot_index
@@ -218,6 +186,8 @@ func _swap_items(slot_index_1, slot_index_2):
 
 	print("Swapped items between slots " + str(slot_index_1) + " and " + str(slot_index_2))
 
+
+# Called from other files via a signal, this causes the update_inventory to be run, hence causing a change in the playerdata values and the frontend of the inventory. 
 func _on_request_inventory_update(item_name, quantity):
 	print("adding ", item_name, quantity)
 	inventory.add_item(item_name, quantity)
@@ -356,7 +326,7 @@ func update_inventory_ui(item_name, updated_quantity):
 						item.texture = null
 						label.text = null
 
-	
+# Signal from playerdata is caught here and updated the inventory based on the amounts present in the save file
 func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, amethyst_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount, metal_plate_amount, computer_chip_amount):
 	for slot in inventory_slots:
 		if slot.get_child_count() != 0:
@@ -568,7 +538,7 @@ func inventoryopen():
 	inv_open = !inv_open
 
 
-	
+# Carries out the different inputs from the player
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pausemenu()
@@ -596,6 +566,8 @@ func _process(delta):
 			player.speed = 0
 			await get_tree().create_timer(1.5).timeout 
 			get_tree().change_scene_to_file("res://end_scene.tscn")
+	
+	#Updates the items for the spaceship based on how many have been deposited
 	var text = ""
 	text += "Amethyst Gears: " + str(playerdata.spaceship_amethyst_gears) + "/5\n"
 	text += "Cartons of Oil: " + str(playerdata.spaceship_carton_of_oil) + "/3\n"
@@ -616,7 +588,7 @@ func _process(delta):
 
 		
 		
-
+# Allows player to deposit items in the spaceship
 func deposititems():
 	if playerdata.invamethystgear >= 5 and playerdata.invoil >= 3 and playerdata.invcobaltgear >= 5 and playerdata.invcomputerchip >= 1 and playerdata.invgoldgear >=5 and playerdata.invtoolbox >= 4 and playerdata.invtoolkit >= 2 and playerdata.invwires >=10: 
 		_on_request_inventory_update(REMOVE_PARTS.name, 1)
@@ -639,7 +611,7 @@ func deposititems():
 		playerdata.add_wires(-1 * playerdata.invwires)
 	
 
-
+# Highlights slots 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:
 		if slot.has_node("background"):
@@ -679,28 +651,9 @@ func pausemenu():
 		pause_menu.show()
 		Engine.time_scale = 0
 		
-func _on_startsignpostarea_body_entered(body):
-	if body == player:	
-		start_sign_post_entered = true
-
-func _on_startsignpostarea_body_exited(body):
-	if body == player:
-		start_sign_post_entered = false
-		thiswaytomines.hide()
-		is_showing_thiswaytomines = false 
 
 
-func _on_entrancetogoldmine_body_entered(body):
-	if body.name == "Player":
-		StageManager.changeStage(StageManager.GOLDMINE, 453, -30)
-
-
-
-func _on_area_2d_body_entered(body):
-	if body.name == "Player":
-		StageManager.changeStage(StageManager.HOUSETEST, 453, -30)
-		
-
+# Showing the list of items for spaceship 
 func _on_spaceshiparea_body_entered(body):
 	if body == player:
 		spaceship_entered = true
@@ -713,7 +666,7 @@ func _on_spaceshiparea_body_exited(body):
 		rich_text_label.hide()
 
 
-
+# Camera limits based on where the player is in the game as well as transitions between areas
 func _on_areaback_body_entered(body):
 	if body == player:
 		player.speed = 0 
@@ -767,15 +720,6 @@ func _on_cavetomain_body_exited(body):
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
 
-
-func _on_pickaxearea_body_entered(body):
-	if body == player:
-		player_in_collect_pick_axe_head_area = true
-
-
-func _on_pickaxearea_body_exited(body):
-		if body == player:
-			player_in_collect_pick_axe_head_area = false
 
 
 func _on_area_2d_3_body_entered(body):
@@ -839,7 +783,7 @@ var fade_duration = 1.0
 var move_speed = 200  
 var exit_delay = 2.0  
 var player_exit_position = Vector2(-500, -500)
-
+#Rocket 
 func _on_area_2d_rocket_body_entered(body):
 	if body == player:  
 		move_player_off_rocket()
@@ -891,7 +835,7 @@ func _wait_for_animation(anim_name):
 	if animation_rocket:
 		await animation_rocket.animation_finished  
 
-
+#plays music based on area
 func _on_area_2d_music_body_entered(body):
 	if body == player:
 		music.play()
