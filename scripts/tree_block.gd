@@ -42,10 +42,10 @@ func _process(delta):
 			treefallinganimplayer()
 
 func treefallinganimplayer():
-	audio_stream_player_2d.play()
 	treefallinganim.play("treefalling")
 	await get_tree().create_timer(1.5).timeout
 	treefallinganim.play("treefading")
+	audio_stream_player_2d.play()
 	drop_gold()
 
 
