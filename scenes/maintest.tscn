@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=50 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://108k0hdoohuq" path="res://art/mainart/crashed shadows.png" id="15_nc7go"]
 [ext_resource type="Texture2D" uid="uid://bmoitxm6luwvj" path="res://art/pickaxe head.png" id="16_brmdr"]
 [ext_resource type="PackedScene" uid="uid://cm5dh2olqycmx" path="res://electrician.tscn" id="17_ghbfs"]
+[ext_resource type="Texture2D" uid="uid://bqf1cqdarjchu" path="res://art/map.png" id="17_qoh61"]
 [ext_resource type="AudioStream" uid="uid://6mpfcjj0ifpu" path="res://Dopplerette.wav" id="19_slii8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqiey"]
@@ -2321,6 +2322,19 @@ offset_top = 173.0
 offset_right = 729.4
 offset_bottom = 232.04
 scale = Vector2(2.6, 2.6)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_right = 499.0
+offset_bottom = 918.0
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="maprough" type="NinePatchRect" parent="CanvasLayer"]
+visible = false
+offset_left = 644.0
+offset_top = 226.0
+offset_right = 1335.0
+offset_bottom = 917.0
+texture = ExtResource("17_qoh61")
 
 [node name="pick-axe-head" type="Sprite2D" parent="."]
 position = Vector2(-43.5, -601)

@@ -9,6 +9,7 @@ var paused = false
 
 
 @onready var interact_to_read = $Sprite2D/startsignpostarea/interact_to_read
+@onready var maprough = $CanvasLayer/maprough
 
 @onready var thiswaytomines = $Sprite2D/thiswaytomines
 @onready var spaceship = $spaceship
@@ -19,7 +20,6 @@ var paused = false
 const SPACESHIPFINISH = preload("res://art/spaceshipfinish.tres")
 @onready var recipe_gui = $Player/Camera2D/recipeGui
 var mapshow = false
-@onready var maprough = $CanvasLayer/maprough
 @onready var start_sign_post_entered = false
 var is_showing_thiswaytomines = false
 @onready var listofitems = $Control
@@ -48,7 +48,7 @@ const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
 const GLOVE = preload("res://Inventory/items/glove.tres")
 const GEAR = preload("res://Inventory/items/gear.tres")
 const COMPUTER_CHIP = preload("res://Inventory/items/computer_chip.tres")
-const METAL_PLATE = preload("res://Inventory/items/metal_plate.tres")
+
 const REMOVE_PARTS = preload("res://Inventory/items/remove_parts.tres")
 const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
 const AMETHYST = preload("res://Inventory/items/amethyst.tres")
@@ -568,11 +568,6 @@ func update_inventory_ui(item_name, updated_quantity):
 					if int(label.text) <= 0:
 						label.text = ""
 						item.texture = null
-				if item.texture == METAL_PLATE.texture:
-					label.text = str(int(label.text) - playerdata.invmetalplate)
-					if int(label.text) <= 0:
-						label.text = ""
-						item.texture = null
 				if item.texture == GOLD_GEAR.texture: 
 					label.text = str(int(label.text) - playerdata.invgoldgear)
 					if int(label.text) <= 0:
@@ -789,17 +784,6 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, am
 					label.text = str(cobalt_gear_amount)
 					break
 					
-	if metal_plate_amount> 0:
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = METAL_PLATE.texture
-					label.text = str(cobalt_gear_amount)
-					break
 					
 	if computer_chip_amount > 0:
 		for slot in inventory_slots:
@@ -873,8 +857,10 @@ func _process(delta):
 	text += "Thruster Repair Kits: " + str(playerdata.spaceship_thruster_repair_kits) + "/2\n"
 	text += "Wires: " + str(playerdata.spaceship_wires) + "/10\n"
 
-	#rich_text_label.text = text
-
+	rich_text_label.text = text
+	
+	if Input.is_action_just_pressed("map"):
+		mapopen()
 	
 		
 		
