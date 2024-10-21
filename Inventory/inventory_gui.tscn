@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://booto5uhhl2kr"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_gui.gd" id="1_egmnt"]
-[ext_resource type="Texture2D" uid="uid://btsgl2go21lfk" path="res://art/inv back.png" id="2_81a1c"]
+[ext_resource type="Texture2D" uid="uid://b1qelthn8r2a4" path="res://art/inv back.png" id="2_81a1c"]
 [ext_resource type="PackedScene" uid="uid://chpj76y4h6uxx" path="res://scenes/slot.tscn" id="3_meoxf"]
-[ext_resource type="Texture2D" uid="uid://bm72khgtiohcd" path="res://art/slot backg.png" id="4_pl8nr"]
+[ext_resource type="Texture2D" uid="uid://cqbgo7nkltvgj" path="res://art/slot backg.png" id="4_pl8nr"]
 [ext_resource type="PackedScene" uid="uid://cwbjcat8e4j7n" path="res://scenes/crafting.tscn" id="4_qikhw"]
 
 [node name="InventoryGui" type="Control"]

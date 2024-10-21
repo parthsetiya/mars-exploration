@@ -201,7 +201,7 @@ func update_inventory_ui(item_name, updated_quantity):
 		playerdata.load_data()
 
 	if item_name == AMETHYST.name:
-		playerdata.add_invironingot(1)
+		playerdata.add_invamethystingot(1)
 		playerdata.load_data()
 		
 	if item_name == GOLD.name:
