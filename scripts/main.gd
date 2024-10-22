@@ -154,7 +154,7 @@ func _ready():
 	canvas_modulate.color = Color(1, 1, 1, 1) 
 	
 	
-#Allows items to be swapped between slots
+# Allows items to be swapped between slots
 func _on_slot_clicked(slot_index):
 	if first_slot_index == null:
 		first_slot_index = slot_index
