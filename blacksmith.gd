@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var playerdata = PlayerData.new()
 var playerscript = Player.new()
+var main = Main.new()
 var resource = load("res://dialogue/testing.dialogue")
 @onready var blacksmithshop = $blacksmithshop
 var playerinarea = false
@@ -28,9 +29,9 @@ func _on_area_2d_body_exited(body):
 
 func shopopen():
 	if shopshow:
-		playerscript.speed = 100
+		main.change_lock(false)
 		blacksmithshop.hide()
 	else:
 		blacksmithshop.show()
-		playerscript.speed = 0
+		main.change_lock(true)
 	shopshow = !shopshow

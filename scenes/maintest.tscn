@@ -2304,6 +2304,8 @@ offset_top = -5.0
 offset_right = -5.0
 offset_bottom = -5.0
 size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="recipeGui" parent="CanvasLayer" instance=ExtResource("7_lua2c")]
 visible = false

@@ -34,6 +34,7 @@ var playerdata = PlayerData.new()
 @onready var character_body_2d = $CharacterBody2D
 var inventory = Inventory.new()
 var playerscript = Player.new()
+var lock = false
 @onready var inventory_gui = get_node("/root/main/CanvasLayer/InventoryGui")
 var inv_open = false
 const SELECTEDSLOT = preload("res://art/mainart/selectedslot.tres")
@@ -48,7 +49,6 @@ const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
 const GLOVE = preload("res://Inventory/items/glove.tres")
 const GEAR = preload("res://Inventory/items/gear.tres")
 const COMPUTER_CHIP = preload("res://Inventory/items/computer_chip.tres")
-
 const REMOVE_PARTS = preload("res://Inventory/items/remove_parts.tres")
 const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
 const AMETHYST = preload("res://Inventory/items/amethyst.tres")
@@ -189,6 +189,13 @@ func _swap_items(slot_index_1, slot_index_2):
 
 	print("Swapped items between slots " + str(slot_index_1) + " and " + str(slot_index_2))
 
+func change_lock(value : bool):
+	pass
+	#lock = value
+	#if lock:
+		#player_node.speed = 0
+	#else:
+		#player_node.speed = 100
 
 # Called from other files via a signal, this causes the update_inventory to be run, hence causing a change in the playerdata values and the frontend of the inventory. 
 func _on_request_inventory_update(item_name, quantity):
