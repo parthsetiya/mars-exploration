@@ -19,6 +19,7 @@ func _on_button_pressed():
 	if playerdata.invlogingot >= 6:
 		playerdata.add_oil(1)
 		playerdata.add_invlogingot(-6)
+		playerdata.load_data()
 
 
 func _on_goldplate_pressed():
