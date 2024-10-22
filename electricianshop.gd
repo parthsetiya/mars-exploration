@@ -14,7 +14,7 @@ func add_item_to_inventory(item_name, quantity):
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("g"):
+	if Input.is_action_just_pressed("shop"):
 		get_tree().change_scene_to_file("res://scenes/maintest.tscn")
 
 func _on_button_pressed():

@@ -559,10 +559,6 @@ func _process(delta):
 			recipe_gui.hide()
 	if playerdata.current_item == str(GOLD_PICKAXE.texture):
 		playerscript.playerholdingpick = true
-	
-	if player_in_collect_pick_axe_head_area == true && Input.is_action_just_pressed("g"):
-		_on_request_inventory_update(PICK_AXE_HEAD.name, 1)
-		pick_axe_head.queue_free()
 	if spaceship_entered == true && Input.is_action_just_pressed("g"):
 		deposititems()
 		if playerdata.spaceship_amethyst_gears >= 5 and playerdata.spaceship_carton_of_oil >= 3 and playerdata.spaceship_cobalt_gears >= 5 and playerdata.spaceship_computer_chip >= 1 and playerdata.spaceship_gold_gears >= 5 and playerdata.spaceship_machine_parts >= 4 and playerdata.spaceship_thruster_repair_kits >= 2 and playerdata.spaceship_wires >= 10:
