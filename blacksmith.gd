@@ -20,7 +20,7 @@ func _on_area_2d_body_entered(body):
 
 
 func _process(delta):
-	if playerinarea && Input.is_action_just_pressed("g"):
+	if playerinarea && Input.is_action_just_pressed("shop"):
 		get_tree().change_scene_to_file("res://blacksmithshop.tscn")
 
 func _on_area_2d_body_exited(body):
