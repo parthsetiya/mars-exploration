@@ -21,55 +21,71 @@
 
 [node name="blacksmithshop" type="Control"]
 layout_mode = 3
+anchor_left = 0.009
 anchor_right = 0.276
 anchor_bottom = 0.251
-offset_right = -0.920044
-offset_bottom = -0.0800171
+offset_left = -32.28
+offset_top = 67.0
+offset_right = 1.07996
+offset_bottom = 66.92
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3.5, 3.5)
 script = ExtResource("1_3ytjd")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 z_index = 12
+clip_contents = false
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
 offset_left = 49.0
 offset_top = 145.0
-offset_right = 159.0
-offset_bottom = 225.0
+offset_right = 357.0
+offset_bottom = 289.0
+scale = Vector2(0.333, 0.333)
+theme_override_font_sizes/normal_font_size = 50
 text = "Required items:
 6x Log "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 z_index = 12
+clip_contents = false
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
 offset_left = 169.0
 offset_top = 145.0
-offset_right = 279.0
-offset_bottom = 225.0
+offset_right = 484.0
+offset_bottom = 289.0
+scale = Vector2(0.333, 0.333)
+theme_override_font_sizes/normal_font_size = 50
 text = "Required items:
 3x Gold Ingot "
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 z_index = 12
+clip_contents = false
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
 offset_left = 289.0
 offset_top = 145.0
-offset_right = 399.0
-offset_bottom = 225.0
+offset_right = 610.0
+offset_bottom = 291.0
+scale = Vector2(0.333, 0.333)
+theme_override_font_sizes/normal_font_size = 50
 text = "Required items:
 3x Cobalt Ingot "
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
 z_index = 12
+clip_contents = false
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
-offset_left = 409.0
+offset_left = 405.571
 offset_top = 145.0
-offset_right = 519.0
-offset_bottom = 225.0
+offset_right = 730.571
+offset_bottom = 295.0
+scale = Vector2(0.333, 0.333)
+theme_override_font_sizes/normal_font_size = 50
 text = "Required items:
 3x Amethyst Ingot"
 
@@ -98,6 +114,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c2s1y")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nj8c7")
@@ -110,7 +127,7 @@ custom_minimum_size = Vector2(110, 2.08165e-12)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(80, 96)
 layout_mode = 2
 texture = ExtResource("3_oxdpu")
 
@@ -121,6 +138,7 @@ layout_mode = 2
 [node name="goldplate" type="Button" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c2s1y")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nj8c7")
@@ -133,7 +151,7 @@ custom_minimum_size = Vector2(110, 2.08165e-12)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(2.08165e-12, 100)
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 texture = ExtResource("4_15fwt")
 
@@ -144,6 +162,7 @@ layout_mode = 2
 [node name="coplate" type="Button" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c2s1y")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nj8c7")
@@ -167,6 +186,7 @@ layout_mode = 2
 [node name="amplate" type="Button" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_y0swj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c2s1y")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nj8c7")
@@ -176,9 +196,10 @@ text = "BUY"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 17.0
-offset_right = 535.0
-offset_bottom = 423.0
+offset_left = -12.0
+offset_top = -41.0
+offset_right = 571.0
+offset_bottom = 506.0
 texture = ExtResource("2_afk55")
 patch_margin_left = 5
 patch_margin_top = 5
