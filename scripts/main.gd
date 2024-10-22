@@ -103,6 +103,7 @@ var allamethyst
 var player_node
 var playerholding_pick = false
 var blacksmithshop
+var electricianshop
 signal player_holding_pick
 
 #Declares all of the external files using get_nodes which allows signals to be connected, as well as declaring other variables to be used in the script. 
@@ -133,6 +134,8 @@ func _ready():
 	player_node = get_node("Player")
 	blacksmithshop = get_node("blacksmith/blacksmithshop")
 	blacksmithshop.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
+	electricianshop = get_node("electrician/electricianshop")
+	electricianshop.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25) 
 	
