@@ -102,9 +102,10 @@ var alltree
 var allamethyst
 var player_node
 var playerholding_pick = false
-var blacksmithshop
-var electricianshop
 signal player_holding_pick
+@onready var blacksmithshop = $blacksmithshop
+@onready var electricianshop = $electricianshop
+
 
 #Declares all of the external files using get_nodes which allows signals to be connected, as well as declaring other variables to be used in the script. 
 func _ready():
@@ -132,9 +133,7 @@ func _ready():
 	npc.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	housealien = get_node("housealien")
 	player_node = get_node("Player")
-	blacksmithshop = get_node("blacksmith/blacksmithshop")
 	blacksmithshop.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
-	electricianshop = get_node("electrician/electricianshop")
 	electricianshop.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25) 
@@ -170,32 +169,27 @@ func _on_slot_clicked(slot_index):
 func _swap_items(slot_index_1, slot_index_2):
 	if inv_open == false:
 		return
+	
 	var slot_1 = inventory_slots[slot_index_1]
 	var slot_2 = inventory_slots[slot_index_2]
-	var item_1 = slot_1.get_children()[1].get_children()[0].get_children()[0]
-	var label_1 = slot_1.get_children()[1].get_children()[0].get_children()[1]
+	if slot_1.get_child_count() != 0 and slot_2.get_child_count() !=0:
+		var item_1 = slot_1.get_children()[1].get_children()[0].get_children()[0]
+		var label_1 = slot_1.get_children()[1].get_children()[0].get_children()[1]
 
-	var item_2 = slot_2.get_children()[1].get_children()[0].get_children()[0]
-	var label_2 = slot_2.get_children()[1].get_children()[0].get_children()[1]
+		var item_2 = slot_2.get_children()[1].get_children()[0].get_children()[0]
+		var label_2 = slot_2.get_children()[1].get_children()[0].get_children()[1]
 
-	var temp_texture = item_1.texture
-	var temp_text = label_1.text
+		var temp_texture = item_1.texture
+		var temp_text = label_1.text
 
-	item_1.texture = item_2.texture
-	label_1.text = label_2.text
+		item_1.texture = item_2.texture
+		label_1.text = label_2.text
 
-	item_2.texture = temp_texture
-	label_2.text = temp_text
+		item_2.texture = temp_texture
+		label_2.text = temp_text
 
-	print("Swapped items between slots " + str(slot_index_1) + " and " + str(slot_index_2))
+		print("Swapped items between slots " + str(slot_index_1) + " and " + str(slot_index_2))
 
-func change_lock(value : bool):
-	pass
-	#lock = value
-	#if lock:
-		#player_node.speed = 0
-	#else:
-		#player_node.speed = 100
 
 # Called from other files via a signal, this causes the update_inventory to be run, hence causing a change in the playerdata values and the frontend of the inventory. 
 func _on_request_inventory_update(item_name, quantity):

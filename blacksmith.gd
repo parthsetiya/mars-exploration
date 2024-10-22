@@ -21,17 +21,17 @@ func _on_area_2d_body_entered(body):
 
 func _process(delta):
 	if playerinarea && Input.is_action_just_pressed("g"):
-		shopopen()
+		get_tree().change_scene_to_file("res://blacksmithshop.tscn")
 
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		playerinarea = false
 
-func shopopen():
-	if shopshow:
-		main.change_lock(false)
-		blacksmithshop.hide()
-	else:
-		blacksmithshop.show()
-		main.change_lock(true)
-	shopshow = !shopshow
+#func shopopen():
+	#if shopshow:
+		#main.change_lock(false)
+		#blacksmithshop.hide()
+	#else:
+		#blacksmithshop.show()
+		#main.change_lock(true)
+	#shopshow = !shopshow

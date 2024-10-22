@@ -51,10 +51,6 @@ var jsonstickvalue
 
 signal inventory_loaded(gold_amount, iron_amount, log_amount)
 
-func update_given_item_to_alien(value : bool):
-	givenitemtoalien = value
-	save()
-
 func add_invGoldIngot(value : int):
 	invGoldIngot += value
 	save()

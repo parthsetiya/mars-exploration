@@ -19,16 +19,11 @@ func _on_area_2d_body_entered(body):
 
 
 func _process(delta):
-	if playerinarea && Input.is_action_just_pressed("g"):
-		shopopen()
+	if playerinarea and Input.is_action_just_pressed("g"):
+		get_tree().change_scene_to_file('res://electricianshop.tscn')
 
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		playerinarea = false
 
-func shopopen():
-	if shopshow:
-		electricianshop.hide()
-	else:
-		electricianshop.show()
-	shopshow = !shopshow
+

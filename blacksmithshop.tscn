@@ -21,9 +21,10 @@
 
 [node name="blacksmithshop" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.276
+anchor_bottom = 0.251
+offset_right = -0.920044
+offset_bottom = -0.0800171
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3ytjd")
@@ -174,7 +175,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_1i475")
 text = "BUY"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_right = 535.0
@@ -186,7 +186,6 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 164.0
 offset_top = -131.0
@@ -195,7 +194,6 @@ offset_bottom = 262.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 404.0
 offset_top = -130.0
@@ -204,7 +202,6 @@ offset_bottom = 263.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 284.0
 offset_top = -131.0
@@ -213,7 +210,6 @@ offset_bottom = 262.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 44.0
 offset_top = -130.0
@@ -222,7 +218,6 @@ offset_bottom = 263.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect10" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 284.0
 offset_top = -10.0
@@ -231,7 +226,6 @@ offset_bottom = 388.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect8" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 285.0
 offset_top = -70.0
@@ -240,7 +234,6 @@ offset_bottom = 328.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect11" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 404.0
 offset_top = -10.0
@@ -249,7 +242,6 @@ offset_bottom = 388.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect9" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 404.0
 offset_top = -69.0
@@ -258,7 +250,6 @@ offset_bottom = 329.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect12" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 164.0
 offset_top = -10.0
@@ -267,7 +258,6 @@ offset_bottom = 388.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect7" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 164.0
 offset_top = -68.0
@@ -276,7 +266,6 @@ offset_bottom = 330.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect13" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 44.0
 offset_top = -10.0
@@ -285,7 +274,6 @@ offset_bottom = 388.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 44.0
 offset_top = -67.0

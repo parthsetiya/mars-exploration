@@ -18,9 +18,6 @@ func on_options_pressed() -> void:
 	margin_container.visible = false
 	options_menu.visible = true
 	
-func on_exit_option_menu() -> void:
-	pass	
-	
 func _on_texture_button_2_pressed():
 	get_tree().change_scene_to_file("res://scenes/options/scenes/options_menu.tscn")
 
