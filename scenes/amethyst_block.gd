@@ -39,6 +39,7 @@ func _process(delta):
 	elif state == "amethyst":
 		animated_sprite.play("amethyst")
 		if player_in_area and Input.is_action_just_pressed("swing"):
+			await get_tree().create_timer(0.6).timeout
 			state = "no_amethyst"
 			drop_amethyst()
 			player_sound.play()
