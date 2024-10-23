@@ -666,7 +666,6 @@ func pausemenu():
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
-		
 
 
 # Showing the list of items for spaceship 

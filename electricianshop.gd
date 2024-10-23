@@ -1,7 +1,6 @@
 extends Control
 
 var playerdata = PlayerData.new()
-
 signal request_inventory_update
 const COMPUTER_CHIP = preload("res://Inventory/items/computer_chip.tres")
 const TOOLBOX = preload("res://Inventory/items/toolbox.tres")
@@ -17,6 +16,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("shop") and not get_tree().current_scene.name == "main":
 		get_tree().change_scene_to_file("res://scenes/maintest.tscn")
 
+
 func _on_button_pressed():
 	playerdata.load_data()
 	if playerdata.invGoldIngot >= 1:
@@ -31,7 +31,8 @@ func _on_chipbutton_pressed():
 		playerdata.add_computerchip(1)
 		playerdata.add_invGoldIngot(-2)
 		playerdata.add_wires(-2)
-		
+
+
 func _on_toolkitbutton_pressed():
 	playerdata.load_data()
 	if playerdata.invstick >= 5 and playerdata.invironingot >= 2:
@@ -48,3 +49,4 @@ func _on_toolboxbutton_pressed():
 		playerdata.add_goldgear(-2)
 		playerdata.add_invironingot(-4)
 		playerdata.load_data()
+
