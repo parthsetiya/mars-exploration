@@ -533,7 +533,7 @@ func inventoryopen():
 			slot.hide()
 
 		
-	else:
+	if not inv_open and not player.is_swinging:
 		inv_gui_show.show()
 		inv_crafting.show()
 		player.speed = 0
@@ -545,7 +545,7 @@ func inventoryopen():
 # Carries out the different inputs from the player
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
-		pausemenu()
+		get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
 	if Input.is_action_just_pressed("Inventory"):
 		inventoryopen()
 	for i in range(5):
@@ -559,11 +559,10 @@ func _process(delta):
 			recipe_gui.hide()
 	if playerdata.current_item == str(GOLD_PICKAXE.texture):
 		playerscript.playerholdingpick = true
-	if spaceship_entered == true && Input.is_action_just_pressed("g"):
+	if spaceship_entered == true and Input.is_action_just_pressed("g"):
 		deposititems()
 		if playerdata.spaceship_amethyst_gears >= 5 and playerdata.spaceship_carton_of_oil >= 3 and playerdata.spaceship_cobalt_gears >= 5 and playerdata.spaceship_computer_chip >= 1 and playerdata.spaceship_gold_gears >= 5 and playerdata.spaceship_machine_parts >= 4 and playerdata.spaceship_thruster_repair_kits >= 2 and playerdata.spaceship_wires >= 10:
-			spaceship.texture = SPACESHIPFINISH.texture
-			player.speed = 0
+			_launch_rocket_()
 			await get_tree().create_timer(1.5).timeout 
 			get_tree().change_scene_to_file("res://end_scene.tscn")
 	
@@ -591,8 +590,8 @@ func _process(delta):
 # Allows player to deposit items in the spaceship
 func deposititems():
 	var required_computer_chips = 1
-	var required_toolkits = 2
-	var required_toolboxes = 4
+	var required_toolkits = 4
+	var required_toolboxes = 2
 	var required_oil = 3
 	var required_gold_gears = 5
 	var required_cobalt_gears = 5
@@ -836,26 +835,27 @@ var move_speed = 200
 var exit_delay = 2.0  
 var player_exit_position = Vector2(-500, -500)
 #Rocket 
-func _on_area_2d_rocket_body_entered(body):
-	if body == player:  
-		move_player_off_rocket()
-		hide_player()
-		player.speed = 0
-		var spaceship = $spaceship  
-		if spaceship:
-			spaceship.visible = false  
-		animation_rocket.play("fadein") 
-		var rocket_sprite = $Rocket 
-		if rocket_sprite:
-			rocket_sprite.visible = true  
-		await screen_shake()
-		await move_rocket_up(rocket_sprite)
-		animation_rocket.play("fadein")  
-		await _wait_for_animation("fadein")  
-		animation_rocket.play("fadeout")
-		await _wait_for_animation("fadeout")  
-		await get_tree().create_timer(exit_delay).timeout  
-		get_tree().quit()
+
+func _launch_rocket_():
+	move_player_off_rocket()
+	hide_player()
+	player.speed = 0
+	var spaceship = $spaceship  
+	if spaceship:
+		spaceship.visible = false  
+	animation_rocket.play("fadein") 
+	var rocket_sprite = $Rocket2
+	if rocket_sprite:
+		rocket_sprite.visible = true  
+	await screen_shake()
+	await move_rocket_up(rocket_sprite)
+	animation_rocket.play("fadein")  
+	await _wait_for_animation("fadein")  
+	animation_rocket.play("fadeout")
+	await _wait_for_animation("fadeout")  
+	await get_tree().create_timer(exit_delay).timeout  
+	get_tree().change_scene_to_file("res://end_scene.tscn")
+
 
 func move_player_off_rocket():
 	if player:
@@ -880,7 +880,6 @@ func move_rocket_up(sprite):
 		var frame_size = sprite_frames.get_frame_texture(sprite.animation, 0).get_size()  
 		while sprite.position.y > -frame_size.y:  
 			sprite.position.y -= move_speed * get_process_delta_time()  
-			await get_tree().create_timer(0.01).timeout
 		sprite.visible = false
 
 func _wait_for_animation(anim_name):

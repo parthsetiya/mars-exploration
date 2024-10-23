@@ -6,7 +6,7 @@ var playerdata = PlayerData.new()
 
 func _on_resume_pressed():
 	#get_tree().change_scene_to_packed(start_level)
-	hide()
+	get_tree().change_scene_to_file("res://scenes/maintest.tscn")
 	Engine.time_scale =  1
 
 

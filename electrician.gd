@@ -21,7 +21,7 @@ func _on_area_2d_body_entered(body):
 func _process(delta):
 	if playerinarea and Input.is_action_just_pressed("shop"):
 		get_tree().change_scene_to_file("res://electricianshop.tscn")
-		print("WHOOPS")
+
 
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":

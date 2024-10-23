@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=58 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://6mpfcjj0ifpu" path="res://Dopplerette.wav" id="19_slii8"]
 [ext_resource type="PackedScene" uid="uid://bw25qskwak7la" path="res://blacksmithshop.tscn" id="20_f0mu3"]
 [ext_resource type="PackedScene" uid="uid://codgfhbhs8ppm" path="res://electricianshop.tscn" id="21_fxmdo"]
+[ext_resource type="Texture2D" uid="uid://b2mtff8ikx4qe" path="res://art/mainart/spaceship fire animation/spritesheet (1).png" id="22_mt4pl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqiey"]
 texture = ExtResource("11_6wovd")
@@ -2052,6 +2053,56 @@ size = Vector2(2110.5, 1740)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcabv"]
 size = Vector2(5772, 1751.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwt5d"]
+atlas = ExtResource("22_mt4pl")
+region = Rect2(0, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6p5w"]
+atlas = ExtResource("22_mt4pl")
+region = Rect2(66, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo8gd"]
+atlas = ExtResource("22_mt4pl")
+region = Rect2(132, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8upt"]
+atlas = ExtResource("22_mt4pl")
+region = Rect2(0, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56vbn"]
+atlas = ExtResource("22_mt4pl")
+region = Rect2(66, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii4hq"]
+atlas = ExtResource("22_mt4pl")
+region = Rect2(132, 66, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eeyrq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwt5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6p5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo8gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8upt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56vbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii4hq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="main" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_6jpb6")
@@ -2391,6 +2442,13 @@ visible = false
 position = Vector2(189, 126.5)
 scale = Vector2(3.54688, 3.31352)
 polygon = PackedVector2Array(10, -17.1, 10, -13.9, 9.3, -8.7, 12.1, -4, 23, -5.2, 23, -3, 31, 3, 31, 5.7, 32, 8.6, 32, 11, 30, 11, 26, 16, 22.4, 16, 19, 16.7, 19, 18.5, 14.2, 27, 11.7, 27, 5.7, 32, -0.799999, 32, -4.6, 28.2, -9, 32, -23, 32, -23, 31, -28, 27, -28, 8, -26.1, 8, -25.1, 6.5, -27.3, 3.1, -26.2, 1, -24.8, 1, -24, 0.200001, -27, -1.9, -27, -6.1, -25.8, -19, -23.8, -19, -19.5, -23.4, -17, -22.3, -17, -20.6, -11.9, -13, -11.2, -13.6, -13.3, -16.9, -12.2, -19, -10.8, -19, -6, -23.8, -6, -25.2, -3.9, -26.3)
+
+[node name="Rocket2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(173.5, 125)
+scale = Vector2(3.72348, 3.72348)
+sprite_frames = SubResource("SpriteFrames_eeyrq")
+frame_progress = 0.544119
 
 [connection signal="body_entered" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_entered"]
 [connection signal="body_exited" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_exited"]
