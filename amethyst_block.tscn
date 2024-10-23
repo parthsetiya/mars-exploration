@@ -55,7 +55,7 @@ shape = SubResource("CircleShape2D_2exkv")
 visible = false
 
 [node name="respawn_timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 15.0
 one_shot = true
 
 [node name="Marker2D" type="Marker2D" parent="."]

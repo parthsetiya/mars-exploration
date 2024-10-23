@@ -3,16 +3,19 @@ Engineer: [speed=0.5][[Hi|Hello|Hello]]! [wait=1]Your spaceship has crashed sir!
 - next
 	Engineer: [speed=0.5]Walk near the broken spaceship to see which items are required to repair it, if the items are available in your inventory, you may press "g" to deposit them into the spaceship
 	- next
-		Engineer: [speed=0.5] Here is a map. To open, press 'm'. This will help you on your travels. I recommend travelling west of here to the village. Good Luck!
+		Engineer: [speed=0.5] Here is a map. To open, press 'm'. This will help you on your travels. 
+		Engineer: [speed=0.5] I recommend travelling west of here to the village. Talk to the blacksmith.
+		Engineer: [speed=0.5] I have given you a pickaxe to start your journey! Good Luck!
 => END
 
 
 ~ blacksmith
 Blacksmith: [speed=0.5]I see you are in the needs of some parts to repair your ship. 
-Blacksmith: [speed=0.5]I am getting far too old and can no longer move around like I used to. I would recommend looking in the cave for some valueables. I am in need of some more resources and can trade some parts lying around.
+Blacksmith: [speed=0.5]I am getting far too old and can no longer move around like I used to. 
+Blacksmith: [speed=0.5]I would recommend looking in the cave for some valueables. I am in need of some more resources and can trade some parts lying around.
+Blacksmith: [speed=0.5]If you need anything electronic, talk to the electrician south of me. 
 => END
 
 ~ electrician
 Electrician: [speed=0.5]You've come to the right person for everything electronic. 
 
-	
