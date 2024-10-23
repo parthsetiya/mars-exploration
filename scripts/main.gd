@@ -590,26 +590,78 @@ func _process(delta):
 		
 # Allows player to deposit items in the spaceship
 func deposititems():
-	if playerdata.invamethystgear >= 5 and playerdata.invoil >= 3 and playerdata.invcobaltgear >= 5 and playerdata.invcomputerchip >= 1 and playerdata.invgoldgear >=5 and playerdata.invtoolbox >= 4 and playerdata.invtoolkit >= 2 and playerdata.invwires >=10: 
-		_on_request_inventory_update(REMOVE_PARTS.name, 1)
-		playerdata.add_spaceship_computer_chip(playerdata.invcomputerchip)
-		playerdata.add_spaceship_machine_parts(playerdata.invtoolkit)
-		playerdata.add_spaceship_thruster_repair_kits(playerdata.invtoolbox)
-		playerdata.add_spaceship_carton_of_oil(playerdata.invoil)
-		playerdata.add_spaceship_metal_plates(playerdata.invmetalplate)
-		playerdata.add_spaceship_gold_gears(playerdata.invgoldgear)
-		playerdata.add_spaceship_cobalt_gears(playerdata.invcobaltgear)
-		playerdata.add_spaceship_amethyst_gears(playerdata.invamethystgear)
-		playerdata.add_spaceship_wires(playerdata.invwires)
-		playerdata.add_computerchip(-1 * playerdata.invcomputerchip)
-		playerdata.add_toolkit(-1 * playerdata.invtoolkit)
-		playerdata.add_toolbox(-1 * playerdata.invtoolbox)
-		playerdata.add_oil(-1 * playerdata.invoil)
-		playerdata.add_goldgear(-1 * playerdata.invgoldgear)
-		playerdata.add_cobaltgear(-1 * playerdata.invcobaltgear)
-		playerdata.add_amethystgear(-1 * playerdata.invamethystgear)
-		playerdata.add_wires(-1 * playerdata.invwires)
+	var required_computer_chips = 1
+	var required_toolkits = 2
+	var required_toolboxes = 4
+	var required_oil = 3
+	var required_gold_gears = 5
+	var required_cobalt_gears = 5
+	var required_amethyst_gears = 5
+	var required_wires = 10
 	
+
+	if playerdata.invcomputerchip >= required_computer_chips:
+		playerdata.add_spaceship_computer_chip(required_computer_chips)
+		playerdata.add_computerchip(-required_computer_chips)
+	else:
+		playerdata.add_spaceship_computer_chip(playerdata.invcomputerchip)
+		playerdata.add_computerchip(-playerdata.invcomputerchip)
+
+	if playerdata.invtoolkit >= required_toolkits:
+		playerdata.add_spaceship_machine_parts(required_toolkits)
+		playerdata.add_toolkit(-required_toolkits)
+	else:
+		playerdata.add_spaceship_machine_parts(playerdata.invtoolkit)
+		playerdata.add_toolkit(-playerdata.invtoolkit)
+		
+	if playerdata.invtoolbox >= required_toolboxes:
+		playerdata.add_spaceship_thruster_repair_kits(required_toolboxes)
+		playerdata.add_toolbox(-required_toolboxes)
+	else:
+		playerdata.add_spaceship_thruster_repair_kits(playerdata.invtoolbox)
+		playerdata.add_toolbox(-playerdata.invtoolbox)
+
+	if playerdata.invoil >= required_oil:
+		playerdata.add_spaceship_carton_of_oil(required_oil)
+		playerdata.add_oil(-required_oil)
+	else:
+		playerdata.add_spaceship_carton_of_oil(playerdata.invoil)
+		playerdata.add_oil(-playerdata.invoil)
+
+	playerdata.add_spaceship_metal_plates(playerdata.invmetalplate)
+	playerdata.add_metalplate(-playerdata.invmetalplate)
+
+	if playerdata.invgoldgear >= required_gold_gears:
+		playerdata.add_spaceship_gold_gears(required_gold_gears)
+		playerdata.add_goldgear(-required_gold_gears)
+	else:
+		playerdata.add_spaceship_gold_gears(playerdata.invgoldgear)
+		playerdata.add_goldgear(-playerdata.invgoldgear)
+
+	if playerdata.invcobaltgear >= required_cobalt_gears:
+		playerdata.add_spaceship_cobalt_gears(required_cobalt_gears)
+		playerdata.add_cobaltgear(-required_cobalt_gears)
+	else:
+		playerdata.add_spaceship_cobalt_gears(playerdata.invcobaltgear)
+		playerdata.add_cobaltgear(-playerdata.invcobaltgear)
+
+	if playerdata.invamethystgear >= required_amethyst_gears:
+		playerdata.add_spaceship_amethyst_gears(required_amethyst_gears)
+		playerdata.add_amethystgear(-required_amethyst_gears)
+	else:
+		playerdata.add_spaceship_amethyst_gears(playerdata.invamethystgear)
+		playerdata.add_amethystgear(-playerdata.invamethystgear)
+
+	if playerdata.invwires >= required_wires:
+		playerdata.add_spaceship_wires(required_wires)
+		playerdata.add_wires(-required_wires)
+	else:
+		playerdata.add_spaceship_wires(playerdata.invwires)
+		playerdata.add_wires(-playerdata.invwires)
+
+	playerdata.load_data()
+
+
 
 # Highlights slots 
 func highlight_slot(index):
@@ -839,7 +891,6 @@ func _wait_for_animation(anim_name):
 func _on_area_2d_music_body_entered(body):
 	if body == player:
 		music.play()
-
 
 func _on_area_2d_music_body_exited(body):
 	if body == player:
