@@ -1,16 +1,17 @@
 extends Node2D
 class_name Main
-
 @onready var pause_menu = $CanvasLayer/Pausemenu
 var paused = false
-
 @onready var music = $AudioStreamPlayer
 @onready var cavemusic = $AudioStreamPlayer2
-
-
+@onready var animation_rocket = $AnimationPlayer
+var screen_shake_strength = 10  
+var fade_duration = 1.0  
+var move_speed = 200  
+var exit_delay = 2.0  
+var player_exit_position = Vector2(-500, -500)
 @onready var interact_to_read = $Sprite2D/startsignpostarea/interact_to_read
 @onready var maprough = $CanvasLayer/maprough
-
 @onready var thiswaytomines = $Sprite2D/thiswaytomines
 @onready var spaceship = $spaceship
 @onready var spaceship_entered = false
@@ -24,9 +25,7 @@ var mapshow = false
 var is_showing_thiswaytomines = false
 @onready var listofitems = $Control
 @onready var tocavemarker = $tocavemarker
-
 @onready var pick_axe_head = $"pick-axe-head"
-const PICK_AXE_HEAD = preload("res://Inventory/items/pick-axe-head.tres")
 @onready var player = $Player
 @onready var alltreefolder = $alltree
 @onready var allamethystfolder = $allamethyst
@@ -46,8 +45,6 @@ const GOLD_STICK = preload("res://art/mainart/gold_stick.tres")
 const GOLD_PICKAXE = preload("res://Inventory/items/gold_pickaxe.tres")
 const REMOVE_GOLD = preload("res://Inventory/items/remove_gold.tres")
 const WOODEN_PICKAXE = preload("res://Inventory/items/wooden_pickaxe.tres")
-const GLOVE = preload("res://Inventory/items/glove.tres")
-const GEAR = preload("res://Inventory/items/gear.tres")
 const COMPUTER_CHIP = preload("res://Inventory/items/computer_chip.tres")
 const REMOVE_PARTS = preload("res://Inventory/items/remove_parts.tres")
 const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
@@ -66,8 +63,6 @@ const OIL = preload("res://Inventory/items/oil.tres")
 const TOOLBOX = preload("res://Inventory/items/toolbox.tres")
 const TOOLKIT = preload("res://Inventory/items/toolkit.tres")
 const WIRES = preload("res://Inventory/items/wires.tres")
-
-# Node definitions
 var gold_node
 var gold_node2
 var iron_node
@@ -399,29 +394,7 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, am
 					label.text = str(amethyst_amount)
 					break
 					
-	if pick_axe_head_amount > 0:
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
 
-				if item.texture == null:
-					item.texture = PICK_AXE_HEAD.texture
-					label.text = str(pick_axe_head_amount)
-					break
-
-	if pick_axe_amount > 0:
-		for slot in inventory_slots:
-			if slot.get_child_count() != 0:
-				var centre_container = slot.get_children()[1]
-				var item = centre_container.get_children()[0].get_children()[0]
-				var label = centre_container.get_children()[0].get_children()[1]
-
-				if item.texture == null:
-					item.texture = GOLD_PICKAXE.texture
-					label.text = str(pick_axe_amount)
-					break
 
 	if toolbox_amount > 0:
 		for slot in inventory_slots:
@@ -791,25 +764,21 @@ func _on_area_2d_4_body_entered(body):
 			camera.limit_left = 5400
 			camera.limit_bottom = 1000
 			camera.limit_top = -1800
-			music.play()
 
 
 func _on_area_2d_cave_body_entered(body):
 	if body == player: 
 		cavemusic.play()
 		var canvas_modulate = $CanvasModulate2
-		if canvas_modulate:
-			canvas_modulate.color = Color(0, 0, 1, 1) 
+		canvas_modulate.color = Color(0, 0, 1, 1) 
 		var point_light = $Player/Camera2D/PointLight2D
-		if point_light:
-			point_light.visible = true 
+		point_light.visible = true 
 		var camera = $Player/Camera2D 
 		if camera:
 			camera.limit_right = 100000
 			camera.limit_left = -40000
 			camera.limit_bottom = 100000
 			camera.limit_top = -100000
-
 
 
 func _on_area_2d_cave_body_exited(body):
@@ -827,14 +796,6 @@ func _on_area_2d_cave_body_exited(body):
 		camera.limit_bottom = 1000
 		camera.limit_top = -1800
 
-
-@onready var animation_rocket = $AnimationPlayer
-var screen_shake_strength = 10  
-var fade_duration = 1.0  
-var move_speed = 200  
-var exit_delay = 2.0  
-var player_exit_position = Vector2(-500, -500)
-#Rocket 
 
 func _launch_rocket_():
 	move_player_off_rocket()

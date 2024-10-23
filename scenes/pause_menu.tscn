@@ -1,7 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbe4fh5bqi4gh"]
+[gd_scene load_steps=6 format=3 uid="uid://cbe4fh5bqi4gh"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_32q2i"]
 [ext_resource type="Texture2D" uid="uid://dpg0160uc305r" path="res://art/mainart/pausemenubackground.jpg" id="2_ygccb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mp1m"]
+bg_color = Color(0.772549, 0.537255, 0.411765, 1)
+border_color = Color(0.329412, 0.203922, 0.133333, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ki6s"]
+bg_color = Color(0.772236, 0.538536, 0.412924, 1)
+border_width_bottom = 4
+border_color = Color(0.329961, 0.202269, 0.132808, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
+shadow_color = Color(0.329412, 0.203922, 0.133333, 1)
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_uwu21"]
+Button/styles/hover = SubResource("StyleBoxFlat_4mp1m")
+Button/styles/normal = SubResource("StyleBoxFlat_1ki6s")
 
 [node name="Pausemenu" type="Control"]
 layout_mode = 3
@@ -10,48 +36,56 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_uwu21")
 script = ExtResource("1_32q2i")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Resume" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+offset_left = 840.0
+offset_top = 298.0
+offset_right = 1090.0
+offset_bottom = 373.0
+theme_override_font_sizes/font_size = 35
+text = "RESUME"
 
-[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(150, 50)
+[node name="Settings" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
-text = "Resume"
+offset_left = 840.0
+offset_top = 387.0
+offset_right = 1090.0
+offset_bottom = 462.0
+theme_override_font_sizes/font_size = 35
+text = "SETTINGS"
 
-[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(150, 50)
+[node name="Quit" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
-text = "Settings"
+offset_left = 839.0
+offset_top = 474.0
+offset_right = 1089.0
+offset_bottom = 549.0
+theme_override_font_sizes/font_size = 35
+text = "MAIN MENU"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(150, 50)
+[node name="Button" type="Button" parent="."]
 layout_mode = 2
-text = "Quit to main menu"
-
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Save game"
+offset_left = 839.0
+offset_top = 560.0
+offset_right = 1089.0
+offset_bottom = 635.0
+theme_override_font_sizes/font_size = 30
+text = "SAVE GAME"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 z_index = -10
 layout_mode = 0
-offset_right = 1917.0
-offset_bottom = 1917.0
+offset_right = 1919.0
+offset_bottom = 1077.0
 texture = ExtResource("2_ygccb")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

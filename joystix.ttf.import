@@ -15,7 +15,6 @@ dest_files=["res://.godot/imported/joystix.ttf-ed2246c9a2b79046adf6ea93c9c86d04.
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
-disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
