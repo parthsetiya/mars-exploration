@@ -33,13 +33,14 @@ func _on_inventory_updated(new_inventory):
 func _process(delta):
 	if state == "no_gold":
 		animated_sprite.play("no_tree")
-		#treefallinganim.play("treedown")
 	elif state == "gold":
 		animated_sprite.play("tree")
 		treefallinganim.play("treeup")
 		if player_in_area and Input.is_action_just_pressed("swing"):
+			await get_tree().create_timer(0.6).timeout
 			state = "falling"
 			treefallinganimplayer()
+			state = "no_gold"
 
 func treefallinganimplayer():
 	audio_stream_player_2d.play()
@@ -56,6 +57,7 @@ func drop_gold():
 	popfromground(gold_instance)
 	respawn_timer.start()
 	emit_signal("request_inventory_update", item.name, 1)
+	
 
 func popfromground(tree_collectable):
 	tree_collectable.get_node("AnimatedSprite2D").show()

@@ -182,11 +182,8 @@ radius = 92.0489
 script = ExtResource("1_n8dsu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_ift33")
 animation = &"tree"
-offset = Vector2(30, -80)
 
 [node name="pickablearea" type="Area2D" parent="."]
 
@@ -197,7 +194,7 @@ shape = SubResource("CircleShape2D_qjadx")
 [node name="tree_collectable" parent="pickablearea" instance=ExtResource("2_5wokc")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.001
+wait_time = 3.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
