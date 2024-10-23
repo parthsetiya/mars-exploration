@@ -1,5 +1,4 @@
 extends Node2D
-
 @onready var player_sound = $AudioStreamPlayer2D
 var state = "no_amethyst"
 var player_in_area = false
@@ -7,21 +6,14 @@ var amethyst_scene = preload("res://scenes/amethyst_collectable.tscn") as Packed
 var playerData = PlayerData.new()
 var player = null
 var collectable = false
-
-
 @export var inventory_manager: Node
-
 @onready var respawn_timer = $respawn_timer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var marker = $Marker2D
-
-
 const item = preload("res://Inventory/items/amethyst.tres")
-
 var player_node
 var inventory
 var current_amethyst
-
 signal request_inventory_update()
 
 

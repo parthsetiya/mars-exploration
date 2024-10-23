@@ -161,6 +161,7 @@ func _on_slot_clicked(slot_index):
 		first_slot_index = null
 		second_slot_index = null
 
+
 func _swap_items(slot_index_1, slot_index_2):
 	if inv_open == false:
 		return
@@ -324,6 +325,7 @@ func update_inventory_ui(item_name, updated_quantity):
 					if int(label.text) <= 0:
 						item.texture = null
 						label.text = null
+
 
 # Signal from playerdata is caught here and updated the inventory based on the amounts present in the save file
 func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, amethyst_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount, metal_plate_amount, computer_chip_amount):
@@ -493,10 +495,7 @@ func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, am
 					label.text = str(cobalt_gear_amount)
 					break
 
-		
 
-	
-	
 func inventoryopen():
 	if inv_open:
 		inv_gui_show.hide()
@@ -515,7 +514,6 @@ func inventoryopen():
 	inv_open = !inv_open
 
 
-# Carries out the different inputs from the player
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
@@ -554,12 +552,8 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("map"):
 		mapopen()
-	
-		
-		
 
-		
-		
+
 # Allows player to deposit items in the spaceship
 func deposititems():
 	var required_computer_chips = 1
@@ -634,7 +628,6 @@ func deposititems():
 	playerdata.load_data()
 
 
-
 # Highlights slots 
 func highlight_slot(index):
 	for slot in inventory_hotbar_slots:
@@ -658,15 +651,14 @@ func highlight_slot(index):
 				playerdata.updatecurrent_item("")
 
 
-			
 func mapopen():
 	if mapshow:
 		maprough.hide()
 	else:
 		maprough.show()
 	mapshow = !mapshow
-	
-	
+
+
 func pausemenu():
 	if paused:
 		pause_menu.hide()
@@ -721,9 +713,6 @@ func _on_area_2d_2_body_entered(body):
 		player.speed = 100
  
 
-
-
-
 func _on_tocave_body_entered(body):
 	if body == player:
 		player.speed = 0 
@@ -732,8 +721,7 @@ func _on_tocave_body_entered(body):
 		animation_player.play("fadeout")
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
-		
-		
+
 
 func _on_cavetomain_body_exited(body):
 	if body == player: 
@@ -743,7 +731,6 @@ func _on_cavetomain_body_exited(body):
 		animation_player.play("fadeout")
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
-
 
 
 func _on_area_2d_3_body_entered(body):
@@ -822,9 +809,11 @@ func move_player_off_rocket():
 	if player:
 		player.position.x -= 50  
 
+
 func hide_player():
 	if player:
 		player.visible = false  
+
 
 func screen_shake():
 	var camera = $Player/Camera2D  
@@ -835,6 +824,7 @@ func screen_shake():
 			await get_tree().create_timer(0.05).timeout
 		camera.offset = Vector2(0, 0)  
 
+
 func move_rocket_up(sprite):
 	var sprite_frames = sprite.sprite_frames  
 	if sprite_frames:
@@ -843,15 +833,19 @@ func move_rocket_up(sprite):
 			sprite.position.y -= move_speed * get_process_delta_time()  
 		sprite.visible = false
 
+
 func _wait_for_animation(anim_name):
 	if animation_rocket:
 		await animation_rocket.animation_finished  
+
 
 #plays music based on area
 func _on_area_2d_music_body_entered(body):
 	if body == player:
 		music.play()
 
+
 func _on_area_2d_music_body_exited(body):
 	if body == player:
 		music.stop()
+
