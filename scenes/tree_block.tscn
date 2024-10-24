@@ -194,7 +194,7 @@ shape = SubResource("CircleShape2D_qjadx")
 [node name="tree_collectable" parent="pickablearea" instance=ExtResource("2_5wokc")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 30.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 

@@ -14,6 +14,7 @@ var collectable = false
 const item = preload("res://Inventory/items/log.tres")
 var player_node
 var inventory
+var tree_collected = false
 signal request_inventory_update()
 
 
@@ -30,12 +31,14 @@ func _process(delta):
 	if state == "no_gold":
 		animated_sprite.play("no_tree")
 		#treefallinganim.play("treedown")
+		tree_collected = false
 	elif state == "gold":
 		animated_sprite.play("tree")
 		treefallinganim.play("treeup")
-		if player_in_area and Input.is_action_just_pressed("swing"):
+		if player_in_area and Input.is_action_just_pressed("swing") and tree_collected == false:
 			state = "falling"
 			treefallinganimplayer()
+			tree_collected = true
 
 
 func treefallinganimplayer():
@@ -53,6 +56,7 @@ func drop_gold():
 	popfromground(gold_instance)
 	respawn_timer.start()
 	emit_signal("request_inventory_update", item.name, 1)
+	state = "no_gold"
 
 
 func popfromground(tree_collectable):

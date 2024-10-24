@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://m32rf8bgbsqs"]
+[gd_scene load_steps=6 format=3 uid="uid://m32rf8bgbsqs"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_1lt66"]
 [ext_resource type="Texture2D" uid="uid://cjpja7jnm7dgx" path="res://art/mainmenu/Frame 1 (1).png" id="2_bjdic"]
 [ext_resource type="PackedScene" uid="uid://2uqyrmvyqs5u" path="res://scenes/options/scenes/options_menu.tscn" id="3_nqggx"]
 [ext_resource type="Theme" uid="uid://4hkej5w50ixp" path="res://scenes/pause_menu.tres" id="4_kfhcf"]
 [ext_resource type="FontFile" uid="uid://qgpnaaet74fu" path="res://TT Octosquares Trial Compressed Bold.ttf" id="5_7klpp"]
-[ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="7_rywwq"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -64,7 +63,7 @@ alignment = 1
 visible = false
 layout_mode = 1
 
-[node name="quit" type="Button" parent="."]
+[node name="play" type="Button" parent="."]
 layout_mode = 2
 offset_left = 763.0
 offset_top = 645.0
@@ -75,10 +74,7 @@ theme_override_fonts/font = ExtResource("5_7klpp")
 theme_override_font_sizes/font_size = 50
 text = "Play"
 
-[node name="Player" parent="." instance=ExtResource("7_rywwq")]
-visible = false
-
-[node name="quit3" type="Button" parent="."]
+[node name="quit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 767.0
 offset_top = 906.0
@@ -89,7 +85,7 @@ theme_override_fonts/font = ExtResource("5_7klpp")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
-[node name="quit2" type="Button" parent="."]
+[node name="options" type="Button" parent="."]
 layout_mode = 0
 offset_left = 761.0
 offset_top = 775.0
@@ -99,3 +95,9 @@ theme = ExtResource("4_kfhcf")
 theme_override_fonts/font = ExtResource("5_7klpp")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_options_pressed"]
