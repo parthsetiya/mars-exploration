@@ -1,9 +1,13 @@
-[gd_scene load_steps=58 format=3 uid="uid://h53l6bk3kdqi"]
+[gd_scene load_steps=66 format=3 uid="uid://h53l6bk3kdqi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jpb6"]
 [ext_resource type="PackedScene" uid="uid://cd8a1b041m6tj" path="res://scenes/player.tscn" id="1_w3bu8"]
+[ext_resource type="Texture2D" uid="uid://bf0f76pe3s568" path="res://art/mainart/amythest.png" id="3_ueq4c"]
 [ext_resource type="PackedScene" uid="uid://cbe4fh5bqi4gh" path="res://scenes/pause_menu.tscn" id="4_b4hsc"]
+[ext_resource type="Script" path="res://scenes/pickableareamethyst.gd" id="4_qlqby"]
+[ext_resource type="PackedScene" uid="uid://b683v8qkstwsn" path="res://scenes/amethyst_collectable.tscn" id="5_1it78"]
 [ext_resource type="PackedScene" uid="uid://bvtistcsm3ds0" path="res://scenes/gold_block.tscn" id="6_rrp7u"]
+[ext_resource type="AudioStream" uid="uid://1gf0jh0gbx20" path="res://art/390771__d00121058__fx_013_sword_contact_stone_1.wav" id="6_y2qkr"]
 [ext_resource type="AudioStream" uid="uid://cku7bphlf2vx2" path="res://Soaring.wav" id="6_y3d5e"]
 [ext_resource type="PackedScene" uid="uid://uvxjnidohd5v" path="res://scenes/cobalt_block.tscn" id="7_6rs4l"]
 [ext_resource type="PackedScene" uid="uid://b2tn12fbfracb" path="res://scenes/recipeGui.tscn" id="7_lua2c"]
@@ -12,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://crlao84s5ynxx" path="res://scenes/friendlyalien.tscn" id="12_3kb63"]
 [ext_resource type="PackedScene" uid="uid://booto5uhhl2kr" path="res://Inventory/inventory_gui.tscn" id="12_tamxu"]
 [ext_resource type="PackedScene" uid="uid://b40cachjw03ub" path="res://listofitems.tscn" id="13_ejr1y"]
-[ext_resource type="PackedScene" uid="uid://kfgimtoe72hl" path="res://scenes/amethyst_block.tscn" id="14_u0j5j"]
 [ext_resource type="PackedScene" uid="uid://b601k4v85jj8e" path="res://blacksmith.tscn" id="15_5e6i8"]
 [ext_resource type="PackedScene" uid="uid://cy45fnv5txv60" path="res://scenes/tree_block.tscn" id="15_5jhu1"]
 [ext_resource type="Texture2D" uid="uid://108k0hdoohuq" path="res://art/mainart/crashed shadows.png" id="15_nc7go"]
@@ -1912,8 +1915,125 @@ texture_region_size = Vector2i(32, 32)
 12:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="GDScript" id="GDScript_e3453"]
+script/source = "extends Node2D
+@onready var player_sound = $AudioStreamPlayer2D
+var state = \"no_amethyst\"
+var player_in_area = false
+var amethyst_scene = preload(\"res://scenes/amethyst_collectable.tscn\") as PackedScene
+var playerData = PlayerData.new()
+var player = null
+var collectable = false
+@export var inventory_manager: Node
+@onready var respawn_timer = $respawn_timer
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var marker = $Marker2D
+const item = preload(\"res://Inventory/items/amethyst.tres\")
+var player_node
+var inventory
+var current_amethyst
+signal request_inventory_update()
+
+# Sets ore to not spawned at start
+func _ready():
+	print(amethyst_scene)
+	if state == \"no_amethyst\":
+		respawn_timer.start() 
+
+
+# Checks for when ore is mined and should be respawned
+func _process(delta):
+	if state == \"no_amethyst\":
+		animated_sprite.play(\"no_amethyst\")
+	elif state == \"amethyst\":
+		animated_sprite.play(\"amethyst\")
+		if player_in_area and Input.is_action_just_pressed(\"swing\"):
+			await get_tree().create_timer(0.6).timeout
+			state = \"no_amethyst\"
+			_drop_amethyst_()
+			player_sound.play()
+			_add_item_to_inventory_(item.name, 1)
+
+
+# Plays animation for ore ingot
+func _popfromground_(amethyst_collectable):
+	amethyst_collectable.get_node(\"AnimatedSprite2D\").show()
+	amethyst_collectable.get_node(\"AnimationPlayer\").play(\"popfromgroundamethyst\")
+	await get_tree().create_timer(1.5).timeout
+	amethyst_collectable.get_node(\"AnimationPlayer\").play(\"fadeamethyst\")
+	await get_tree().create_timer(0.6).timeout
+	amethyst_collectable.queue_free()
+
+
+func _on_respawn_timer_timeout():
+	if state == \"no_amethyst\":
+		state = \"amethyst\"
+
+# Makes the animation play for the correct texture and at the correct location
+func _drop_amethyst_():
+	var amethyst_instance = amethyst_scene.instantiate()
+	amethyst_instance.global_position = marker.global_position / 2
+	get_parent().add_child(amethyst_instance)
+	_popfromground_(amethyst_instance)
+	await get_tree().create_timer(3).timeout
+	respawn_timer.start()
+	emit_signal(\"request_inventory_update\", item.name, 1)
+
+
+func _on_area_2d_body_entered(body):
+	player_in_area = true
+	player = body
+
+
+func _on_area_2d_body_exited(body):
+	player_in_area = false
+
+# Adds item to inventory via signal to main file
+func _add_item_to_inventory_(item_name, quantity):
+	emit_signal(\"request_inventory_update\", item_name, quantity)
+
+
+
+
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3hoaj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ueq4c")
+}],
+"loop": true,
+"name": &"amethyst",
+"speed": 0.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"no_amethyst",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ho54j"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8w04"]
+radius = 16.0312
+
+[sub_resource type="PackedScene" id="PackedScene_cfp1o"]
+_bundled = {
+"conn_count": 8,
+"conns": PackedInt32Array(1073741834, 1073741833, 29, 28, 2, 0, 0, 1073741836, 1073741835, 31, 30, 2, 0, 0, 1073741838, 1073741837, 33, 32, 2, 0, 0, 1073741840, 1073741839, 35, 34, 2, 0, 0, 1073741842, 1073741841, 37, 36, 2, 0, 0, 1073741844, 1073741843, 39, 38, 2, 0, 0, 1073741846, 1073741845, 41, 40, 2, 0, 0, 1073741848, 1073741847, 43, 42, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("amethyst_block", "Node2D", "script", "AnimatedSprite2D", "AnimatedSprite2D", "sprite_frames", "animation", "pickableareamethyst", "Area2D", "script", "CollisionShape2D", "CollisionShape2D", "shape", "amethyst_collectable", "visible", "respawn_timer", "Timer", "wait_time", "Marker2D", "Marker2D", "Area2D", "Area2D", "CollisionShape2D", "CollisionShape2D", "shape", "AudioStreamPlayer2D", "AudioStreamPlayer2D", "stream", "_on_body_entered", "body_entered", "_on_body_exited", "body_exited", "_on_respawn_timer_timeout", "timeout", "_on_respawn_timeramethyst_timeout", "timeout", "_on_area_2d_area_entered", "area_entered", "_on_area_2d_area_exited", "area_exited", "_on_area_2d_body_entered", "body_entered", "_on_area_2d_body_exited", "body_exited"),
+"node_count": 10,
+"node_paths": [NodePath("."), NodePath("."), NodePath("./pickableareamethyst"), NodePath("./pickableareamethyst"), NodePath("."), NodePath("."), NodePath("."), NodePath("./Area2D"), NodePath("."), NodePath("pickableareamethyst"), NodePath("pickableareamethyst"), NodePath("pickableareamethyst"), NodePath("pickableareamethyst"), NodePath("."), NodePath("respawn_timer"), NodePath("."), NodePath("respawn_timer"), NodePath("."), NodePath("Area2D"), NodePath("."), NodePath("Area2D"), NodePath("."), NodePath("Area2D"), NodePath("."), NodePath("Area2D")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 2, 5, 1, 6, 2, 0, 1073741825, 0, 8, 7, -1, 1, 9, 3, 0, 1073741826, 0, 11, 10, -1, 1, 12, 4, 0, 1073741827, 0, 2147483647, 13, 5, 1, 14, 6, 0, 1073741828, 0, 16, 15, -1, 1, 17, 7, 0, 1073741829, 0, 19, 18, -1, 0, 0, 1073741830, 0, 21, 20, -1, 0, 0, 1073741831, 0, 23, 22, -1, 1, 24, 8, 0, 1073741832, 0, 26, 25, -1, 1, 27, 9, 0),
+"variants": [SubResource("GDScript_e3453"), SubResource("SpriteFrames_3hoaj"), &"amethyst", ExtResource("4_qlqby"), SubResource("CircleShape2D_ho54j"), ExtResource("5_1it78"), false, 30.0, SubResource("CircleShape2D_m8w04"), ExtResource("6_y2qkr")],
+"version": 3
+}
+
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cc2iu"]
-scenes/1/scene = ExtResource("14_u0j5j")
+scenes/1/scene = SubResource("PackedScene_cfp1o")
 scenes/3/scene = ExtResource("6_rrp7u")
 
 [sub_resource type="TileSet" id="TileSet_duuyq"]

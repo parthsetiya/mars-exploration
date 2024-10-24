@@ -42,7 +42,7 @@ var jsonlogvalue
 var jsonstickvalue
 signal inventory_loaded(gold_amount, iron_amount, log_amount)
 
-
+# Add functions update the saved amount of items when the player collects more
 func add_invGoldIngot(value : int):
 	invGoldIngot += value
 	save()
@@ -65,17 +65,6 @@ func add_invlogingot(value : int):
 
 func add_invstick(value: int):
 	invstick += value
-	save()
-
-
-func add_pickaxe(value: int):
-	invpickaxe += value
-	print("this much invpickaxe: ", invpickaxe)
-	save()
-
-
-func add_pickaxehead(value: int):
-	invpickaxehead += value
 	save()
 
 
@@ -178,6 +167,7 @@ func add_spaceship_wires(value: int):
 	save()
 
 
+# Saves the items and player position
 func save():
 	var data = {
 		"gold_amount": invGoldIngot,
@@ -216,6 +206,7 @@ func save():
 	file.close()
 
 
+# Loads the data and sets the variables to the correct values and emits signal of those values
 func load_data():
 	if not FileAccess.file_exists("res://Inventory/saveitems.json"):
 		save()  # Save default data if file doesn't exist

@@ -19,8 +19,7 @@ signal request_inventory_update()
 
 
 func _ready():
-	if state == "no_gold":
-		respawn_timer.start() 
+	state = "gold"
 
 
 func _on_inventory_updated(new_inventory):

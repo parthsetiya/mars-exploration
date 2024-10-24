@@ -4,16 +4,8 @@ class_name OptionsMenu
 signal exit_options_menu
 
 
-func _ready():
-	exit_button.button_down.connect(on_exit_pressed)
-	set_process(false)
 
-
-func on_exit_pressed() -> void:
-	exit_options_menu.emit()
-	set_process(false)
-
-
+# Exits back to the main menu of the game
 func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 

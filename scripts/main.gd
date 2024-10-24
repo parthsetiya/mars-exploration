@@ -261,7 +261,6 @@ func update_inventory_ui(item_name, updated_quantity):
 		playerdata.load_data()
 
 	if item_name == REMOVE_PARTS.name:
-		print("REMOVING ITEMS")
 		for slot in inventory_slots:
 			if slot.get_child_count() != 0:
 				var centre_container = slot.get_children()[1]
@@ -328,7 +327,14 @@ func update_inventory_ui(item_name, updated_quantity):
 
 
 # Signal from playerdata is caught here and updated the inventory based on the amounts present in the save file
-func _on_inventory_loaded(gold_amount, iron_amount, log_amount, stick_amount, amethyst_amount, pick_axe_head_amount, pick_axe_amount, toolbox_amount, toolkit_amount, wires_amount, oil_amount, gold_gear_amount, amethyst_gear_amount, cobalt_gear_amount, metal_plate_amount, computer_chip_amount):
+func _on_inventory_loaded(gold_amount, iron_amount, 
+	log_amount, stick_amount, 
+	amethyst_amount, pick_axe_head_amount, 
+	pick_axe_amount, toolbox_amount, 
+	toolkit_amount, wires_amount, 
+	oil_amount, gold_gear_amount, 
+	amethyst_gear_amount, cobalt_gear_amount, 
+	metal_plate_amount, computer_chip_amount):
 	for slot in inventory_slots:
 		if slot.get_child_count() != 0:
 			var centre_container = slot.get_children()[1]
@@ -782,7 +788,7 @@ func _on_area_2d_cave_body_exited(body):
 		camera.limit_bottom = 1000
 		camera.limit_top = -1800
 
-
+# Moves the player off the rocket and initiates the launch sequence, including animations and scene transition.Moves the player slightly to simulate stepping off the rocket during launch preparation.
 func _launch_rocket_():
 	move_player_off_rocket()
 	hide_player()
@@ -803,17 +809,17 @@ func _launch_rocket_():
 	await get_tree().create_timer(exit_delay).timeout  
 	get_tree().change_scene_to_file("res://end_scene.tscn")
 
-
+# Moves the player slightly to simulate stepping off the rocket during launch preparation.
 func move_player_off_rocket():
 	if player:
 		player.position.x -= 50  
 
-
+# Hides the player during the launch
 func hide_player():
 	if player:
 		player.visible = false  
 
-
+# Shakes the camera to give effect of rocket taking off
 func screen_shake():
 	var camera = $Player/Camera2D  
 	if camera:
@@ -823,7 +829,7 @@ func screen_shake():
 			await get_tree().create_timer(0.05).timeout
 		camera.offset = Vector2(0, 0)  
 
-
+# Moves rocket sprite up and off of the screen
 func move_rocket_up(sprite):
 	var sprite_frames = sprite.sprite_frames  
 	if sprite_frames:
@@ -832,7 +838,7 @@ func move_rocket_up(sprite):
 			sprite.position.y -= move_speed * get_process_delta_time()  
 		sprite.visible = false
 
-
+# Waits for animations to finish before allowing others to continue
 func _wait_for_animation(anim_name):
 	if animation_rocket:
 		await animation_rocket.animation_finished  

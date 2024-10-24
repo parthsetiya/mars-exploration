@@ -7,11 +7,3 @@ var collectable = false
 var current_iron
 
 
-func _on_body_entered(body):
-	print($AnimationPlayer)
-	entered = true
-
-
-func _on_body_exited(body):
-	entered = false
-

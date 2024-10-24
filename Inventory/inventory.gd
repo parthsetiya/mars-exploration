@@ -13,7 +13,7 @@ func add_item(item_name, quantity):
 func get_items():
 	return items
 
-
+# Gets the quantity of a certain item within the inventory 
 func get_item_quantity(item_name):
 	if items.has(item_name):
 		return items[item_name]

@@ -7,16 +7,18 @@ const TOOLBOX = preload("res://Inventory/items/toolbox.tres")
 const TOOLKIT = preload("res://Inventory/items/toolkit.tres")
 const WIRES = preload("res://Inventory/items/wires.tres")
 
-
+# Emits signal to add item to inventory 
 func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
 
 
+# Changes scene back to main
 func _process(delta):
 	if Input.is_action_just_pressed("shop") and not get_tree().current_scene.name == "main":
 		get_tree().change_scene_to_file("res://scenes/maintest.tscn")
 
 
+# Buttons add items to inventory from shop if the player has the required items
 func _on_button_pressed():
 	playerdata.load_data()
 	if playerdata.invGoldIngot >= 1:

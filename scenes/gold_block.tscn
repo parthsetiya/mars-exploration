@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvtistcsm3ds0"]
+[gd_scene load_steps=10 format=3 uid="uid://bvtistcsm3ds0"]
 
 [ext_resource type="Script" path="res://scenes/gold_block.gd" id="1_ej74l"]
 [ext_resource type="Texture2D" uid="uid://ch7fbuhmrm1yq" path="res://art/mainart/gold.png" id="2_k44p7"]
-[ext_resource type="Script" path="res://scenes/pickable_area.gd" id="4_yqus4"]
 [ext_resource type="AudioStream" uid="uid://1gf0jh0gbx20" path="res://art/390771__d00121058__fx_013_sword_contact_stone_1.wav" id="5_jdb6v"]
 [ext_resource type="PackedScene" uid="uid://daflkqadevkq6" path="res://scenes/gold_collectable.tscn" id="5_scnpm"]
 
@@ -49,7 +48,6 @@ animation = &"no_gold"
 
 [node name="pickable_area" type="Area2D" parent="."]
 position = Vector2(3, -1)
-script = ExtResource("4_yqus4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
 position = Vector2(-1, 2)

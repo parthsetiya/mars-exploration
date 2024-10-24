@@ -15,29 +15,21 @@ var playerholdingpick
 @onready var toolanim = $Node2D/AnimationPlayer
 @onready var node_2d = $Node2D
 
-
+# Sets player position to last saved position
 func _ready():
-	verify_save_directory(save_file_path)
 	playerData.load_data()
 	self.position = playerData.SavePos
 
 
-func verify_save_directory(path: String):
-	DirAccess.make_dir_absolute(path)
 
 
+# Get direction of the player and play a swing animation based on the direction the player is facing
 func _process(delta):
 	position += velocity * delta
-	if Input.is_action_just_pressed("save"):
-		save()
-	if Input.is_action_just_pressed("load"):
-		load_data()
-	emit_signal("update_ui", playerData.health, self.position)
 	if Input.is_action_just_pressed("right"):
 		direction = "right"
 	if Input.is_action_just_pressed("left"):
 		direction = "left"
-	$Goldcounter.text = "Gold: %s" % playerData.invGoldIngot
 	if Input.is_action_just_pressed("swing") and not is_swinging:
 		$AudioStreamPlayer2D.play()
 		print(playerData.current_item)
@@ -46,6 +38,7 @@ func _process(delta):
 		playerData.UpdatePos(self.position)
 
 
+# Function for playing the swinging of the tool animation
 func swing_tool():
 	if is_swinging:
 		return 
@@ -69,27 +62,12 @@ func swing_tool():
 	is_swinging = false
 	speed = 100 
 
-
-func load_data():
-	playerData = ResourceLoader.load(save_file_path + save_file_name). duplicate(true)
-	on_start_load()
-	print("loaded data")
-
-
-func on_start_load():
-	self.position = playerData.SavePos
-
-
-func save():
-	ResourceSaver.save(playerData, save_file_path + save_file_name)
-	print("saved data")
-
-
+# Gets the direction of the player and moves them in that direction
 func get_input():
 	input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 
-
+# Plays animation based on what directon the player is walking
 func updateAnimation():
 	if not is_swinging:
 		if velocity.length() == 0: 
@@ -111,7 +89,6 @@ func _physics_process(delta):
 	updateAnimation()
 
 
-func player_hold_pick():
-	playerholdingpick = true
+
 
 

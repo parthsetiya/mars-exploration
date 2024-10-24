@@ -6,12 +6,3 @@ var entered = false
 var collectable = false
 var current_gold
 
-
-func _on_body_entered(body):
-	print($AnimationPlayer)
-	entered = true
-
-
-func _on_body_exited(body):
-	entered = false
-
