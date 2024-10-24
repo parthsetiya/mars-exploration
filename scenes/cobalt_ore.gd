@@ -34,13 +34,14 @@ func _process(delta):
 		collected_iron = false
 	elif state == "iron":
 		animated_sprite.play("iron")
-		if player_in_area and Input.is_action_just_pressed("swing") and collected_iron == false:
+		if player_in_area and Input.is_action_just_pressed("swing") and not collected_iron:
+			collected_iron = true
 			await get_tree().create_timer(0.6).timeout
 			state = "no_iron"
 			drop_iron()
 			player_break.play()
 			add_item_to_inventory(item.name, 1)
-			collected_iron = true
+			
 
 
 # Plays the animation of the ingot dropping to the ground
