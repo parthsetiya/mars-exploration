@@ -2396,7 +2396,6 @@ libraries = {
 position = Vector2(3527.5, 158.5)
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0687983, 0.0687983, 0.0687983, 1)
 
 [node name="Area2DRocket" type="Area2D" parent="."]
