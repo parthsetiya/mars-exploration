@@ -2267,20 +2267,17 @@ position = Vector2(-720.5, -365.5)
 [node name="tree_block11" parent="alltree" instance=ExtResource("15_5jhu1")]
 position = Vector2(850, 60)
 
-[node name="tree_block12" parent="alltree" instance=ExtResource("15_5jhu1")]
-position = Vector2(-253, 199.5)
-
-[node name="Area2D3" type="Area2D" parent="."]
+[node name="BlueArea" type="Area2D" parent="."]
 position = Vector2(-875, -811)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueArea"]
 position = Vector2(1085.25, 763.25)
 shape = SubResource("RectangleShape2D_d4pvv")
 
-[node name="Area2D4" type="Area2D" parent="."]
+[node name="GreenArea" type="Area2D" parent="."]
 position = Vector2(-875, -811)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GreenArea"]
 position = Vector2(4574, 590)
 shape = SubResource("RectangleShape2D_d4pvv")
 
@@ -2313,13 +2310,13 @@ shape = SubResource("CircleShape2D_q7t5t")
 [node name="Marker2D" type="Marker2D" parent="areaback"]
 position = Vector2(-1515, -31)
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Teleporter" type="Area2D" parent="."]
 position = Vector2(1286, -137.5)
 
-[node name="Marker2D2" type="Marker2D" parent="Area2D2"]
+[node name="Marker2D2" type="Marker2D" parent="Teleporter"]
 position = Vector2(1512.5, 31.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter"]
 position = Vector2(7.5, -0.5)
 shape = SubResource("CircleShape2D_igvuk")
 
@@ -2400,7 +2397,6 @@ libraries = {
 position = Vector2(3527.5, 158.5)
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0687983, 0.0687983, 0.0687983, 1)
 
 [node name="Area2DRocket" type="Area2D" parent="."]
@@ -2461,11 +2457,13 @@ frame_progress = 0.544119
 
 [connection signal="body_entered" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_entered"]
 [connection signal="body_exited" from="spaceship/spaceshiparea" to="." method="_on_spaceshiparea_body_exited"]
-[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]
-[connection signal="body_exited" from="Area2D3" to="." method="_on_area_2d_3_body_exited"]
-[connection signal="body_entered" from="Area2D4" to="." method="_on_area_2d_4_body_entered"]
+[connection signal="body_entered" from="BlueArea" to="." method="_on_blue_area_body_entered"]
+[connection signal="body_exited" from="BlueArea" to="." method="_on_area_2d_3_body_exited"]
+[connection signal="body_entered" from="GreenArea" to="." method="_on_area_2d_4_body_entered"]
+[connection signal="body_entered" from="GreenArea" to="." method="_on_green_area_body_entered"]
 [connection signal="body_entered" from="areaback" to="." method="_on_areaback_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Teleporter" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Teleporter" to="." method="_on_teleporter_body_entered"]
 [connection signal="body_entered" from="tocave" to="." method="_on_tocave_body_entered"]
 [connection signal="area_entered" from="cavetomain" to="." method="_on_cavetomain_area_entered"]
 [connection signal="area_shape_entered" from="cavetomain" to="." method="_on_cavetomain_area_shape_entered"]

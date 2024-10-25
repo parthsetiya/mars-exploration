@@ -49,7 +49,7 @@ const COMPUTER_CHIP = preload("res://Inventory/items/computer_chip.tres")
 const REMOVE_PARTS = preload("res://Inventory/items/remove_parts.tres")
 const REMOVEFROMNPC = preload("res://Inventory/items/removefromnpc.tres")
 const AMETHYST = preload("res://Inventory/items/amethyst.tres")
-@onready var marker_2d_2 = $Area2D2/Marker2D2
+@onready var marker_2d_2 = $Teleporter/Marker2D2
 @onready var marker_2d = $areaback/Marker2D
 @onready var allgoldfolder = $allgold
 @onready var allironfolder = $alliron
@@ -718,21 +718,6 @@ func _on_areaback_body_entered(body):
 		player.speed = 100
 
 
-# Fades in transitions and teleports player, changes camera limit
-func _on_area_2d_2_body_entered(body):
-	if body == player:
-		player.speed = 0
-		animation_player.play("fadein")  
-		player.global_position = marker_2d_2.global_position
-		var camera = $Player/Camera2D 
-		if camera:
-			camera.limit_right = 10000 
-			camera.limit_left = 5400
-		animation_player.play("fadeout") 
-		await get_tree().create_timer(1).timeout
-		player.speed = 100
- 
-
 # Fades in transitions and teleports player
 func _on_tocave_body_entered(body):
 	if body == player:
@@ -742,28 +727,6 @@ func _on_tocave_body_entered(body):
 		animation_player.play("fadeout")
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
-
-
-# Changes camera limits
-func _on_area_2d_3_body_entered(body):
-	if body == player:
-		var camera = $Player/Camera2D
-		if camera:
-			camera.limit_right = 2600 
-			camera.limit_left = -2000
-			camera.limit_bottom = 1000
-			camera.limit_top = -1800
-
-
-# Changes camera limits
-func _on_area_2d_4_body_entered(body):
-	if body == player:
-		var camera = $Player/Camera2D
-		if camera:
-			camera.limit_right = 10000 
-			camera.limit_left = 5400
-			camera.limit_bottom = 1200
-			camera.limit_top = -2200
 
 
 # Turns on canvasmodulate and 2D pointlight, changes cameralimit
@@ -821,3 +784,40 @@ func _on_cavetomain_body_entered(body):
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
 
+
+# Changes camera limits
+func _on_blue_area_body_entered(body):
+	if body == player:
+		var camera = $Player/Camera2D
+		if camera:
+			camera.limit_right = 2600 
+			camera.limit_left = -2000
+			camera.limit_bottom = 1000
+			camera.limit_top = -1800
+
+
+# Changes camera limits
+func _on_green_area_body_entered(body):
+	if body == player:
+		var camera = $Player/Camera2D
+		if camera:
+			camera.limit_right = 10000 
+			camera.limit_left = 5400
+			camera.limit_bottom = 1200
+			camera.limit_top = -2200
+
+
+# Fades in transitions and teleports player, changes camera limit
+func _on_teleporter_body_entered(body):
+	if body == player:
+		player.speed = 0
+		animation_player.play("fadein")  
+		player.global_position = marker_2d_2.global_position
+		var camera = $Player/Camera2D 
+		if camera:
+			camera.limit_right = 10000 
+			camera.limit_left = 5400
+		animation_player.play("fadeout") 
+		await get_tree().create_timer(1).timeout
+		player.speed = 100
+ 
