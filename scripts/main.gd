@@ -104,7 +104,7 @@ signal player_holding_pick
 
 #Declares all of the external files using get_nodes which allows signals to be connected, as well as declaring other variables to be used in the script. 
 func _ready():
-	playerdata.load_data()
+	player.speed = 100
 	allgold = allgoldfolder.get_children()
 	alliron = allironfolder.get_children()
 	alltree = alltreefolder.get_children()
@@ -133,6 +133,7 @@ func _ready():
 	electricianshop.connect("request_inventory_update", Callable(self, "_on_request_inventory_update"))
 	inventory_gui_slots = inventory_slots.slice(0, 15)
 	inventory_hotbar_slots = inventory_slots.slice(20, 25) 
+	pause_menu.connect("changespeed", Callable(self, "_change_player_speed"))
 	
 	for slot in inventory_hotbar_slots:
 		if slot.has_node("background"):
@@ -525,7 +526,7 @@ func inventoryopen():
 # Opens inventory
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
-		get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
+		pausemenu()
 	if Input.is_action_just_pressed("Inventory"):
 		inventoryopen()
 	for i in range(5):
@@ -662,6 +663,11 @@ func highlight_slot(index):
 				playerdata.updatecurrent_item("")
 
 
+func _change_player_speed():
+	player.speed = 100
+	pausemenu()
+
+
 func mapopen():
 	if mapshow:
 		maprough.hide()
@@ -673,11 +679,11 @@ func mapopen():
 func pausemenu():
 	if paused:
 		pause_menu.hide()
-		Engine.time_scale =  1
+		player.speed = 100
 	else:
 		pause_menu.show()
-		Engine.time_scale = 0
-
+		player.speed = 0
+	paused = !paused
 
 # Showing the list of items for spaceship 
 func _on_spaceshiparea_body_entered(body):

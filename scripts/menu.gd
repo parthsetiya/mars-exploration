@@ -30,6 +30,7 @@ func _on_options_pressed():
 # Restarts the game
 func _on_restart_pressed():
 	reset_inventory()
+	get_tree().change_scene_to_packed(start_level)
 
 
 func reset_inventory():

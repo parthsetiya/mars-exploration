@@ -1,12 +1,12 @@
 extends Control
 @onready var start_level = preload("res://scenes/maintest.tscn") as PackedScene
-var playerdata = PlayerData.new()
+signal changespeed
+
 
 # Resume the game
 func _on_resume_pressed():
-	playerdata.load_data()
-	get_tree().change_scene_to_file("res://scenes/maintest.tscn")
-	Engine.time_scale =  1
+	hide()
+	emit_signal("changespeed")
 
 
 # change the scene to the settings scene
