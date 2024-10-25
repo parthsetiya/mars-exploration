@@ -4,6 +4,7 @@ var playerdata = PlayerData.new()
 
 # Resume the game
 func _on_resume_pressed():
+	playerdata.load_data()
 	get_tree().change_scene_to_file("res://scenes/maintest.tscn")
 	Engine.time_scale =  1
 

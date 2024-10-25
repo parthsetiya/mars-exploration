@@ -104,6 +104,7 @@ signal player_holding_pick
 
 #Declares all of the external files using get_nodes which allows signals to be connected, as well as declaring other variables to be used in the script. 
 func _ready():
+	playerdata.load_data()
 	allgold = allgoldfolder.get_children()
 	alliron = allironfolder.get_children()
 	alltree = alltreefolder.get_children()
@@ -502,6 +503,7 @@ func _on_inventory_loaded(gold_amount, iron_amount,
 					break
 
 
+# Opens inventory
 func inventoryopen():
 	if inv_open:
 		inv_gui_show.hide()
@@ -520,6 +522,7 @@ func inventoryopen():
 	inv_open = !inv_open
 
 
+# Opens inventory
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
@@ -746,8 +749,8 @@ func _on_area_2d_4_body_entered(body):
 		if camera:
 			camera.limit_right = 10000 
 			camera.limit_left = 5400
-			camera.limit_bottom = 1000
-			camera.limit_top = -1800
+			camera.limit_bottom = 1200
+			camera.limit_top = -2200
 
 
 func _on_area_2d_cave_body_entered(body):

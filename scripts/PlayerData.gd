@@ -169,6 +169,7 @@ func add_spaceship_wires(value: int):
 
 # Saves the items and player position
 func save():
+	print("gasdasdasdddddadsds")
 	var data = {
 		"gold_amount": invGoldIngot,
 		"iron_amount": invironingot,
