@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://codgfhbhs8ppm"]
+[gd_scene load_steps=20 format=3 uid="uid://codgfhbhs8ppm"]
 
 [ext_resource type="Script" path="res://electricianshop.gd" id="1_3x0rg"]
 [ext_resource type="Texture2D" uid="uid://cdtjf1kwmw7p1" path="res://art/wires.png" id="2_4p7gb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://oybwqw8m3qur" path="res://art/shop back.png" id="6_kpxn4"]
 [ext_resource type="Texture2D" uid="uid://bgahhllsskeh6" path="res://art/shop slot.png" id="7_kn3rj"]
 [ext_resource type="Texture2D" uid="uid://cospvnhl8oemd" path="res://art/shop buycost.png" id="8_x0obq"]
+[ext_resource type="AudioStream" uid="uid://cyh4xt361r2s2" path="res://760701__bigvegie__tipitipiwawa.wav" id="9_w6l1k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18702"]
 
@@ -302,6 +303,9 @@ offset_top = 59.0
 offset_right = 398.0
 offset_bottom = 457.0
 texture = ExtResource("8_x0obq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_w6l1k")
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/chipbutton" to="." method="_on_chipbutton_pressed"]
