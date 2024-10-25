@@ -33,62 +33,6 @@ grow_vertical = 2
 scale = Vector2(3.5, 3.5)
 script = ExtResource("1_3ytjd")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-z_index = 12
-clip_contents = false
-custom_minimum_size = Vector2(2.08165e-12, 80)
-layout_mode = 2
-offset_left = 49.0
-offset_top = 145.0
-offset_right = 357.0
-offset_bottom = 289.0
-scale = Vector2(0.333, 0.333)
-theme_override_font_sizes/normal_font_size = 50
-text = "Required items:
-6x Log "
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-z_index = 12
-clip_contents = false
-custom_minimum_size = Vector2(2.08165e-12, 80)
-layout_mode = 2
-offset_left = 169.0
-offset_top = 145.0
-offset_right = 484.0
-offset_bottom = 289.0
-scale = Vector2(0.333, 0.333)
-theme_override_font_sizes/normal_font_size = 50
-text = "Required items:
-3x Gold Ingot "
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="."]
-z_index = 12
-clip_contents = false
-custom_minimum_size = Vector2(2.08165e-12, 80)
-layout_mode = 2
-offset_left = 289.0
-offset_top = 145.0
-offset_right = 610.0
-offset_bottom = 291.0
-scale = Vector2(0.333, 0.333)
-theme_override_font_sizes/normal_font_size = 50
-text = "Required items:
-3x Cobalt Ingot "
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="."]
-z_index = 12
-clip_contents = false
-custom_minimum_size = Vector2(2.08165e-12, 80)
-layout_mode = 2
-offset_left = 405.571
-offset_top = 145.0
-offset_right = 730.571
-offset_bottom = 295.0
-scale = Vector2(0.333, 0.333)
-theme_override_font_sizes/normal_font_size = 50
-text = "Required items:
-3x Amethyst Ingot"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 z_index = 1
 layout_mode = 0
@@ -196,18 +140,17 @@ text = "BUY"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = -12.0
-offset_top = -41.0
-offset_right = 571.0
-offset_bottom = 506.0
+offset_left = 4.0
+offset_top = -19.0
+offset_right = 553.0
+offset_bottom = 329.0
 texture = ExtResource("2_afk55")
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
-patch_margin_bottom = 5
+patch_margin_bottom = 50
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="."]
-layout_mode = 0
 offset_left = 164.0
 offset_top = -131.0
 offset_right = 566.0
@@ -215,7 +158,6 @@ offset_bottom = 262.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="."]
-layout_mode = 0
 offset_left = 404.0
 offset_top = -130.0
 offset_right = 806.0
@@ -223,15 +165,13 @@ offset_bottom = 263.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="."]
-layout_mode = 0
 offset_left = 284.0
 offset_top = -131.0
 offset_right = 686.0
 offset_bottom = 262.0
 texture = ExtResource("7_iljbb")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="."]
-layout_mode = 0
+[node name="NinePatchRect6" type="NinePatchRect" parent="."]
 offset_left = 44.0
 offset_top = -130.0
 offset_right = 446.0
@@ -239,68 +179,112 @@ offset_bottom = 263.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect10" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 284.0
-offset_top = -10.0
-offset_right = 682.0
-offset_bottom = 388.0
-texture = ExtResource("8_xjqdq")
-
-[node name="NinePatchRect8" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 285.0
-offset_top = -70.0
-offset_right = 683.0
-offset_bottom = 328.0
+offset_left = 404.0
+offset_top = -9.14286
+offset_right = 802.0
+offset_bottom = 388.857
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect11" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 404.0
-offset_top = -10.0
-offset_right = 802.0
-offset_bottom = 388.0
-texture = ExtResource("8_xjqdq")
-
-[node name="NinePatchRect9" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 404.0
-offset_top = -69.0
-offset_right = 802.0
-offset_bottom = 329.0
+offset_left = 403.714
+offset_top = -67.4286
+offset_right = 801.714
+offset_bottom = 330.571
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect12" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 164.0
-offset_top = -10.0
-offset_right = 562.0
-offset_bottom = 388.0
-texture = ExtResource("8_xjqdq")
-
-[node name="NinePatchRect7" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 164.0
-offset_top = -68.0
-offset_right = 562.0
-offset_bottom = 330.0
+offset_left = 284.0
+offset_top = -9.0
+offset_right = 682.0
+offset_bottom = 389.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect13" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 44.0
-offset_top = -10.0
-offset_right = 442.0
-offset_bottom = 388.0
+offset_left = 284.0
+offset_top = -67.0
+offset_right = 682.0
+offset_bottom = 331.0
 texture = ExtResource("8_xjqdq")
 
-[node name="NinePatchRect6" type="NinePatchRect" parent="."]
-layout_mode = 0
+[node name="NinePatchRect9" type="NinePatchRect" parent="."]
+offset_left = 164.0
+offset_top = -9.0
+offset_right = 562.0
+offset_bottom = 389.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="."]
+offset_left = 164.286
+offset_top = -66.8571
+offset_right = 562.286
+offset_bottom = 331.143
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="."]
+offset_left = 44.0
+offset_top = -9.0
+offset_right = 442.0
+offset_bottom = 389.0
+texture = ExtResource("8_xjqdq")
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="."]
 offset_left = 44.0
 offset_top = -67.0
 offset_right = 442.0
 offset_bottom = 331.0
 texture = ExtResource("8_xjqdq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+offset_left = 51.0
+offset_top = 151.0
+offset_right = 374.0
+offset_bottom = 293.0
+scale = Vector2(0.333, 0.333)
+theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/bold_font_size = 1
+text = "Required items:
+6 x Log Ingot"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+offset_left = 171.714
+offset_top = 150.857
+offset_right = 507.714
+offset_bottom = 292.857
+scale = Vector2(0.333, 0.333)
+theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/bold_font_size = 1
+text = "Required items:
+3 x Gold Ingot"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+offset_left = 292.286
+offset_top = 150.857
+offset_right = 639.286
+offset_bottom = 294.857
+scale = Vector2(0.333, 0.333)
+theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/bold_font_size = 1
+text = "Required items:
+3 x Cobalt Ingot"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+z_index = 12
+custom_minimum_size = Vector2(2.08165e-12, 80)
+offset_left = 410.571
+offset_top = 153.429
+offset_right = 855.571
+offset_bottom = 337.429
+scale = Vector2(0.333, 0.333)
+theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/bold_font_size = 1
+text = "Required items:
+3 x Ameythst Ingot"
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/goldplate" to="." method="_on_goldplate_pressed"]

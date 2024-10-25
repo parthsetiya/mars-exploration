@@ -728,16 +728,6 @@ func _on_tocave_body_entered(body):
 		player.speed = 100
 
 
-func _on_cavetomain_body_exited(body):
-	if body == player: 
-		player.speed = 0
-		animation_player.play("fadein")
-		player.global_position = cavetomainmarker.global_position
-		animation_player.play("fadeout")
-		await get_tree().create_timer(1).timeout
-		player.speed = 100
-
-
 func _on_area_2d_3_body_entered(body):
 	if body == player:
 		var camera = $Player/Camera2D
@@ -788,6 +778,7 @@ func _on_area_2d_cave_body_exited(body):
 		camera.limit_bottom = 1000
 		camera.limit_top = -1800
 
+
 # Moves the player off the rocket and initiates the launch sequence, including animations and scene transition.Moves the player slightly to simulate stepping off the rocket during launch preparation.
 func _launch_rocket_():
 	move_player_off_rocket()
@@ -809,15 +800,18 @@ func _launch_rocket_():
 	await get_tree().create_timer(exit_delay).timeout  
 	get_tree().change_scene_to_file("res://end_scene.tscn")
 
+
 # Moves the player slightly to simulate stepping off the rocket during launch preparation.
 func move_player_off_rocket():
 	if player:
 		player.position.x -= 50  
 
+
 # Hides the player during the launch
 func hide_player():
 	if player:
 		player.visible = false  
+
 
 # Shakes the camera to give effect of rocket taking off
 func screen_shake():
@@ -829,6 +823,7 @@ func screen_shake():
 			await get_tree().create_timer(0.05).timeout
 		camera.offset = Vector2(0, 0)  
 
+
 # Moves rocket sprite up and off of the screen
 func move_rocket_up(sprite):
 	var sprite_frames = sprite.sprite_frames  
@@ -838,19 +833,30 @@ func move_rocket_up(sprite):
 			sprite.position.y -= move_speed * get_process_delta_time()  
 		sprite.visible = false
 
+
 # Waits for animations to finish before allowing others to continue
 func _wait_for_animation(anim_name):
 	if animation_rocket:
 		await animation_rocket.animation_finished  
 
 
-#plays music based on area
+# Plays music based on area
 func _on_area_2d_music_body_entered(body):
 	if body == player:
 		music.play()
 
-
+# Stops music based on area
 func _on_area_2d_music_body_exited(body):
 	if body == player:
 		music.stop()
 
+
+# Transitions player to main once entering cave entrance
+func _on_cavetomain_body_entered(body):
+	if body == player: 
+		player.speed = 0
+		animation_player.play("fadein")
+		player.global_position = cavetomainmarker.global_position
+		animation_player.play("fadeout")
+		await get_tree().create_timer(1).timeout
+		player.speed = 100

@@ -8,9 +8,6 @@ var playerinarea = false
 var shopshow = false
 @onready var animation_player = $AnimationPlayer
 
-# Plays animation of NPC
-func _ready():
-	animation_player.play("bobbing")
 
 # Plays NPC dialogue when the player is in the area
 func _on_area_2d_body_entered(body):
