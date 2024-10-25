@@ -9,9 +9,6 @@ extends Control
 var playerdata = PlayerData.new()
 
 
-
-
-
 # Changes scene to main scene
 func _on_play_pressed():
 	get_tree().change_scene_to_packed(start_level)
@@ -29,11 +26,12 @@ func _on_options_pressed():
 
 # Restarts the game
 func _on_restart_pressed():
-	reset_inventory()
+	reset_player_stats()
 	get_tree().change_scene_to_packed(start_level)
 
 
-func reset_inventory():
+# Resets inventory and position
+func reset_player_stats():
 	playerdata.add_invGoldIngot(0)
 	playerdata.add_invamethystingot(0)
 	playerdata.add_invironingot(0)

@@ -2367,8 +2367,10 @@ scale = Vector2(2.6, 2.6)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 visible = false
-offset_right = 499.0
-offset_bottom = 918.0
+offset_left = 48.0
+offset_top = 10.0
+offset_right = 547.0
+offset_bottom = 928.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 50
 

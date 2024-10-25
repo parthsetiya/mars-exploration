@@ -20,7 +20,6 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://scenes/maintest.tscn")
 
 
-
 # Buttons add items to inventory from shop if the player has the required items
 func _on_button_pressed():
 	playerdata.load_data()

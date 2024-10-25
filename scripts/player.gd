@@ -15,12 +15,11 @@ var playerholdingpick
 @onready var toolanim = $Node2D/AnimationPlayer
 @onready var node_2d = $Node2D
 
+
 # Sets player position to last saved position
 func _ready():
 	playerData.load_data()
 	self.position = playerData.SavePos
-
-
 
 
 # Get direction of the player and play a swing animation based on the direction the player is facing
@@ -62,10 +61,12 @@ func swing_tool():
 	is_swinging = false
 	speed = 100 
 
+
 # Gets the direction of the player and moves them in that direction
 func get_input():
 	input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
+
 
 # Plays animation based on what directon the player is walking
 func updateAnimation():
@@ -87,8 +88,4 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	updateAnimation()
-
-
-
-
 

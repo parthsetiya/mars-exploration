@@ -7,7 +7,7 @@ const COBALT_GEAR = preload("res://Inventory/items/cobalt_gear.tres")
 const AMETHYST_GEAR = preload("res://Inventory/items/amethyst_gear.tres")
 @onready var audio_stream_player = $AudioStreamPlayer
 
-	
+
 # Emits signal to add item to inventory 
 func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
