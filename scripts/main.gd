@@ -663,11 +663,13 @@ func highlight_slot(index):
 				playerdata.updatecurrent_item("")
 
 
+# Changes player speed on pause menu
 func _change_player_speed():
 	player.speed = 100
 	pausemenu()
 
 
+# Opens map
 func mapopen():
 	if mapshow:
 		maprough.hide()
@@ -676,6 +678,7 @@ func mapopen():
 	mapshow = !mapshow
 
 
+# Opens pause menu
 func pausemenu():
 	if paused:
 		pause_menu.hide()
@@ -715,6 +718,7 @@ func _on_areaback_body_entered(body):
 		player.speed = 100
 
 
+# Fades in transitions and teleports player, changes camera limit
 func _on_area_2d_2_body_entered(body):
 	if body == player:
 		player.speed = 0
@@ -729,6 +733,7 @@ func _on_area_2d_2_body_entered(body):
 		player.speed = 100
  
 
+# Fades in transitions and teleports player
 func _on_tocave_body_entered(body):
 	if body == player:
 		player.speed = 0 
@@ -739,6 +744,7 @@ func _on_tocave_body_entered(body):
 		player.speed = 100
 
 
+# Changes camera limits
 func _on_area_2d_3_body_entered(body):
 	if body == player:
 		var camera = $Player/Camera2D
@@ -749,6 +755,7 @@ func _on_area_2d_3_body_entered(body):
 			camera.limit_top = -1800
 
 
+# Changes camera limits
 func _on_area_2d_4_body_entered(body):
 	if body == player:
 		var camera = $Player/Camera2D
@@ -759,6 +766,7 @@ func _on_area_2d_4_body_entered(body):
 			camera.limit_top = -2200
 
 
+# Turns on canvasmodulate and 2D pointlight, changes cameralimit
 func _on_area_2d_cave_body_entered(body):
 	if body == player: 
 		cavemusic.play()
@@ -774,6 +782,7 @@ func _on_area_2d_cave_body_entered(body):
 			camera.limit_top = -100000
 
 
+# Turns off canvasmodulate and 2D pointlight, changes cameralimit
 func _on_area_2d_cave_body_exited(body):
 	if body == player: 
 		cavemusic.stop() 
@@ -795,6 +804,7 @@ func _on_area_2d_music_body_entered(body):
 	if body == player:
 		music.play()
 
+
 # Stops music based on area
 func _on_area_2d_music_body_exited(body):
 	if body == player:
@@ -810,3 +820,4 @@ func _on_cavetomain_body_entered(body):
 		animation_player.play("fadeout")
 		await get_tree().create_timer(1).timeout
 		player.speed = 100
+
