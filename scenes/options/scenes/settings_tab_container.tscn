@@ -51,7 +51,7 @@ offset_bottom = 877.0
 [node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Binds/HBoxContainer"]
 custom_minimum_size = Vector2(1592, 2.08165e-12)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 55
+theme_override_font_sizes/normal_font_size = 50
 text = "Interact: E
 Inventory: Tab
 Pause : Escape

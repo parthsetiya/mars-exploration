@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://bfbjlnacaygu8"]
+[gd_scene load_steps=2 format=3 uid="uid://bfbjlnacaygu8"]
+
+[ext_resource type="Texture2D" uid="uid://d2jq7mh1xbgn2" path="res://art/mainmenu/background.png" id="1_07kys"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_07kys")

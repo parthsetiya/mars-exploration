@@ -539,9 +539,13 @@ func _process(delta):
 	if spaceship_entered == true and Input.is_action_just_pressed("g"):
 		deposititems()
 		if playerdata.spaceship_amethyst_gears >= 5 and playerdata.spaceship_carton_of_oil >= 3 and playerdata.spaceship_cobalt_gears >= 5 and playerdata.spaceship_computer_chip >= 1 and playerdata.spaceship_gold_gears >= 5 and playerdata.spaceship_machine_parts >= 4 and playerdata.spaceship_thruster_repair_kits >= 2 and playerdata.spaceship_wires >= 10:
-			_launch_rocket_()
+			rich_text_label.hide()
+			inventory_gui.hide()
+			animation_player.play("fadein")
 			await get_tree().create_timer(1.5).timeout 
 			get_tree().change_scene_to_file("res://end_scene.tscn")
+	
+	
 	
 	#Updates the items for the spaceship based on how many have been deposited
 	var text = ""
@@ -600,8 +604,6 @@ func deposititems():
 		playerdata.add_spaceship_carton_of_oil(playerdata.invoil)
 		playerdata.add_oil(-playerdata.invoil)
 
-	playerdata.add_spaceship_metal_plates(playerdata.invmetalplate)
-	playerdata.add_metalplate(-playerdata.invmetalplate)
 
 	if playerdata.invgoldgear >= required_gold_gears:
 		playerdata.add_spaceship_gold_gears(required_gold_gears)
@@ -777,67 +779,6 @@ func _on_area_2d_cave_body_exited(body):
 		camera.limit_left = -2000
 		camera.limit_bottom = 1000
 		camera.limit_top = -1800
-
-
-# Moves the player off the rocket and initiates the launch sequence, including animations and scene transition.Moves the player slightly to simulate stepping off the rocket during launch preparation.
-func _launch_rocket_():
-	move_player_off_rocket()
-	hide_player()
-	player.speed = 0
-	var spaceship = $spaceship  
-	if spaceship:
-		spaceship.visible = false  
-	animation_rocket.play("fadein") 
-	var rocket_sprite = $Rocket2
-	if rocket_sprite:
-		rocket_sprite.visible = true  
-	await screen_shake()
-	await move_rocket_up(rocket_sprite)
-	animation_rocket.play("fadein")  
-	await _wait_for_animation("fadein")  
-	animation_rocket.play("fadeout")
-	await _wait_for_animation("fadeout")  
-	await get_tree().create_timer(exit_delay).timeout  
-	get_tree().change_scene_to_file("res://end_scene.tscn")
-
-
-# Moves the player slightly to simulate stepping off the rocket during launch preparation.
-func move_player_off_rocket():
-	if player:
-		player.position.x -= 50  
-
-
-# Hides the player during the launch
-func hide_player():
-	if player:
-		player.visible = false  
-
-
-# Shakes the camera to give effect of rocket taking off
-func screen_shake():
-	var camera = $Player/Camera2D  
-	if camera:
-		for i in range(10):  
-			var shake_offset = Vector2(randi() % screen_shake_strength, randi() % screen_shake_strength)
-			camera.offset = shake_offset
-			await get_tree().create_timer(0.05).timeout
-		camera.offset = Vector2(0, 0)  
-
-
-# Moves rocket sprite up and off of the screen
-func move_rocket_up(sprite):
-	var sprite_frames = sprite.sprite_frames  
-	if sprite_frames:
-		var frame_size = sprite_frames.get_frame_texture(sprite.animation, 0).get_size()  
-		while sprite.position.y > -frame_size.y:  
-			sprite.position.y -= move_speed * get_process_delta_time()  
-		sprite.visible = false
-
-
-# Waits for animations to finish before allowing others to continue
-func _wait_for_animation(anim_name):
-	if animation_rocket:
-		await animation_rocket.animation_finished  
 
 
 # Plays music based on area

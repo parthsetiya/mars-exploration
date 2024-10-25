@@ -26,3 +26,35 @@ func _on_quit_pressed():
 func _on_options_pressed():
 	get_tree().change_scene_to_file("res://scenes/options/scenes/options_menu.tscn")
 
+
+# Restarts the game
+func _on_restart_pressed():
+	reset_inventory()
+
+
+func reset_inventory():
+	playerdata.add_invGoldIngot(0)
+	playerdata.add_invamethystingot(0)
+	playerdata.add_invironingot(0)
+	playerdata.add_invlogingot(0)
+	playerdata.add_invstick(0)
+	playerdata.add_toolbox(0)
+	playerdata.add_toolkit(0)
+	playerdata.add_wires(0)
+	playerdata.add_oil(0)
+	playerdata.add_goldgear(0)
+	playerdata.add_amethystgear(0)
+	playerdata.add_cobaltgear(0)
+	playerdata.add_computerchip(0)
+	playerdata.add_spaceship_computer_chip(0)
+	playerdata.add_spaceship_machine_parts(0)
+	playerdata.add_spaceship_thruster_repair_kits(0)
+	playerdata.add_spaceship_carton_of_oil(0)
+	playerdata.add_spaceship_metal_plates(0)
+	playerdata.add_spaceship_gold_gears(0)
+	playerdata.add_spaceship_cobalt_gears(0)
+	playerdata.add_spaceship_amethyst_gears(0)
+	playerdata.add_spaceship_wires(0)
+	playerdata.UpdatePos(Vector2(0, 0))
+	playerdata.load_data()
+

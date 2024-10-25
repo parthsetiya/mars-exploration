@@ -1,14 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://codgfhbhs8ppm"]
+[gd_scene load_steps=21 format=3 uid="uid://codgfhbhs8ppm"]
 
 [ext_resource type="Script" path="res://electricianshop.gd" id="1_3x0rg"]
 [ext_resource type="Texture2D" uid="uid://cdtjf1kwmw7p1" path="res://art/wires.png" id="2_4p7gb"]
 [ext_resource type="Texture2D" uid="uid://cjdiu5plq3um2" path="res://art/chip.png" id="3_o87w2"]
 [ext_resource type="Texture2D" uid="uid://3b0f5ox18jb8" path="res://art/toolkit.png" id="4_exd8w"]
 [ext_resource type="Texture2D" uid="uid://c0rw4jcr7yskf" path="res://art/toolbox.png" id="5_q4ll8"]
+[ext_resource type="Theme" uid="uid://4hkej5w50ixp" path="res://scenes/pause_menu.tres" id="5_tumic"]
 [ext_resource type="Texture2D" uid="uid://oybwqw8m3qur" path="res://art/shop back.png" id="6_kpxn4"]
 [ext_resource type="Texture2D" uid="uid://bgahhllsskeh6" path="res://art/shop slot.png" id="7_kn3rj"]
 [ext_resource type="Texture2D" uid="uid://cospvnhl8oemd" path="res://art/shop buycost.png" id="8_x0obq"]
-[ext_resource type="AudioStream" uid="uid://cyh4xt361r2s2" path="res://760701__bigvegie__tipitipiwawa.wav" id="9_w6l1k"]
+[ext_resource type="AudioStream" uid="uid://cyh4xt361r2s2" path="res://760701__bigvegie__tipitipiwawa.wav" id="10_b4g7f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18702"]
 
@@ -61,10 +62,10 @@ text = "Required items:
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
-offset_left = 168.286
-offset_top = 146.0
-offset_right = 504.286
-offset_bottom = 288.0
+offset_left = 171.714
+offset_top = 150.857
+offset_right = 507.714
+offset_bottom = 292.857
 scale = Vector2(0.333, 0.333)
 theme_override_font_sizes/normal_font_size = 35
 theme_override_font_sizes/bold_font_size = 1
@@ -75,10 +76,10 @@ text = "Required items:
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
-offset_left = 286.857
-offset_top = 146.0
-offset_right = 633.857
-offset_bottom = 290.0
+offset_left = 292.286
+offset_top = 150.857
+offset_right = 639.286
+offset_bottom = 294.857
 scale = Vector2(0.333, 0.333)
 theme_override_font_sizes/normal_font_size = 35
 theme_override_font_sizes/bold_font_size = 1
@@ -89,12 +90,12 @@ text = "Required items:
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
 layout_mode = 2
-offset_left = 407.0
-offset_top = 151.0
-offset_right = 852.0
-offset_bottom = 335.0
+offset_left = 410.571
+offset_top = 153.429
+offset_right = 855.571
+offset_bottom = 337.429
 scale = Vector2(0.333, 0.333)
-theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/normal_font_size = 33
 theme_override_font_sizes/bold_font_size = 1
 text = "Required items:
 2x Gold Plate + 4x Cobalt"
@@ -178,21 +179,17 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_51cpp")
 text = "BUY"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(110, 2.08165e-12)
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer4"]
-custom_minimum_size = Vector2(2.08165e-12, 100)
-layout_mode = 2
-texture = ExtResource("5_q4ll8")
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer4"]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(110, 185)
 layout_mode = 2
 
 [node name="toolboxbutton" type="Button" parent="HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
+theme = ExtResource("5_tumic")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_up8s2")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_d7pa4")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_upteh")
@@ -202,15 +199,14 @@ text = "BUY"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = -80.0
-offset_top = -70.0
-offset_right = 716.0
-offset_bottom = 552.0
+offset_top = -20.0
+offset_right = 548.0
+offset_bottom = 328.0
 texture = ExtResource("6_kpxn4")
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
-patch_margin_bottom = 5
+patch_margin_bottom = 50
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -244,6 +240,62 @@ offset_right = 446.0
 offset_bottom = 263.0
 texture = ExtResource("7_kn3rj")
 
+[node name="NinePatchRect10" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 404.0
+offset_top = -9.14286
+offset_right = 802.0
+offset_bottom = 388.857
+texture = ExtResource("8_x0obq")
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 403.714
+offset_top = -67.4286
+offset_right = 801.714
+offset_bottom = 330.571
+texture = ExtResource("8_x0obq")
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = -9.0
+offset_right = 682.0
+offset_bottom = 389.0
+texture = ExtResource("8_x0obq")
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = -67.0
+offset_right = 682.0
+offset_bottom = 331.0
+texture = ExtResource("8_x0obq")
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -9.0
+offset_right = 562.0
+offset_bottom = 389.0
+texture = ExtResource("8_x0obq")
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 164.286
+offset_top = -66.8571
+offset_right = 562.286
+offset_bottom = 331.143
+texture = ExtResource("8_x0obq")
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -9.0
+offset_right = 442.0
+offset_bottom = 389.0
+texture = ExtResource("8_x0obq")
+
 [node name="NinePatchRect6" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_left = 44.0
@@ -252,60 +304,17 @@ offset_right = 442.0
 offset_bottom = 331.0
 texture = ExtResource("8_x0obq")
 
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6"]
-layout_mode = 0
-offset_top = 58.0
-offset_right = 398.0
-offset_bottom = 456.0
-texture = ExtResource("8_x0obq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = -58.0
-offset_right = 518.0
-offset_bottom = 340.0
-texture = ExtResource("8_x0obq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_top = 58.0
-offset_right = 398.0
-offset_bottom = 456.0
-texture = ExtResource("8_x0obq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = -58.0
-offset_right = 518.0
-offset_bottom = 340.0
-texture = ExtResource("8_x0obq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_top = 58.0
-offset_right = 398.0
-offset_bottom = 456.0
-texture = ExtResource("8_x0obq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = -59.0
-offset_right = 518.0
-offset_bottom = 339.0
-texture = ExtResource("8_x0obq")
-
-[node name="NinePatchRect6" type="NinePatchRect" parent="NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6/NinePatchRect6"]
-layout_mode = 0
-offset_top = 59.0
-offset_right = 398.0
-offset_bottom = 457.0
-texture = ExtResource("8_x0obq")
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+offset_left = 418.571
+offset_top = 34.0
+offset_right = 498.571
+offset_bottom = 114.0
+texture = ExtResource("5_q4ll8")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_w6l1k")
+stream = ExtResource("10_b4g7f")
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/chipbutton" to="." method="_on_chipbutton_pressed"]

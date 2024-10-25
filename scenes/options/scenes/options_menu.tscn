@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://2uqyrmvyqs5u"]
 
 [ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_g8gp6"]
-[ext_resource type="Texture2D" uid="uid://su0xtwgf3obo" path="res://art/mainmenu/pixel_art_astronaut_standing_o(1).jpeg" id="2_6dym8"]
+[ext_resource type="Texture2D" uid="uid://cacut6v7r2b0n" path="res://art/mainmenu/normal background.png" id="2_0gpkn"]
 [ext_resource type="PackedScene" uid="uid://pgvsr3tvtgpr" path="res://scenes/options/scenes/settings_tab_container.tscn" id="2_b1py2"]
 
 [sub_resource type="SystemFont" id="SystemFont_algh3"]
@@ -28,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6dym8")
+texture = ExtResource("2_0gpkn")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

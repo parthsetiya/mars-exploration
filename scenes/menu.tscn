@@ -65,10 +65,10 @@ layout_mode = 1
 
 [node name="play" type="Button" parent="."]
 layout_mode = 2
-offset_left = 763.0
-offset_top = 645.0
-offset_right = 1110.0
-offset_bottom = 749.0
+offset_left = 767.0
+offset_top = 514.0
+offset_right = 1114.0
+offset_bottom = 618.0
 theme = ExtResource("4_kfhcf")
 theme_override_fonts/font = ExtResource("5_7klpp")
 theme_override_font_sizes/font_size = 50
@@ -76,10 +76,10 @@ text = "Play"
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 767.0
-offset_top = 906.0
-offset_right = 1114.0
-offset_bottom = 1010.0
+offset_left = 771.0
+offset_top = 775.0
+offset_right = 1118.0
+offset_bottom = 879.0
 theme = ExtResource("4_kfhcf")
 theme_override_fonts/font = ExtResource("5_7klpp")
 theme_override_font_sizes/font_size = 50
@@ -87,15 +87,27 @@ text = "Quit"
 
 [node name="options" type="Button" parent="."]
 layout_mode = 0
-offset_left = 761.0
-offset_top = 775.0
-offset_right = 1108.0
-offset_bottom = 879.0
+offset_left = 765.0
+offset_top = 644.0
+offset_right = 1112.0
+offset_bottom = 748.0
 theme = ExtResource("4_kfhcf")
 theme_override_fonts/font = ExtResource("5_7klpp")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 
+[node name="restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 908.0
+offset_right = 1123.0
+offset_bottom = 1012.0
+theme = ExtResource("4_kfhcf")
+theme_override_fonts/font = ExtResource("5_7klpp")
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
