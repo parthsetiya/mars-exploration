@@ -8,9 +8,6 @@ const TOOLKIT = preload("res://Inventory/items/toolkit.tres")
 const WIRES = preload("res://Inventory/items/wires.tres")
 @onready var audio_stream_player = $AudioStreamPlayer
 
-func _ready():
-	audio_stream_player.play()
-
 
 # Emits signal to add item to inventory 
 func add_item_to_inventory(item_name, quantity):
@@ -21,7 +18,7 @@ func add_item_to_inventory(item_name, quantity):
 func _process(delta):
 	if Input.is_action_just_pressed("shop") and not get_tree().current_scene.name == "main":
 		get_tree().change_scene_to_file("res://scenes/maintest.tscn")
-		audio_stream_player.stop()
+
 
 
 # Buttons add items to inventory from shop if the player has the required items

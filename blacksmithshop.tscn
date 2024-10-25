@@ -151,6 +151,7 @@ patch_margin_right = 5
 patch_margin_bottom = 50
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 164.0
 offset_top = -131.0
 offset_right = 566.0
@@ -158,6 +159,7 @@ offset_bottom = 262.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 404.0
 offset_top = -130.0
 offset_right = 806.0
@@ -165,6 +167,7 @@ offset_bottom = 263.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 284.0
 offset_top = -131.0
 offset_right = 686.0
@@ -172,6 +175,7 @@ offset_bottom = 262.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 44.0
 offset_top = -130.0
 offset_right = 446.0
@@ -179,6 +183,7 @@ offset_bottom = 263.0
 texture = ExtResource("7_iljbb")
 
 [node name="NinePatchRect10" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 404.0
 offset_top = -9.14286
 offset_right = 802.0
@@ -186,6 +191,7 @@ offset_bottom = 388.857
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect11" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 403.714
 offset_top = -67.4286
 offset_right = 801.714
@@ -193,6 +199,7 @@ offset_bottom = 330.571
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect12" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 284.0
 offset_top = -9.0
 offset_right = 682.0
@@ -200,6 +207,7 @@ offset_bottom = 389.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect13" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 284.0
 offset_top = -67.0
 offset_right = 682.0
@@ -207,6 +215,7 @@ offset_bottom = 331.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect9" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 164.0
 offset_top = -9.0
 offset_right = 562.0
@@ -214,6 +223,7 @@ offset_bottom = 389.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect8" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 164.286
 offset_top = -66.8571
 offset_right = 562.286
@@ -221,6 +231,7 @@ offset_bottom = 331.143
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect7" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 44.0
 offset_top = -9.0
 offset_right = 442.0
@@ -228,6 +239,7 @@ offset_bottom = 389.0
 texture = ExtResource("8_xjqdq")
 
 [node name="NinePatchRect14" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 44.0
 offset_top = -67.0
 offset_right = 442.0
@@ -237,6 +249,7 @@ texture = ExtResource("8_xjqdq")
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 0
 offset_left = 51.0
 offset_top = 151.0
 offset_right = 374.0
@@ -250,6 +263,7 @@ text = "Required items:
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 0
 offset_left = 171.714
 offset_top = 150.857
 offset_right = 507.714
@@ -263,6 +277,7 @@ text = "Required items:
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 0
 offset_left = 292.286
 offset_top = 150.857
 offset_right = 639.286
@@ -276,6 +291,7 @@ text = "Required items:
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
 z_index = 12
 custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 0
 offset_left = 410.571
 offset_top = 153.429
 offset_right = 855.571
