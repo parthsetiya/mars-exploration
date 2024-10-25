@@ -500,7 +500,7 @@ func _on_inventory_loaded(gold_amount, iron_amount,
 
 				if item.texture == null:
 					item.texture = COMPUTER_CHIP.texture
-					label.text = str(cobalt_gear_amount)
+					label.text = str(computer_chip_amount)
 					break
 
 
