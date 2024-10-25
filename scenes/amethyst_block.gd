@@ -16,6 +16,7 @@ var inventory
 var current_amethyst
 signal request_inventory_update()
 
+
 # Start the respawn timer if there’s no ore
 func _ready():
 	state = "gold"
@@ -62,11 +63,9 @@ func drop_amethyst():
 	emit_signal("request_inventory_update", item.name, 1)
 
 
-
 func _on_area_2d_body_entered(body):
 	player_in_area = true
 	player = body
-
 
 
 func _on_area_2d_body_exited(body):

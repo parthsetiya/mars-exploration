@@ -21,6 +21,7 @@ var current_gold
 @export var normal_frame: int = 0  
 signal request_inventory_update()
 
+
 # Spawn gold when game is run
 func _ready():
 	state = "gold"

@@ -17,15 +17,12 @@ var inventory
 var tree_collected = false
 signal request_inventory_update()
 
-
+# Sets the tree to spawn when the game is started
 func _ready():
 	state = "gold"
 
 
-func _on_inventory_updated(new_inventory):
-	print("new inventory: " + str(new_inventory))
-
-
+# Detects when tree is broken and plays animation and adds item to inventory 
 func _process(delta):
 	if state == "no_gold":
 		animated_sprite.play("no_tree")
@@ -40,6 +37,7 @@ func _process(delta):
 			tree_collected = true
 
 
+# Plays the tree falling animation
 func treefallinganimplayer():
 	audio_stream_player_2d.play()
 	treefallinganim.play("treefalling")
@@ -47,7 +45,7 @@ func treefallinganimplayer():
 	treefallinganim.play("treefading")
 	drop_gold()
 
-
+# Plays the log dropping on the ground 
 func drop_gold():
 	var gold_instance = gold_scene.instantiate()
 	gold_instance.global_position = marker.global_position / 2
@@ -67,6 +65,7 @@ func popfromground(tree_collectable):
 	tree_collectable.queue_free()
 
 
+# Emits signal to add item to inventory
 func add_item_to_inventory(item_name, quantity):
 	emit_signal("request_inventory_update", item_name, quantity)
 

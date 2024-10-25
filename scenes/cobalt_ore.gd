@@ -71,7 +71,6 @@ func drop_iron():
 	respawn_timer.start()
 
 
-
 func _on_area_2d_body_entered(body):
 		player_in_area = true
 		player = body
